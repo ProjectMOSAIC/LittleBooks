@@ -5,7 +5,7 @@
 \usepackage{pdfpages}
 %\usepackage[shownotes]{authNote}
 \usepackage[hidenotes]{authNote}
-\usepackage{language}
+\usepackage{language}    % available at https://github.com/rpruim/latex
 \usepackage{hyperref}
 \usepackage{fancyhdr} % DTK added for header.
 
@@ -83,7 +83,7 @@
 
 
 \title{Start Teaching with R}
-\author[Pruim, Horton & Kaplan]{Randall Pruim, Nicholas J. Horton, and Daniel Kaplan}
+\author[Pruim, Horton \& Kaplan]{Randall Pruim, Nicholas J. Horton, and Daniel Kaplan}
 \date{January 2015}
 
 \begin{document}
