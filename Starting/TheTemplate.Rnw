@@ -678,7 +678,8 @@ trellis.par.set(col.whitebg())
 show.settings()
 @
 
-\Pointer{In the printed version of this book, all three examples appear in black and white and were processed with \verb+theme.mosaic(bw=TRUE)+.  In the online version, the first and third examples appear in color.}
+\Pointer{In the printed version of this book, all three examples appear in black and white and were processed with \texttt{theme.mosaic(bw=TRUE)}.  
+In the online version, the first and third examples appear in color.}
 
 <<out.width=".8\\textwidth", fig.width=10, fig.height=6>>=
 trellis.par.set(theme.mosaic(bw=TRUE))
