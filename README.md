@@ -3,9 +3,7 @@ Project MOSAIC Little Books
 
 
 
-## PDFs
-
-You can grab PDFs of the little books here:
+You can grab PDFs of the Little Books here:
 
  * [Start Teaching Statistics Using R](Starting/MOSAIC-StartTeaching.pdf)
  * [A Compendium of Commands to Teach Statistics with R](Compendium/MOSAIC-Compendium.pdf)
