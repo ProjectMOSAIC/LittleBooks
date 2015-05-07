@@ -1,7 +1,7 @@
 \documentclass[openany]{tufte-book}
 
 
-\usepackage{RBook}
+\usepackage{../include/RBook}
 \usepackage{pdfpages}
 %\usepackage[shownotes]{authNote}
 \usepackage[hidenotes]{authNote}
