@@ -61,94 +61,20 @@ img {
 
 
 
-<div id="little-books" class="section level1">
-<h1>Little Books</h1>
-<p>Materials for the Project MOSAIC “Little Books”</p>
-<div id="compiling" class="section level3">
-<h3>Compiling</h3>
-<p>Each book is in a separate directory and the “master” file for each is identified below. Compiling (Knit PDF) the master file should produce the PDF.</p>
-<p>Each of the component <code>.Rnw</code> files in these directories an also be compiled on it’s own. Just “Knit PDF” in RStudio. This will create a PDF file containing just a portion of the book.</p>
-</div>
-<div id="the-little-books" class="section level3">
-<h3>The Little Books</h3>
-<p>This project consists of several short books that are inter-related.</p>
-<ol style="list-style-type: decimal">
-<li><p>Start Teaching Statistics with R</p>
-<p>Directory: <code>Starting</code> Master: <code>MOSAIC-Starting.Rnw</code></p></li>
-<li><p>A Compendium of Commands to Teach Statistics with R</p>
-<p>Directory: <code>Compendium</code> Master: <code>MOSAIC-Compendium.Rnw</code></p></li>
-<li><p>Simulation-Based Inference</p>
-<p>Directory: <code>Simulation</code> Master: <code>MOSAIC-SimulattionBased.Rnw</code></p></li>
-<li><p>Start with Modeling</p>
-<p>Directory: <code>Modeling</code> or <code>ModelingV2</code> Master: <code>MOSAIC-Modeling.Rnw</code></p></li>
-<li><p>Start R in Calculus</p>
-<p>This is maintained elsewhere</p></li>
-</ol>
-<p>APPENDICES</p>
-</div>
-</div>
-<div id="appendix-a-style-instructions-for-authors" class="section level1">
-<h1>Appendix A: Style Instructions for Authors</h1>
-<p>Notes for the authors can be included using <code>\authNote{A note to the authors.}</code></p>
-<p>Processed notes for the authors can be hidden using <code>\authNoted{A noted note to the authors.}</code></p>
-<div id="some-style-guidelines" class="section level2">
-<h2>Some Style Guidelines</h2>
-<ol style="list-style-type: decimal">
-<li>R Code
-<ol style="list-style-type: decimal">
-<li>Use space after comma in argument lists</li>
-<li>No space around = in argument list</li>
-<li>Use space around operators, <code>&lt;-</code> and <code>-&gt;</code></li>
-<li>Casual comments (no need for caps)</li>
-<li>When referring to functions in the text, add empty parens (e.g., <code>data()</code>) to make it clear that the object is a function.</li>
-</ol></li>
-<li>Exercises N.B. Some exercises are for instructors, not for students.
-<ol style="list-style-type: decimal">
-<li>Use <code>\begin{problem} ... \end{problem}</code> to define problems.</li>
-<li>Use <code>\begin{solution} ... \end{solution}</code> to define solutions.</li>
-</ol></li>
-</ol>
-<p>This must be  the <code>problem</code> environment and before the definition of the next problem. Put it immediately after <code>\end{problem}</code> to avoid confusion.</p>
+<div id="project-mosaic-little-books" class="section level1">
+<h1>Project MOSAIC Little Books</h1>
+<div id="pdfs" class="section level2">
+<h2>PDFs</h2>
+<p>You can grab PDFs of the little books here:</p>
 <ul>
-<li>Use <code>\shipoutProblems</code> to display all problems queued up since the last <code>shipoutProblems</code>.</li>
-<li><p>Examples Put within <code>\begin{example}</code> and <code>end{example}</code>. We can tweak the formatting later.</p></li>
-<li>Marginal Notes We can place some marginal notes with:
-<ul>
-<li><code>\InstructorNote{This is an instructor note.}</code></li>
-<li><code>\FoodForThought{We can tweak the layout, color, size, etc. later.  For now. I'm just using color to distinguish.}</code></li>
-<li><code>\Caution{This is a caution}</code></li>
-</ul></li>
+<li><a href="Starting/MOSAIC-Starting.pdf">Start Teaching Statistics Using R</a></li>
+<li><a href="Compendium/MOSAIC-Compendium.pdf">A Compendium of Commands to Teach Statistics with R</a></li>
 </ul>
-<ol style="list-style-type: decimal">
-<li>Variable names. Often it’s nice to distinguish between anactual variable name and a word that might have a similar name, for instance between sex and <code>sex</code>. Use the <code>\VN{sex}</code> command to accomplish this.</li>
-<li>Model formulas. Use <code>\model{A}{B+C}</code> to generate <code>A ~ B+C</code> . Often, you may want to use variable names, for instance <code>\model{\VN{height}}{\VN{age}+\VN{sex}}</code> gives <code>height ~ age + sex</code>.</li>
-</ol>
-</div>
-</div>
-<div id="appendix-b-possible-additional-topics" class="section level1">
-<h1>Appendix B: Possible Additional Topics</h1>
-<p><em>This list is quite old now…</em></p>
-<p>Do we want to include any of these topics?</p>
+<p>Others that are in progress include</p>
 <ul>
-<li>Fancier Lattice Graphics</li>
-<li>Base Graphics</li>
-<li>Making plots with <code>ggplots2</code></li>
-<li>Writing executable R scripts</li>
-<li>R Infrastructure for Teaching</li>
-<li>Sharing in R Studio</li>
-<li>Public Data</li>
-<li>Google Data</li>
-<li>Making Data Available Online</li>
-<li>A Brief Tour of knitr and R-markdown</li>
-<li>exams</li>
-<li>Books
-<ul>
-<li>Our books</li>
-<li>Chance et al (in progress)</li>
-<li>Existing books that work well/poorly with R (and why)</li>
-</ul></li>
-<li>Online materials</li>
+<li>Start Modeling with R</li>
 </ul>
+</div>
 </div>
 
 
