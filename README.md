@@ -18,22 +18,22 @@ This project consists of several short books that are inter-related.
  1. Start Teaching Statistics with R
  
     Directory: `Starting`
-    Master: `Master-Starting.Rnw`
+    Master: `MOSAIC-Starting.Rnw`
     
  2. A Compendium of Commands to Teach Statistics with R
 
     Directory: `Compendium`
-    Master: `Compendium.Rnw`
+    Master: `MOSAIC-Compendium.Rnw`
     
  3. Simulation-Based Inference
  
     Directory: `Simulation`
-    Master: `SimulattionBased.Rnw`
+    Master: `MOSAIC-SimulattionBased.Rnw`
     
  4. Start with Modeling
  
     Directory: `Modeling` or `ModelingV2`
-    Master: `Master-Modeling.Rnw`
+    Master: `MOSAIC-Modeling.Rnw`
     
  5. Start R in Calculus
  
