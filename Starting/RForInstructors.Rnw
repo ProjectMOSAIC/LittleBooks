@@ -148,7 +148,6 @@ class(KidsFeet$length)
 class(KidsFeet$sex)
 str(KidsFeet)                  # show the class for each variable
 @
-\end{widestuff}
 \Rindex{KidsFeet}
 
 From this we see that \dataframe{KidsFeet} is a data frame and that
