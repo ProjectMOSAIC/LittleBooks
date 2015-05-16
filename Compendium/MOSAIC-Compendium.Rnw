@@ -82,9 +82,9 @@
 
 
 
-\title{A Compendium of Commands to Teach Statistics with R}
+\title{A Student's Guide to R}
 \author[Horton, Kaplan, Pruim]{ Nicholas J. Horton, Daniel Kaplan, and Randall Pruim} 
-\date{January 2015}
+\date{May 2015}
 
 \begin{document}
 \def\cplabel{^X} 
@@ -143,10 +143,10 @@ knit_hooks$set(document = function(x) {
 \newpage
 \vspace*{2in}
 
-\parbox{4in}{\noindent Copyright (c) 2015 by Randall Pruim, Nicholas Horton, \& Daniel Kaplan.}
+\parbox{4in}{\noindent Copyright (c) 2015 by Nicholas Horton, Randall Pruim, \& Daniel Kaplan.}
 \medskip
 
-\parbox{4in}{\noindent Edition 1.0, January 2015}
+\parbox{4in}{\noindent Edition 1.1, May 2015}
 
 \bigskip
 

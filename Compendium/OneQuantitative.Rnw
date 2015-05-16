@@ -173,7 +173,7 @@ dotPlot( ~ cesd, xlab="CESD score",
 
 \FoodForThought{Density plots are also sensitive to certain choices.  If your density plot is too jagged or too smooth, try changing the \option{adjust} argument: larger than 1 for smoother plots, less than 1 for more jagged plots.} One disadvantage of histograms is that they can be sensitive to the choice of the number of bins.  Another display to consider is a density curve.
 
-Here we adorn a density plot with some gratuitous additions to demonstrate how to build up a graphic for pedagogical purposes. We add some text, a superimposed normal density as well as a vertical line. A variety of line types and colors can be specified, as well as line widths.
+Here we adorn a density plot with some additions to demonstrate how to build up a graphic for pedagogical purposes. We add some text, a superimposed normal density as well as a vertical line. A variety of line types and colors can be specified, as well as line widths.
 
 \DiggingDeeper{The \function{plotFun()} function can also be used to annotate plots (see section \ref{sec:plotFun}).}
 \begin{center}
