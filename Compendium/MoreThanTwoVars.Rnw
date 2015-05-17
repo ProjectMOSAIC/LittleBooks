@@ -104,7 +104,7 @@ mplot(lmnointeract, rows=-1, which=7)
 
 \TeachingTip[-4cm]{Darker dots indicate regression coefficients where the 95\% confidence interval does not include the null hypothesis value of zero.}
 
-\Caution[-2cm\{Be careful when fitting regression models with missing values (see also section \ref{sec:miss}).}
+\Caution{Be careful when fitting regression models with missing values (see also section \ref{sec:miss}).}
 
 \newpage
 
