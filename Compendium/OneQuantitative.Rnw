@@ -65,7 +65,7 @@ with(HELPrct, quantile(cesd))
 with(HELPrct, quantile(cesd, c(.025, .975)))
 @
 
-\hfill\newpage
+\hfill
 
 \Rindex{favstats()}%
 Finally, the \function{favstats()} function in the \pkg{mosaic} package provides a concise summary of  many useful statistics.

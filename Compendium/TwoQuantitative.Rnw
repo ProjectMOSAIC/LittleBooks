@@ -20,8 +20,8 @@ as the plotting character and slightly thicker line.
 \begin{center}
 <<HELPrct-xyplot,fig.height=3,tidy=FALSE>>=
 females <- filter(HELPrct, female==1)
-xyplot(cesd ~ mcs, type=c("p","smooth"), pch=1, cex=0.6,
-  lwd=3, data=females)
+xyplot(cesd ~ mcs, type=c("p","smooth"), pch=1, 
+  cex=0.6, lwd=3, data=females)
 @
 \end{center}
 \DiggingDeeper{The \emph{Start Modeling with R} companion book will be helpful if you are unfamiliar with the
@@ -181,15 +181,13 @@ Cook's distance by observation number,
 mplot(cesdmodel, which=4)
 @
 
-\newpage
-
 \myindex{leverage}%
-residuals vs.\,leverage
+residuals vs.\,leverage,
 <<results='hide'>>=
 mplot(cesdmodel, which=5)
 @
 
-Cook's distance vs. leverage.
+and Cook's distance vs. leverage.
 <<results='hide'>>=
 mplot(cesdmodel, which=6)
 @

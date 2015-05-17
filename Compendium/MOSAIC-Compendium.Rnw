@@ -109,15 +109,17 @@ trellis.par.set(theme=col.mosaic(bw=FALSE))
 trellis.par.set(fontsize=list(text=9))
 options(format.R.blank=FALSE) 
 options(width=70)
+options(continue=" ")
 require(vcd)
 require(knitr)
 opts_chunk$set(  tidy=FALSE,
 			     size='small',
                  dev="pdf",
                  fig.path="figures/fig-",  
-                 fig.width=3, fig.height=2,
+                 fig.width=4, fig.height=2.4,
                  fig.align="center",
                  fig.show="hold",
+ 		 prompt=TRUE,
                  comment=NA)
 knit_theme$set("greyscale0") # For printing in black and white
 opts_chunk$set( fig.path="figure/Core-fig-" ) 
@@ -168,6 +170,10 @@ knit_hooks$set(document = function(x) {
 
 \chapter{Introduction}
 <<child='Introduction.Rnw', eval=TRUE>>=
+@
+
+\chapter{Getting Started with RStudio}
+<<child='GettingStarted.Rnw', eval=TRUE>>=
 @
 
 \chapter{One Quantitative Variable}

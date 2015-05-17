@@ -1,0 +1,304 @@
+
+\label{chap:RStudio}
+
+\RStudio\ is an integrated development environment (IDE) for \R\ that provides an alternative
+interface to \R\ that has several advantages over other the default \R\ interfaces:
+\TeachingTip{A series of getting started videos are available at \url{http://www.amherst.edu/~nhorton/rstudio}.}
+\begin{itemize}
+	\item \RStudio\ runs on Mac, PC, and Linux machines and provides 
+	  a simplified interface that 
+	  \emph{looks and feels identical on all of them.}
+
+		The default interfaces for \R\ are quite different on the various platforms.  This
+		is a distractor for students and adds an extra layer of support responsibility
+		for the instructor.
+	\item
+		\RStudio\ can run in a web browser.
+
+		In addition to stand-alone desktop versions, \RStudio\ can be set up 
+		as a server application that is accessed via the internet.  
+
+		The web interface is nearly identical to the desktop version.% 
+		\Caution{The desktop and server version of \RStudio\ are so similar
+		that if you run them both, you will have to pay careful attention to make 
+		sure you are working in the one you intend to be working in.}
+		As with other web services, users login to access their account.
+		If students logout and login in again later, even on a different machine,
+		their session is restored and they can resume their analysis 
+		right where they left off.
+		With a little advanced set up, instructors can save the history of their 
+		classroom \R\ use and students can load those history files into their own
+		environment.%
+		\Note{Using \RStudio\ in a browser is like Facebook for statistics.
+		Each time the user returns, the previous session is restored and they
+		can resume work where they left off.  Users can login from any device 
+		with internet access.}%
+	\item
+		\RStudio\ provides support for reproducible research.
+
+		\RStudio\ makes it easy to include text, statistical analysis (\R\ code
+		 and \R\ output), and graphical displays all in the same document.
+		 The RMarkdown system provides a simple markup language and renders the 
+		 results in HTML.  The \pkg{knitr}/\LaTeX\ system 
+		 allows users to combine \R\ and \LaTeX\ in the same document.  The 
+		 reward for learning this more complicated system is much finer control
+		 over the output format.  Depending on the level of the course, 
+		 students can use either of these for homework and projects.  
+		 \authNote{NH (via rjp): Add some pointers to more information?}
+		 \marginnote{To use Markdown or \pkg{knitr}/\LaTeX\ requires that 
+		 the \pkg{knitr} package be installed on your system.  }
+		 
+
+	 \item
+		 \RStudio\ provides an integrated support for editing and executing \R\
+		 code and documents.
+
+	 \item
+		 \RStudio\ provides some useful functionality via a graphical user interface.
+
+		 \RStudio\ is not a GUI for \R, but it does provide a GUI that simplifies things
+		 like installing and updating packages; monitoring, saving and loading environments;
+		 importing and exporting data; browsing and exporting graphics; and browsing files and 
+		 documentation.
+
+
+	 \item
+		 \RStudio\ provides access to the \pkg{manipulate} package.
+
+		 The \pkg{manipulate} package provides a way to create simple interactive
+		 graphical applications quickly and easily.
+
+\end{itemize}
+While one can certainly use \R\ without using \RStudio, \RStudio\ makes a number 
+of things easier and we highly recommend using \RStudio.  Furthermore, since \RStudio\
+is in active development, we fully expect more useful features in the future.
+
+
+We primarily use an online version of \Rstudio.  \Rstudio\ is a innovative and
+powerful interface to \R\ that runs in a web browser or on your local machine.
+Running in the browser has the advantage that you don't have to install or
+configure anything.  Just login and you are good to go.  Futhermore, \Rstudio\
+will ``remember'' what you were doing so that each time you login (even on a
+different machine) you can pick up right where you left off.  This is ``\R\ in
+the cloud" and works a bit like GoogleDocs or Facebook for \R.
+
+\R\ can also be obtained from \url{http://cran.r-project.org/}.  
+Download and installation are pretty straightforward for Mac, PC, or Linux machines.
+\RStudio\ is available from \url{http://www.rstudio.org/}.
+
+
+
+\section{Connecting to an RStudio server}
+
+\RStudio\ servers have been set up at a number of schools to facilitate cloud-based computing.  
+\TeachingTip{
+As examples, registered students at Amherst College can connect to \url{r.amherst.edu}, while
+Smith College students connect to \url{rstudio.smith.edu:8787}.
+Please contact your instructor for details about access to servers at other campuses.  
+More details about (free) academic licenses for \RStudio as well as setup instructions can be found at \url{http://www.rstudio.com/resources/faqs} under {\tt Academic}
+}
+
+Once you connect to the server, you should see a login screen:
+\TeachingTip{The \RStudio\ server doesn't tend to work well with Internet Explorer.}
+
+\includegraphics[width=4.34in]{rstudio-login.png}
+
+Once you authenticate, 
+you should see the \RStudio\ interface:
+
+\includegraphics[width=4.34in]{rstudio-init.png}
+
+Notice that \Rstudio\ divides its world into four panels.  Several of the panels
+are further subdivided into multiple tabs.  Which tabs appear in which panels
+can be customized by the user.
+
+\R\ can do much more than a simple calculator, and we will introduce 
+additional features in due time.  But performing simple calculations in \R\ is a
+good way to begin learning the features of \RStudio.
+
+Commands entered in the \tab{Console} tab are immediately executed by \R.
+A good way to familiarize yourself with the console is to do some simple 
+calculator-like computations.  Most of this will work just like you would 
+expect from a typical calculator.
+Try typing the following commands in the console panel.
+
+<<arithmetic>>=
+5 + 3
+15.3 * 23.4
+sqrt(16)                  # square root
+@
+
+
+This last example demonstrates how functions are called within \R\ as
+well as the use of comments.
+Comments are prefaced with the \verb!#! character.
+Comments can be very helpful when writing scripts 
+with multiple commands or to annotate example code for your students.
+
+You can save values to named variables for later reuse.
+\TeachingTip{It's probably best to settle on using 
+one or the other of the right-to-left assignment operators rather than to switch
+back and forth.  The authors have different preferences:
+two of us find the equal sign to be simpler for students and more 
+intuitive, while the other prefers the arrow operator because it
+represents visually what is happening in an assignment, because it
+can also be used in a left to right manner, and because it makes 
+a clear distinction between the assignment operator, the use of \code{=}
+to provide values to arguments of functions, and the use of \code{==} to test
+for equality.}%
+
+<<rs-variables1a,tidy=FALSE>>=
+product = 15.3 * 23.4       # save result
+product                     # display the result
+product <- 15.3 * 23.4      # <- can be used instead of =
+product                     
+@
+
+
+Once variables are defined, they can be referenced in other operations
+and functions.
+
+<<rs-variables2,tidy=FALSE>>=
+0.5 * product               # half of the product
+log(product)                # (natural) log of the product
+log10(product)              # base 10 log of the product
+log2(product)               # base 2 log of the product
+log(product, base=2)        # base 2 log of the product, another way
+@
+
+The semi-colon can be used to place multiple commands on one line.  
+One frequent use of this is to save and print a value all in one go:
+
+<<rs-variables-semi,tidy=FALSE>>=
+product <- 15.3 * 23.4; product    # save result and show it
+@
+
+
+
+\section{Working with Files}
+
+\subsection{Working with \R\ Script Files}
+As an alternative, \R\ commands can be stored in a file.  \RStudio\ provides
+an integrated editor for editing these files and facilitates executing some or all of 
+the commands.  To create a file, select \tab{File}, then \tab{New File}, then \tab{R Script}
+from the \RStudio\ menu.  A file editor tab will open in the \tab{Source} panel.  
+\R\ code can be entered here, and 
+buttons and menu items are provided to run all the code (called sourcing the file) or 
+to run the code on a single line or in a selected section of the file.
+
+\subsection{Working with RMarkdown, and knitr/\LaTeX}
+A third alternative is to take advantage of \RStudio's support for reproducible research.
+If you already know \LaTeX, you will want to investigate the \pkg{knitr}/\LaTeX\ capabilities.
+For those who do not already know \LaTeX, the simpler RMarkdown system provides an easy
+entry into the world of reproducible research methods.  It also provides a good facility
+for students to create homework and reports that include text, \R\ code, \R\ output, and graphics.
+
+To create a new RMarkdown file, select \tab{File}, then \tab{New File}, then \tab{RMarkdown}.
+The file will be opened with a short template document that illustrates the mark up language.
+
+\includegraphics[width=4.34in]{markdown1.png}
+
+
+The \pkg{mosaic} package includes two useful RMarkdown templates for getting started: {\tt fancy} includes bells and whistles (and is intended to give an overview of features), while {\tt plain} is useful as a starting point for a new analysis.  These
+are accessed using the {\tt Template} option when creating a new RMarkdown file.
+
+\includegraphics[width=4.34in]{markdown2.png}
+
+
+Click on the \tab{Knit} button to convert to an HTML, PDF, or Word file.
+
+\includegraphics[width=4.34in]{markdown3.png}
+
+This will generate a formatted version of the document.
+
+\includegraphics[width=4.34in]{markdown4.png}
+
+There is a button (marked with a question mark) which
+provides a brief description of the supported markup commands. The \RStudio\ web site 
+includes more extensive tutorials on using RMarkdown.
+
+\Caution{RMarkdown, and \pkg{knitr}/\LaTeX\ files do not have access to the console environment, 
+so the code in them must be self-contained.}
+%
+It is important to remember that unlike \R\ scripts, which are executed in the
+console and have access to the console environment,  RMarkdown and \pkg{knitr}/\LaTeX\
+files do not have access to the console environment  This is a good feature because it forces
+the files to be self-contained, which makes them transferable and respects good
+reproducible research practices.  But beginners, especially if they adopt a
+strategy of trying things out in the console and copying and pasting successful
+code from the console to their file, will often create files that are
+incomplete and therefore do not compile correctly.
+
+
+\section{The Other Panels and Tabs}
+
+\subsection{The History Tab}
+
+As commands are entered in the console, they appear in the \tab{History} tab.
+These histories can be saved and loaded, there is a search feature to locate
+previous commands, and individual lines or sections can be transfered back to
+the console.  Keeping the \tab{History} tab open will allow you to go
+back and see the previous several commands.  This can be especially useful when
+commands produce a fair amount of output and so scroll off the screen rapidly.
+
+\subsection{Communication between tabs}
+
+\RStudio\ provides several ways to move \R\ code between tabs.  Pressing the \tab{Run} button
+in the editing panel for an \R\ script or RMarkdown or other file will copy lines of code
+into the Console and run them.
+\subsection{The Files Tab}
+The \tab{Files} tab provides a simple file manager.  It can be navigated in familiar ways
+and used to open, move, rename, and delete files.  In the browser version of \RStudio, 
+the \tab{Files} tab also provides a file upload utility for moving files from the local
+machine to the server.
+In RMarkdown and knitr files one can also run the code in a particular chunk or in all of the 
+chunks in a file.  Each of these features makes it easy to try out code ``live'' while 
+creating a document that keeps a record of the code.
+
+In the reverse direction, code from the history can be copied either back into the console
+to run them again (perhaps after editing) or into one of the file editing tabs for inclusion
+in a file.
+
+
+\subsection{The Help Tab}
+The \tab{Help} tab is where \RStudio\ displays \R\ help files.  These can be searched and navigated
+in the \tab{Help} tab.  You can also open a help file using the \texttt{?} operator in the console.
+For example the following command 
+will provide the help file for the logarithm function.
+<<eval=FALSE, tidy=FALSE>>=
+?log
+@
+
+\subsection{The Environment Tab}
+The \tab{Environment} tab shows the objects available to the console.  These are
+subdivided into data, values (non-dataframe, non-function objects) and
+functions.  
+The broom icon can be used to remove all objects from the environment, and it is good
+to do this from time to time, especially when running in RStudio server or if you 
+choose to save the environment when shutting down \RStudio\, since in these cases objects 
+can stay in the environment essentially indefinitely.
+
+\subsection{The Plots Tab}
+Plots created in the console are displayed in the \tab{Plots} tab.  For example,
+the following commands display the number of births in the United States for each day in 1978.
+<<message=FALSE>>=
+# this will make lattice graphics available to the session
+# as well as the Births dataset
+require(mosaic); require(mosaicData)
+xyplot( births ~ dayofyear, data=Births78)
+@
+From the \tab{Plots} tab, you can navigate to previous plots and also export plots 
+in various formats after interactively resizing them.
+
+
+% this fixes bad spacing -- but I don't know why the spacing was bad
+%\bigskip
+\subsection{The Packages Tab}
+
+Much of the functionality of \R\ is located in packages, many of which can be obtained
+from a central clearing house called CRAN (Comprehensive R Archive Network).  The \tab{Packages}
+tab facilitates installing and loading packages.  It will also allow you to search for
+packages that have been updated since you installed them.
+
+
+
