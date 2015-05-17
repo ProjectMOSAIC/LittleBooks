@@ -108,14 +108,14 @@ scores.}
 
 To simplify the output, we turn off the option to display significance stars.
 \myindex{significance stars}%
-\Rindex{summary()}%
+\Rindex{msummary()}%
 \Rindex{confint()}%
 \Rindex{rsquared()}%
 \Rindex{coef()}%
 <<>>=
 options(show.signif.stars=FALSE)
 coef(cesdmodel)
-summary(cesdmodel)
+msummary(cesdmodel)
 coef(summary(cesdmodel))
 confint(cesdmodel)
 rsquared(cesdmodel)

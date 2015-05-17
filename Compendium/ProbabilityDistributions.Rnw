@@ -22,6 +22,13 @@ xpnorm(1.96, mean=0, sd=1)    # P(Z < 1.96)
 qnorm(.975, mean=0, sd=1)   
 integrate(dnorm, -Inf, 0)   # P(Z < 0)
 @
+
+A similar display is available for the F distribution.
+
+<<>>=
+xpf(3, df1=4, df2=20)
+@
+
 The following table displays the basenames for probability distributions 
 available within base \R.  These functions can be prefixed by {\tt d} to 
 find the density function for the distribution, {\tt p} to find the 

@@ -22,7 +22,9 @@ select (pick columns by name),
 arrange (reorder rows),
 mutate (add new variables),
 summarise (reduce variables to values), and
-group by (collapse groups).}
+group by (collapse groups).
+See \url{http://www.amherst.edu/~nhorton/precursors} for more details and resources.}
+
 \section{Adding new variables to a dataframe}
 \myindex{dataframe}%
 We can add additional variables to an existing dataframe (name for a dataset in \R) using \function{mutate()}.  But first we create a smaller version of the \dataframe{iris} dataframe.
@@ -293,6 +295,17 @@ HELPrct <- mutate(HELPrct, cesdcut = cut(cesd,
   labels=c("low", "medium", "high"),
   breaks=c(0, 20, 40, 60), include.lowest=TRUE))
 bwplot(cesd ~ cesdcut, data=HELPrct)
+@
+
+The \function{derivedFactor} is even more general and can also be used for this purpose.
+
+\Rindex{derivedFactor()}%
+<<>>=
+HELPrct <- mutate(HELPrct, 
+  anothercut = derivedFactor(
+    low = cesd >= 0 & cesd <= 20,
+    medium = cesd > 20 & cesd <= 40,
+    high = cesd > 40))
 @
 
 
