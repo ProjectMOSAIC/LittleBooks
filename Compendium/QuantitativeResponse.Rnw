@@ -144,7 +144,7 @@ mean(cesd ~ substance, data=HELPrct)
 \Rindex{aov()}%
 <<help-aov>>=
 anovamod <- aov(cesd ~ substance, data=HELPrct)
-msummary(anovamod)
+summary(anovamod)
 @
 While still high (scores of 16 or more are generally considered to be 
 ``severe'' symptoms), the cocaine-involved group tend to have lower 
@@ -160,7 +160,9 @@ The \function{anova()} command can summarize models.
 anova(modsubstance)
 @
 
-It can also be used to formally 
+In this setting the results are identical (since there is only one predictor, with 2 df).
+
+The \function{anova()} function can also be used to formally 
 compare two (nested) models.
 \myindex{model comparison}%
 <<help-aov-more>>=
