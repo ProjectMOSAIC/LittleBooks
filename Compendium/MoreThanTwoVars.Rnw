@@ -116,7 +116,8 @@ fitted values and residuals to the dataset.
 \Rindex{abs()}%
 \InstructorNote{Here we are adding two new variables into an existing dataset. It's often a good practice to give the resulting dataframe a new name.}
 <<tidy=FALSE>>=
-HELPrct <- mutate(HELPrct, residuals = resid(lmnointeract), 
+HELPrct <- mutate(HELPrct, 
+  residuals = resid(lmnointeract), 
   pred = fitted(lmnointeract))
 @
 <<tidy=FALSE, message=FALSE>>=

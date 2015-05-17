@@ -43,6 +43,18 @@ irisSmall <- mutate(irisSmall,
   Length = cut(Sepal.Length, breaks=4:8))    
 @
 
+\myindex{pipe operator}%
+\Rindex{\%>\%}%
+Multiple commands can be chained together using the {\tt \%>\%} (pipe) operator:
+<<>>=
+irisSmall <- iris %>%
+  select(Species, Sepal.Length) %>%
+  mutate(Length = cut(Sepal.Length, breaks=4:8))
+@
+Note that in this usage the first argument to \function{select} is the first variable
+(as it inherits the data from the previous pipe).
+
+
 \TeachingTip[1cm]{The \function{cut()} function has an option \option{labels} which can be used to specify more descriptive names for the groups.}
 <<"mr-adding-variable2-again">>=
 head(irisSmall)
@@ -341,14 +353,18 @@ the median age of subjects by substance group.
 \Rindex{group\_by()}%
 \Rindex{left\_join()}%
 \Rindex{summarise()}%
+\Rindex{nrow()}%
 <<tidy=FALSE>>=
 favstats(age ~ substance, data=HELPrct)
 ageGroup <- HELPrct %>% 
   group_by(substance) %>%
   summarise(agebygroup = mean(age))
 ageGroup
+nrow(ageGroup)
+nrow(HELPrct)
 HELPmerged <- left_join(ageGroup, HELPrct, by="substance") 
 favstats(agebygroup ~ substance, data=HELPmerged)
+nrow(HELPmerged)
 @
 
 
@@ -378,11 +394,16 @@ Of the 470 subjects in the 6 variable dataframe, only the \code{drugrisk}, \code
 \Rindex{na.omit()}%
 \Rindex{favstats()}%
 \Rindex{is.na()}%
+\Rindex{sum()}%
+\Rindex{nrow()}%
+\Rindex{ncol()}%
 <<tidy=FALSE>>=
 favstats(~ mcs, data=smaller)
 with(smaller, sum(is.na(mcs)))
 nomiss <- na.omit(smaller)
 dim(nomiss)
+nrow(nomiss)
+ncol(nomiss)
 favstats(~ mcs, data=nomiss)
 @
 
