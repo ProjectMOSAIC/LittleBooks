@@ -112,7 +112,7 @@ has very unfortunate names.
 names(faithful)
 @
 
-The measurements are the duration of an euption and the time until the subsequent eruption,
+The measurements are the duration of an eruption and the time until the subsequent eruption,
 so let's give it some better names.
 <<tidy=FALSE>>=
 faithful <- rename(faithful, 
@@ -179,7 +179,7 @@ head(sorted, 3)
 OLD <- options(width=90)
 @
 The \dataframe{fusion1} dataframe in the \pkg{fastR} package contains 
-genotype information for a SNP (single nucleotide polymorphism) in the gene \emph{TCF7L2}. The \dataframe{pheno} dataframe contains phenotypes (includingtype 2 diabetes case/control status) for an intersecting set of individuals. We can join (or merge) these together to explore the association between genotypes and phenotypes using \verb!merge()!.
+genotype information for a SNP (single nucleotide polymorphism) in the gene \emph{TCF7L2}. The \dataframe{pheno} dataframe contains phenotypes (including type 2 diabetes case/control status) for an intersecting set of individuals. We can join (or merge) these together to explore the association between genotypes and phenotypes using \verb!merge()!.
 
 \Rindex{arrange()}%
 <<warning=FALSE,message=FALSE>>=
@@ -297,7 +297,7 @@ HELPrct <- mutate(HELPrct, cesdcut = cut(cesd,
 bwplot(cesd ~ cesdcut, data=HELPrct)
 @
 
-The \function{derivedFactor} is even more general and can also be used for this purpose.
+The \function{derivedFactor} function is even more general and can also be used for this purpose.
 
 \Rindex{derivedFactor()}%
 <<>>=

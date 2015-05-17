@@ -77,7 +77,7 @@ is in active development, we fully expect more useful features in the future.
 We primarily use an online version of \Rstudio.  \Rstudio\ is a innovative and
 powerful interface to \R\ that runs in a web browser or on your local machine.
 Running in the browser has the advantage that you don't have to install or
-configure anything.  Just login and you are good to go.  Futhermore, \Rstudio\
+configure anything.  Just login and you are good to go.  Furthermore, \Rstudio\
 will ``remember'' what you were doing so that each time you login (even on a
 different machine) you can pick up right where you left off.  This is ``\R\ in
 the cloud" and works a bit like GoogleDocs or Facebook for \R.
@@ -236,7 +236,7 @@ incomplete and therefore do not compile correctly.
 
 As commands are entered in the console, they appear in the \tab{History} tab.
 These histories can be saved and loaded, there is a search feature to locate
-previous commands, and individual lines or sections can be transfered back to
+previous commands, and individual lines or sections can be transferred back to
 the console.  Keeping the \tab{History} tab open will allow you to go
 back and see the previous several commands.  This can be especially useful when
 commands produce a fair amount of output and so scroll off the screen rapidly.

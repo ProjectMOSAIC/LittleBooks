@@ -8,8 +8,9 @@ separately for males and females.
 <<aggregate>>=
 mean(cesd ~ sex, data=HELPrct)
 @
-
+\Rindex{favstats()}%
 The \function{favstats()} function can provide more statistics by group.
+
 <<summary>>=
 favstats(cesd ~ sex, data=HELPrct)
 @
@@ -39,8 +40,8 @@ side-by-side boxplots.  Thinking a major victory had been won, he naively
 asked how many observations were in each group.  ``Four,'' replied the 
 biologist.}
 \Rindex{xyplot()}%
-\Rindex{alpha}%
-\Rindex{cex}%
+\Rindex{alpha option}%
+\Rindex{cex option}%
 \begin{center}
 <<KidsFeet-xy,fig.height=1.5>>=
 xyplot(sex ~ length, alpha=.6, cex=1.4, data=KidsFeet) 
@@ -50,6 +51,8 @@ xyplot(sex ~ length, alpha=.6, cex=1.4, data=KidsFeet)
 \section{A dichotomous predictor: two-sample t}
 
 The Student's two sample t-test can be run without (default) or with an equal variance assumption.
+\Rindex{t.test()}%
+\Rindex{var.equal option}%
 <<HELPrct-nonpar,tidy=FALSE>>=
 t.test(cesd ~ sex, var.equal=FALSE, data=HELPrct)
 @
@@ -60,7 +63,9 @@ We can repeat using the equal variance assumption.
 t.test(cesd ~ sex, var.equal=TRUE, data=HELPrct)
 @
 
-The groups can also be compared using the \function{lm()} function (also with an equal variance assumption).
+The groups can also be compared using the \function{lm()} function (also with an equal variance assumption).  The mosaic command \function{msummary()} provides a slightly terser version of the typical ooutput from \function{summary()}.
+\Rindex{msummary()}%
+\Rindex{summary()}%
 <<>>=
 msummary(lm(cesd ~ sex, data=HELPrct))
 @
