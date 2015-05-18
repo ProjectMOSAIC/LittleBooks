@@ -132,7 +132,8 @@ For beginners, we introduce \pkg{knitr} with RMarkdown,
 which produces PDF, HTML, or Word files using a simpler syntax.}
 
 This document was created on
-\today, using \pkg{knitr} and 
+\today, using \pkg{knitr}, version \Sexpr{packageVersion("mosaic")} 
+of the \pkg{mosaic} package, and 
 \Sexpr{R.version.string}.
 
 
