@@ -22,7 +22,9 @@ select (pick columns by name),
 arrange (reorder rows),
 mutate (add new variables),
 summarise (reduce variables to values), and
-group by (collapse groups).}
+group by (collapse groups).
+See \url{http://www.amherst.edu/~nhorton/precursors} for more details and resources.}
+
 \section{Adding new variables to a dataframe}
 \myindex{dataframe}%
 We can add additional variables to an existing dataframe (name for a dataset in \R) using \function{mutate()}.  But first we create a smaller version of the \dataframe{iris} dataframe.
@@ -40,6 +42,18 @@ irisSmall <- select(iris, Species, Sepal.Length)
 irisSmall <- mutate(irisSmall, 
   Length = cut(Sepal.Length, breaks=4:8))    
 @
+
+\myindex{pipe operator}%
+\Rindex{\%>\%}%
+Multiple commands can be chained together using the {\tt \%>\%} (pipe) operator:
+<<>>=
+irisSmall <- iris %>%
+  select(Species, Sepal.Length) %>%
+  mutate(Length = cut(Sepal.Length, breaks=4:8))
+@
+Note that in this usage the first argument to \function{select} is the first variable
+(as it inherits the data from the previous pipe).
+
 
 \TeachingTip[1cm]{The \function{cut()} function has an option \option{labels} which can be used to specify more descriptive names for the groups.}
 <<"mr-adding-variable2-again">>=
@@ -110,7 +124,7 @@ has very unfortunate names.
 names(faithful)
 @
 
-The measurements are the duration of an euption and the time until the subsequent eruption,
+The measurements are the duration of an eruption and the time until the subsequent eruption,
 so let's give it some better names.
 <<tidy=FALSE>>=
 faithful <- rename(faithful, 
@@ -177,7 +191,7 @@ head(sorted, 3)
 OLD <- options(width=90)
 @
 The \dataframe{fusion1} dataframe in the \pkg{fastR} package contains 
-genotype information for a SNP (single nucleotide polymorphism) in the gene \emph{TCF7L2}. The \dataframe{pheno} dataframe contains phenotypes (includingtype 2 diabetes case/control status) for an intersecting set of individuals. We can join (or merge) these together to explore the association between genotypes and phenotypes using \verb!merge()!.
+genotype information for a SNP (single nucleotide polymorphism) in the gene \emph{TCF7L2}. The \dataframe{pheno} dataframe contains phenotypes (including type 2 diabetes case/control status) for an intersecting set of individuals. We can join (or merge) these together to explore the association between genotypes and phenotypes using \verb!merge()!.
 
 \Rindex{arrange()}%
 <<warning=FALSE,message=FALSE>>=
@@ -295,6 +309,17 @@ HELPrct <- mutate(HELPrct, cesdcut = cut(cesd,
 bwplot(cesd ~ cesdcut, data=HELPrct)
 @
 
+The \function{derivedFactor} function is even more general and can also be used for this purpose.
+
+\Rindex{derivedFactor()}%
+<<>>=
+HELPrct <- mutate(HELPrct, 
+  anothercut = derivedFactor(
+    low = cesd >= 0 & cesd <= 20,
+    medium = cesd > 20 & cesd <= 40,
+    high = cesd > 40))
+@
+
 
 \subsection{Reordering factors}
 \myindex{reordering factors}%
@@ -328,14 +353,18 @@ the median age of subjects by substance group.
 \Rindex{group\_by()}%
 \Rindex{left\_join()}%
 \Rindex{summarise()}%
+\Rindex{nrow()}%
 <<tidy=FALSE>>=
 favstats(age ~ substance, data=HELPrct)
 ageGroup <- HELPrct %>% 
   group_by(substance) %>%
   summarise(agebygroup = mean(age))
 ageGroup
+nrow(ageGroup)
+nrow(HELPrct)
 HELPmerged <- left_join(ageGroup, HELPrct, by="substance") 
 favstats(agebygroup ~ substance, data=HELPmerged)
+nrow(HELPmerged)
 @
 
 
@@ -365,11 +394,16 @@ Of the 470 subjects in the 6 variable dataframe, only the \code{drugrisk}, \code
 \Rindex{na.omit()}%
 \Rindex{favstats()}%
 \Rindex{is.na()}%
+\Rindex{sum()}%
+\Rindex{nrow()}%
+\Rindex{ncol()}%
 <<tidy=FALSE>>=
 favstats(~ mcs, data=smaller)
 with(smaller, sum(is.na(mcs)))
 nomiss <- na.omit(smaller)
 dim(nomiss)
+nrow(nomiss)
+ncol(nomiss)
 favstats(~ mcs, data=nomiss)
 @
 

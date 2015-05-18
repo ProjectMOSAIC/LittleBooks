@@ -22,6 +22,13 @@ xpnorm(1.96, mean=0, sd=1)    # P(Z < 1.96)
 qnorm(.975, mean=0, sd=1)   
 integrate(dnorm, -Inf, 0)   # P(Z < 0)
 @
+
+A similar display is available for the F distribution.
+
+<<>>=
+xpf(3, df1=4, df2=20)
+@
+
 The following table displays the basenames for probability distributions 
 available within base \R.  These functions can be prefixed by {\tt d} to 
 find the density function for the distribution, {\tt p} to find the 
@@ -55,14 +62,27 @@ Weibull        &  {\tt weibull}   \\ \hline
 \DiggingDeeper{The \function{fitdistr()} within the \pkg{MASS} package facilitates estimation
 of parameters for many distributions.}
 The \function{plotDist()} can be used to display distributions in a variety of ways.
+\Rindex{plotDist()}%
 <<tidy=FALSE>>=
 plotDist('norm', mean=100, sd=10, kind='cdf')
 @
 <<tidy=FALSE>>=
 plotDist('exp', kind='histogram', xlab="x")
 @
-<<tidy=FALSE>>=
+<<tidy=FALSE,fig.keep='last'>>=
 plotDist('binom', size=25, prob=0.25, xlim=c(-1,26))
+@
+
+Multiple distributions can be plotted on the same plot.
+\Rindex{groups option}%
+\Rindex{type option}%
+\Rindex{under option}%
+\Rindex{lwd option}%
+\Rindex{pch option}%
+<<tidy=FALSE,fig.keep='last'>>=
+plotDist("binom", size=100, prob=.3, col="black", lwd=3, pch=16)
+plotDist("norm", mean=30, sd=sqrt(100 * .3 * .7), 
+  groups = abs(x - 30) > 6 , type="h", under=TRUE)
 @
 \begin{problem}
 Generate a sample of 1000 exponential random variables with rate parameter

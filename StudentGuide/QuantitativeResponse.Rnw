@@ -4,11 +4,13 @@ Here we will compare the distributions of CESD scores by sex.
 
 The \function{mean()} function can be used to calculate the mean CESD score
 separately for males and females.
+\Rindex{mean()}%
 <<aggregate>>=
 mean(cesd ~ sex, data=HELPrct)
 @
-
+\Rindex{favstats()}%
 The \function{favstats()} function can provide more statistics by group.
+
 <<summary>>=
 favstats(cesd ~ sex, data=HELPrct)
 @
@@ -22,6 +24,7 @@ summaries that women tend to have slightly higher CESD scores than men.
 \FoodForThought[-3cm]{Although we usually put explanatory variables along the horizontal axis,
 page layout sometimes makes the other orientation preferable for these plots.}
 %\vspace{-8mm}
+\Rindex{bwplot()}%
 \begin{center}
 <<cesd-box,fig.height=1.5>>=
 bwplot(sex ~ cesd, data=HELPrct)
@@ -36,15 +39,20 @@ Setting the alpha level helps detect multiple observations with the same value.
 side-by-side boxplots.  Thinking a major victory had been won, he naively
 asked how many observations were in each group.  ``Four,'' replied the 
 biologist.}
+\Rindex{xyplot()}%
+\Rindex{alpha option}%
+\Rindex{cex option}%
 \begin{center}
 <<KidsFeet-xy,fig.height=1.5>>=
-xyplot(sex ~ length, KidsFeet, alpha=.6, cex=1.4) 
+xyplot(sex ~ length, alpha=.6, cex=1.4, data=KidsFeet) 
 @
 \end{center}
 
 \section{A dichotomous predictor: two-sample t}
 
 The Student's two sample t-test can be run without (default) or with an equal variance assumption.
+\Rindex{t.test()}%
+\Rindex{var.equal option}%
 <<HELPrct-nonpar,tidy=FALSE>>=
 t.test(cesd ~ sex, var.equal=FALSE, data=HELPrct)
 @
@@ -55,9 +63,11 @@ We can repeat using the equal variance assumption.
 t.test(cesd ~ sex, var.equal=TRUE, data=HELPrct)
 @
 
-The groups can also be compared using the \function{lm()} function (also with an equal variance assumption).
+The groups can also be compared using the \function{lm()} function (also with an equal variance assumption).  The mosaic command \function{msummary()} provides a slightly terser version of the typical ooutput from \function{summary()}.
+\Rindex{msummary()}%
+\Rindex{summary()}%
 <<>>=
-summary(lm(cesd ~ sex, data=HELPrct))
+msummary(lm(cesd ~ sex, data=HELPrct))
 @
 
 \TeachingTip[1cm]{The \function{lm} function is part of a much more flexible modeling framework while \function{t.test} is essentially a dead end. \function{lm} uses of the equal variance assumption. See the companion book, {\em Start Modeling in R} for more details.}%
@@ -67,6 +77,7 @@ summary(lm(cesd ~ sex, data=HELPrct))
 
 The same conclusion is reached using a non-parametric (Wilcoxon rank sum) test.
 
+\Rindex{wilcox.test()}%
 <<HELPrct-nonpar2>>=
 wilcox.test(cesd ~ sex, data=HELPrct)
 @
@@ -149,7 +160,9 @@ The \function{anova()} command can summarize models.
 anova(modsubstance)
 @
 
-It can also be used to formally 
+In this setting the results are identical (since there is only one predictor, with 2 df).
+
+The \function{anova()} function can also be used to formally 
 compare two (nested) models.
 \myindex{model comparison}%
 <<help-aov-more>>=

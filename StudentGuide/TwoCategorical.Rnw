@@ -38,7 +38,9 @@ oddsRatio(tally(~ (homeless=="housed") + sex, margins=FALSE,
 Graphical summaries of cross classification tables may be helpful in visualizing
 associations.  Mosaic plots are one example, where the total area (all observations) is proportional to one.
 \Caution{The jury is still out
-regarding the utility of mosaic plots, relative to the low data to ink ratio\cite{Tufte:2001:Visual}.  But we have found them to be helpful to reinforce understanding of a two way contingency table.}%
+regarding the utility of mosaic plots, 
+relative to the low data to ink ratio.\cite{Tufte:2001:Visual}%
+We have found them to be helpful to reinforce understanding of a two way contingency table.}%
 Here we see that males tend to be over-represented
 amongst the homeless subjects (as represented by the horizontal line which is higher for
 the homeless rather than the housed).  
@@ -53,7 +55,19 @@ mosaicplot(mytab)
 @
 \end{center}
 
-\newpage
+\section{Creating tables from summary statistics}
+
+Tables can be created from summary statistics using the \function{do} function.
+
+<<>>=
+HELPtable <- rbind(
+  do(40) * data.frame(sex="female", homeless="homeless"),
+  do(169) * data.frame(sex="male", homeless="homeless"),
+  do(67) * data.frame(sex="female", homeless="housed"),
+  do(177) * data.frame(sex="male", homeless="housed")
+)
+tally(~ homeless + sex, data=HELPtable)
+@
 
 \section{Chi-squared tests}
 

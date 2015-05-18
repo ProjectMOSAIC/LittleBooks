@@ -12,10 +12,11 @@ so we don't need to specify it here. The more verbose usage would be \code{famil
 \Rindex{glm()}%
 \Rindex{family option}%
 \Rindex{exp()}%
+\Rindex{msummary()}%
 <<help-logit,tidy=FALSE>>=
 logitmod <- glm(homeless ~ age + female, family=binomial, 
   data=HELPrct)
-summary(logitmod)
+msummary(logitmod)
 exp(coef(logitmod))
 exp(confint(logitmod))
 @
@@ -29,7 +30,7 @@ mymodsubage <- glm((homeless=="homeless") ~ age + substance,
   family=binomial, data=HELPrct)
 mymodage <- glm((homeless=="homeless") ~ age, family=binomial, 
   data=HELPrct)
-summary(mymodsubage)
+msummary(mymodsubage)
 exp(coef(mymodsubage))
 anova(mymodage, mymodsubage, test="Chisq")
 @

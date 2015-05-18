@@ -41,8 +41,6 @@ regularly.  The motivation for this is described at length in the companion volu
 Here we consider a model (parallel slopes) for depressive symptoms as a function of Mental Component Score (MCS),
 age (in years) and sex of the subject.
 
-\newpage
-
 <<help-multreg>>=
 lmnointeract <- lm(cesd ~ mcs + age + sex, data=HELPrct)
 summary(lmnointeract)
@@ -104,9 +102,7 @@ mplot(lmnointeract, rows=-1, which=7)
 
 \TeachingTip[-4cm]{Darker dots indicate regression coefficients where the 95\% confidence interval does not include the null hypothesis value of zero.}
 
-\Caution[-2cm\{Be careful when fitting regression models with missing values (see also section \ref{sec:miss}).}
-
-\newpage
+\Caution{Be careful when fitting regression models with missing values (see also section \ref{sec:miss}).}
 
 \subsection{Residual diagnostics}
 \myindex{residual diagnostics}
@@ -120,7 +116,8 @@ fitted values and residuals to the dataset.
 \Rindex{abs()}%
 \InstructorNote{Here we are adding two new variables into an existing dataset. It's often a good practice to give the resulting dataframe a new name.}
 <<tidy=FALSE>>=
-HELPrct <- mutate(HELPrct, residuals = resid(lmnointeract), 
+HELPrct <- mutate(HELPrct, 
+  residuals = resid(lmnointeract), 
   pred = fitted(lmnointeract))
 @
 <<tidy=FALSE, message=FALSE>>=

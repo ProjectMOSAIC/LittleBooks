@@ -82,9 +82,9 @@
 
 
 
-\title{A Compendium of Commands to Teach Statistics with R}
+\title{A Student's Guide to R}
 \author[Horton, Kaplan, Pruim]{ Nicholas J. Horton, Daniel Kaplan, and Randall Pruim} 
-\date{January 2015}
+\date{May 2015}
 
 \begin{document}
 \def\cplabel{^X} 
@@ -109,15 +109,17 @@ trellis.par.set(theme=col.mosaic(bw=FALSE))
 trellis.par.set(fontsize=list(text=9))
 options(format.R.blank=FALSE) 
 options(width=70)
+options(continue=" ")
 require(vcd)
 require(knitr)
 opts_chunk$set(  tidy=FALSE,
 			     size='small',
                  dev="pdf",
                  fig.path="figures/fig-",  
-                 fig.width=3, fig.height=2,
+                 fig.width=4, fig.height=2.4,
                  fig.align="center",
                  fig.show="hold",
+ 		 prompt=TRUE,
                  comment=NA)
 knit_theme$set("greyscale0") # For printing in black and white
 opts_chunk$set( fig.path="figure/Core-fig-" ) 
@@ -143,10 +145,10 @@ knit_hooks$set(document = function(x) {
 \newpage
 \vspace*{2in}
 
-\parbox{4in}{\noindent Copyright (c) 2015 by Randall Pruim, Nicholas Horton, \& Daniel Kaplan.}
+\parbox{4in}{\noindent Copyright (c) 2015 by Nicholas Horton, Randall Pruim, \& Daniel Kaplan.}
 \medskip
 
-\parbox{4in}{\noindent Edition 1.0, January 2015}
+\parbox{4in}{\noindent Edition 1.1, May 2015}
 
 \bigskip
 
@@ -168,6 +170,10 @@ knit_hooks$set(document = function(x) {
 
 \chapter{Introduction}
 <<child='Introduction.Rnw', eval=TRUE>>=
+@
+
+\chapter{Getting Started with RStudio}
+<<child='GettingStarted.Rnw', eval=TRUE>>=
 @
 
 \chapter{One Quantitative Variable}
