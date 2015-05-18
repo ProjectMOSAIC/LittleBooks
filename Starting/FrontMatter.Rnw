@@ -141,9 +141,10 @@ This document was created on \today, using
 \item \Sexpr{R.version.string}
 \end{itemize}
 
-A time moves along, each of these is likely to be updated from time to time.
-If you find that things look different on your computer, make sure you have an
-up-to-date system installed and/or check for a newer version of this document.
+Inevitably, each of these will be updated from time to time.
+If you find that things look different on your computer, make sure that your 
+version of \R{} and your packags are up to date and check for a newer version 
+of this document.
 
 
 
