@@ -131,10 +131,19 @@ reproducible analysis methods.
 For beginners, we introduce \pkg{knitr} with RMarkdown,
 which produces PDF, HTML, or Word files using a simpler syntax.}
 
-This document was created on
-\today, using \pkg{knitr}, version \Sexpr{packageVersion("mosaic")} 
-of the \pkg{mosaic} package, and 
-\Sexpr{R.version.string}.
+\section*{Document Creation}
+
+This document was created on \today, using 
+\begin{itemize}
+\item \pkg{knitr}, version  \Sexpr{packageVersion("knitr")}
+\item \pkg{mosaic}, version \Sexpr{packageVersion("mosaic")} 
+\item \pkg{mosaicData}, version \Sexpr{packageVersion("mosaic")} 
+\item \Sexpr{R.version.string}
+\end{itemize}
+
+A time moves along, each of these is likely to be updated from time to time.
+If you find that things look different on your computer, make sure you have an
+up-to-date system installed and/or check for a newer version of this document.
 
 
 
