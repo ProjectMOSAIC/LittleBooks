@@ -131,7 +131,7 @@ reproducible analysis methods.
 For beginners, we introduce \pkg{knitr} with RMarkdown,
 which produces PDF, HTML, or Word files using a simpler syntax.}
 
-\section*{Document Creation}
+\subsection*{Document Creation}
 
 This document was created on \today, using 
 \begin{itemize}
