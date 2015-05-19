@@ -23,8 +23,14 @@ You can grab PDFs of the Little Books here:
     This book is organized by analysis method and demonstrates how to perform
     all of the statistical analyses typically covered in an Intro Stats course.
     It can serve a good reference for both students and faculty.
+    
+    This was formerly known as *A Compendium of Commands to Teach Statistics With R* but has been reworked to make it more student friendly.
 
-
+  * *Start R in Calculus* [[Amazon]](http://www.amazon.com/Start-Calculus-Daniel-T-Kaplan/dp/0983965897)
+ 
+  This book describes the use of R in calculus based on the successful
+  redesign of the first semester calculus course at Macalester College.
+  
 Others that are in progress include
  
   * Start Modeling with R
