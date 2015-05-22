@@ -27,12 +27,17 @@ and powerful enough to keep up with students as they progress through a program.
 It is also a marketable skill.  But R can be daunting, especially if the instructor
 is unfamiliar with R.  And, like any language, it can be used well or poorly.
 
-My goal is to convince you that if you want to do SBI using R you can, even with 
-students (and instructors) who have never used R before.  Along the way I'll mention
+My goal is to convince you that if you want to do SBI using R you can, even with
+students (and instructors) who have never used R before. 
+Along the way I'll mention
 some guiding principles and illustrate some tools that 
 my colleagues Danny Kaplan and Nick Horton and I have assembled in the 
 [`mosaic` R package](https://github.com/ProjectMOSAIC/mosaic/blob/master/README.md) 
 to make SBI (and EDA and traditional inference procedures) much easier.
+
+If you are unfamiliar with R, this post will be too short to give you 
+a good introduction, but I hope it will make you curious enough to learn more. 
+See the references for places to learn more about R and teaching with R.
 
 ## Less Volume, More Creativity
 
@@ -45,7 +50,7 @@ On the other hand, if your students are able to guess how to do new things
 in R before you show them, then you will know you are on the right track.
 
 If you have used R before, I recommend the following exercise: Make a list of
-all of the R commands you have introduced over the course of a semester. 
+all of the R commands you have introduced in your course. 
 Organize them into themes.  Eliminate the unnecessary.  Replace one command with
 another if it reduces the overall complexity of the R you are teaching and still
 gets the job done.  Compare your list to 
@@ -69,24 +74,79 @@ then it doesn't matter what technology we are using, we have other work to do fi
 
 ## do()ing randomization tests 
 
-The R part of a randomization test generally involves three parts.
-    
-We need to be able to flip a coin, so `mosaic` provides a coin flipper:
+The R part of conducting hypothesis tests generally boils down
+to this:
+
+ 1. Compute a test statistic from the data.
+ 
+    Often this will involve a numerical summary function 
+    like `mean()`, `prop()`, `diffmean()`, `diffprop()`, `cor()`, 
+    etc. or a modeling function like `lm()`.  The `mosaic` package
+    gives all these (and graphical summaries, too) a common interface 
+    so that they can be learned as a single cognitive template.
+ 
+    *perhaps insert template graphic here*
+ 
+ 2. Figure out how to simulate a test statistic computed from
+    random data assuming the null hypothesis is true. 
+
+    The main functions I use to introduce randomness are
+    `rflip()` (for "coin tosses"), `shuffle()` (for rearranging the order), 
+    and `resample()` (for sampling with replacement). 
+ 
+ 3. Do that a lot of times.
+ 
+    If we can do it once, then the `do()` function will let us do it 
+    lots of times.
+ 
+ 4. Compare the test statistic from step 1 to the distribution in step 3.
+ 
+    The same numerical and graphical summary functions used
+    in step 1 can be used here because we make sure that the 
+    output from step 3 is a data frame, just like the original
+    sample data was.
+ 
+Altogether, the R-related cognitive load for students is
+
+  * a [template for graphical and numerical summaries](http://cran.r-project.org/web/packages/mosaic/vignettes/LessVolume-MoreCreativity.html)
+  * `rflip()`, `shuffle()` and `resample()` for generating random data
+  * `do()` for repeating things
+ 
+These can be combined to perform a wide variety of tests.  That's a lot 
+of creativity for little volume.
+
+## An example: The Lady Tasting Tea
+
+I typically introduce inference on the first day doing a hypothesis test 
+for a  proportion "informally".  Often I use some variation on 
+[Fisher's Lady Tasting Tea](http://en.wikipedia.org/wiki/Lady_tasting_tea) 
+example because I find that students remember it well and I can refer back 
+to it as a motivating example for the rest of the semester.  I find the example works equally well
+in an Intro Stats course an in my upper level courses, and I like that it 
+connects them in a small way to the history of the discipline. 
+
+Let's see how we can compute a p-value for a test of the null hypothesis
+that the lady is just guessing given that she correctly identifies 9 of 10
+randomly prepared cups of tea.
+
+Guessing is like flipping a coin, so `mosaic` provides a coin flipper:
 
 ```{r}
 rflip()    # think random flip
 ```
-    
-If our design calls for 10 cups of tea, we'd like to flip 10 coins.
+ 
+Since our design calls for 10 cups of tea, we need to flip 10 coins.
 Fortunately, we don't have to use `rflip()` ten times and record 
 the results manually.  We just ask for 10 flips.
-    
+ 
 ```{r}
 rflip(10)
 ```
-    
-Since we get different results on different tries, we should do this
-a lot of times.  
+ 
+Now we need to do this a lot of times.  The `do()` function provides 
+an easy syntax and is clever about how it stores the results, in this
+case storing the number of flips, number of heads, number of tails,
+and proportion that are heads.
 
 ```{r eval=FALSE}
 do(1000) * rflip(10)   # do 1000 times 
@@ -98,13 +158,11 @@ do(3) * rflip(10)
 ```
 ## <997 lines omitted>
 ```
-`do()` is reasonably clever about what it "remembers".  In the case of 
-coin flipping, it records the number of flips (`n`), the number of heads,
-the number of tails, and the proportion that are heads. Of course,
-we should look at this  some other way than by having 
+
+Of course, we should look at this some other way than by having 
 it all scroll past on our screen.  Let's save the results and 
 look at numerical and graphical sumamries.
-    
+
 ```{r}
 GuessingLadies <-
   do(1000) * rflip(10)  # simulate 1000 guessing ladies
@@ -115,145 +173,140 @@ histogram(~heads, data = GuessingLadies, width=1)
 Based on our simulation, it appears that someone can get 9 or 10 just by
 guessing only about `r sum(GuessingLadies$heads >= 9) * 100 / 1000`% of the time.
 
-## Keep the main thing the main thing
+If we want to have a more precise estimate of the p-value, we can increase
+the number of times we do things, or we can use 999 instaed of 1000 and 
+include the observed statistic in the null distribution as recommended
+in Tim Hesterberg's article referenced in his 
+[SBI blog post](https://www.causeweb.org/sbi/?p=521#more-521). 
+
+## Generalizing to other tests
+
+### Did tall men marry tall women?
 
 The power of this example is in the ease with which it can be generalized.
-The R technical part of conducting hypothesis tests generally boils down
-to three steps:
-
- 1. Compute a test statistic from the data.
- 
-    We did this in our head for our simple example, but often this will
-    involve a numerical summary function like `mean()`, `prop()`, `diffmean()`, 
-    or `diffprop()` or a modeling function like `lm()`.  The `mosaic` package
-    gives all these and the graphical summaries a common template so that they 
-    are easily learned.
- 
- 2. Figure out how to simulate a test statistic computed from
-    random data assuming the null hypothesis is true. 
-
-    To simulate a proportion, we use `rflip()`.  For permuation tests,
-    we can use `shuffle()` to shuffle one of the variables.
- 
- 3. Do that a lot of times.
- 
-    If we can do it once, then we can `do()` it lots of times.
- 
- 4. Compare step 1 to step 4.
- 
-    We can use `tally()` or `prop()` to compute numbers and 
-    `histogram()` or `dotPlot()` to see things graphically.
-
-Here are a number of examples of step 3 for situations commonly seen in
-Intro Stats:
-
+Let's try it out with another historical example.  Using Galton's data on
+heights of (adult) children and their parents, 
+is there evidence that taller men married
+taller women?  One way to formalize this would be to ask whether the slope of
+the regression line is positive, negative or 0.  (We could also look at the
+correlation coefficient or an $F$ statistic if we preferred.)
+Since the parents are included in the data once for each child, we first reduce the data to one copy per family:
 ```{r}
-Two.Proportions <- do(1000) * diffprop( homeless ~ shuffle(sex),   data=HELPrct)
-Two.Means       <- do(1000) * diffmean(      age ~ shuffle(sex),   data=HELPrct)
-Linear.Model    <- do(1000) *       lm(   length ~ shuffle(width), data=KidsFeet)
+Galton2 <- 
+  Galton %>% 
+  group_by(family) %>%
+  summarise(father = mean(father), mother=mean(mother), nkids = mean(nkids))
 ```
-It is worth taking a look at the the linear model example.
+Now we can fit our linear model
 ```{r}
-do(1) * lm(length ~ width, data=KidsFeet)  # actual data
-head(Linear.Model, 3)
-```
-From this we see that the coefficients of the model, and estimate for $\sigma$, $r^2$,
-and the ANOVA $F$ statistic have been recorded.  We could compare either `width` 
-coefficients, $r^2$ values, or $F$ statistics to compute a p-value for the test that
-$\beta_1 = 0$.
-
-```{r}
-tally( ~(width >= 1.657624), data=Linear.Model )
-tally( ~(r.squared >= 0.4110041), data=Linear.Model )
-tally( ~(F >= 25.81878), data=Linear.Model )
+model <- lm(mother ~ father, data = Galton2)
+coef(model)
+xyplot(mother ~ father, data = Galton2, type=c("p","r"))
 ```
 
-## Bootstrap, too
-
-Bootstrap distributions can be created in a similar way, usually
-using the `resample()` function which samples with replacement.
+There seems to be a bit of an upward trend, but could it just be do to chance?
+If the heights of spouses are uncorrelated, then shuffling one of the two lists of heights (or both, but there is no need to do that) would simulate the null
+hypothesis.
 
 ```{r}
-AgeDiff.boot <- do(1000) * diffmean( age ~ sex, data=resample(HELPrct))
+lm( mother ~ shuffle(father), data = Galton2)
 ```
+
+Once we can do it once, it is easy to do it many times.
+
+```{r}
+do(1) * lm( mother ~ shuffle(father), data = Galton2)
+do(1) * lm( mother ~ shuffle(father), data = Galton2)
+Galton.null <- do(1000) * lm( mother ~ shuffle(father), data = Galton2)
+```
+
+
+And now we can compare the slope from our original data to the 1000 simulated
+slopes:
+```{r}
+histogram( ~ father, data = Galton.null, v=0.09038 )
+tally( ~(father >= 0.09038), data = Galton.null, format="prop" )
+```
+
+### Were men taller than women?
+This same outline can be used to simulate a wide variety of null distributions.
+Perhaps we want to know whether men were taller than women (on average) in 
+Galton's day. (Is $\mu_M > \mu_W$?)
+```{r}
+favstats( height ~ sex, data=Galton)      # our favorite numerical summaries
+diffmean( height ~ sex, data=Galton)      # compare the means
+  bwplot( height ~ sex, data=Galton)      # look at the data
+HeightBySex.null <-                       # generate null distribution
+  do(1000) * diffmean( height ~ shuffle(sex), data = Galton)
+histogram( ~diffmean, data = HeightBySex.null, v=5.118)  # look at null dist.
+tally( ~(diffmean > 5.118), data = HeightBySex.null)     # compuate p-value
+```
+
+## Bootstrap too
+It isn't so suprising that Galton's data provide evidence that men were taller
+on average than women.  But suppose we want to know how accurate our estimated 
+difference is.  Instead of shuffling a variable we can resample the entire data
+set to produce a bootstrap distribution.
+
+```{r}
+HeightBySex.boot <- 
+  do(1000) * diffmean( height ~ sex, data = resample(Galton) )
+histogram(~diffmean, data = HeightBySex.boot)
+```
+
+Confidence intervals can be computed using percentiles or the bootstrap
+standard error, which is just the standard deviation of the bootstrap 
+distribution.
+
+```{r}
+cdata(0.95, ~diffmean, data = HeightBySex.boot)  # central 95%
+sd(~diffmean, data=HeightBySex.boot)
+```
+
+Once the bootstrap distribution has been made, we can even automate computation
+of confidence intervals based on percentiles or the bootstrap standard error:
+
+```{r}
+confint(HeightBySex.boot, method=c("percentile", "se"))
+```
+
+## Trade-offs
+
+I find that the use of these `mosaic` tools keeps 
+the focus on what is important 
+(thinking about where randomization enters and why, 
+comparing the actual data to
+a simulated distribution, etc.) while hiding distracting details (looping 
+structures, extracting the relevant information from R object, etc.). 
+The flexibility and syntactic simplicity cost some computational efficiency -- 
+You might not want to wait for 100,000 replicates in front of class.
+There are other R packages 
+([`resample`](http://cran.r-project.org/web/packages/resample/index.html) 
+and 
+[`boot`](http://cran.r-project.org/web/packages/boot/index.html), for example) 
+that are faster and do more but hide some of the things we want students 
+to see and think about when they are learning how simulation based inference 
+works.
+
 
 ## Additional Resources
 
   * [eCOTS 2014 Workshop: "Effective Teaching using R, RStudio, and the MOSAIC Package"](https://www.causeweb.org/ecots/ecots14/45/).
-  
-  
-# Scraps
-
-
-## Use RStudio
-
-[RStudio](http://rstudio.com) has made the entry into R much easier than it once 
-was by providing a free integrated development environment (IDE) for R that has
-quickly become *the* interface to R and keeps improving.  If you can set up an RStudio
-server locally or contract with a remote service, then your students can do their 
-R work in any web browser without any need to install software.  This simplifies 
-things even more.
-
-## Early and Often
-
-One of the advantages of the SBI approach is that it lets us get to the heart 
-of the matter early in the course and keep at it all semester.  That same approach
-is also useful for learning R.
-
-I typically introduce inference on the first day doing a hypothesis test for a 
-proportion "informally".  Often I use some variation on 
-[Fisher's Lady Tasting Tea](http://en.wikipedia.org/wiki/Lady_tasting_tea) example because
-I find that students remember it well and I can refer back to it as a motivating
-example for the rest of the semester.  I find the example works equally well
-in an Intro Stats course an in my upper level courses, and I like that it 
-connects them in a small way to the history of the discipline.  But one 
-could easily substitute in some other experiment that test's a proportion.
-
-My goal is to introduce some key ideas without any of the technical language.  
-
- 1. It all starts with a question.
  
-    Statistics is about learning things from data.  In order to learn 
-    something, we need to have a question we want to answer.  In this case,
-    we want to know whether the lady can really tell the difference
-    between tea poured into milk and milk poured into tea.  
-    
- 2. Design matters.
+  * [Less Volume, More Creativity](http://cran.r-project.org/web/packages/mosaic/vignettes/LessVolume-MoreCreativity.html) -- an introduction to the `mosaic` package emphasing the use of 
+  a common template for numerical summaries, graphical summaries, and modeling.
  
-    This problem context is simple enough that my students readily come
-    up with a design.  Typically it involves preparing cups of tea each
-    way and having the lady taste them declare which are which.  If they
-    don't specify a number, I'll ask what they would conclude if they
-    gave the lady one cup of tea and she correctly identified how it had 
-    been prepared.  (They are rightfully unimpressed.)  And I ask whether 
-    they think it is reasonable to have her drink 100 cups of tea.  
-    Typically they settle on 10 or 20 cups.  Sometimes we have a discussion
-    about how to decide which are prepared each way, and generally 
-    students come up with flipping a coin (although shuffling a deck with
-    equal numbers of each of two kinds of cards sometimes comes up as well)
-
- 3. How well the lady does can be summarised with a "score".
+  * Randomization based Inference 
+  [[view]](https://github.com/ProjectMOSAIC/mosaic/blob/master/vignettes/Resampling.pdf) 
+  [[download]](https://github.com/ProjectMOSAIC/mosaic/raw/master/vignettes/Resampling.pdf) -- examples of simulation based inference with `mosaic` based on the 2013 USCOTS Randomization Bake Off
  
-    This is my informal notion of a test statistic, and I'll use it 
-    later to motivate test statistics as a single number that summarises
-    all of the available data.
-    
-    Let's suppose she gets 9 out of 10 correct.  What should we conclude?
-    
- 4. Either she's just guessing, or she's not.
  
-    Unfortunately, any score *could* happen in either case.  She could get
-    9 of 10 buy guessing.  But the 
-    students have a stong intuition that it is hard to get a high score 
-    just by guessing, and are pretty sure that 9 out of 10 is neither very
-    likely nor rediculously unlikely to happen by guessing.
-    
- 5. We can use (simulated) coin tosses to quantify chance.
-
-    After doing a simulation or two flipping actual coins, it's time to 
-    bring out the technology to speed things up.  On the first day, I 
-    do not expect students to get the details of the commands used.  I ask them
-    what should be done and translate their ideas into R code.  We spend
-    our time looking at the output and I want them to get a sense for what 
-    is possible.
-    
+  * *Start Teaching Statistics Using R*
+ [[view]](Starting/MOSAIC-StartTeaching.pdf)
+ [[download]](../../raw/master/Starting/MOSAIC-StartTeaching.pdf)
+ 
+  * *A Student's Guide to R* 
+ [[view]](StudentGuide/MOSAIC-StudentGuide.pdf)
+ [[download]](../../raw/master/StudentGuide/MOSAIC-StudentGuide.pdf)
+ 
+ 
