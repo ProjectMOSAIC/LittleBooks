@@ -1,0 +1,259 @@
+---
+title: "How I do() SBI using R"
+author: "R Pruim"
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    fig_height: 3
+    fig_width: 4
+    size: "small"
+---
+
+```{r, startup, include=FALSE}
+require(mosaic)
+trellis.par.set(theme=col.mosaic())
+set.seed(12345)
+```
+
+```{r}
+require(mosaic)
+```
+
+I'm not writing to convince you that you *should* use R to teach simulation based 
+inference (SBI).  Choice of technology depends on many things, including short- 
+and long-term learning objectives for and of the students, local infrastructure,
+instructor familiarity, and budget.  R is a popular choice because it is free
+and powerful enough to keep up with students as they progress through a program.
+It is also a marketable skill.  But R can be daunting, especially if the instructor
+is unfamiliar with R.  And, like any language, it can be used well or poorly.
+
+My goal is to convince you that if you want to do SBI using R you can, even with 
+students (and instructors) who have never used R before.  Along the way I'll mention
+some guiding principles and illustrate some tools that 
+my colleagues Danny Kaplan and Nick Horton and I have assembled in the 
+[`mosaic` R package](https://github.com/ProjectMOSAIC/mosaic/blob/master/README.md) 
+to make SBI (and EDA and traditional inference procedures) much easier.
+
+## Less Volume, More Creativity
+
+The biggest key to using R well is to provide a lot of creative oppurtunity
+with as little R as possible.  There can be a lot of ways to skin a cat in R,
+what you need is a systematic approach that allows you to economically 
+acheive your goals.  If technology is the most difficult thing in your course, 
+then your technology is too hard or your questions are too simple (probably both).
+On the other hand, if your students are able to guess how to do new things
+in R before you show them, then you will know you are on the right track.
+
+If you have used R before, I recommend the following exercise: Make a list of
+all of the R commands you have introduced over the course of a semester. 
+Organize them into themes.  Eliminate the unnecessary.  Replace one command with
+another if it reduces the overall complexity of the R you are teaching and still
+gets the job done.  Compare your list to 
+[someone else's list](https://github.com/ProjectMOSAIC/mosaic/blob/master/vignettes/MinimalR.pdf)
+and see if that leads you to adjust your list.
+
+If you are going to do SBI, make sure that your non-SBI tools and your SBI tools
+play well together.
+
+## Don't teach programming
+
+Nearly everything I do with R in my courses involves simple, one-line, declarative
+R statements. You won't see any `if()` statements or `for()` loops in my class -- not even for SBI. I focus on getting students to ask two questions:
+
+ 1. What do I want R to do?
+ 2. What does R need to know to do that for me?
+
+If students can answer those questions, we're typically not far from writing 
+down the R syntax to make it happen.  If they can't answer those questions,
+then it doesn't matter what technology we are using, we have other work to do first.
+
+## do()ing randomization tests 
+
+The R part of a randomization test generally involves three parts.
+    
+We need to be able to flip a coin, so `mosaic` provides a coin flipper:
+
+```{r}
+rflip()    # think random flip
+```
+    
+If our design calls for 10 cups of tea, we'd like to flip 10 coins.
+Fortunately, we don't have to use `rflip()` ten times and record 
+the results manually.  We just ask for 10 flips.
+    
+```{r}
+rflip(10)
+```
+    
+Since we get different results on different tries, we should do this
+a lot of times.  
+
+```{r eval=FALSE}
+do(1000) * rflip(10)   # do 1000 times 
+```
+```{r echo=FALSE}
+do(3) * rflip(10)
+```
+
+```
+## <997 lines omitted>
+```
+`do()` is reasonably clever about what it "remembers".  In the case of 
+coin flipping, it records the number of flips (`n`), the number of heads,
+the number of tails, and the proportion that are heads. Of course,
+we should look at this  some other way than by having 
+it all scroll past on our screen.  Let's save the results and 
+look at numerical and graphical sumamries.
+    
+```{r}
+GuessingLadies <-
+  do(1000) * rflip(10)  # simulate 1000 guessing ladies
+tally(~heads, data = GuessingLadies)
+histogram(~heads, data = GuessingLadies, width=1)
+```
+
+Based on our simulation, it appears that someone can get 9 or 10 just by
+guessing only about `r sum(GuessingLadies$heads >= 9) * 100 / 1000`% of the time.
+
+## Keep the main thing the main thing
+
+The power of this example is in the ease with which it can be generalized.
+The R technical part of conducting hypothesis tests generally boils down
+to three steps:
+
+ 1. Compute a test statistic from the data.
+ 
+    We did this in our head for our simple example, but often this will
+    involve a numerical summary function like `mean()`, `prop()`, `diffmean()`, 
+    or `diffprop()` or a modeling function like `lm()`.  The `mosaic` package
+    gives all these and the graphical summaries a common template so that they 
+    are easily learned.
+ 
+ 2. Figure out how to simulate a test statistic computed from
+    random data assuming the null hypothesis is true. 
+
+    To simulate a proportion, we use `rflip()`.  For permuation tests,
+    we can use `shuffle()` to shuffle one of the variables.
+ 
+ 3. Do that a lot of times.
+ 
+    If we can do it once, then we can `do()` it lots of times.
+ 
+ 4. Compare step 1 to step 4.
+ 
+    We can use `tally()` or `prop()` to compute numbers and 
+    `histogram()` or `dotPlot()` to see things graphically.
+
+Here are a number of examples of step 3 for situations commonly seen in
+Intro Stats:
+
+```{r}
+Two.Proportions <- do(1000) * diffprop( homeless ~ shuffle(sex),   data=HELPrct)
+Two.Means       <- do(1000) * diffmean(      age ~ shuffle(sex),   data=HELPrct)
+Linear.Model    <- do(1000) *       lm(   length ~ shuffle(width), data=KidsFeet)
+```
+It is worth taking a look at the the linear model example.
+```{r}
+do(1) * lm(length ~ width, data=KidsFeet)  # actual data
+head(Linear.Model, 3)
+```
+From this we see that the coefficients of the model, and estimate for $\sigma$, $r^2$,
+and the ANOVA $F$ statistic have been recorded.  We could compare either `width` 
+coefficients, $r^2$ values, or $F$ statistics to compute a p-value for the test that
+$\beta_1 = 0$.
+
+```{r}
+tally( ~(width >= 1.657624), data=Linear.Model )
+tally( ~(r.squared >= 0.4110041), data=Linear.Model )
+tally( ~(F >= 25.81878), data=Linear.Model )
+```
+
+## Bootstrap, too
+
+Bootstrap distributions can be created in a similar way, usually
+using the `resample()` function which samples with replacement.
+
+```{r}
+AgeDiff.boot <- do(1000) * diffmean( age ~ sex, data=resample(HELPrct))
+```
+
+## Additional Resources
+
+  * [eCOTS 2014 Workshop: "Effective Teaching using R, RStudio, and the MOSAIC Package"](https://www.causeweb.org/ecots/ecots14/45/).
+  
+  
+# Scraps
+
+
+## Use RStudio
+
+[RStudio](http://rstudio.com) has made the entry into R much easier than it once 
+was by providing a free integrated development environment (IDE) for R that has
+quickly become *the* interface to R and keeps improving.  If you can set up an RStudio
+server locally or contract with a remote service, then your students can do their 
+R work in any web browser without any need to install software.  This simplifies 
+things even more.
+
+## Early and Often
+
+One of the advantages of the SBI approach is that it lets us get to the heart 
+of the matter early in the course and keep at it all semester.  That same approach
+is also useful for learning R.
+
+I typically introduce inference on the first day doing a hypothesis test for a 
+proportion "informally".  Often I use some variation on 
+[Fisher's Lady Tasting Tea](http://en.wikipedia.org/wiki/Lady_tasting_tea) example because
+I find that students remember it well and I can refer back to it as a motivating
+example for the rest of the semester.  I find the example works equally well
+in an Intro Stats course an in my upper level courses, and I like that it 
+connects them in a small way to the history of the discipline.  But one 
+could easily substitute in some other experiment that test's a proportion.
+
+My goal is to introduce some key ideas without any of the technical language.  
+
+ 1. It all starts with a question.
+ 
+    Statistics is about learning things from data.  In order to learn 
+    something, we need to have a question we want to answer.  In this case,
+    we want to know whether the lady can really tell the difference
+    between tea poured into milk and milk poured into tea.  
+    
+ 2. Design matters.
+ 
+    This problem context is simple enough that my students readily come
+    up with a design.  Typically it involves preparing cups of tea each
+    way and having the lady taste them declare which are which.  If they
+    don't specify a number, I'll ask what they would conclude if they
+    gave the lady one cup of tea and she correctly identified how it had 
+    been prepared.  (They are rightfully unimpressed.)  And I ask whether 
+    they think it is reasonable to have her drink 100 cups of tea.  
+    Typically they settle on 10 or 20 cups.  Sometimes we have a discussion
+    about how to decide which are prepared each way, and generally 
+    students come up with flipping a coin (although shuffling a deck with
+    equal numbers of each of two kinds of cards sometimes comes up as well)
+
+ 3. How well the lady does can be summarised with a "score".
+ 
+    This is my informal notion of a test statistic, and I'll use it 
+    later to motivate test statistics as a single number that summarises
+    all of the available data.
+    
+    Let's suppose she gets 9 out of 10 correct.  What should we conclude?
+    
+ 4. Either she's just guessing, or she's not.
+ 
+    Unfortunately, any score *could* happen in either case.  She could get
+    9 of 10 buy guessing.  But the 
+    students have a stong intuition that it is hard to get a high score 
+    just by guessing, and are pretty sure that 9 out of 10 is neither very
+    likely nor rediculously unlikely to happen by guessing.
+    
+ 5. We can use (simulated) coin tosses to quantify chance.
+
+    After doing a simulation or two flipping actual coins, it's time to 
+    bring out the technology to speed things up.  On the first day, I 
+    do not expect students to get the details of the commands used.  I ask them
+    what should be done and translate their ideas into R code.  We spend
+    our time looking at the output and I want them to get a sense for what 
+    is possible.
+    
