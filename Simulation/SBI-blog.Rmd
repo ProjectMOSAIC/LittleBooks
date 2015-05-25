@@ -348,17 +348,17 @@ statistics.
  [[download]](../../raw/master/StudentGuide/MOSAIC-StudentGuide.pdf)
  
  * [Lock5withR](https://github.com/rpruim/Lock5withR/blob/master/README.md)
- -- a companion to *Unlocking the Power of Data* by Five Locks
+ -- a companion to *Unlocking the Power of Data* by Five Locks (with Lana Park)
  
  * [ISIwithR](https://github.com/rpruim/ISIwithR/blob/master/README.md)
  -- a companion to *Introduction to Statistical Inference* 
- by Nathan Tintle *et al*
+ by Nathan Tintle *et al* (with Lana Park)
  
 
 ### About the Author
 
 Randall Pruim is a professor of 
-mateamtics and statsitics at Calvin College and the maintainer of several
+mathematics and statsitics at Calvin College and the maintainer of several
 R packages, including `mosaic`, `Lock5withR`, and `ISIwithR`.
 
 <img src="images/headshot-1.jpg"  style="width: 200px;" /img>
