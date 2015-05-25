@@ -28,6 +28,7 @@ created this package.
 
 I'm not writing to convince you that you *should* use R to teach simulation based 
 inference (SBI).
+<!--
 <del>
 Choice of technology depends on many things, including short- 
 and long-term learning objectives for and of the students, local infrastructure,
@@ -35,7 +36,7 @@ instructor familiarity, and budget.  R is a popular choice because it is free
 and powerful enough to keep up with students as they progress through a program.
 It is also a marketable skill.  But R can be daunting, especially if the instructor
 is unfamiliar with R.  And, like any language, it can be used well or poorly.
-</del>
+</del> -->
 My goal is to convince you that you *can* use R for SBI, even with
 students (and instructors) who have never used R before. 
 Along the way I'll mention
@@ -59,6 +60,7 @@ then your technology is too hard or your questions are too simple (probably both
 On the other hand, if your students are able to guess how to do new things
 in R before you show them, then you will know you are on the right track.
 
+<!--
 <del>
 If you have used R before, I recommend the following exercise: Make a list of
 all of the R commands you have introduced in your course. 
@@ -73,7 +75,9 @@ and see if that leads you to adjust your list.
 If you are going to do SBI, make sure that your non-SBI tools and your SBI tools
 play well together.
 </del>
+-->
 
+<!--
 ### <del>Don't teach programming</del>
 
 <del>
@@ -89,7 +93,9 @@ If students can answer those questions, we're typically not far from writing
 down the R syntax to make it happen.  If they can't answer those questions,
 then it doesn't matter what technology we are using, we have other work to do first.
 </del>
+-->
 
+<!--
 ### Doing randomization tests 
 
 The R part of conducting hypothesis tests generally boils down
@@ -136,6 +142,7 @@ of creativity for little volume.
 In what follows, I will focus primarily on step 3, generating the randomization 
 distribution since the other steps involve components that would need to be 
 in place for any course using R to analyse data.
+-->
 
 ## An example: The Lady Tasting Tea
 
@@ -289,16 +296,13 @@ confint(HeightBySex.boot, method=c("percentile", "se"))
 
 ### Striking a Balance
 
-I find that using the `mosaic` package
-keeps the focus on what is important 
+
+I find that using the `mosaic` package keeps the focus on what is important 
 (thinking about where randomization enters and why, and what to do
 with the distribution once we have it)
 while hiding distracting details 
-(looping structures, extracting the relevant information from R objects, etc.). 
-<!--
-The flexibility and syntactic simplicity cost some computational efficiency -- 
-You might not want to wait for 100,000 replicates in front of class.
--->
+(looping structures, extracting the relevant information from 
+R objects, etc.).
 There are other R packages 
 ([`resample`](http://cran.r-project.org/web/packages/resample/index.html) 
 and 
@@ -306,6 +310,16 @@ and
 that are faster and use more sophisticed methods, but hide some of the things 
 I want students to see and think about when they are learning how simulation 
 based inference works.
+
+Altogether, the R-related cognitive load for students to do
+SBI amounts to
+
+  * [a template for graphical and numerical summaries](http://cran.r-project.org/web/packages/mosaic/vignettes/LessVolume-MoreCreativity.html), which is needed for non SBI things as well
+  * `rflip()`, `shuffle()` and `resample()` for generating random data
+  * `do()` for repeating things
+ 
+These can be combined to perform a wide variety of tests.  That's a lot 
+of SBI creativity for little volume.
 
 ### Additional Resources
 
@@ -333,3 +347,19 @@ statistics.
  [[view]](StudentGuide/MOSAIC-StudentGuide.pdf)
  [[download]](../../raw/master/StudentGuide/MOSAIC-StudentGuide.pdf)
  
+ * [Lock5withR](https://github.com/rpruim/Lock5withR/blob/master/README.md)
+ -- a companion to *Unlocking the Power of Data* by Five Locks
+ 
+ * [ISIwithR](https://github.com/rpruim/ISIwithR/blob/master/README.md)
+ -- a companion to *Introduction to Statistical Inference* 
+ by Nathan Tintle *et al*
+ 
+
+### About the Author
+
+Randall Pruim is a professor of 
+mateamtics and statsitics at Calvin College and the maintainer of several
+R packages, including `mosaic`, `Lock5withR`, and `ISIwithR`.
+
+<img src="images/headshot-1.jpg"  style="width: 200px;" /img>
+<img src="images/headshot-2.jpg"  style="width: 200px;" /img>
