@@ -3,9 +3,9 @@
 
 \usepackage{../include/RBook}
 \usepackage{pdfpages}
-%\usepackage[shownotes]{authNote}
-\usepackage[hidenotes]{authNote}
-\usepackage{language}
+%\usepackage[shownotes]{../include/authNote}
+\usepackage[hidenotes]{../include/authNote}
+\usepackage{../include/language}
 \usepackage{hyperref}
 \usepackage{fancyhdr} % DTK added for header.
 
