@@ -46,8 +46,9 @@ Updated versions will be posted at \url{http://mosaic-web.org}.
 
 \subsection*{Two Audiences}
 
-The primary audience for these materials is instructors of statistics at the college or
-university level.  A secondary audience is the students these instructors teach.  
+We initially developed these materials for
+instructors of statistics at the college or
+university level.  Another audience is the students these instructors teach.  
 Some of the sections, examples, and exercises are written with one or the other of 
 these audiences more clearly at the forefront.  This means that 
 \begin{enumerate}
@@ -71,24 +72,6 @@ Download and installation are quite straightforward for Mac, PC, or linux machin
 \RStudio\ can be installed as a desktop (laptop) application or as a server application that is accessible to users via the Internet.\TeachingTip[-.5cm]{RStudio server version works well with starting students.  All they need is a web browser, avoiding any potential problems with oddities of students' individual computers.}
 
 In addition to \R\ and \RStudio, we will make use of several packages that need to be installed and loaded separately. The \pkg{mosaic} package (and its dependencies) will be used throughout.  Other packages appear from time to time as well.
-\iffalse
-including
-\begin{multicols}{3}
-\begin{itemize}
-\item
-\pkg{fastR}
-\item
-\pkg{abd}
-%\item
-%\pkg{Zillow}
-\item
-\pkg{twitteR}
-\item
-\pkg{vcd}
-\end{itemize}
-\end{multicols}
-\authNote{Can we prune this list?}
-\fi
 
 
 %\subsection*{Notation}
