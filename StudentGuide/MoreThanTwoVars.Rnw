@@ -3,6 +3,9 @@
 
 We can fit a two (or more) way ANOVA model, without or with an interaction,
 using the same modeling syntax.
+\Rindex{median()}%
+\Rindex{bwplot()}%
+\Rindex{aov()}%
 <<help-aovplot>>=
 median(cesd ~ substance | sex, data=HELPrct)
 bwplot(cesd ~ subgrp | sex, data=HELPrct)
@@ -18,11 +21,11 @@ significant main effects terms for \variable{substance} group and
 \variable{sex}.
 
 <<help-interaction,tidy=FALSE>>=
-xyplot(cesd ~ substance, groups=sex, 
-  auto.key=list(columns=2, lines=TRUE, points=FALSE), type='a',
-  data=HELPrct)
+xyplot(cesd ~ substance, groups=sex, lwd=2,
+  auto.key=list(columns=2, lines=TRUE, points=FALSE), 
+  type='a', data=HELPrct)
 @
-\Rindex{auto.key option}
+\Rindex{auto.key option}%
 
 
 \section{Multiple regression}
@@ -41,15 +44,17 @@ regularly.  The motivation for this is described at length in the companion volu
 Here we consider a model (parallel slopes) for depressive symptoms as a function of Mental Component Score (MCS),
 age (in years) and sex of the subject.
 
+\myindex{msummary()}%
 <<help-multreg>>=
 lmnointeract <- lm(cesd ~ mcs + age + sex, data=HELPrct)
-summary(lmnointeract)
+msummary(lmnointeract)
 @
+\myindex{anova()}%
 \myindex{interactions}%
 We can also fit a model that includes an interaction between MCS and sex.
 <<help-multreg2>>=
 lminteract <- lm(cesd ~ mcs + age + sex + mcs:sex, data=HELPrct)
-summary(lminteract)
+msummary(lminteract)
 anova(lminteract)
 @
 <<help-multreg3>>=

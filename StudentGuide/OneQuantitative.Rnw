@@ -84,6 +84,14 @@ histogram(~ cesd, data=HELPrct)
 @
 \end{center}
 
+We can use the \function{width} and \function{center} options to control the location of the bins.
+
+\begin{center}
+<<cesd-hist2>>=
+histogram(~ cesd, width=5, center=2.5, data=HELPrct)
+@
+\end{center}
+
 
 \Rindex{tally()}%
 \Rindex{format option}%

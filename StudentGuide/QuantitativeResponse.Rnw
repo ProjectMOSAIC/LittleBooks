@@ -111,7 +111,7 @@ do(3) * diffmean(age ~ shuffle(sex), data=HELPrct)
 <<permute-HELPrct,fig.keep='last', tidy=FALSE>>=
 rtest.stats <- do(500) * diffmean(age ~ shuffle(sex), 
   data=HELPrct)
-head(rtest.stats)
+head(rtest.stats, 3)
 favstats(~ diffmean, data=rtest.stats)
 histogram(~ diffmean, n=40, xlim=c(-6, 6),
   groups=diffmean >= test.stat, pch=16, cex=.8, 

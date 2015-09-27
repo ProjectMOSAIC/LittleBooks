@@ -35,10 +35,20 @@ oddsRatio(tally(~ (homeless=="housed") + sex, margins=FALSE,
   data=HELPrct)) 
 @
 
+The \function{CrossTable()} function in the \pkg{gmodels} package also displays
+a cross classification table.
+
+\Rindex{CrossTable()}%
+<<crosstable, message=FALSE>>=
+require(gmodels)
+with(HELPrct, CrossTable(homeless, sex, 
+  prop.r=FALSE, prop.chisq=FALSE, prop.t=FALSE))
+@
+
 Graphical summaries of cross classification tables may be helpful in visualizing
 associations.  Mosaic plots are one example, where the total area (all observations) is proportional to one.
 \Caution{The jury is still out
-regarding the utility of mosaic plots, 
+regarding the utility of mosaic plots (also known as eikosograms), 
 relative to the low data to ink ratio.\cite{Tufte:2001:Visual}%
 We have found them to be helpful to reinforce understanding of a two way contingency table.}%
 Here we see that males tend to be over-represented
