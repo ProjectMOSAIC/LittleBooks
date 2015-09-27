@@ -160,35 +160,35 @@ xyplot(resid(cesdmodel) ~ fitted(cesdmodel), type=c("p", "smooth", "r"),
 The \function{mplot()} function can facilitate creating a variety of useful plots, including the same residuals vs. fitted scatterplots, by specifying the \option{which=1} option.
 \Rindex{mplot()}%
 \Rindex{which option}%
-<<results='hide'>>=
+<<mplotc1>>=
 mplot(cesdmodel, which=1)
 @
 
 It can also generate a normal quantile-quantile plot (\option{which=2}),
-<<results='hide'>>=
+<<mplotc2, results='hide'>>=
 mplot(cesdmodel, which=2)
 @
 
 \myindex{scale versus location}%
 scale vs.\,location,
-<<results='hide'>>=
+<<mplotc3, results='hide'>>=
 mplot(cesdmodel, which=3)
 @
 
 \myindex{Cook's distance}%
 Cook's distance by observation number,
-<<results='hide'>>=
+<<mplotc4, results='hide'>>=
 mplot(cesdmodel, which=4)
 @
 
 \myindex{leverage}%
 residuals vs.\,leverage,
-<<results='hide'>>=
+<<mplotc5,results='hide'>>=
 mplot(cesdmodel, which=5)
 @
 
 and Cook's distance vs. leverage.
-<<results='hide'>>=
+<<mplotc6,results='hide'>>=
 mplot(cesdmodel, which=6)
 @
 
@@ -197,7 +197,7 @@ mplot(cesdmodel, which=6)
 \Rindex{band.lwd option}%
 Prediction bands can be added to a plot using the \function{panel.lmbands()} function.
 \begin{center}
-<<>>=
+<<HELPxyplot1>>=
 xyplot(cesd ~ mcs, panel=panel.lmbands, cex=0.2, band.lwd=2, data=HELPrct)
 @
 \end{center}

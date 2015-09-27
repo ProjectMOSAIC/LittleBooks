@@ -12,10 +12,10 @@ counts, percentages and proportions for a categorical variable.
 \Rindex{tally()}%
 \Rindex{margins option}%
 <<homeless-table>>=
-tally( ~ homeless, data=HELPrct)      
-tally( ~ homeless, margins=TRUE, data=HELPrct)      
-tally( ~ homeless, format="percent", data=HELPrct)      
-tally( ~ homeless, format="proportion", data=HELPrct)  
+tally(~ homeless, data=HELPrct)      
+tally(~ homeless, margins=TRUE, data=HELPrct)      
+tally(~ homeless, format="percent", data=HELPrct)      
+tally(~ homeless, format="proportion", data=HELPrct)  
 @
 
 \section{The binomial test}
@@ -32,7 +32,7 @@ binom.test(209, 209 + 244)
 The \pkg{mosaic} package provides a formula interface that avoids the need to pre-tally
 the data.
 <<binomtest>>=
-result <- binom.test( ~ (homeless=="homeless"), HELPrct)
+result <- binom.test(~ (homeless=="homeless"), data=HELPrct)
 result
 @
 
@@ -68,7 +68,7 @@ A similar interval and test can be calculated using the function \function{prop.
 Here is a count of the number of people at each of the two levels of \variable{homeless}
 
 <<tidy=FALSE>>=
-tally( ~ homeless, data=HELPrct)
+tally(~ homeless, data=HELPrct)
 @
 
 The \function{prop.test} function will carry out the calculations of the proportion test and report the result.
@@ -76,7 +76,7 @@ The \function{prop.test} function will carry out the calculations of the proport
 \hfill
 
 <<tidy=FALSE>>=
-prop.test( ~ (homeless=="homeless"), correct=FALSE, data=HELPrct)
+prop.test(~ (homeless=="homeless"), correct=FALSE, data=HELPrct)
 @
 In this statement, prop.test is examining the \variable{homeless} variable in the same way that \function{tally} would. \Pointer{We write \code{homeless=="homeless"} to define unambiguously which proportion we are considering. We could also have written \code{homeless=="housed"}. }
 \function{prop.test} can also work directly with numerical counts, the way \function{binom.test()} does.
@@ -92,8 +92,8 @@ A variety of goodness of fit tests can be calculated against a reference  distri
 
 
 <<gofmore,tidy=FALSE>>=
-tally( ~ substance, format="percent", data=HELPrct)
-observed <- tally( ~ substance, data=HELPrct)
+tally(~ substance, format="percent", data=HELPrct)
+observed <- tally(~ substance, data=HELPrct)
 observed
 @
 
@@ -117,7 +117,16 @@ chisq <- sum((observed - expected)^2/(expected)); chisq
 @
 \TeachingTip[-2cm]{The \function{pchisq} function calculates the probability that a $\chi^2$ random variable with \function{df} degrees is freedom is less than or equal to a given value.  Here we calculate the complement to find the area to the right of the observed Chi-square statistic.}%
 
+It may be helpful to consult a graph of the statistic, where the shaded area represents the value to the right of the observed value.
+
+\Rindex{plotDist()}%
+<<chisqplotDist>>=
+plotDist("chisq", df=2, groups = x > 9.31, type="h")
+@
+
+
 Alternatively, the \pkg{mosaic} package provides a version of \function{chisq.test()} with more verbose output.
+\Rindex{xchisq.test()}%
 <<>>=
 xchisq.test(observed, p=p)
 @

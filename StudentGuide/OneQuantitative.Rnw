@@ -20,7 +20,7 @@ level (see \function{?options} for more configuration possibilities).
 require(mosaic)
 require(mosaicData)
 options(digits=3)
-mean( ~ cesd, data=HELPrct)
+mean(~ cesd, data=HELPrct)
 @
 
 \myindex{Start Teaching with R@\emph{Start Teaching with R}}%
@@ -41,11 +41,11 @@ mean(HELPrct$cesd)
 \Rindex{var()}%
 Similar functionality exists for other summary statistics.
 <<cesd2,cache=FALSE>>=
-sd( ~ cesd, data=HELPrct)
+sd(~ cesd, data=HELPrct)
 @
 <<cesd2b,cache=FALSE>>=
-sd( ~ cesd, data=HELPrct)^2
-var( ~ cesd, data=HELPrct)
+sd(~ cesd, data=HELPrct)^2
+var(~ cesd, data=HELPrct)
 @
 
 It is also straightforward to calculate quantiles of the distribution.
@@ -53,7 +53,7 @@ It is also straightforward to calculate quantiles of the distribution.
 \myindex{quantiles}%
 \Rindex{median()}%
 <<cesd3>>=
-median( ~ cesd, data=HELPrct)
+median(~ cesd, data=HELPrct)
 @
 
 By default, the \function{quantile()} function displays the quartiles, but can be given a vector of quantiles to display.  
@@ -70,7 +70,7 @@ with(HELPrct, quantile(cesd, c(.025, .975)))
 \Rindex{favstats()}%
 Finally, the \function{favstats()} function in the \pkg{mosaic} package provides a concise summary of  many useful statistics.
 <<>>=
-favstats( ~ cesd, data=HELPrct)
+favstats(~ cesd, data=HELPrct)
 @
 
 \section{Graphical summaries}
@@ -80,7 +80,7 @@ The \function{histogram()} function is used to create a histogram. Here we use t
 \vspace{-4mm}
 \begin{center}
 <<cesd-hist>>=
-histogram( ~ cesd, data=HELPrct)
+histogram(~ cesd, data=HELPrct)
 @
 \end{center}
 
@@ -89,8 +89,8 @@ histogram( ~ cesd, data=HELPrct)
 \Rindex{format option}%
 In the \variable{HELPrct} dataset, approximately one quarter of the subjects are female.  
 <<>>=
-tally( ~ sex, data=HELPrct)
-tally( ~ sex, format="percent", data=HELPrct)
+tally(~ sex, data=HELPrct)
+tally(~ sex, format="percent", data=HELPrct)
 @
 
 It is straightforward to restrict our attention to just the female subjects.
@@ -116,20 +116,20 @@ Subsets can also be generated and used ``on the fly" (this time including
 an overlaid normal density):
 \Rindex{fit option}%
 <<women-cesd-hist,tidy=FALSE,message=FALSE>>=
-histogram( ~ cesd, fit="normal",
+histogram(~ cesd, fit="normal",
   data=filter(HELPrct, sex=='female'))  
 @
 
 Alternatively, we can make side-by-side plots to compare multiple subsets.
 <<cesd-male-female>>=
-histogram( ~ cesd | sex, data=HELPrct)
+histogram(~ cesd | sex, data=HELPrct)
 @
 
 The layout can be rearranged.
 \Rindex{layout option}%
 \begin{center}
 <<cesd-dotlayout>>=
-histogram( ~ cesd | sex, layout=c(1, 2), data=HELPrct)   
+histogram(~ cesd | sex, layout=c(1, 2), data=HELPrct)   
 @
 \end{center}
 \begin{problem}
@@ -139,7 +139,7 @@ group, just for the male subjects, with an overlaid normal density.
 \end{problem}%
 \begin{solution}
 <<subsmale, tidy=FALSE>>=
-histogram( ~ cesd | substance, fit="normal", 
+histogram(~ cesd | substance, fit="normal", 
   data=filter(HELPrct, sex=='male'))
 @
 \end{solution}%
@@ -148,14 +148,14 @@ as the total number.
 \Rindex{nint option}%
 \begin{center}
 <<cesd-dot,fig.height=1.8>>=
-histogram( ~ cesd, nint=20, data=female)   
+histogram(~ cesd, nint=20, data=female)   
 @
 \end{center}
 The width of the bins can be specified.
 \Rindex{width option}%
 \begin{center}
 <<cesd-dotwidth,fig.height=1.8>>=
-histogram( ~ cesd, width=1, data=female)   
+histogram(~ cesd, width=1, data=female)   
 @
 \end{center}
 
@@ -164,7 +164,7 @@ for a smaller subset of subjects (homeless females).  We also demonstrate
 how to change the x-axis label.
 \Rindex{dotPlot()}%
 <<cesd-dot4,tidy=FALSE>>=
-dotPlot( ~ cesd, xlab="CESD score", 
+dotPlot(~ cesd, xlab="CESD score", 
   data=filter(HELPrct, (sex=="female") & (homeless=="homeless")))
 @
 
@@ -186,7 +186,7 @@ Here we adorn a density plot with some additions to demonstrate how to build up 
 \Rindex{lty option}%
 \Rindex{lwd option}%
 <<dens1,tidy=FALSE,fig.keep="last">>=
-densityplot( ~ cesd, data=female)
+densityplot(~ cesd, data=female)
 ladd(grid.text(x=0.2, y=0.8, 'only females'))
 ladd(panel.mathdensity(args=list(mean=mean(cesd), 
   sd=sd(cesd)), col="red"), data=female)
@@ -201,7 +201,7 @@ A third option is a frequency polygon, where  the graph is created by joining th
 \Rindex{freqpolygon()}%
 \begin{center}
 <<poly,tidy=FALSE,fig.keep="last",out.width="2.5in">>=
-freqpolygon( ~ cesd, data=female)
+freqpolygon(~ cesd, data=female)
 @
 \end{center}
 
@@ -224,8 +224,8 @@ xpnorm(1.96, mean=0, sd=1)
 We can calculate a 95\% confidence interval for the mean CESD 
 score for females by using a t-test:
 <<tinterval>>=
-t.test( ~ cesd, data=female)
-confint(t.test( ~ cesd, data=female))
+t.test(~ cesd, data=female)
+confint(t.test(~ cesd, data=female))
 @
 
 \DiggingDeeper{More details and examples can be found in the 
@@ -235,7 +235,7 @@ confint(t.test( ~ cesd, data=female))
 But it's also straightforward to calculate this using a bootstrap.
 The statistic that we want to resample is the mean.  
 <<calculuatemean>>=
-mean( ~ cesd, data=female)
+mean(~ cesd, data=female)
 @
 
 One resampling trial can be carried out:
@@ -243,7 +243,7 @@ One resampling trial can be carried out:
 creating a resampled dataframe with the same number of rows.}
 \Rindex{resample()}%
 <<resamplemean>>=
-mean( ~ cesd, data=resample(female))
+mean(~ cesd, data=resample(female))
 @
 \TeachingTip{Even though a single trial is of little use, it's smart having
 students do the calculation to show that they are (usually!) getting a different
@@ -251,7 +251,7 @@ result than without resampling.}
 
 Another will yield different results:
 <<>>=
-mean( ~ cesd, data=resample(female))
+mean(~ cesd, data=resample(female))
 @
 
 Now conduct 1000 resampling trials, saving the results in an object
@@ -259,6 +259,7 @@ called \texttt{trials}:
 \Rindex{do()}%
 \Rindex{qdata()}%
 <<bootint>>=
-trials <- do(1000) * mean( ~ cesd, data=resample(female))
+trials <- do(1000) * mean(~ cesd, data=resample(female))
+head(trials, 3)
 qdata(c(.025, .975), ~ result, data=trials)
 @

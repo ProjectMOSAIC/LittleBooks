@@ -96,7 +96,7 @@
 
 <<include=FALSE>>=
 #setCacheDir("cache")
-require(MASS)
+# require(MASS)   # commented out by NJH 9/27/2015
 require(grDevices) 
 require(datasets) 
 require(stats) 
