@@ -148,7 +148,7 @@ knit_hooks$set(document = function(x) {
 \parbox{4in}{\noindent Copyright (c) 2015 by Nicholas Horton, Randall Pruim, \& Daniel Kaplan.}
 \medskip
 
-\parbox{4in}{\noindent Edition 1.2, October 2015}
+\parbox{4in}{\noindent Edition 1.2, November 2015}
 
 \bigskip
 
