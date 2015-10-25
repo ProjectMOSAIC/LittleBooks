@@ -247,13 +247,13 @@ mean(~ cesd, data=female)
 @
 
 One resampling trial can be carried out:
-\TeachingTip{Here we sample with replacement from the original dataframe,
+\FoodForThought{Here we sample with replacement from the original dataframe,
 creating a resampled dataframe with the same number of rows.}
 \Rindex{resample()}%
 <<resamplemean>>=
 mean(~ cesd, data=resample(female))
 @
-\TeachingTip{Even though a single trial is of little use, it's smart having
+\FoodForThought{Even though a single trial is of little use, it's smart having
 students do the calculation to show that they are (usually!) getting a different
 result than without resampling.}
 

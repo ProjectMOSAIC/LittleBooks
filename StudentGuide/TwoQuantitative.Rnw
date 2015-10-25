@@ -75,7 +75,7 @@ cor(cesd, mcs, method="spearman", data=females)
 \myindex{scatterplot matrix}%
 
 A pairs plot (scatterplot matrix) can be calculated for each pair of a set of variables.
-\TeachingTip{The \pkg{GGally} package has support for more elaborate pairs plots.}
+\FoodForThought{The \pkg{GGally} package has support for more elaborate pairs plots.}
 \Rindex{splom()}%
 <<fig.height=3>>=
 splom(smallHELP)

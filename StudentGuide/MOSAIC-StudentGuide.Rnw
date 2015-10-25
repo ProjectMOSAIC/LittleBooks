@@ -84,7 +84,7 @@
 
 \title{A Student's Guide to R}
 \author[Horton, Kaplan, Pruim]{ Nicholas J. Horton, Daniel Kaplan, and Randall Pruim} 
-\date{October 2015}
+\date{November 2015}
 
 \begin{document}
 \def\cplabel{^X} 

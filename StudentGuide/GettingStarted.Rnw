@@ -3,7 +3,7 @@
 
 \RStudio\ is an integrated development environment (IDE) for \R\ that provides an alternative
 interface to \R\ that has several advantages over other the default \R\ interfaces:
-\TeachingTip{A series of getting started videos are available at \url{http://www.amherst.edu/~nhorton/rstudio}.}
+\FoodForThought{A series of getting started videos are available at \url{http://www.amherst.edu/~nhorton/rstudio}.}
 \begin{itemize}
 	\item \RStudio\ runs on Mac, PC, and Linux machines and provides 
 	  a simplified interface that 
@@ -91,7 +91,7 @@ Download and installation are pretty straightforward for Mac, PC, or Linux machi
 \section{Connecting to an RStudio server}
 
 \RStudio\ servers have been set up at a number of schools to facilitate cloud-based computing.  
-\TeachingTip{
+\FoodForThought{
 As examples, registered students at Amherst College can connect to \url{r.amherst.edu}, while
 Smith College students connect to \url{rstudio.smith.edu:8787}.
 Please contact your instructor for details about access to servers at other campuses.  
@@ -99,7 +99,7 @@ More details about (free) academic licenses for \RStudio as well as setup instru
 }
 
 Once you connect to the server, you should see a login screen:
-\TeachingTip{The \RStudio\ server doesn't tend to work well with Internet Explorer.}
+\FoodForThought{The \RStudio\ server doesn't tend to work well with Internet Explorer.}
 
 \includegraphics[width=4.34in]{rstudio-login.png}
 
@@ -136,7 +136,7 @@ Comments can be very helpful when writing scripts
 with multiple commands or to annotate example code for your students.
 
 You can save values to named variables for later reuse.
-\TeachingTip{It's probably best to settle on using 
+\FoodForThought{It's probably best to settle on using 
 one or the other of the right-to-left assignment operators rather than to switch
 back and forth.  The authors have different preferences:
 two of us find the equal sign to be simpler for students and more 

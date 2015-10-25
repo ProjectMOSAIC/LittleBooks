@@ -70,7 +70,7 @@ The groups can also be compared using the \function{lm()} function (also with an
 msummary(lm(cesd ~ sex, data=HELPrct))
 @
 
-\TeachingTip[1cm]{The \function{lm} function is part of a much more flexible modeling framework while \function{t.test} is essentially a dead end. \function{lm} uses of the equal variance assumption. See the companion book, {\em Start Modeling in R} for more details.}%
+\FoodForThought[1cm]{The \function{lm} function is part of a much more flexible modeling framework while \function{t.test} is essentially a dead end. \function{lm} uses of the equal variance assumption. See the companion book, {\em Start Modeling in R} for more details.}%
 
 
 \section{Non-parametric 2 group tests}

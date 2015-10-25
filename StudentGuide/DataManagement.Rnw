@@ -4,7 +4,7 @@
 \myindex{data management}%
 \myindex{thinking with data}%
 
-\TeachingTip{The \emph{Start Teaching with R} book features an extensive section on data management, including use of the \function{read.file()} function to load data into \R\ and \RStudio.}
+\FoodForThought{The \emph{Start Teaching with R} book features an extensive section on data management, including use of the \function{read.file()} function to load data into \R\ and \RStudio.}
 
 \vspace*{-1cm}
 Data management is a key capacity to allow students (and instructors) to ``compute with data'' or  
@@ -15,7 +15,7 @@ undertake substantive projects, data management is more important.  This chapter
 some key data management tasks.
 \myindex{read.file()}%
 
-\TeachingTip{The \pkg{dplyr} and \pkg{tidyr} packages provide an elegant approach to data management and facilitate the ability of students to compute with data.  Hadley Wickham, author of the packages,
+\FoodForThought{The \pkg{dplyr} and \pkg{tidyr} packages provide an elegant approach to data management and facilitate the ability of students to compute with data.  Hadley Wickham, author of the packages,
 suggests that there are six key idioms (or verbs) implemented within these packages that allow a large set of tasks to be accomplished: 
 filter (keep rows matching criteria),
 select (pick columns by name),
@@ -55,7 +55,7 @@ Note that in this usage the first argument to \function{select} is the first var
 (as it inherits the data from the previous pipe).
 
 
-\TeachingTip[1cm]{The \function{cut()} function has an option \option{labels} which can be used to specify more descriptive names for the groups.}
+\FoodForThought[1cm]{The \function{cut()} function has an option \option{labels} which can be used to specify more descriptive names for the groups.}
 <<"mr-adding-variable2-again">>=
 head(irisSmall)
 @
@@ -119,7 +119,7 @@ simple assignment using \function{row.names()}.
 \myindex{faithful dataset}%
 The \dataframe{faithful} data set (in the \pkg{datasets} package, which is always available)
 has very unfortunate names.
-\TeachingTip{It's a good idea to start teaching good practices for choice of variable names from day one.}
+\FoodForThought{It's a good idea to start teaching good practices for choice of variable names from day one.}
 <<>>=
 names(faithful)
 @
@@ -242,7 +242,7 @@ have in your final dataframe.
 The \pkg{tidyr} package provides a flexible way to change the arrangement of data.  
 It was designed for converting between long and wide versions of 
 time series data and its arguments are named with that in mind.
-\TeachingTip{The vignettes that accompany the \pkg{tidyr} and \pkg{dplyr} packages feature a number of useful examples of common data manipulations.}
+\FoodForThought{The vignettes that accompany the \pkg{tidyr} and \pkg{dplyr} packages feature a number of useful examples of common data manipulations.}
 
 
 A common situation is when we want to convert from a wide form to a 
@@ -299,7 +299,7 @@ HELPrct <- mutate(HELPrct, cesdcut = cut(cesd,
 bwplot(cesd ~ cesdcut, data=HELPrct)
 @
 \Rindex{ntiles()}%
-\TeachingTip{The \function{ntiles} function can be used to automate creation of groups in this manner.}
+\FoodForThought{The \function{ntiles} function can be used to automate creation of groups in this manner.}
 
 It might be preferable to give better labels.
 <<tidy=FALSE>>=

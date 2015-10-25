@@ -1,41 +1,39 @@
 
 \vspace*{-.5cm}
 
-In this monograph, we briefly review the commands and functions needed to analyze data from introductory and second courses in statistics.  This is intended to complement the \emph{Start Teaching with R} and \emph{Start Modeling with R} books.
+In this reference book, we briefly review the commands and functions needed to analyze data from introductory and second courses in statistics.  This is intended to complement the \emph{Start Teaching with R} and \emph{Start Modeling with R} books.
 
 Most of our examples will use data from the HELP (Health Evaluation and Linkage to Primary Care) study: a randomized clinical trial of a novel way to link at-risk subjects with primary care.  More information on the dataset can be found in chapter \ref{sec:help}.
 
 
 Since the selection and order of topics can vary greatly from 
 textbook to textbook and instructor to instructor, we have chosen to 
-organize this material by the kind of data being analyzed.  This should make it straightforward to find what you are looking for even if you present things in a different order.  This is also a good organizational template to give your students to help them keep straight ``what to do when".
-
-Some data management is needed by students (and more by instructors).  This
-material is reviewed in Chapter \ref{sec:manipulatingData}.
+organize this material by the kind of data being analyzed.  This should make it straightforward to find what you are looking for.
+Some data management skills are needed by students\cite{hort:2015}. A basic introduction to key idioms
+is provided in Chapter \ref{sec:manipulatingData}.
 
 \myindex{vignettes}%
-This work leverages initiatives undertaken by Project MOSAIC (\url{http://www.mosaic-web.org}), an NSF-funded effort to improve the teaching of statistics, calculus, science and computing in the undergraduate curriculum. In particular, we utilize the \pkg{mosaic} package, which was written to simplify the use of \R\ for introductory statistics courses, and the \pkg{mosaicData} package which includes a number of data sets. A short summary of the \R\ commands needed to teach introductory statistics can be found in the mosaic package vignette:\\
-\verb+http://cran.r-project.org/web/packages/mosaic/vignettes/mosaic-resources.pdf+
+This work leverages initiatives undertaken by Project MOSAIC (\url{http://www.mosaic-web.org}), an NSF-funded effort to improve the teaching of statistics, calculus, science and computing in the undergraduate curriculum. In particular, we utilize the \pkg{mosaic} package, which was written to simplify the use of \R\ for introductory statistics courses, and the \pkg{mosaicData} package which includes a number of data sets. A short summary of the \R\ commands needed to teach introductory statistics can be found in the mosaic package vignette:
+\url{https://cran.r-project.org/web/packages/mosaic}.
 
 Other related resources from Project MOSAIC may be helpful, including an annotated set of examples from the sixth edition of Moore, McCabe and Craig's \emph{Introduction to the Practice of Statistics}\cite{moor:mcca:2007} (see \url{http://www.amherst.edu/~nhorton/ips6e}), the second and third editions of the \emph{Statistical Sleuth}\cite{Sleuth2} (see \url{http://www.amherst.edu/~nhorton/sleuth}), and \emph{Statistics: Unlocking the Power of Data} by Lock et al (see \url{https://github.com/rpruim/Lock5withR}).
 
 \myindex{installing packages}%
 \Rindex{install.packages()}%
-To use a package within R, it must be installed (one time), and loaded (each session). The \pkg{mosaic} and \pkg{mosaicData} packages can be installed using the following commands:
+To use a package within R, it must be installed (one time), and loaded (each session). The \pkg{mosaic} package can be installed using the following commands:
 <<install_mosaic,eval=FALSE>>=
 install.packages("mosaic")    # note the quotation marks
 @
-\TeachingTip[-1.5cm]{\Rstudio\ features a simplified package installation tab (in the bottom right panel).} The {\tt \#} character is a comment in R, and all text after that on the current line is ignored.
+\FoodForThought[-1.5cm]{\Rstudio\ features a simplified package installation tab (in the bottom right panel).} The {\tt \#} character is a comment in R, and all text after that on the current line is ignored.
 
 \myindex{loading packages}%
 \Rindex{require()}%
 Once the package is installed (one time only), it can be loaded by running the command:
 <<load_mosaic,eval=FALSE>>=
 require(mosaic)
-require(mosaicData)
 @
 
-\TeachingTip[-3cm]{The \pkg{knitr}/\LaTeX\ system allows experienced users to combine \R\ and \LaTeX\ in the same document.  The reward for learning this more complicated system is much finer control over the output format. But RMarkdown is much easier to learn and is adequate even for professional-level work.}%
+\FoodForThought[-3cm]{The \pkg{knitr}/\LaTeX\ system allows experienced users to combine \R\ and \LaTeX\ in the same document.  The reward for learning this more complicated system is much finer control over the output format. But RMarkdown is much easier to learn and is adequate even for professional-level work.}%
 
 
 \myindex{reproducible analysis}%

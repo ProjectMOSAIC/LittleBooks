@@ -67,9 +67,9 @@ fit into each category as we go along.
 Download and installation are quite straightforward for Mac, PC, or linux machines.
 
 \RStudio\ is an integrated development environment (IDE) that facilitates use of \R\ for both novice and expert users.  We have adopted it as our standard teaching environment because it dramatically simplifies the use of \R\ for instructors and for students.%
-\Pointer[-3cm]{Several things we use that can be done only in \RStudio, for instance \function{manipulate} or \RStudio's support for reproducible research).}%
+\Pointer[-3cm]{Several things we use that can be done only in \RStudio, for instance \function{manipulate} or \RStudio's integrated support for reproducible research).}%
 %\RStudio\ is available from \url{http://www.rstudio.org/}.
-\RStudio\ can be installed as a desktop (laptop) application or as a server application that is accessible to users via the Internet.\TeachingTip[-.5cm]{RStudio server version works well with starting students.  All they need is a web browser, avoiding any potential problems with oddities of students' individual computers.}
+\RStudio\ can be installed as a desktop (laptop) application or as a server application that is accessible to users via the Internet.\FoodForThought[-.5cm]{RStudio server version works well with starting students.  All they need is a web browser, avoiding any potential problems with oddities of students' individual computers.}
 
 In addition to \R\ and \RStudio, we will make use of several packages that need to be installed and loaded separately. The \pkg{mosaic} package (and its dependencies) will be used throughout.  Other packages appear from time to time as well.
 
@@ -202,7 +202,8 @@ incremental modifications of existing resources that draw on the
 connections between the MOSAIC topics.
 \end{description}
 
-We welcome and encourage your participation in all of these initiatives.
+More details can be found at \url{http://www.mosaic-web.org}.
+We welcome and encourage your participation in all of these initiatives.  
 
 \chapter*{Computational Statistics}
 
@@ -218,8 +219,8 @@ tool to replace pencil-and-paper calculations and drawing plots manually.
 
 In the second approach, more fundamental changes in the course result from the introduction of the computer.  Some new topics are covered, some old topics are omitted.  Some old topics are treated in very different ways, and perhaps at different points in the course.  We will refer to this approach as \term{computational statistics} because the availability of computation is shaping how statistics is done and taught.  Computational statistics is a key component of \term{data science}, defined as the ability to use data to answer questions and communicate those results.
 
-\FoodForThought{Our students need to see aspects of computation and data science early and often
-to develop deeper skills.  Establishing precursors in introductory courses will help them get started.}%
+\FoodForThought{Students need to see aspects of computation and data science early and often
+to develop deeper skills.  Establishing precursors in introductory courses help them get started.}%
 In practice, most courses will incorporate elements of both 
 statistical computation and computational statistics, but the relative 
 proportions may differ dramatically from course to course.
@@ -245,16 +246,16 @@ At the same time, the development of \R\ and of \RStudio\ (an optional
 interface and integrated development environment for \R) are making it
 easier and easier to get started with \R.
 
-Nevertheless, those who are unfamiliar with \R\ or who have never used \R\ for teaching are understandably cautious about using it with students.  If you are in that category, then this book is for you.  Our goal is to reveal some of what we have learned teaching with \R\ and to make teaching statistics with \R\ as rewarding and easy as possible -- for both students and faculty. We will cover both technical aspects of \R\ and \RStudio\ (e.g., how do I get \R\ to do thus and such?) as well as some perspectives on how to use computation to teach statistics. The latter will be illustrated in \R\ but would be equally applicable with other statistical software.
+%Nevertheless, those who are unfamiliar with \R\ or who have never used \R\ for teaching are understandably cautious about using it with students.  If you are in that category, then this book is for you.  Our goal is to reveal some of what we have learned teaching with \R\ and to make teaching statistics with \R\ as rewarding and easy as possible -- for both students and faculty. We will cover both technical aspects of \R\ and \RStudio\ (e.g., how do I get \R\ to do thus and such?) as well as some perspectives on how to use computation to teach statistics. The latter will be illustrated in \R\ but would be equally applicable with other statistical software.
 
-Others have used \R\ in their courses, but have perhaps left the course feeling
-like there must have been better ways to do this or that topic.  If that
-sounds more like you, then this book is for you, too.  As we have been working 
-on this book, we have also been developing the \pkg{mosaic}
+%Others have used \R\ in their courses, but have perhaps left the course feeling
+%like there must have been better ways to do this or that topic.  If that
+%sounds more like you, then this book is for you, too.  As we have been working 
+%on this book, we have also been developing the \pkg{mosaic}
+
+\FoodForThought{Information about the \pkg{mosaic} package, including vignettes demonstrating features and supplementary materials (such as this book) can be found at \url{https://cran.r-project.org/web/packages/mosaic}.}
+We developed the \pkg{mosaic}
 \R\ package (available on CRAN) to make certain aspects of statistical
-computation and computational statistics simpler for beginners.  
-You will also find here some of our favorite activities, examples, and data
-sets, as well as answers to questions that we have heard frequently from both students
-and faculty colleagues.  We invite you to scavenge from our materials and ideas 
-and modify them to fit your courses and your students.
+computation and computational statistics simpler for beginners, without limiting their ability to
+use more advanced features of the language.  The \pkg{mosaic} package includes a modelling approach that uses the same general syntax to calculate descriptive statistics, create graphics, and fit linear models.  
 

@@ -89,7 +89,7 @@ type="one.sample")$power
 This analytic (formula-based approach) yields a similar estimate to the value that we calculated directly.  
 
 Overall, we see that the t-test has higher power than the sign test, if the underlying
-data are truly normal.  \TeachingTip{It's useful to have students calculate power empirically, 
+data are truly normal.  \FoodForThought{It's useful to have students calculate power empirically, 
 to demonstrate the power of simulations.}
 \begin{problem}
 \label{prob:power1}%

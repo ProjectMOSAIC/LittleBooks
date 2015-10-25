@@ -108,14 +108,14 @@ expected <- total*p; expected
 
 We can also calculate the $\chi^2$ statistic manually, as a function of observed and expected values.
 
-\TeachingTip[-1cm]{We don't have students do  much if any manual calculations in our courses.}%
+\FoodForThought[-1cm]{We don't have students do  much if any manual calculations in our courses.}%
 \Rindex{sum()}%
 \Rindex{pchisq()}%
 <<gof2,tidy=FALSE>>=
 chisq <- sum((observed - expected)^2/(expected)); chisq
 1 - pchisq(chisq, df=2)
 @
-\TeachingTip[-2cm]{The \function{pchisq} function calculates the probability that a $\chi^2$ random variable with \function{df} degrees is freedom is less than or equal to a given value.  Here we calculate the complement to find the area to the right of the observed Chi-square statistic.}%
+\FoodForThought[-2cm]{The \function{pchisq} function calculates the probability that a $\chi^2$ random variable with \function{df} degrees is freedom is less than or equal to a given value.  Here we calculate the complement to find the area to the right of the observed Chi-square statistic.}%
 
 It may be helpful to consult a graph of the statistic, where the shaded area represents the value to the right of the observed value.
 
@@ -132,7 +132,7 @@ xchisq.test(observed, p=p)
 @
 \FoodForThought[-1.5cm]{\code{x} in \function{xchisq.test} stands for eXtra.}
 
-\TeachingTip{Objects in the workspace are listed in the {\sc Environment} tab in \RStudio.  If you want to clean up that listing, remove objects that are no longer needed with \function{rm}.}
+\FoodForThought{Objects in the workspace are listed in the {\sc Environment} tab in \RStudio.  If you want to clean up that listing, remove objects that are no longer needed with \function{rm}.}
 <<>>=
 # clean up variables no longer needed
 rm(observed, p, total, chisq)  

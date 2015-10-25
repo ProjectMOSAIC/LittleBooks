@@ -105,7 +105,7 @@ confidence intervals).
 mplot(lmnointeract, rows=-1, which=7)
 @
 
-\TeachingTip[-4cm]{Darker dots indicate regression coefficients where the 95\% confidence interval does not include the null hypothesis value of zero.}
+\FoodForThought[-4cm]{Darker dots indicate regression coefficients where the 95\% confidence interval does not include the null hypothesis value of zero.}
 
 \Caution{Be careful when fitting regression models with missing values (see also section \ref{sec:miss}).}
 
@@ -115,7 +115,7 @@ mplot(lmnointeract, rows=-1, which=7)
 
 It's straightforward to undertake residual diagnostics for this model.  We begin by adding the
 fitted values and residuals to the dataset.
-\TeachingTip[-1cm]{The \function{mplot} function can also be used to create these graphs.}
+\FoodForThought[-1cm]{The \function{mplot} function can also be used to create these graphs.}
 \Rindex{resid()}%
 \Rindex{fitted()}%
 \Rindex{abs()}%
