@@ -1,7 +1,6 @@
 
 \section{A dichotomous predictor: numerical and graphical summaries}
 Here we will compare the distributions of CESD scores by sex.
-
 The \function{mean()} function can be used to calculate the mean CESD score
 separately for males and females.
 \Rindex{mean()}%
@@ -63,7 +62,7 @@ We can repeat using the equal variance assumption.
 t.test(cesd ~ sex, var.equal=TRUE, data=HELPrct)
 @
 
-The groups can also be compared using the \function{lm()} function (also with an equal variance assumption).  The mosaic command \function{msummary()} provides a slightly terser version of the typical ooutput from \function{summary()}.
+The groups can also be compared using the \function{lm()} function (also with an equal variance assumption).  The mosaic command \function{msummary()} provides a slightly terser version of the typical output from \function{summary()}.
 \Rindex{msummary()}%
 \Rindex{summary()}%
 <<>>=

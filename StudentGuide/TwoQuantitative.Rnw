@@ -49,7 +49,7 @@ xyplot(Murder ~ Assault, panel=panel.labels,
 \section{Correlation}
 
 <<echo=FALSE>>=
-#detach(package:MASS)   # where did MASS come from?  (histogram in mosaic XX)
+detach(package:vcd)   # where did vcd come from?  
 @
 
 
@@ -78,7 +78,7 @@ A pairs plot (scatterplot matrix) can be calculated for each pair of a set of va
 \FoodForThought{The \pkg{GGally} package has support for more elaborate pairs plots.}
 \Rindex{splom()}%
 <<fig.height=3>>=
-splom(smallHELP)
+splom(smallHELP, cex=0.3)
 @
 
 \section{Simple linear regression}

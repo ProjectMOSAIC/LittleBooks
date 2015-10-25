@@ -269,5 +269,5 @@ called \texttt{trials}:
 <<bootint>>=
 trials <- do(1000) * mean(~ cesd, data=resample(female))
 head(trials, 3)
-qdata(c(.025, .975), ~ result, data=trials)
+qdata(c(.025, .975), ~ mean, data=trials)
 @

@@ -108,7 +108,6 @@ expected <- total*p; expected
 
 We can also calculate the $\chi^2$ statistic manually, as a function of observed and expected values.
 
-\FoodForThought[-1cm]{We don't have students do  much if any manual calculations in our courses.}%
 \Rindex{sum()}%
 \Rindex{pchisq()}%
 <<gof2,tidy=FALSE>>=

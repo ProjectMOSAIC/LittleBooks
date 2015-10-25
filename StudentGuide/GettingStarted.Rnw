@@ -91,11 +91,10 @@ Download and installation are pretty straightforward for Mac, PC, or Linux machi
 \section{Connecting to an RStudio server}
 
 \RStudio\ servers have been set up at a number of schools to facilitate cloud-based computing.  
-\FoodForThought{
-As examples, registered students at Amherst College can connect to \url{r.amherst.edu}, while
+\FoodForThought{Registered students at Amherst College can connect to \url{r.amherst.edu}, while
 Smith College students connect to \url{rstudio.smith.edu:8787}.
-Please contact your instructor for details about access to servers at other campuses.  
-More details about (free) academic licenses for \RStudio as well as setup instructions can be found at \url{http://www.rstudio.com/resources/faqs} under {\tt Academic}
+Other servers have been installed at many other institutions.
+More details about (free) academic licenses for \RStudio\ Server Pro as well as setup instructions can be found at \url{http://www.rstudio.com/resources/faqs} under the {\tt Academic} tab.
 }
 
 Once you connect to the server, you should see a login screen:
@@ -138,11 +137,10 @@ with multiple commands or to annotate example code for your students.
 You can save values to named variables for later reuse.
 \FoodForThought{It's probably best to settle on using 
 one or the other of the right-to-left assignment operators rather than to switch
-back and forth.  The authors have different preferences:
-two of us find the equal sign to be simpler for students and more 
-intuitive, while the other prefers the arrow operator because it
-represents visually what is happening in an assignment, because it
-can also be used in a left to right manner, and because it makes 
+back and forth.  We prefer the 
+arrow operator because it
+represents visually what is happening in an assignment 
+and because it makes 
 a clear distinction between the assignment operator, the use of \code{=}
 to provide values to arguments of functions, and the use of \code{==} to test
 for equality.}%
@@ -293,9 +291,9 @@ Plots created in the console are displayed in the \tab{Plots} tab.  For example,
 the following commands display the number of births in the United States for each day in 1978.
 <<message=FALSE>>=
 # this will make lattice graphics available to the session
-# as well as the Births dataset
-require(mosaic); require(mosaicData)
-xyplot( births ~ dayofyear, data=Births78)
+# as well as the Births78 dataset
+require(mosaic)
+xyplot(births ~ dayofyear, data=Births78)
 @
 From the \tab{Plots} tab, you can navigate to previous plots and also export plots 
 in various formats after interactively resizing them.

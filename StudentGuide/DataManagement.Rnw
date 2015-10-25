@@ -119,7 +119,7 @@ simple assignment using \function{row.names()}.
 \myindex{faithful dataset}%
 The \dataframe{faithful} data set (in the \pkg{datasets} package, which is always available)
 has very unfortunate names.
-\FoodForThought{It's a good idea to start teaching good practices for choice of variable names from day one.}
+\FoodForThought{It's a good idea to establish practices for choice of variable names from day one.}
 <<>>=
 names(faithful)
 @

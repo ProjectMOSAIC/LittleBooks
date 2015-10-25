@@ -71,10 +71,10 @@ Tables can be created from summary statistics using the \function{do} function.
 
 <<>>=
 HELPtable <- rbind(
-  do(40) * data.frame(sex="female", homeless="homeless"),
-  do(169) * data.frame(sex="male", homeless="homeless"),
-  do(67) * data.frame(sex="female", homeless="housed"),
-  do(177) * data.frame(sex="male", homeless="housed")
+  do(40)  * data.frame(sex="female", homeless="homeless"),
+  do(169) * data.frame(sex="male",   homeless="homeless"),
+  do(67)  * data.frame(sex="female", homeless="housed"),
+  do(177) * data.frame(sex="male",   homeless="housed")
 )
 tally(~ homeless + sex, data=HELPtable)
 @
