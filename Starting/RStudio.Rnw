@@ -328,7 +328,7 @@ xyplot( births ~ dayofyear, data=Births78)
 @
 will display the number of births in the United States for each day in 1978.
 From the \tab{Plots} tab, you can navigate to previous plots and also export plots 
-in various formats after interactively resizing them.
+in various formats or copy them to the cliboard after interactively resizing them.
 
 
 % this fixes bad spacing -- but I don't know why the spacing was bad
