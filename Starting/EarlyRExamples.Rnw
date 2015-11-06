@@ -356,12 +356,13 @@ We could simulate this by shuffling a deck of 10 cards and dealing five of them.
 
 \begin{widestuff}
 <<lady-five-cards>>=
-cards <- factor(c("M","M","M","M","M","T","T","T","T","T"))
+cards <- 
+  factor(c("M","M","M","M","M","T","T","T","T","T"))
 tally(~deal(cards, 5))
 @
 \end{widestuff}
 
-\marginnote[2cm]{The use of \function{factor} here lets \R\ 
+\marginnote[-1cm]{The use of \function{factor} here lets \R\ 
 know that the possible values are `M' and `T', even when only one
 or the other appears in a given random sample.}
 <<lady-five,cache=TRUE>>=
@@ -380,7 +381,8 @@ Later we will emphasize how \texttt{\~} can often be interpreted as ``depends on
 A scatter plot of births by day of year reveals some interesting patterns. Let's see how the number of births depends on the day of the year.
 
 \TeachingTip{The plot could also be made using \variable{date}.  For general 
-purposes, this is probably the better plot to make, but using \variable{dayofyear} forces students to think more about what the x-axis means.}
+purposes, this is probably the better plot to make, but using \variable{dayofyear} 
+forces students to think more about what the x-axis means.}
 <<births1,out.width=".8\\textwidth",fig.width=5>>=
 xyplot(births ~ dayofyear, data=Births78)
 @
@@ -390,6 +392,8 @@ When shown this image, students should readily be able to describe two patterns 
 Many students will be able to come up with conjectures about the peaks and valleys, but they often struggle to correctly interpret the parallel waves.  Having them make conjectures about this will quickly reveal whether they are correctly interpreting the plot.
 
 One conjecture about the parallel waves can be checked using the data at hand. If we display each day of the week with a different symbol or color, we see that there are fewer births on weekends -- likely because scheduled births are less likely on weekends.  There are a handful of exceptions which are readily seen to be holidays.
+\TeachingTip{The handful of exceptions are easier to see if we ``connect the dots''.
+See Section~\ref{sec:births-lines}.}
 
 \newpage
 
@@ -400,7 +404,7 @@ trellis.par.set(superpose.symbol=list(pch=16, alpha=.6, cex=.6))
 <<births3,fig.width=5,fig.height=3.0,tidy=FALSE>>=
 require(mosaicData)       # load mosaic data sets
 xyplot(births ~ dayofyear, data=Births78, 
-       groups=dayofyear%%7, 
+       groups=wday,
        auto.key=list(space="right")) 
 @
 
@@ -471,19 +475,9 @@ Is there a relationship between infestation and Wilt disease?
 The accompanying table shows a cross tabulation the number of plants that
 developed symptoms of Wilt disease.
 
-<<eval=TRUE, message=FALSE, tidy=FALSE>>=
-Mites <- data.frame(
-   mites = c(rep("Yes", 11), rep("No", 17), 
-             rep("Yes", 15), rep("No", 4)),
-   wilt = c(rep("Yes", 28), rep("No", 19))
-)
-@
-
-\newpage
-\vspace*{-10mm}
 
 <<eval=TRUE, message=FALSE, tidy=FALSE>>=
-tally(~ wilt + mites, Mites)
+tally(outcome ~ treatment, data = Mites, margins = TRUE)
 @
 \vspace*{-5mm}
 
@@ -567,11 +561,12 @@ simulations very quickly.
 	\centerline{\textbf{Computational Simulation}}
 
 <<eval=TRUE,tidy=FALSE,out.width="0.65\\textwidth",warning=FALSE,message=FALSE>>=
-tally(~ wilt + mites, data=Mites)
-X <- tally(~ wilt + mites, data=Mites)["No","No"]; X
+tally(outcome ~ treatment, data=Mites)
+X <- tally(outcome ~ treatment, data=Mites)[1,1]; X
 nullDist <- do(1000) * 
-    tally(~ wilt + shuffle(mites), data=Mites)["No","No"]
-histogram(~ result, data=nullDist, width=1, type="density", fit="normal") 
+    tally(outcome ~ shuffle(treatment), data=Mites)[1,1]
+histogram(~ result, data=nullDist, width=1, 
+          type="density", fit="normal", v=15) 
 @
 
 \end{boxedText}
