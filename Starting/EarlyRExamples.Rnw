@@ -392,14 +392,14 @@ When shown this image, students should readily be able to describe two patterns 
 Many students will be able to come up with conjectures about the peaks and valleys, but they often struggle to correctly interpret the parallel waves.  Having them make conjectures about this will quickly reveal whether they are correctly interpreting the plot.
 
 One conjecture about the parallel waves can be checked using the data at hand. If we display each day of the week with a different symbol or color, we see that there are fewer births on weekends -- likely because scheduled births are less likely on weekends.  There are a handful of exceptions which are readily seen to be holidays.
-\TeachingTip{The handful of exceptions are easier to see if we ``connect the dots''.
-See Section~\ref{sec:births-lines}.}
 
 \newpage
 
 <<births2,echo=FALSE,results="hide">>=
 trellis.par.set(superpose.symbol=list(pch=16, alpha=.6, cex=.6))
 @
+\TeachingTip{The handful of exceptions are easier to see if we ``connect the dots''.
+See Section~\ref{sec:births-lines}.}
 
 <<births3,fig.width=5,fig.height=3.0,tidy=FALSE>>=
 require(mosaicData)       # load mosaic data sets
