@@ -1384,16 +1384,16 @@ single state in one year by gathering the states columns.
 
 <<tidy=FALSE>>=
 require(tidyr)
-longTraffic <- 
+LongTraffic <- 
   traffic %>% 
   select(-cn.deaths) %>%
   gather(state, death.rate, ny:ri)
-head(longTraffic)
+head(LongTraffic)
 @
 
 This long format allows us to create a plot like this.
 <<>>=
-xyplot(death.rate ~ year, data = longTraffic, groups = toupper(state), 
+xyplot(death.rate ~ year, data = LongTraffic, groups = toupper(state), 
        type = "l", 
        auto.key = list(space = "right", lines = TRUE, points = FALSE))
 @
@@ -1405,11 +1405,19 @@ We can also reformat the other way, this time having all data for a given state 
 OLD <- options(width=100)
 @
 <<tidy=FALSE>>=
-stateTraffic <- 
-  longTraffic %>%
+StateTraffic <- 
+  LongTraffic %>%
   spread(state, death.rate)
-stateTraffic
+StateTraffic %>% head(3)
 @
+\noindnet
+We can create a plot using data in this format as well, but it involves a type of formula
+we have not seen before:
+<<>>=
+xyplot(ri + ny + cn + ma ~ year, data=StateTraffic, type = "l",
+       auto.key = list(space = "right", lines = TRUE, points = FALSE))
+@
+
 <<echo=FALSE>>=
 options(OLD)
 @
