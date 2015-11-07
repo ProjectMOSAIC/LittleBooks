@@ -5,8 +5,6 @@ set.seed(123)
 @
 
 
-
-
 \chapter[What Students Need to Know about R]{What Students Need to Know About R\\ 
 \& How to Teach It}
 \label{chap:RForStudents}
@@ -14,6 +12,9 @@ set.seed(123)
 
 In Chapter~\ref{chap:RStudio}, we give a brief orientation to the \RStudio\ IDE
 and what happens in each of its tabs and panels.
+\Pointer{Be sure to look at \emph{A Student's Guide to R} as well.  That little 
+book contains a brief summary of all the commands needed to perform the statistical
+analyses typically seen in the first two statistics courses.}%
 In Chapter~\ref{chap:Template}, we show how to make use of a common template
 for graphical summaries, numerical summaries, and modeling.
 In this chapter we cover some additional things that are important for 
@@ -41,6 +42,11 @@ This will generally determine which \R\ function to use.
 		This will determine the inputs to the function.  
 \end{enumerate}
 
+When your students preface their questions about \R{} by telling you
+what they want \R{} to do and what \R{} needs to know to that, then
+you know they have internalized these two questions.
+
+\newpage
 
 \section{Four Things to Know About \R}
 
@@ -208,10 +214,10 @@ install the mosaic package using
 \Rindex{install_github()}
 \Rindex{devtools}
 <<eval=FALSE>>=
-# if you haven't already installed this package
+# if you haven't already installed devtools
 install.packages("devtools")     
 require(devtools)
-install_github("mosaic", "rpruim")
+install_github("ProjectMOSAIC/mosaic")
 @
 
 Occasionally you might find a package of interest that is not available via
@@ -257,9 +263,15 @@ This will give you the documentation for the object you are interested in.
 \Rindex{apropos()}
 If you don't know the exact name of a function, you can give part of the name and 
 \R\ will find all functions that match.  Quotation marks are mandatory here.
+\Pointer{Notice that \code{tally} appears twice.  That is because there are two
+\code{tally()} functions, one in the \pkg{mosaic} package and one in the 
+\code{dplyr} package.  The \code{find()} function can be used to determine
+which package(s) a function belongs to.  In this case, the \pkg{mosaic} package
+takes care of navigating among the two versions of \code{tally()}.  In other cases,
+you may need to explicitly specify which package's function you want.}
 
 <<rs-apropos>>=
-apropos('tally')            # must include quotes.  single or double.
+apropos('tally')   # must include quotes. single or double.
 @
 
 \subsection{\texttt{??} and \texttt{help.search()}}
@@ -333,12 +345,11 @@ observational unit).
 \end{boxedText}
 \TeachingTip[-1cm]{To help students keep variables and data frames straight, and to
 make it easier to remember the names, we have adopted the convention that data
-frames in the \pkg{mosaic} package are capitalized and variables (usually) are
+frames in the \pkg{mosaicData} package are capitalized and variables (usually) are
 not.  This convention has worked well, and you may wish to adopt it for your
 data sets as well.}
 
-\pkg{Births78}
-The \dataframe{Births78} data frame contains three variables measured for each
+The \dataframe{Births78} data frame contains four variables measured for each
 day in 1978.  
 There are several ways we can get some idea about what is in the \dataframe{Births78} 
 data frame.
@@ -363,10 +374,17 @@ sample(Births78, 4)       # show 4 randomly selected rows
 summary(Births78)         # provide summary info about each variable
 @
 
+\newpage
+
+\Rindex{inspect()}
+<<rs-Births78-inspect>>=
+inspect(Births78)         # provide summary info about each variable
+@
+
 \Rindex{str}
 \begin{widestuff}
 <<rs-Births78-str>>=
-str(Births78)             # show the structure of the data frame
+str(Births78)             # show the structure of any R object
 @
 \end{widestuff}
 
@@ -379,8 +397,8 @@ In interactive mode, you can also try
 ?Births78
 @
 to access the documentation for the data set.  This is also available in the \tab{Help} tab.
-Finally, the \tab{Environment} tab provides a list of data in the workspace.  Clicking on
-one of the data sets brings up the same data viewer as 
+Finally, the \tab{Environment} tab provides a list of data in the global environment.  
+Clicking on one of the data sets brings up the same data viewer as 
 \Rindex{View()}
 <<rs-view1,eval=FALSE,tidy=FALSE>>=
 View(Births78)
@@ -389,8 +407,8 @@ View(Births78)
 \authNote{add pointer to fetchData()?}
 
 %\subsection{Getting at the Variables}
-We can gain access to a single variable in a data frame using the \code{\$} operator or, alternatively, using
-the \function{with()} function.
+We can gain access to a single variable in a data frame using the \code{\$} operator or, 
+alternatively, using the \function{with()} function.
 
 \Rindex{\$}
 \Rindex{with()}
@@ -457,7 +475,7 @@ data(package="mosaic")
 @
 
 Typically%
-\Note{This depends on the package.  Most package authors
+\Pointer{This depends on the package.  Most package authors
 set up their packages with ``lazy loading'' of data.  If they do not,
 then you need to use \function{data()} explicitly.}%
 you can use data sets by simply typing their names.  But if you have already
@@ -473,13 +491,13 @@ data(Births78)
 \Caution{If two packages include data sets with the same name, you may need to
 specify which package you want the data from with
 \code{
-data(Births78, package="mosaic")
+data(Births78, package="mosaicData")
 }
 }%
 There is no visible effect of this command, but the \dataframe{Births78} data frame
-has now been reloaded from the \pkg{mosaic} package and is ready for use.  Anything you
+has now been reloaded from the \pkg{mosaicData} package and is ready for use.  Anything you
 may have previously stored in a variable with this same name is replaced by
-the version of the data set stored with in the \pkg{mosaic} package.
+the version of the data set stored with in the \pkg{mosaicData} package.
 
 
 \subsection{Using Your Own Data}
@@ -502,20 +520,27 @@ The \pkg{mosaic} package includes a function called \function{read.file()} that 
 
 \myindex{Excel}
 Since most software packages can export to csv format, this has become a 
-sort of \emph{lingua franca} for moving data between packages.  Data in excel, for example,
+sort of \emph{lingua franca} for moving data between packages.  
+Data in excel, for example,
 can be exported as a csv file for subsequent reading in \R.%
 \Rindex{resample()}
-\Rindex{gdata}
-\Rindex{read.xls()}
-\Caution{There is a conflict between the \function{resample()} functions in
-\pkg{gdata} and \pkg{mosaic}.  If you want to use \pkg{mosaic}'s \function{resample()},
-be sure to load \pkg{mosaic} \emph{after} you load \pkg{gdata}.}
-If you have python installed on your system, you can also use
-\function{read.xls()} from the \pkg{gdata} package to read read directly from
-Excel files without this extra step.
+\Rindex{readxl}
+\Rindex{read_excel}
+\Rindex{haven}
+%\Caution{There is a conflict between the \function{resample()} functions in
+%\pkg{gdata} and \pkg{mosaic}.  If you want to use \pkg{mosaic}'s \function{resample()},
+%be sure to load \pkg{mosaic} \emph{after} you load \pkg{gdata}.}
+%If you have python installed on your system, you can also use
+%\function{read.xls()} from the \pkg{gdata} package to read read directly from
+%Excel files without this extra step.
+There is a danger in doing this, however, since some types of data don't export
+from Excel they way you might expect.  A safer way to read excel files is to use
+the \code{read_excel()} function from the \pkg{readxl} package.
+The \pkg{haven} package includes utilities for reading data in several other formats
+that are exported from other statistics packages like SAS and Stata.
 
-Each of these functions accepts a URL as well as a file name, which provides an
-easy way to distribute data via the Internet:
+Some of these data ingesting functions accept a URL as well as a file name, 
+which provides an easy way to distribute data via the Internet:
 \authNote{Should we change URLs to something at mosaic-web.org?}
 \Rindex{read.table()}
 \Rindex{head()}
@@ -524,7 +549,8 @@ easy way to distribute data via the Internet:
 
 \begin{widestuff}
 <<tidy=FALSE>>=
-births <- read.file('http://www.calvin.edu/~rpruim/data/births.txt', header=TRUE)
+births <- 
+  read.table('http://www.calvin.edu/~rpruim/data/births.txt', header=TRUE)
 head(births) # live births in the US each day of 1978.
 @
 \end{widestuff}
@@ -534,12 +560,13 @@ We can omit the \option{header=TRUE} if we use \function{read.file()}
 
 \begin{widestuff}
 <<tidy=FALSE>>=
-births <- read.file('http://www.calvin.edu/~rpruim/data/births.txt')
+births <- 
+  read.file('http://www.calvin.edu/~rpruim/data/births.txt')
 @
 \end{widestuff}
 
 %\Rstudio\ will help you import your own data.  To do so use the ``Import Dataset" 
-%button in the \tab{Workspace} tab.  You can load data from text files, from the web, or from
+%button in the \tab{Environment} tab.  You can load data from text files, from the web, or from
 %google spreadsheets.   
 
 \subsection{Importing Data in \RStudio}
@@ -550,10 +577,9 @@ they are there you can include them in posts, etc.}%
 The \RStudio\ interface provides some GUI tools for loading data.
 If you are using the \RStudio\ server, you will first need to upload the data
 to the server (in the \tab{Files} tab), and then import the data into your \R\ 
-session (in the \tab{Workspace} tab).%
+session (in the \tab{Environment} tab).%
 
 If you are running the desktop version, the upload step is not needed.
-
 
 \subsection{Working with Pretabulated Data}
 \InstructorNote[-1cm]{Even if you use \RStudio\ GUI for interactive work, you 
@@ -568,7 +594,8 @@ of \function{c()}, \function{rbind()} and \function{cbind()}:
 \Rindex{c()}
 \Rindex{cbind()}
 \Rindex{rbind()}
-\TeachingTip[2cm]{This is an important technique if you use a text book that presents pre-tabulated categorical data.}
+\TeachingTip[2cm]{This is an important technique if you use a text book that 
+presents pre-tabulated categorical data.}
 
 <<rs-make-table>>=
 myrace <- c( NW=67, W=467 )  # c for combine or concatenate
@@ -584,7 +611,7 @@ mycrosstable <- rbind(
 			  )
 mycrosstable
 @
-
+\noindent
 Replacing \function{rbind()} with \function{cbind()} will allow you to give the data column-wise instead.
 \TeachingTip[-1cm]{If plotting pre-tabulated categorical data is important, you probably want to provide your students with a wrapper function to simplify all this.  We generally avoid this situation by provided the data in raw format or by presenting an analysing the data in tables without using graphical summaries.}
 
@@ -616,6 +643,40 @@ already tabulated in this way, but first we need yet one more transformation.
 <<>>=
 head(as.data.frame(mycrosstable))
 @
+
+\begin{problem}
+The table below is from a study of nighttime lighting in infancy and 
+eyesight (later in life).  
+% latex table generated in R 2.12.1 by xtable 1.5-6 package
+% Fri Feb  4 15:46:48 2011
+\begin{center}
+\begin{tabular}{rrrr}
+  \hline
+ & no myopia & myopia & high myopia \\ 
+  \hline
+darkness & 155 & 15 & 2 \\ 
+  nightlight & 153 & 72 & 7 \\ 
+  full light & 34 & 36 & 3 \\ 
+   \hline
+\end{tabular}
+\end{center}
+
+\begin{enumerate}
+%\item
+%Do you think this was an experiment or an observational study?  Why?
+\item
+Recreate the table in \R. %Copy and paste the results into your Word document.
+\item
+What percent of the subjects slept with a nightlight as infants?
+
+There are several ways to do this.  You could use \R\ as a calculator to do the arithmetic.
+You can save some typing if you use the function \function{tally()}.  See
+\code{?tally} for documentation.
+%If you just want row and column totals added to the table, see \verb!mar_table()!
+%in the \verb!vcd! package.
+\item Create a graphical representation of the data.  What does this plot reveal?
+\end{enumerate}
+\end{problem}
 
 \newpage
 
@@ -722,6 +783,8 @@ str(iris)                         # show the structure of the iris data set
 mydata <- read.table("file.txt")  # read data from a text file
 mydata <- read.csv("file.csv")    # read data from a csv file
 mydata <- read.file("file.txt")   # read data from a text or csv file
+require(readxl)
+mydata <- read_excel("file.xlsx") # read data from an Excel file
 @
 
 \end{widestuff}
