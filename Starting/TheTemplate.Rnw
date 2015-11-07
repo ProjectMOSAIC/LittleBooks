@@ -1,5 +1,5 @@
 <<echo=FALSE,include=FALSE>>=
-opts_chunk$set( fig.path="figures/RForStudents-" ) 
+opts_chunk$set(fig.path="figures/RForStudents-") 
 set_parent('Master-Starting.Rnw')
 require(mosaic)
 require(mosaicData)
@@ -96,11 +96,11 @@ will also emphasize its importance.}
 The template has a bit more flexibility than we have indicated.
 Sometimes the \code{y} is not needed:
 <<eval=FALSE>>=
-goal ( ~ x, data=mydata )
+goal( ~ x, data=mydata )
 @
 The formula may also include a third part
 <<eval=FALSE>>=
-goal ( y ~ x | z , data=mydata )
+goal( y ~ x | z , data=mydata )
 @
 We can unify all of these into one form:
 <<eval=FALSE>>=
@@ -127,7 +127,7 @@ This is the goal.
 
 \section{Graphical summaries of data}
 
-\TeachingTip[-2cm]{We recommend showing some plots on the first day and having student
+\TeachingTip[-2cm]{We recommend showing some plots on the first day and having students
 generate their own graphs before the end of the first week.}
 %
 Graphical summaries are an important and eye-catching way to demonstrate the 
@@ -142,7 +142,8 @@ data, to think about distributions, and to pose statistical questions.
 \Rindex{gplot2}
 \Rindex{lattice}
 \Rindex{ggvis}
-\Pointer[-1cm]{We are often asked about the other graphics systems, especially \pkg{ggplot2} graphics.  In our experience, \pkg{lattice} makes it easier for beginners to create a wide variety of more or less ``standard'' plots -- including the ability to represent multiple variables at once.  \pkg{ggplot2}, on the other hand, makes it easier to generate custom plots or to combine plot components. Each has their place, and we use both systems.  But for beginners, we typically emphasize \pkg{lattice}.
+\Pointer[-1cm]{We are often asked about the other graphics systems, especially \pkg{ggplot2} graphics.  In our experience, \pkg{lattice} makes it easier for beginners to create a wide variety of more or less ``standard'' plots -- including the ability to represent multiple variables at once.  \pkg{ggplot2}, on the other hand, makes it easier to generate custom plots or to combine plot components. Each has its place, and we use both systems.  
+But for beginners, we typically emphasize \pkg{lattice}.
 
 The new \pkg{ggvis} package, by the same author as \pkg{ggplot2} adds interactivity and speed to the strengths of \pkg{ggplot2}.}
 %
@@ -167,7 +168,7 @@ number of births in the United States for each day in 1978.
 \Rindex{xyplot()}
 
 <<scatter-births, echo=FALSE>>=
-xyplot( births ~ date, data=Births78) 
+xyplot(births ~ date, data=Births78) 
 @
 
 \TeachingTip[-2cm]{This plot can make an interesting discussion starter
@@ -211,17 +212,22 @@ Now let's create this plot, which shows boxplots
 of age for each of three substances abused by participants in the 
 \emph{Health Evaluation and Linkage to Primary Care} randomized
 clinical trial.
-\Pointer{You can find out more about the \dataframe{HELPrct} data set using the help command: \code{?HELPrct}.}
+\Pointer{You can find out more about the \dataframe{HELPrct} data set using the help command: 
+\code{?HELPrct}.  This will provide you with the codebook for the data and links to the 
+original source.
+
+There are also a number of functions that allow us to inspect the contents of a data frame.
+Among our favorites are \code{inspect()}, \code{glimpse()}, and \code{head()}.}
 
 \Rindex{HELPrct}
 <<bwplot-example1, echo=FALSE>>=
-bwplot( age ~ substance, data=HELPrct)
+bwplot(age ~ substance, data=HELPrct)
 @
 
 The data we need are in the \dataframe{HELPrct} data frame, from which we want to display variables \variable{age} and \variable{substance} on the $y$- and $x$-axes.  According to our template, the command to create this plot has the form
 
 <<eval=FALSE>>=
-goal( age ~ substance, data=HELPrct )
+goal(age ~ substance, data=HELPrct)
 @
 The only additional information we need is the name of the function that creates boxplots.  That function is \function{bwplot()}. So we can create the plot with
 <<eval=FALSE>>=
@@ -231,7 +237,7 @@ The only additional information we need is the name of the function that creates
 To make the boxplots horizontal instead of vertical, reverse the roles of \variable{age} and \variable{substance}:
 
 <<>>=
-bwplot( substance ~ age, data=HELPrct )
+bwplot(substance ~ age, data=HELPrct)
 @
 
 \Pointer{You may be wondering about plots for two categorical variables.
@@ -292,13 +298,16 @@ horizontal bar graphs are produced using \option{horizontal = TRUE}.
 \Rindex{barchart()}
 \Pointer{The \function{bargraph()} function is not in the \pkg{lattice} package but in the \pkg{mosaic} package.  The \pkg{lattice} function \function{barchart()} creates bar graphs from \emph{summarized} data; \pkg{bargraph()} takes care of creating this summary data and then uses \function{barchart()} to create the plot.}
 <<out.width=".47\\textwidth">>=
-bargraph( ~ substance, data=HELPrct ) 
-bargraph( ~ substance, data=HELPrct, horizontal=TRUE ) 
+bargraph( ~ substance, data=HELPrct) 
+bargraph( ~ substance, data=HELPrct, horizontal=TRUE) 
 @
 
 
 \subsection{A palette of plots}
 \label{sec:paletteOfPlots}
+\Pointer{If you are unfamiliar with some of the plots, like ashplots and frequency
+polygons, keep reading.  We have more to say about them shortly.}
+
 The power of the template is that we can now make many different kinds of plots
 by mimicking the examples above but replacing the goal.
 
@@ -306,18 +315,23 @@ by mimicking the examples above but replacing the goal.
 \Rindex{freqpolygon()}
 \Rindex{dotPlot()}
 \Rindex{qqmath()}
+\Rindex{ashplot()}
 <<one-var-plots, eval=FALSE, tidy=FALSE, out.width=".3\\textwidth">>=
-  histogram( ~age, data=HELPrct ) 
-densityplot( ~age, data=HELPrct ) 
-freqpolygon( ~age, data=HELPrct ) 
-    dotPlot( ~age, data=HELPrct, width=1 ) 
-     bwplot( ~age, data=HELPrct ) 
-     qqmath( ~age, data=HELPrct ) 
+  histogram( ~ age, data=HELPrct) 
+freqpolygon( ~ age, data=HELPrct) 
+    dotPlot( ~ age, data=HELPrct, width=1) 
+    ashplot( ~ age, data=HELPrct, width=1) 
+@
+<<one-var-plots-contd, eval=FALSE, tidy=FALSE, out.width=".3\\textwidth">>=
+densityplot( ~ age, data=HELPrct) 
+     bwplot( ~ age, data=HELPrct) 
+     qqmath( ~ age, data=HELPrct) 
 @
 
 \begin{widestuff}
-<<echo=FALSE, out.width=".3\\textwidth">>=
+<<echo=FALSE, out.width=".45\\textwidth">>=
 <<one-var-plots>>
+<<one-var-plots-contd>>
 @
 \end{widestuff}
 
@@ -328,7 +342,7 @@ function for creating pie charts.  This is no great loss
 since it is generally harder to make comparisons using a pie 
 chart.}
 <<>>=
-   bargraph( ~sex, data=HELPrct )  # categorical variable
+   bargraph( ~ sex, data=HELPrct)  # categorical variable
 @
 
 
@@ -336,10 +350,10 @@ chart.}
 
 \Rindex{plotPoints()}
 <<two-var-plots, eval=FALSE, tidy=FALSE>>=
-    xyplot( width ~ length, data=KidsFeet )  # 2 quantitative vars
-plotPoints( width ~ length, data=KidsFeet )  # mosaic alternative
-   bwplot( length ~ sex,    data=KidsFeet )  # 1 cat; 1 quant
-      bwplot( sex ~ length, data=KidsFeet )  # reverse roles
+    xyplot(width ~ length, data=KidsFeet)  # 2 quantitative vars
+plotPoints(width ~ length, data=KidsFeet)  # mosaic alternative
+   bwplot(length ~ sex,    data=KidsFeet)  # 1 cat; 1 quant
+      bwplot(sex ~ length, data=KidsFeet)  # reverse roles
 @
 <<echo=FALSE, out.width=".47\\textwidth">>=
 <<two-var-plots>>
@@ -356,17 +370,17 @@ for larger data sets.
 \Rindex{dotplot()}
 \Rindex{stripplot()}
 <<out.width=".47\\textwidth">>=
-stripplot( ~length, data=KidsFeet )
-  dotplot( ~length, data=KidsFeet )
+stripplot( ~ length, data=KidsFeet)
+  dotplot( ~ length, data=KidsFeet)
 @
 \TeachingTip{We generally don't introduce \function{dotplot()} and
 \function{stripplot()} to students but simply use \function{xyplot()}
 or \function{plotPoints()}.} These and \function{xyplot()} or \function{plotPoints()} can also be used with one quantitative variable and one categorical variable.
 <<tidy=FALSE, out.width=".42\\textwidth">>=
-    xyplot( sex ~ length, data=KidsFeet )
-plotPoints( sex ~ length, data=KidsFeet )
- stripplot( sex ~ length, data=KidsFeet )
-   dotplot( sex ~ length, data=KidsFeet )
+    xyplot(sex ~ length, data=KidsFeet)
+plotPoints(sex ~ length, data=KidsFeet)
+ stripplot(sex ~ length, data=KidsFeet)
+   dotplot(sex ~ length, data=KidsFeet)
 @
 
 \subsection{Groups and sub-plots}
@@ -411,12 +425,12 @@ gives us the numerical summary we desire.
 
 \Rindex{mean()}
 <<>>=
-histogram( ~ age, data=HELPrct )
-     mean( ~ age, data=HELPrct )
+histogram( ~ age, data=HELPrct)
+     mean( ~ age, data=HELPrct)
 @
 
 \Pointer[-2cm]{To see the full list of these formula-aware
-numerical summary functions, use \code{help(favstats).} }
+numerical summary functions, use \code{help(favstats)}.}
 
 \Rindex{sd()}
 \Rindex{var()}
@@ -438,7 +452,7 @@ numerical summaries, including
 In addition, the \function{favstats()} function computes many of 
 our favorite statistics all at once:
 <<>>=
-favstats( ~ age, data=HELPrct )
+favstats( ~ age, data=HELPrct)
 @
 \Rindex{tally()}
 The \function{tally()} function can be used to count cases.
@@ -461,29 +475,29 @@ in three ways.  Each of these computes the same value.
 
 <<>>=
 # age dependant on substance
-sd(   age ~ substance, data=HELPrct )
+sd(   age ~ substance, data=HELPrct)
 # age separately for each substance
-sd( ~ age | substance, data=HELPrct )
+sd( ~ age | substance, data=HELPrct)
 # age grouped by substance
-sd( ~ age, groups=substance, data=HELPrct )
+sd( ~ age, groups=substance, data=HELPrct)
 @
 The \function{favstats()} function can compute several numerical summaries for
 each subset
 <<>>=
-favstats( age ~ substance, data=HELPrct )
+favstats(age ~ substance, data=HELPrct)
 @
 
 Similarly, we can create two-way tables that display either as 
 counts or proportions.
 
 <<>>=
-tally( sex ~ substance, data=HELPrct )
-tally( ~ sex + substance, data=HELPrct )
+tally(sex ~ substance, data=HELPrct)
+tally( ~ sex + substance, data=HELPrct)
 @
 Marginal totals can be added with \option{margins=TRUE}
 <<>>=
-tally( sex ~ substance, data=HELPrct, margins=TRUE )
-tally( ~ sex + substance, data=HELPrct, margins=TRUE )
+tally(sex ~ substance, data=HELPrct, margins=TRUE)
+tally( ~ sex + substance, data=HELPrct, margins=TRUE)
 @
 
 \section{Linear models}
@@ -505,8 +519,8 @@ For example, suppose we want to know how the width of kids' feet depends on the
 length of the their feet.  We could make a scatter plot
 and we can construct a linear model using the same template
 <<>>=
-xyplot( width ~ length, data=KidsFeet )
-lm( width ~ length, data=KidsFeet )
+xyplot(width ~ length, data=KidsFeet)
+    lm(width ~ length, data=KidsFeet)
 @
 We'll have more to say about modeling elsewhere.  For now, the important point is 
 that our use of the template for graphing and numerical summaries prepares students 
@@ -521,11 +535,11 @@ tests for means and proportions.  The \pkg{mosaic} package brings these into
 the template as well.
 \Pointer{For a more thorough treatment of how to use \R\ for 
 the core topics of a traditional introductory statistics course,
-see \emph{A Compendium of Commands to Teach Statistics with R}.}%
+see \emph{A Student's Guide to R}.}%
 \authNote{We could use better examples here.  -- rjp 2014-06-21}%
 \Rindex{t.test()}
 <<tidy=FALSE>>=
-t.test( ~ length, data=KidsFeet )
+t.test( ~ length, data=KidsFeet)
 @
 The output from these functions also includes more than we really need.
 The \pkg{mosaic} package provides \function{pval()} and \function{confint()}
@@ -535,8 +549,8 @@ rather than in \function{chisq.test()}.}
 \Rindex{pval()}
 \Rindex{confint()}
 <<>>=
-pval( t.test( ~ length, data=KidsFeet ) )
-confint( t.test( ~ length, data=KidsFeet ) )
+pval(t.test( ~ length, data=KidsFeet))
+confint(t.test( ~ length, data=KidsFeet))
 @
 \Rindex{binom.test()}
 \Rindex{prop.test()}
@@ -545,16 +559,16 @@ confint( t.test( ~ length, data=KidsFeet ) )
 OLD <- options(width=100)
 @
 <<>>=
-confint(t.test( length ~ sex, data=KidsFeet ))
+confint(t.test(length ~ sex, data=KidsFeet))
 @
 <<>>=
 # using Binomial distribution
-confint(binom.test( ~ sex, data=HELPrct ))  
+confint(binom.test( ~ sex, data=HELPrct))  
 @
 <<>>=
 # using normal approximation to the binomial distribution
-confint(prop.test( ~ sex, data=HELPrct ))    
-confint(prop.test( sex ~ homeless, data=HELPrct ))
+confint(prop.test( ~ sex, data=HELPrct))    
+confint(prop.test(sex ~ homeless, data=HELPrct))
 @
 <<echo=FALSE>>=
 options(OLD)
@@ -592,6 +606,7 @@ students ask or an analysis demands them.
 
 
 \subsection{Example: Number of births per day}
+\label{sec:births-lines}
 We have seen the \dataframe{Births78} data set in
 Section~\ref{sec:Births78Intro}.  The plots below take
 advantage of additional arguments to improve the plot.
@@ -616,7 +631,7 @@ From this we can be quite certain that 1978 began on a Sunday.
 \myindex{titles (plots)}
 \Rindex{par.settings}
 <<fig.width=4, tidy=FALSE>>=
-xyplot( births ~ date, data=Births78,  
+xyplot(births ~ date, data=Births78,  
         groups=dayofyear %% 7, 
         auto.key=list(columns=4),
         main="Number of US births each day in 1978",
@@ -653,8 +668,8 @@ Here we have used
 The following plot uses lines instead of points which makes it easier to
 locate the handful of unusual observations.
 <<fig.width=4, tidy=FALSE>>=
-xyplot( births ~ date, data=Births78,  
-  groups=dayofyear %% 7, type='l',
+xyplot(births ~ date, data=Births78,  
+  groups=wday, type='l',
   main="Number of US births each day in 1978",
   auto.key=list(columns=4, lines=TRUE, points=FALSE),
   xlab="day of year",
@@ -695,8 +710,8 @@ show.settings()
 Themes can also be assigned to \option{par.settings} if we want them to
 affect only one plot:
 <<fig.width=4, tidy=FALSE>>=
-xyplot( births ~ date, data=Births78,  
-  groups=dayofyear %% 7, type='l',
+xyplot(births ~ date, data=Births78,  
+  groups=wday, type='l',
   main="Number of US births each day in 1978",
   auto.key=list(columns=4, lines=TRUE, points=FALSE),
   par.settings=theme.mosaic(bw=TRUE),
@@ -776,7 +791,7 @@ Numerically, the data are being summarized and represented in exactly the same w
 \Rindex{ladd()}
 <<echo=FALSE>>=
 histogram( ~ duration, data=geyser, n=15, col="lightskyblue")
-ladd( panel.freqpolygon(geyser$duration, n=15) )
+ladd(panel.freqpolygon(geyser$duration, n=15))
 @
 This may give a more accurate visual representation in some 
 situations (since the distribution can ``taper off'' better).  More importantly, it makes 
@@ -790,6 +805,24 @@ freqpolygon( ~ Sepal.Length, data=iris,
 @
 
 %\medskip
+
+\subsection{ASH plots: Average Shifted Histograms}
+\Rindex{ashplot()}
+
+Histograms are sensitive to the choice of bin widths and edges (or centers).  One way to reduce
+this dependency is called an Average Shifted Histogram or ASH plot.  The height of an ASH plot
+is the average height over all histograms of a fixed bin width.  If you are familiar with
+density plots (discussed in the next section), ASH plots will remind you them, but they are 
+far easier to explain to beginners.
+
+<<>>=
+ashplot( ~ Sepal.Length, data=iris, groups=Species, 
+         width = 1.0, main = "width = 1.0")
+ashplot( ~ Sepal.Length, data=iris, groups=Species, 
+         width = 0.25, main = "width = 0.25")
+@
+
+
 \subsection{Density plots: \texttt{densityplot()}}
 \Rindex{densityplot()}
 
@@ -807,9 +840,9 @@ Higher values smooth more heavily; lower values, less so.
 
 <<tidy=FALSE, out.width=".47\\textwidth">>=
 densityplot( ~ Sepal.Length, data=iris, groups=Species, 
-             adjust=3, main="adjust=3")
+             adjust=3, main="adjust=2")
 densityplot( ~ Sepal.Length, data=iris, groups=Species, 
-             adjust=1/3, main="adjust=1/3")
+             adjust=1/3, main="adjust=1/2")
 @
 
 \subsection{The Density Scale}
@@ -835,7 +868,7 @@ The density scale is chosen so that the constant of proportionality is 1, in whi
 \TeachingTip[-1.5cm]{Create some histograms or frequency polygons with a density scale and see if your students can determine what the scale is.  Choosing convenient bin widths (but not 1) and comparing plots with different bin widths and different scale types can help them reach a good conjecture about the density scale.}
 This is the only scale available for \function{densityplot()} and is the most suitable scale if one is primarily interested in the \emph{shape} of the distribution.  The vertical scale is affected very little by the choice of bin widths or \option{adjust} multipliers. It is also the appropriate scale to use when overlaying a density function onto a histogram, something the \pkg{mosaic} package makes easy to do.
 <<fig.width=6,out.width="\\textwidth", tidy=FALSE>>=
-histogram( ~ Sepal.Length | Species, data=iris, fit="normal" )
+histogram( ~ Sepal.Length | Species, data=iris, fit="normal")
 @
 
 The other scales are primarily of use when one wants to be able to read off bin counts or percents from the plot.
@@ -877,7 +910,7 @@ Suppose we want to display the following table (based on data from the
 \myindex{Current Population Survey|see{\texttt{CPS85}}}
 \Rindex{tally()}
 <<>>=
-tally( ~sector, data=CPS85 )
+tally( ~sector, data=CPS85)
 @
 The \pkg{mosaic} function \function{bargraph()} can 
 display these tables as bar graphs, but there isn't enough room for the labels.
@@ -987,39 +1020,7 @@ discussion of what you can learn from it.
 \end{enumerate}
 \end{problem}
 
-\begin{problem}
-The table below is from a study of nighttime lighting in infancy and 
-eyesight (later in life).  
-% latex table generated in R 2.12.1 by xtable 1.5-6 package
-% Fri Feb  4 15:46:48 2011
-\begin{center}
-\begin{tabular}{rrrr}
-  \hline
- & no myopia & myopia & high myopia \\ 
-  \hline
-darkness & 155 & 15 & 2 \\ 
-  nightlight & 153 & 72 & 7 \\ 
-  full light & 34 & 36 & 3 \\ 
-   \hline
-\end{tabular}
-\end{center}
 
-\begin{enumerate}
-%\item
-%Do you think this was an experiment or an observational study?  Why?
-\item
-Recreate the table in \R. %Copy and paste the results into your Word document.
-\item
-What percent of the subjects slept with a nightlight as infants?
-
-There are several ways to do this.  You could use \R\ as a calculator to do the arithmetic.
-You can save some typing if you use the function \function{tally()}.  See
-\code{?tally} for documentation.
-%If you just want row and column totals added to the table, see \verb!mar_table()!
-%in the \verb!vcd! package.
-\item Create a graphical representation of the data.  What does this plot reveal?
-\end{enumerate}
-\end{problem}
 
 \section{Saving Your Plots}
 
@@ -1036,9 +1037,13 @@ Go to your document (e.g. Microsoft Word) and paste in the image.
 \item
 Resize or reposition your image as needed.
 \end{enumerate}
-\Rindex{pdf()}
-The \function{pdf()} function can be used to save plots as pdf files.  See 
-the documentation of this function for details and links to functions that 
+Altenatively, a plot can be exported to a file.
+
+\Rindex{pdf()}%
+\R{} also provides function like \function{pdf()} 
+and \function{png()} that can be used to save plots in a 
+varity of formats.
+See the documentation of these functions for details and links to functions that 
 can be used to save graphics in other file formats.
 
 \section{\texttt{mplot()}}
@@ -1093,6 +1098,7 @@ x <- 1:10
 \Rindex{histogram()}
 \Rindex{dotPlot()}
 \Rindex{freqpolygon()}
+\Rindex{ashplot()}
 \Rindex{densityplot()}
 \Rindex{qqmath()}
 \Rindex{bwplot()}
@@ -1101,26 +1107,26 @@ x <- 1:10
 \Rindex{mplot()}
 \myindex{quantile-quantile plots|see{\texttt{qqmath}}}
 <<tidy=FALSE,results='hide',fig.keep="none",warning=FALSE>>=
-require(mosaic)                                # load the mosaic package
-require(mosaicData)                            # load the mosaic data sets
+require(mosaic)                           # load the mosaic package
+require(mosaicData)                       # load the mosaic data sets
 
-tally( ~ sector, data=CPS85 )                  # frequency table
-tally( ~ sector + race, data=CPS85 )           # cross tabulation of sector by race   
-mean( ~ age, data = HELPrct )                  # mean age of HELPrct subjects
-mean( ~ age | sex, data = HELPrct )            # mean age of male and female HELPrct subjects
-mean( age ~ sex, data = HELPrct )              # mean age of male and female HELPrct subjects
-median(x); var(x); sd(x);                      # more numerical summaries
-quantile(x); sum(x); cumsum(x)                 # still more summaries
-favstats( ~ Sepal.Length, data=iris )          # compute favorite numerical summaries
+tally( ~ sector, data=CPS85)              # frequency table
+tally( ~ sector + race, data=CPS85)       # cross tabulation of sector by race   
+mean( ~ age, data = HELPrct)              # mean age of HELPrct subjects
+mean( ~ age | sex, data = HELPrct)        # mean age of male and female subjects
+mean(age ~ sex, data = HELPrct)           # mean age of male and female subjects
+median(x); var(x); sd(x);                 # more numerical summaries
+quantile(x); sum(x); cumsum(x)            # still more summaries
+favstats( ~ Sepal.Length, data=iris)      # compute favorite numerical summaries
 
-histogram( ~ Sepal.Length | Species, data=iris )           # histograms (with extra features)
-dotPlot( ~ Sepal.Length | Species, data=iris )             # dot plots for each species
-freqpolygon( ~ Sepal.Length, groups = Species, data=iris ) # overlaid frequency polygons
-densityplot( ~ Sepal.Length, groups = Species, data=iris ) # overlaid densityplots
-qqmath( ~ age | sex, data=CPS85 )                          # quantile-quantile plots
-bwplot( Sepal.Length ~ Species, data = iris )              # side-by-side boxplots
-xyplot( Sepal.Length ~ Sepal.Width | Species, data=iris )  # scatter plots for each species
-bargraph( ~ sector, data=CPS85 )                           # bar graph
+histogram( ~ Sepal.Length | Species, data=iris)     # histograms (with extra features)
+dotPlot( ~ Sepal.Length | Species, data=iris)       # dot plots for each species
+freqpolygon( ~ Sepal.Length, groups = Species, data=iris) # overlaid freq. polygons
+densityplot( ~ Sepal.Length, groups = Species, data=iris) # overlaid densityplots
+qqmath( ~ age | sex, data=CPS85)                          # quantile-quantile plots
+bwplot(Sepal.Length ~ Species, data = iris)               # side-by-side boxplots
+xyplot(Sepal.Length ~ Sepal.Width | Species, data=iris)   # side-by-side scatter plots
+bargraph( ~ sector, data=CPS85)                           # bar graph
 @
 <<eval=FALSE>>=
 mplot(HELPrct)                         # interactive plot (RStudio only)
