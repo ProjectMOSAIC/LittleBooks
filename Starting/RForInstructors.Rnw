@@ -1391,6 +1391,13 @@ longTraffic <-
 head(longTraffic)
 @
 
+This long format allows us to create a plot like this.
+<<>>=
+xyplot(death.rate ~ year, data = longTraffic, groups = toupper(state), 
+       type = "l", 
+       auto.key = list(space = "right", lines = TRUE, points = FALSE))
+@
+
 We can also reformat the other way, this time having all data for a given state form a row in the data frame.
 
 \begin{widestuff}
