@@ -766,7 +766,7 @@ Here is a brief summary of the commands introduced in this chapter.
 \Rindex{read.table()}
 \Rindex{read.csv()}
 \Rindex{read.file()}
-<<tidy=FALSE,results='hide',fig.keep="none">>=
+<<tidy=FALSE,results='hide',fig.keep="none", message = FALSE>>=
 require(mosaic)                   # load the mosaic package
 require(mosaicData)               # load the mosaic data sets
 answer <- 42                      # store the number 42 in a variable named answer
