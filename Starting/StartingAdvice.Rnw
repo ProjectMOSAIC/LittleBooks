@@ -15,15 +15,15 @@ Learning \R\ is a gradual process, and getting off to a good start goes a long w
 ensuring success.
 In this chapter we discuss some strategies and tactics for getting started teaching
 statistics with \R.  
-In subsequent chapters we provide more details about the (relatively few) \R\ 
 \marginnote{The \pkg{mosaic} package includes a vignette outlining a possible
-minimalist set of \R\ commands for teaching an introductory course.}
+minimalist set of \R\ commands for teaching an introductory course.}%
+In subsequent chapters we provide more details about the (relatively few) \R{} 
 commands that students need to know and some additional information about \R\ 
 that is useful for instructors to know.  Along the way we present some of our favorite 
 examples that highlight the use of \R, including some that can be used very early
 in a course.
 
-\authNote{add a pointer to the 1 page handout somewhere?}
+%\authNote{add a pointer to the 1 page handout somewhere?}
 
 
 \section{Strategies}
@@ -162,12 +162,13 @@ Increased focus on concepts rather than calculations
 Get your students to think that using the computer is just part of how statistics is done, rather than an add-on.   
 
 \item 
+Keep the message as simple as possible and keep the commands accordingly simple.  
 \BlankNote{It is 
 important not to get too complicated too quickly.  Early on, we typically use default
 settings and focus on the main ideas.  Later, we may introduce fancier options
 as students become comfortable with simpler things (and often demand more).}
-Keep the message as simple as possible and keep the commands
-  accordingly simple.  Particularly when doing graphics, beware of distracting
+
+Particularly when doing graphics, beware of distracting
   students with the sometimes intricate details of beautifying for
   publication.  If the default behavior is good enough, go with it.
 
