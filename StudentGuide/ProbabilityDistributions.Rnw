@@ -84,6 +84,23 @@ plotDist("binom", size=100, prob=.3, col="black", lwd=3, pch=16)
 plotDist("norm", mean=30, sd=sqrt(100 * .3 * .7), 
   groups = abs(x - 30) > 6 , type="h", under=TRUE)
 @
+
+The \function{plotFun()} function can be used to plot an arbitrary 
+function (in this case an exponential random variable).
+
+\Rindex{makeFun()}%
+\Rindex{rexp()}%
+\Rindex{plotFun()}%
+\Rindex{histogram()}%
+\Rindex{width option}%
+\Rindex{center option}%
+\Rindex{add option}%
+<<fig.keep="last">>=
+f <- makeFun(2*exp(-2*x) ~ x)   # exponential with rate parameter 2
+x <- rexp(1000, rate=2)
+histogram(~ x, width=0.2, center=0.1)
+plotFun(f(x) ~ x, col="red", lwd=2, add=TRUE)
+@
 \begin{problem}
 Generate a sample of 1000 exponential random variables with rate parameter
 equal to 2, and calculate the mean of those variables.

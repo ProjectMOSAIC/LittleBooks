@@ -25,10 +25,22 @@ summarise (reduce variables to values), and
 group by (collapse groups).
 See \url{http://www.amherst.edu/~nhorton/precursors} for more details and resources.}
 
+\section{Inspecting dataframes}
+\myindex{inspecting dataframes}%
+\myindex{dataframes!inspecting}%
+The \function{inspect()} function can be helpful in describing the variables in a dataframe (the name for a dataset in \R).
+\Rindex{inspect()}%
+<<>>=
+inspect(iris)
+@
+The \dataframe{iris} dataframe includes one categorical and four quantitative variables.
+
+
 \section{Adding new variables to a dataframe}
 \myindex{dataframe}%
-We can add additional variables to an existing dataframe (name for a dataset in \R) using \function{mutate()}.  But first we create a smaller version of the \dataframe{iris} dataframe.
+We can add additional variables to an existing dataframe using \function{mutate()}.  But first we create a smaller version of the \dataframe{iris} dataframe.
 
+\Rindex{select()}%
 \myindex{iris dataset}%
 <<mr-adding-variable2>>=
 irisSmall <- select(iris, Species, Sepal.Length)
@@ -154,7 +166,8 @@ since the previous eruption.
 
 \section{Creating subsets of observations}
 \myindex{creating subsets}%
-\myindex{subsets of dataframes}%
+\myindex{subsetting dataframes}%
+\myindex{dataframes!subsetting}%
 \label{sec:subsets}
 We can also use \function{filter()} to reduce the size of a dataframe by selecting 
 only certain rows.
@@ -171,6 +184,7 @@ xyplot( time.til.next ~ duration, data=faithfulLong )
 
 \section{Sorting dataframes}
 \myindex{sorting dataframes}%
+\myindex{dataframes!sorting}%
 \Rindex{arrange()}%
 
 Data frames can be sorted using the \function{arrange()} function.
@@ -186,6 +200,7 @@ head(sorted, 3)
 
 \section{Merging datasets}
 \myindex{merging dataframes}%
+\myindex{dataframes!merging}%
 
 <<echo=FALSE>>=
 OLD <- options(width=90)
@@ -237,6 +252,7 @@ have in your final dataframe.
 
 \section{Slicing and dicing}
 \myindex{reshaping dataframes}%
+\myindex{dataframes!reshaping}%
 \myindex{transforming dataframes}%
 \myindex{transposing dataframes}%
 The \pkg{tidyr} package provides a flexible way to change the arrangement of data.  
@@ -306,7 +322,7 @@ It might be preferable to give better labels.
 HELPrct <- mutate(HELPrct, cesdcut = cut(cesd, 
   labels=c("low", "medium", "high"),
   breaks=c(0, 20, 40, 60), include.lowest=TRUE))
-bwplot(cesd ~ cesdcut, data=HELPrct)
+bwplot(cesd ~ cesdcut, pch="|", data=HELPrct)
 @
 
 The \function{derivedFactor} function is even more general and can also be used for this purpose.
