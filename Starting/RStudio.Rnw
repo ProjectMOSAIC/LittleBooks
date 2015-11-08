@@ -21,6 +21,10 @@ interface to \R\ that has several advantages over other the default \R\ interfac
 	\item
 		\RStudio\ can run in a web browser.
 
+		\Note{Using \RStudio\ in a browser is like Facebook for statistics.
+		Each time the user returns, the previous session is restored and they
+		can resume work where they left off.  Users can login from any device 
+		with internet access.}%
 		In addition to stand-alone desktop versions, \RStudio\ can be set up 
 		as a server application that is accessed via the internet.  Installation
 		is straightforward for anyone with experience administering a Linux system.
@@ -39,10 +43,6 @@ interface to \R\ that has several advantages over other the default \R\ interfac
 		With a little advanced set up, instructors can save the history of their 
 		classroom \R\ use and students can load those history files into their own
 		environment.%
-		\Note{Using \RStudio\ in a browser is like Facebook for statistics.
-		Each time the user returns, the previous session is restored and they
-		can resume work where they left off.  Users can login from any device 
-		with internet access.}%
 	\item
 		\RStudio\ provides support for reproducible research.
 
@@ -244,12 +244,13 @@ Click on \tab{Compile HTML} to convert this to an HTML file.  There is a button 
 provides a brief description of the mark commands supported, and the \RStudio\ web site 
 includes more extensive tutorials on using RMarkdown.
 
-\Caution{RMarkdown, and \pkg{knitr}/\LaTeX\ files do not have access to the console environment, 
-so the code in them must be self-contained.}
 %
 It is important to remember that unlike \R\ scripts, which are executed in the
 console and have access to the console environment,  RMarkdown and \pkg{knitr}/\LaTeX\
-files do not have access to the console environment  This is a good feature because it forces
+files do not have access to the console environment.  
+\Caution{RMarkdown, and \pkg{knitr}/\LaTeX\ files do not have access to the console environment, 
+so the code in them must be self-contained.}%
+This is a good feature because it forces
 the files to be self-contained, which makes them transferable and respects good
 reproducible research practices.  But beginners, especially if they adopt a
 strategy of trying things out in the console and copying and pasting successful
