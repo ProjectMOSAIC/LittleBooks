@@ -380,12 +380,12 @@ The \dataframe{Births78} data set contains the number of births in the United St
 Later we will emphasize how \texttt{\~} can often be interpreted as ``depends on''.}
 A scatter plot of births by day of year reveals some interesting patterns. Let's see how the number of births depends on the day of the year.
 
-\TeachingTip{The plot could also be made using \variable{date}.  For general 
-purposes, this is probably the better plot to make, but using \variable{dayofyear} 
-forces students to think more about what the x-axis means.}
 <<births1,out.width=".8\\textwidth",fig.width=5>>=
 xyplot(births ~ dayofyear, data=Births78)
 @
+\TeachingTip[-2cm]{The plot could also be made using \variable{date}.  For general 
+purposes, this is probably the better plot to make, but using \variable{dayofyear} 
+forces students to think more about what the x-axis means.}
 
 When shown this image, students should readily be able to describe two patterns in the data; they should notice both the rise and  fall over the course of the year and the two ``parallel waves". 
 \TeachingTip{This can make a good ``think-pair-share'' activity. Have students come up with possible explanations, then discuss these explanations with a partner.  Finally, have some of the pairs share their explanations with the entire class.}
