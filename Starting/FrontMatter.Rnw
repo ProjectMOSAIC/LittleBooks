@@ -1,0 +1,269 @@
+<<echo=FALSE,include=FALSE>>=
+opts_chunk$set( fig.path="figures/FrontMatter-" ) 
+set_parent('Master-Starting.Rnw')
+set.seed(123)
+@
+
+
+\chapter*{About These Notes}
+
+
+We present an approach to teaching introductory and intermediate statistics
+courses that is tightly coupled with computing generally and with \R\ and
+\RStudio\ in particular. These activities and examples are intended to
+highlight a modern approach to statistical education that focuses on modeling,
+resampling based inference, and multivariate graphical techniques.  A secondary
+goal is to facilitate computing with data through use of small simulation
+studies and appropriate statistical analysis workflow. This follows the
+philosophy outlined by Nolan and Temple Lang\cite{nola:temp:2010}. 
+The importance of modern computation\marginnote{$\ $} 
+in statistics education is a principal component of the recently adopted 
+American Statistical Association's curriculum guidelines\cite{ASAcurriculum2014}.
+
+Throughout this book (and its companion volumes), we introduce multiple
+activities, some appropriate for an introductory course, others suitable for
+higher levels, that demonstrate key concepts in statistics and modeling while
+also supporting the core material of more traditional courses.
+
+\subsection*{A Work in Progress}
+
+\Caution{Despite our best efforts, you WILL find bugs both in this document and in our code.
+Please let us know when you encounter them so we can call in the exterminators.}%
+
+These materials were originally developed for a workshop entitled 
+\emph{Teaching Statistics Using R} prior to the 2011 United States Conference 
+on Teaching Statistics and revised for USCOTS 2011, USCOTS 2013, eCOTS 2014, ICOTS 9, 
+and USCOTS 2015.
+We organized these workshops to help instructors integrate \R\ (as well as some
+related technologies) into statistics courses at all levels.  We received great
+feedback and many wonderful ideas from the participants and those that we've
+shared this with since the workshops.  
+
+%Consider these notes to be a work in progress.  
+%\SuggestionBox{Sometimes we will mark
+%places where we would especially like feedback with one of these suggestion boxes.
+%But we won't do that everywhere we want feedback or there won't be room for 
+%anything else.}%
+We appreciate any feedback you are willing to share as we continue
+to work on these materials and the accompanying \pkg{mosaic} package.  
+Drop us an email at \url{pis@mosaic-web.org} with any comments, suggestions,
+corrections, etc.
+
+Updated versions will be posted at \url{http://mosaic-web.org}.
+
+
+\subsection*{Two Audiences}
+
+We initially developed these materials for
+instructors of statistics at the college or
+university level.  Another audience is the students these instructors teach.  
+Some of the sections, examples, and exercises are written with one or the other of 
+these audiences more clearly at the forefront.  This means that 
+\begin{enumerate}
+\item Some of the materials can be used essentially as is with students.
+\item Some of the materials aim to equip instructors to develop their own
+expertise in \R\ and \RStudio\ to develop their own teaching materials.
+\end{enumerate}
+
+Although the distinction can get blurry, and what works ``as is" in one setting may 
+not work ``as is" in another,  we'll try to indicate which parts 
+fit into each category as we go along.
+
+\subsection*{R, RStudio and R Packages}
+
+\R\ can be obtained from \url{http://cran.r-project.org/}.  
+Download and installation are quite straightforward for Mac, PC, or linux machines.
+
+\RStudio\ is an integrated development environment (IDE) that facilitates use of \R\ for both novice and expert users.  We have adopted it as our standard teaching environment because it dramatically simplifies the use of \R\ for instructors and for students.%
+\Pointer[-3cm]{Several things we use that can be done only in \RStudio, for instance \function{manipulate} or \RStudio's integrated support for reproducible research).}%
+%\RStudio\ is available from \url{http://www.rstudio.org/}.
+\RStudio\ can be installed as a desktop (laptop) application or as a server application that is accessible to users via the Internet.\FoodForThought[-.5cm]{RStudio server version works well with starting students.  All they need is a web browser, avoiding any potential problems with oddities of students' individual computers.}
+
+In addition to \R\ and \RStudio, we will make use of several packages that need to be installed and loaded separately. The \pkg{mosaic} package (and its dependencies) will be used throughout.  Other packages appear from time to time as well.
+
+
+%\subsection*{Notation}
+%
+%%\newthought{Exercises}
+%Exercises marked with 1 star are intended for students in courses beyond the
+%introductory level.  Exercises marked with 2 stars are intended primarily for
+%instructors (but may also be appropriate for students in higher level courses).
+
+\subsection*{Marginal Notes}
+Marginal notes appear here and there.  
+%\DiggingDeeper{Some marginal notes will look like this one and provide
+%some additional information that you may find of interest.}%
+\marginnote{Have a great suggestion for a marginal note?  Pass it along.}%
+Sometimes these are side comments that we wanted to say, but we didn't want to interrupt the flow to mention them in the main text. Others provide teaching tips or caution about traps, pitfalls and gotchas.
+%\Caution{But warnings are set differently to make sure they catch your attention.}%
+%These may describe more advanced features of the language or make suggestions
+%about how to implement things in the classroom.  Some are warnings
+%to help you avoid common pitfalls.  Still others contain requests for feedback.
+%\SuggestionBox{So, do you like having marginal notes in these 
+%notes?}
+
+
+\subsection*{What's Ours Is Yours -- To a Point}
+
+This material is copyrighted by the authors under a Creative Commons Attribution 3.0 
+Unported License.
+You are free to \emph{Share} (to copy, distribute and transmit the work) and to \emph{Remix} 
+(to adapt the work) if you attribute our work.
+More detailed information about the licensing is available at this web page:
+\url{http://www.mosaic-web.org/go/teachingRlicense.html}.
+
+
+
+\DiggingDeeper{If you know \LaTeX\ as well as \R, then \pkg{knitr}
+provides a nice solution for mixing the two. 
+We used this system to produce this book.  We also use it 
+for our own research and to introduce upper level students to 
+reproducible analysis methods.
+For beginners, we introduce \pkg{knitr} with RMarkdown,
+which produces PDF, HTML, or Word files using a simpler syntax.}
+
+\subsection*{Document Creation}
+
+This document was created on \today, using 
+\begin{itemize}
+\item \pkg{knitr}, version  \Sexpr{packageVersion("knitr")}
+\item \pkg{mosaic}, version \Sexpr{packageVersion("mosaic")} 
+\item \pkg{mosaicData}, version \Sexpr{packageVersion("mosaic")} 
+\item \Sexpr{R.version.string}
+\end{itemize}
+
+Inevitably, each of these will be updated from time to time.
+If you find that things look different on your computer, make sure that your 
+version of \R{} and your packages are up to date and check for a newer version 
+of this document.
+
+
+
+\chapter*{Project MOSAIC}
+
+This book is a product of
+Project MOSAIC, a community of educators working to develop  new ways to
+introduce mathematics, statistics, computation, and modeling to students in
+colleges and universities.
+
+\bigskip
+
+The goal of the MOSAIC project is to help share ideas and resources to
+improve teaching, and to develop a curricular and assessment
+infrastructure to support the dissemination and evaluation of these approaches.
+Our goal is to provide a broader approach to quantitative studies that provides
+better support for work in science and technology. 
+The project highlights and integrates
+diverse aspects of quantitative work that students in science,
+technology, and engineering will need in their professional lives, but which
+are today usually taught in isolation, if at all.  
+
+\vspace{.1in}
+
+In particular, we focus on:
+\begin{description}
+	\item[Modeling] The ability to create, manipulate and investigate useful	and informative mathematical representations of a real-world situations.
+
+	\item[Statistics] The analysis of variability that draws on our ability to	quantify uncertainty and to draw logical inferences from observations and experiment.
+
+    \item[Computation] 
+	The capacity to think algorithmically, to manage data on large scales, to	visualize and interact with models, and to automate tasks for efficiency, accuracy, and reproducibility.
+
+    \item[Calculus] 
+	The traditional mathematical entry point for college and university students and a subject that still has the potential to provide important insights to today's students.
+	\end{description}
+
+Drawing on support from the US National Science Foundation (NSF DUE-0920350),
+Project MOSAIC supports a number of initiatives to help achieve these goals,
+including:
+\begin{description}
+\item
+[Faculty development and training opportunities,] 
+such as the USCOTS 2011, USCOTS 2013, eCOTS 2014, and ICOTS 9 workshops on 
+\emph{Teaching Statistics Using \R\ and \RStudio}, our 2010 
+Project MOSAIC kickoff workshop at the Institute for Mathematics
+and its Applications, and our \emph{Modeling: Early and Often in Undergraduate Calculus}
+AMS PREP workshops offered in 2012,  2013, and 2015.
+
+\item
+[M-casts,] 
+a series of regularly scheduled webinars, delivered via the Internet, 
+that provide a forum for instructors to share their insights and innovations 
+and to develop collaborations to refine and develop them.
+Recordings of M-casts are available
+at the Project MOSAIC web site, \url{http://mosaic-web.org}.
+
+%\item[The development of a ``concept inventory" to support teaching modeling.] 
+%It is somewhat rare in today's curriculum for modeling to be taught. 
+%College and university catalogs are filled with descriptions of courses 
+%in statistics, computation, and calculus. There are many textbooks in 
+%these areas and most new faculty teaching statistics, computation, 
+%and calculus have a solid idea of what should be included. 
+%But modeling is different. It's generally recognized
+%as important, but few if instructors have a clear view of the essential
+%concepts.
+
+\item[The construction of syllabi and materials] 
+for courses that teach MOSAIC topics in a better integrated way. Such
+courses and materials might be wholly new constructions, or they might be 
+incremental modifications of existing resources that draw on the 
+connections between the MOSAIC topics.
+\end{description}
+
+More details can be found at \url{http://www.mosaic-web.org}.
+We welcome and encourage your participation in all of these initiatives.  
+
+\chapter*{Computational Statistics}
+
+There are at least two ways in which statistical software
+can be introduced into a statistics course.  In the first approach, the course
+is taught essentially as it was before the introduction of statistical 
+software, but using a computer to speed up some of the calculations and 
+to prepare higher quality graphical displays.  Perhaps the size of the 
+data sets will also be increased.   We will refer to this approach as 
+\term{statistical computation} 
+since the computer serves primarily as a computational
+tool to replace pencil-and-paper calculations and drawing plots manually.
+
+In the second approach, more fundamental changes in the course result from the introduction of the computer.  Some new topics are covered, some old topics are omitted.  Some old topics are treated in very different ways, and perhaps at different points in the course.  We will refer to this approach as \term{computational statistics} because the availability of computation is shaping how statistics is done and taught.  Computational statistics is a key component of \term{data science}, defined as the ability to use data to answer questions and communicate those results.
+
+\FoodForThought{Students need to see aspects of computation and data science early and often
+to develop deeper skills.  Establishing precursors in introductory courses help them get started.}%
+In practice, most courses will incorporate elements of both 
+statistical computation and computational statistics, but the relative 
+proportions may differ dramatically from course to course.
+Where on the spectrum a course lies will be depend
+on many factors including 
+the goals of the course, 
+the availability of technology for student use, 
+the perspective of the text book used,
+and the comfort-level 
+of the instructor with both statistics and computation.
+
+
+Among the various statistical software packages available, \R\ is becoming
+increasingly popular.  The recent addition of \RStudio\ has made \R\ both
+more powerful and more accessible.
+Because \R\ and \RStudio\ are free, they
+have become widely
+used in research and industry. Training in \R\ and \RStudio\ is often seen as an 
+important additional skill that a statistics course can develop.  Furthermore,
+an increasing number of instructors are using \R\ for their own statistical
+work, so it is natural for them to use it in their teaching as well.
+At the same time, the development of \R\ and of \RStudio\ (an optional 
+interface and integrated development environment for \R) are making it
+easier and easier to get started with \R.
+
+%Nevertheless, those who are unfamiliar with \R\ or who have never used \R\ for teaching are understandably cautious about using it with students.  If you are in that category, then this book is for you.  Our goal is to reveal some of what we have learned teaching with \R\ and to make teaching statistics with \R\ as rewarding and easy as possible -- for both students and faculty. We will cover both technical aspects of \R\ and \RStudio\ (e.g., how do I get \R\ to do thus and such?) as well as some perspectives on how to use computation to teach statistics. The latter will be illustrated in \R\ but would be equally applicable with other statistical software.
+
+%Others have used \R\ in their courses, but have perhaps left the course feeling
+%like there must have been better ways to do this or that topic.  If that
+%sounds more like you, then this book is for you, too.  As we have been working 
+%on this book, we have also been developing the \pkg{mosaic}
+
+\FoodForThought{Information about the \pkg{mosaic} package, including vignettes demonstrating features and supplementary materials (such as this book) can be found at \url{https://cran.r-project.org/web/packages/mosaic}.}
+We developed the \pkg{mosaic}
+\R\ package (available on CRAN) to make certain aspects of statistical
+computation and computational statistics simpler for beginners, without limiting their ability to
+use more advanced features of the language.  The \pkg{mosaic} package includes a modelling approach that uses the same general syntax to calculate descriptive statistics, create graphics, and fit linear models.  
+
