@@ -12,7 +12,7 @@ trellis.par.set(theme=col.mosaic(bw=FALSE))
 trellis.par.set(fontsize=list(text=9))
 options(keep.blank.line=FALSE) 
 options(width=60)
-require(vcd)        
+# require(vcd)          # went away 11/5/2015 by njh  
 require(knitr)
 opts_chunk$set(  tidy=TRUE,
 			     size='small',

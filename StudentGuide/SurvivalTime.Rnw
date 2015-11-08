@@ -38,5 +38,5 @@ summary(coxph(Surv(dayslink, linkstatus) ~ age + substance,
   data=HELPrct))
 @
 
-Neither age or substance group was significantly associated with linkage to primary care.
+Neither age nor substance group was significantly associated with linkage to primary care.
 

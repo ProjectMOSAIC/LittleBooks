@@ -128,14 +128,15 @@ have the same mean age in the population.
 
 Earlier comparisons were between two groups. We can also consider testing differences between
 three or more groups using one-way ANOVA.  Here we compare
-CESD scores by primary substance of abuse (heroin, cocaine, or alcohol).
+CESD scores by primary substance of abuse (heroin, cocaine, or alcohol) with a line rather a dot to indicate the median.
 
 \Rindex{bwplot()}%
 \begin{center}
 <<cesd-oneway,fig.width=6,fig.height=1.9>>=
-bwplot(cesd ~ substance, data=HELPrct)
+bwplot(cesd ~ substance, pch="|", data=HELPrct)
 @
 \end{center}
+
 
 
 <<aggregate2>>=

@@ -70,8 +70,8 @@ this from the model.
 \Rindex{plotFun()}%
 \Rindex{makeFun()}%
 The \function{makeFun()} and \function{plotFun()} functions from the \pkg{mosaic} package 
-can be used to display the results from a regression model.  For this example, we might 
-display the predicted CESD values for a range of MCS values a 36 year old male and female subject from the parallel
+can be used to display the predicted values from a regression model.  For this example, we might 
+display the predicted CESD values for a range of MCS (mental component score) values a hypothethical 36 year old male and female subject might have from the parallel
 slopes (no interaction) model.
 <<makeFUN>>=
 lmfunction <- makeFun(lmnointeract)
@@ -82,8 +82,8 @@ lmfunction <- makeFun(lmnointeract)
 \Rindex{ylab option}%
 \Rindex{groups option}%
 \Rindex{add option}%
-We can now plot this function for male and female subjects over a range of MCS (mental component score) values, along
-with the observed data for 36 year olds.  
+We can now plot the predicted values separately for male and female subjects over a range of MCS (mental component score) values, along
+with the observed data for all of the 36 year olds.  
 <<plotFUN,tidy=FALSE,fig.keep='last'>>=
 xyplot(cesd ~ mcs, groups=sex, auto.key=TRUE, 
   data=filter(HELPrct, age==36))

@@ -48,10 +48,6 @@ xyplot(Murder ~ Assault, panel=panel.labels,
 
 \section{Correlation}
 
-<<echo=FALSE>>=
-detach(package:vcd)   # where did vcd come from?  
-@
-
 
 Correlations can be calculated for a pair of variables, or for a matrix of variables.
 \myindex{correlation}%
