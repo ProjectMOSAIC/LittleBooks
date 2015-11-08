@@ -243,7 +243,9 @@ bwplot(substance ~ age, data=HELPrct)
 \Pointer{You may be wondering about plots for two categorical variables.
 A commonly used plot for this is a segmented bar graph.  We will treat this as a augmented version of a simple bar graph, which is a graphical summary of one categorical variable.
 
-Another plot that can be used to display two (or more) categorical variables is a mosaic plot.  The \pkg{lattice} package does not include mosaic plots, but the \pkg{vcd} package provides a \function{mosaic()} function that creates mosaic plots.}
+Another plot that can be used to display two (or more) categorical variables is a mosaic plot.  
+The \pkg{lattice} package does not include mosaic plots, but the \pkg{vcd} package provides 
+a \function{mosaic()} function that creates mosaic plots.}
 \Rindex{vcd}
 \myindex{mosaic plot}
 
@@ -303,6 +305,7 @@ bargraph( ~ substance, data=HELPrct, horizontal=TRUE)
 @
 
 
+
 \subsection{A palette of plots}
 \label{sec:paletteOfPlots}
 \Pointer{If you are unfamiliar with some of the plots, like ashplots and frequency
@@ -310,6 +313,7 @@ polygons, keep reading.  We have more to say about them shortly.}
 
 The power of the template is that we can now make many different kinds of plots
 by mimicking the examples above but replacing the goal.
+%(The plots appear in Figure~\ref{fig:one-var-plots}.)
 
 \Rindex{densityplot()}
 \Rindex{freqpolygon()}
@@ -321,39 +325,50 @@ by mimicking the examples above but replacing the goal.
 freqpolygon( ~ age, data=HELPrct) 
     dotPlot( ~ age, data=HELPrct, width=1) 
     ashplot( ~ age, data=HELPrct, width=1) 
-@
-<<one-var-plots-contd, eval=FALSE, tidy=FALSE, out.width=".3\\textwidth">>=
 densityplot( ~ age, data=HELPrct) 
-     bwplot( ~ age, data=HELPrct) 
      qqmath( ~ age, data=HELPrct) 
+     bwplot( ~ age, data=HELPrct) 
+     bwplot( ~ age, data=HELPrct, pch = "|")  
 @
 
-\begin{widestuff}
+%\begin{figure}
 <<echo=FALSE, out.width=".45\\textwidth">>=
 <<one-var-plots>>
-<<one-var-plots-contd>>
 @
-\end{widestuff}
+%\caption{Some one-variable plots.}
+%\label{fig:one-var-plots}
+%\end{figure}
+\Note[-4cm]{If you prefer the more traditional boxplot display with a line at the median
+rather than a dot, you can make that the default behavior with
+\code{trellis.par.set(box.dot = list(pch = "|")).}}
 
+\noindent
+Some people prefer the more traditional boxplot display with a line at the median
+rather than a dot.  We can make this the default behavior using
+<<>>=
+trellis.par.set(box.dot = list(pch = "|"))
+@
 
+\newpage
 For one categorical variable, we can use a bar graph.
 \Note{The \pkg{lattice} package does not supply a 
 function for creating pie charts.  This is no great loss
 since it is generally harder to make comparisons using a pie 
 chart.}
-<<>>=
+<<out.width = "0.45\\textwidth">>=
    bargraph( ~ sex, data=HELPrct)  # categorical variable
 @
 
 
 \bigskip
+Two-variable plots are also very similar.
 
 \Rindex{plotPoints()}
 <<two-var-plots, eval=FALSE, tidy=FALSE>>=
-    xyplot(width ~ length, data=KidsFeet)  # 2 quantitative vars
-plotPoints(width ~ length, data=KidsFeet)  # mosaic alternative
-   bwplot(length ~ sex,    data=KidsFeet)  # 1 cat; 1 quant
-      bwplot(sex ~ length, data=KidsFeet)  # reverse roles
+    xyplot( width ~ length, data=KidsFeet)  # 2 quantitative vars
+plotPoints( width ~ length, data=KidsFeet)  # mosaic alternative
+    bwplot(length ~ sex,    data=KidsFeet)  # 1 cat; 1 quant
+    bwplot(   sex ~ length, data=KidsFeet)  # reverse roles
 @
 <<echo=FALSE, out.width=".47\\textwidth">>=
 <<two-var-plots>>
@@ -536,6 +551,8 @@ the template as well.
 \Pointer{For a more thorough treatment of how to use \R\ for 
 the core topics of a traditional introductory statistics course,
 see \emph{A Student's Guide to R}.}%
+\Pointer[0.5cm]{Chi-squared tests can be performed using \function{chisq.test()}. This function is a little different in that it operates on tabulated data of the sort produced by \function{tally()} rather than on the data itself.  So the use of the template happens inside \function{tally()} 
+rather than in \function{chisq.test()}.}
 \authNote{We could use better examples here.  -- rjp 2014-06-21}%
 \Rindex{t.test()}
 <<tidy=FALSE>>=
@@ -544,8 +561,6 @@ t.test( ~ length, data=KidsFeet)
 The output from these functions also includes more than we really need.
 The \pkg{mosaic} package provides \function{pval()} and \function{confint()}
 for extracting p-values and confidence intervals:
-\Pointer{Chi-squared tests can be performed using \function{chisq.test()}. This function is a little different in that it operates on tabulated data of the sort produced by \function{tally()} rather than on the data itself.  So the use of the template happens inside \function{tally()} %
-rather than in \function{chisq.test()}.}
 \Rindex{pval()}
 \Rindex{confint()}
 <<>>=
@@ -561,6 +576,7 @@ OLD <- options(width=100)
 <<>>=
 confint(t.test(length ~ sex, data=KidsFeet))
 @
+
 <<>>=
 # using Binomial distribution
 confint(binom.test( ~ sex, data=HELPrct))  
