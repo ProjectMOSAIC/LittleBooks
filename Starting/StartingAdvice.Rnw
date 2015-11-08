@@ -163,7 +163,7 @@ Get your students to think that using the computer is just part of how statistic
 
 \item 
 Keep the message as simple as possible and keep the commands accordingly simple.  
-\BlankNote{It is 
+\BlankNote[-3cm]{It is 
 important not to get too complicated too quickly.  Early on, we typically use default
 settings and focus on the main ideas.  Later, we may introduce fancier options
 as students become comfortable with simpler things (and often demand more).}
@@ -211,18 +211,24 @@ See Chapter~\ref{chap:RForInstructors} for some of the common error messages and
 \begin{enumerate}
 
 \item
-Introduce Graphics Early.\marginnote[1cm]{In keeping with this advice, most of the examples in this book fall in the area of exploratory data analysis.  The organization is chosen to develop gradually anunderstanding of \R. See the companion volume\textit{A Compendium of Commands to Teach Statistics with R} for a tour of commands used in the primary sorts analyses used in the first two undergraduate statistics courses. This companion volume is organized by types of data analyses and presumes some familiarity with the \R\ language.}
+Introduce Graphics Early.
 
 
 Introduce graphics very early, so that students see that they can get impressive output from simple commands.  Try to break away from their prior expectation that there is a ``steep learning curve."
 
 Accept the defaults -- don't worry about the niceties (good labels, nice breaks on histograms, colors) too early.  Let them become comfortable with the basic graphics commands and then play (make sure it feels like play!) with fancying things up.  
 
+\marginnote{In keeping with this advice, most of the examples in this book
+fall in the area of exploratory data analysis.  The organization is chosen to
+develop gradually anunderstanding of \R. See the companion volume
+\textit{A Student's Guide to R} for a tour of commands used
+in the primary sorts analyses used in the first two undergraduate statistics
+courses. This companion volume is organized by types of data analyses and
+presumes some familiarity with the \R\ language.}
 
-Keep in mind that just because the graphs are easy to make on the computer doesn't mean your students understand how to read the graphs. Use examples that will help students develop good habits for visualizing data.%
-%Remember:
-%\begin{center}
-%\end{center}
+Keep in mind that just because the graphs are easy to make on the computer
+doesn't mean your students understand how to read the graphs. Use examples that
+will help students develop good habits for visualizing data.
 
 \item Introduce Sampling and Randomization Early.
 
