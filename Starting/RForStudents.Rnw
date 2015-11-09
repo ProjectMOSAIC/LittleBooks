@@ -374,11 +374,20 @@ sample(Births78, 4)       # show 4 randomly selected rows
 summary(Births78)         # provide summary info about each variable
 @
 
-\newpage
+\enlargethispage{1in}
+
+<<echo=FALSE>>=
+oldwidth <- options("width")
+options(width=90)
+@
 
 \Rindex{inspect()}
 <<rs-Births78-inspect>>=
 inspect(Births78)         # provide summary info about each variable
+@
+
+<<echo=FALSE>>=
+options(oldwidth)
 @
 
 \Rindex{str}
@@ -613,7 +622,7 @@ mycrosstable
 @
 \noindent
 Replacing \function{rbind()} with \function{cbind()} will allow you to give the data column-wise instead.
-\TeachingTip[-1cm]{If plotting pre-tabulated categorical data is important, you probably want to provide your students with a wrapper function to simplify all this.  We generally avoid this situation by provided the data in raw format or by presenting an analysing the data in tables without using graphical summaries.}
+\TeachingTip[-3cm]{If plotting pre-tabulated categorical data is important, you probably want to provide your students with a wrapper function to simplify all this.  We generally avoid this situation by provided the data in raw format or by presenting an analysing the data in tables without using graphical summaries.}
 
 This arrangement of the data would be sufficient for applying the Chi-squared test, but it is not in a format suitable for plotting with \pkg{lattice}. Our cross table is still missing a bit of information -- the names of the variables being stored.  We can add this information if we convert it to a table:
 
@@ -638,6 +647,8 @@ mycrosstable
 \Rindex{bargraph()}
 We can use \function{barchart()} instead of \function{bargraph()} to plot data 
 already tabulated in this way, but first we need yet one more transformation.
+
+\enlargethispage{1in}
 \Rindex{head()}
 \Rindex{as.data.frame()}
 <<>>=
@@ -746,6 +757,8 @@ abdData(2)               # all data sets in chapter 2
 %
 %For information on how to create such packages, consult the \textit{Writing R Extensions} manual
 %on CRAN.
+
+\enlargethispage{1.5in}
 
 \section{Review of \R\ Commands}
 

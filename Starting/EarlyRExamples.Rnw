@@ -404,7 +404,7 @@ See Section~\ref{sec:births-lines}.}
 <<births3,fig.width=5,fig.height=3.0,tidy=FALSE>>=
 require(mosaicData)       # load mosaic data sets
 xyplot(births ~ dayofyear, data=Births78, 
-       groups=wday,
+       groups=lubridate::wday(date, label=TRUE),
        auto.key=list(space="right")) 
 @
 
