@@ -91,9 +91,7 @@ Download and installation are pretty straightforward for Mac, PC, or Linux machi
 \section{Connecting to an RStudio server}
 
 \RStudio\ servers have been set up at a number of schools to facilitate cloud-based computing.  
-\FoodForThought{Registered students at Amherst College can connect to \url{r.amherst.edu}, while
-Smith College students connect to \url{rstudio.smith.edu:8787}.
-Other servers have been installed at many other institutions.
+\FoodForThought{\RStudio\ servers have been installed at many institutions.
 More details about (free) academic licenses for \RStudio\ Server Pro as well as setup instructions can be found at \url{http://www.rstudio.com/resources/faqs} under the {\tt Academic} tab.
 }
 
