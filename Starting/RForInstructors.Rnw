@@ -931,7 +931,7 @@ data(Births78)
 weekdays <- c("Sun", "Mon", "Tue", "Wed", "Thr", "Fri", "Sat") 
 Births <- 
   Births78 %>%
-  mutate(weekend = lubridate::wday(date, label=TRUE) %in% c("Sat", "Sun"))
+  mutate(weekend = wday %in% c("Sat", "Sun"))
 
 head(Births, 3)
 @

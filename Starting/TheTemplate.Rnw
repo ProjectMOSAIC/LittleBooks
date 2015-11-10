@@ -685,7 +685,7 @@ The following plot uses lines instead of points which makes it easier to
 locate the handful of unusual observations.
 <<fig.width=4, tidy=FALSE>>=
 xyplot(births ~ date, data=Births78,  
-  groups=lubridate::wday(date, label=TRUE), type='l',
+  groups=wday, type='l',
   main="Number of US births each day in 1978",
   auto.key=list(columns=4, lines=TRUE, points=FALSE),
   xlab="day of year",
@@ -727,7 +727,7 @@ Themes can also be assigned to \option{par.settings} if we want them to
 affect only one plot:
 <<fig.width=4, tidy=FALSE>>=
 xyplot(births ~ date, data=Births78,  
-  groups=lubridate::wday(date, label=TRUE),, type='l',
+  groups=wday, type='l',
   main="Number of US births each day in 1978",
   auto.key=list(columns=4, lines=TRUE, points=FALSE),
   par.settings=theme.mosaic(bw=TRUE),
