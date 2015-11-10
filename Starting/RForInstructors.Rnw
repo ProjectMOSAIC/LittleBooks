@@ -52,7 +52,7 @@ less error-prone.
   Get in the habit (and get your students in the habit) of working with \R\
   scripts and especially RMarkdown files.  
 
-\Pointer[-2cm]{\R\ can be used to create executable scripts.  Option parsing and handling is supported with the \pkg{optparse} package.}
+\Pointer[0cm]{\R\ can be used to create executable scripts.  Option parsing and handling is supported with the \pkg{optparse} package.}
 
 You can execute all the code in an \R\ script file using 
 \Rindex{source()}
@@ -90,8 +90,9 @@ you can selectively copy portions of your history to a script file
   \item
 	  Adopt reusable idioms.
 
-	  Computer programmers refer to the little patterns that recur throughout
-	  their code as idioms.   For example, here is a ``compute, save, display'' 
+\enlargethispage{1in}
+
+	  Computer programmers refer to the little patterns that recur throughout their code as idioms.   For example, here is a ``compute, save, display'' 
 	  idiom.
 <<idiom, tidy=FALSE>>=
 # compute, save, display idiom
@@ -274,8 +275,15 @@ y [ y > 20 ]                  # select the items greater than 20
 @
 The last item deserves a bit of comment.  The expression inside
 the brackets evaluates to a vector of logical values.
+<<echo=FALSE>>=
+oldparams <- options()
+options(width = 90)
+@
 <<>>=
 y > 20
+@
+<<echo=FALSE>>=
+options(oldparams)
 @
 The logical values are then used to select (true) or deselect (false)
 the items in the vector, producing a new (and potentially shorter)
@@ -424,6 +432,8 @@ sqrt(x)                   # square root of each element
 log(x)                    # natural log
 log10(x)                  # base 10 log
 @
+
+\enlargethispage{1in}
 
 \noindent
 Vectors can be combined into a matrix using \function{rbind()} 
@@ -852,7 +862,7 @@ write.csv(ddd, "ddd.csv")
 Data can also be saved in native \R\ format.  Saving data sets 
 (and other \R\ objects) using \function{save()} has some advantages over other 
 file formats:
-\Pointer[-2cm]{If you want to save an \R\ object but not its name, you can use \function{saveRDS()} and choose its name when you read it with \function{readRDS()}.}
+\Pointer[-1cm]{If you want to save an \R\ object but not its name, you can use \function{saveRDS()} and choose its name when you read it with \function{readRDS()}.}
 \begin{itemize}
   \item 
   Complete information about the objects is saved, including attributes.
@@ -909,8 +919,7 @@ can be used to combine data from multiple data frames.
 \subsection{Adding new variables to a data frame}
 
 The \function{mutate()} function can be used to add or modify variables in a data frame.
-\Note{\function{mutate()} is evaluated in such a way that you have direct 
-access to the other variables in the data frame, including any created earlier
+\Note{\function{mutate()} access to the other variables in the data frame, including any created earlier
 in the same \function{mutate()} command.}
 
 
@@ -922,7 +931,7 @@ data(Births78)
 weekdays <- c("Sun", "Mon", "Tue", "Wed", "Thr", "Fri", "Sat") 
 Births <- 
   Births78 %>%
-  mutate(weekend = wday %in% c("Sat", "Sun"))
+  mutate(weekend = lubridate::wday(date, label=TRUE) %in% c("Sat", "Sun"))
 
 head(Births, 3)
 @
@@ -1229,7 +1238,7 @@ HELPrct %>%
   arrange(x.bar)
 @
 
-
+\enlargethispage{1in}
 \subsection{Merging datasets}
 
 The \dataframe{fusion1} data frame in the \pkg{fastR} package contains genotype information for a SNP (single nucleotide polymorphism) in the gene \emph{TCF7L2}.  The \dataframe{pheno} data frame contains phenotypes (including type 2 diabetes case/control status) for an intersecting set of individuals. We can merge these together to explore the association between genotypes and phenotypes using one of the join functions in \pkg{dplyr} or using the \function{merge()} function.
@@ -1241,7 +1250,7 @@ OLD <- options(width=90)
 @
 <<>>=
 require(fastR)
-fusion %>% head(3)
+fusion1 %>% head(3)
 pheno %>% head(3)
 @
 \end{widestuff}
@@ -1311,11 +1320,14 @@ The \pkg{RMySQL} package allows direct access to data in MySQL data bases and th
 genome browser to find all the known genes on chromosome~1.
 
 \begin{widestuff}
-<<echo=FALSE>>=
+<<echo=FALSE, include=FALSE>>=
+library(RMySQL)
 OLD <- options( width=100 )
 @
+
 <<tidy=FALSE, message=FALSE,warning=FALSE>>=
 # connect to a UCSC database
+library(RMySQL)
 UCSCdata <- src_mysql(
   host="genome-mysql.cse.ucsc.edu",
   user="genome",
@@ -1342,18 +1354,18 @@ class(Chrom1)
 @
 \Rindex{mutate()}
 \Caution[3cm]{The arithmetic operations in this \function{mutate()} command are being executed in SQL, not in \R, and the palette of allowable functions is much smaller. It is not possible, for example, to compute the logarithm of the length here using \function{log()}.  For that we must first collect the data into a real data frame.}
-<<>>=
+<<warning=FALSE>>=
 Chrom1 %>% 
   mutate(length=(txEnd - txStart)/1000) -> Chrom1l
 Chrom1l
 @
 
-For efficiency, the full data are not pulled from the database until needed (or until we request this using \function{collect()}).  This allows us, for example, to inspect the firstfew rows of a potentially large pull from the database without actually having done all ofthe work required to pull that data.
+For efficiency, the full data are not pulled from the database until needed (or until we request this using \function{collect()}).  This allows us, for example, to inspect the first few rows of a potentially large pull from the database without actually having done all of the work required to pull that data.
 
 
 But certain things do not work unless we collect the results from the data based into an actual data frame.  To plot the data using \pkg{lattice} or \pkg{ggplot2}, for example, we must first \function{collect()} it into a data frame.
 \Rindex{collect()}
-<<tidy=FALSE>>=
+<<tidy=FALSE, warning=FALSE>>=
 Chrom1df <- collect(Chrom1l)       # collect into a data frame
 histogram( ~length, data=Chrom1df, xlab="gene length (kb)" )
 @
@@ -1410,7 +1422,7 @@ StateTraffic <-
   spread(state, death.rate)
 StateTraffic %>% head(3)
 @
-\noindnet
+\noindent
 We can create a plot using data in this format as well, but it involves a type of formula
 we have not seen before:
 <<>>=
@@ -1558,6 +1570,9 @@ mystats <- function(x) {
 }
 mystats((1:20)^2)
 @
+
+\enlargethispage{1in}
+
 Now the only problem is that we have to remember which number is which. We can fix this by giving names to the slots in our vector. While we're at it, let's add a few more favorites to the list. We'll also add an explicit \function{return()}.
 \Rindex{return()}%
 

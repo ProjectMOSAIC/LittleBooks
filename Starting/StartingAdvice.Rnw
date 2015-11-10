@@ -163,7 +163,7 @@ Get your students to think that using the computer is just part of how statistic
 
 \item 
 Keep the message as simple as possible and keep the commands accordingly simple.  
-\BlankNote[-3cm]{It is 
+\BlankNote[-1cm]{It is 
 important not to get too complicated too quickly.  Early on, we typically use default
 settings and focus on the main ideas.  Later, we may introduce fancier options
 as students become comfortable with simpler things (and often demand more).}
