@@ -83,7 +83,7 @@
 
 
 \title{Start Teaching with R}
-\author[Pruim, Horton \& Kaplan]{Randall Pruim, Nicholas J. Horton, and Daniel Kaplan}
+\author[Pruim, Horton \& Kaplan]{Randall Pruim, Nicholas J. Horton, and Daniel T. Kaplan}
 \date{January 2015}
 
 \begin{document}
@@ -142,7 +142,7 @@ knit_hooks$set(document = function(x) {
 \newpage
 \vspace*{2in}
 
-\parbox{4in}{\noindent Copyright (c) 2015 by Randall Pruim, Nicholas Horton, \& Daniel Kaplan.}
+\parbox{4in}{\noindent Copyright (c) 2015 by Randall Pruim, Nicholas J. Horton, \& Daniel T. Kaplan.}
 \medskip
 
 \parbox{4in}{\noindent Edition 1.1, November 2015}
