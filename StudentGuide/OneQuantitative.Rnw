@@ -163,7 +163,7 @@ The width of the bins can be specified.
 \Rindex{width option}%
 \begin{center}
 <<cesd-dotwidth,fig.height=1.8>>=
-histogram(~ cesd, width=1, data=female)   
+histogram(~ cesd, width=2, data=female)   
 @
 \end{center}
 
