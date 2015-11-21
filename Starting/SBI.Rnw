@@ -1,0 +1,183 @@
+<<echo=FALSE,include=FALSE>>=
+opts_chunk$set(fig.path="figures/RForStudents-") 
+set_parent('Master-Starting.Rnw')
+require(mosaic)
+require(mosaicData)
+set.seed(123)
+@
+
+
+\chapter{Simulation-Based Inference} 
+
+
+Resampling approaches have become increasingly important in statistical education 
+\citep{Tintle:TAS:2015, Hesterberg:2015}.
+The \pkg{mosaic} package  provides simplified functionality to support teaching inference
+based on randomization tests and bootstrap methods.  Our goal was to focus attention
+on the important parts of these techniques (e.g., where randomness enters in and how to
+use the resulting distribution) while hiding some of the technical details
+involved in creating loops and accumulating values.
+
+\section{Staring Early}
+
+One of the advantages of simulation-based inference is that one can start teaching 
+inference early in the course.
+Section~\ref{sec:lady-tasting-tea} describes an example (based on Fisher's lady tasting
+tea) that we have often used on the first day of class.
+Textbooks like \cite{Lock5} and \cite{Title} also begin their 
+discussion of the inference process immediately.
+
+
+As a first example, we often introduce the story of the lady tasting tea.  (See
+\cite{Salsburg:2002} for the details of this famous story.)  But here we will
+test a coin to see whether it is a "fair coin".  Suppose we flip the coin 20 times
+and observe only 6 heads, how suspicious should we be that the coin is not fair?
+The statistical punchline for either the lady tasting tea or testing a coin 
+is that we want to compute the p-value for a binomial 
+test via simulations rather than using formulas for the binomial distribution or 
+normal approximations. But we want to do this on the first day of class, and without
+using any of the jargon of the preceding sentence.
+
+Because students do not know about sampling distributions or random variables yet, 
+but do understand the idea of a coin toss, 
+we have provided `rflip()` to simulate tossing a coin one or several times:
+```{r}
+rflip()
+rflip(20)
+```
+To test a null hypothesis of a fair coin, we need to simulate flipping 20 coins many times,
+recording for each simulation the number of heads that were observed.
+The `do()` function allows us to do just that using the following template
+
+```{r eval = FALSE}
+do(n) * {stuff to do}             # pseudo-code
+```
+\noindent
+where `{stuff to do}` is typically a single R command, but may be something more complicated.
+For example, we can flip 20 coins three times as follows.
+```{r}
+do(3) * rflip(20)
+```
+\noindent
+Notice that `do()` (technically `cull_for_do()`) has been clever about what information 
+is stored for each group of 20 coin tosses.  It is now a simple matter to do this many more
+times and use numerical or graphical summaries to investigate how unusual it is to get
+so few heads if the coin is indeed a fair coin.
+```{r}
+Sims <- do (1000) * rflip(20)
+histogram( ~ heads, data = Sims, width = 1, groups = heads <= 6)
+tally ( ~(heads <= 6), data = Sims)
+```
+\noindent
+(If you are familiar with \pkg{lattice}, you will notice that the \pkg{mosaic} package
+also adds some additional arguments to the `histogram()` function.)
+
+## sample(), resample(), and shuffle()
+
+To facilitate randomization and bootstrapping, \pkg{mosaic} extends `sample()` to operate
+on data frames.  The `shuffle()` function is  an alternative name for `sample()`, and `resample()` 
+is `sample()` with `replace = TRUE`.  With these in hand, all of the tests and confidence
+intervals seen in a traditional first course in statistics can be performed using a common
+outline:
+
+  1. Do it to your data
+  2. Do it to a randomized version of your data
+  3. Do it to lots of randomized versions of your data.
+ 
+For example, we can use randomization in place of the two-sample t test to
+obtain an empirical p-value.
+```{r, include=FALSE}
+set.seed(12432)
+```
+
+```{r, do-diff-mean, digits = 3}
+D <- diffmean(age ~ sex, data = HELPrct); D 
+do(1) * diffmean(age ~ shuffle(sex), data = HELPrct)
+Null.dist <- do(5000) * diffmean(age ~ shuffle(sex), data = HELPrct)
+histogram( ~ diffmean, data = Null.dist, v = D)
+prop( ~ (diffmean < D), data = Null.dist, format = "prop")
+```
+
+```{r}
+pval(t.test(age ~ sex, data = HELPrct, alternative = "greater"))
+```
+
+The example above introduces three additional \pkg{mosaic} functions.
+The `prop()` function computes the proportion of logical vector that is (by default) `TRUE` 
+or of a factor that is (by default) the first label;
+`diffmean()` is similar to `diff(mean())`, but labels the result differently
+(`diffprop()` works similarly for differences in proportions); and 
+`pval()` extracts the p-value from an object of class `"htest"`. 
+
+It should be noted that although this is typically not done in simulation-based introductory 
+statistics texts, one might prefer to calculate p-values by including the 
+observed data in the randomization distribution.  This avoids an empirical p-value of 0
+and guarantees that the actual type I error rate will not exceed the nominal type I error rate.
+```{r}
+count( ~ (diffmean < D), data = Null.dist)
+(1 + count( ~ (diffmean < D), data = Null.dist)) / (1 + nrow(Null.dist))  # p-value
+```
+
+If we are interested in a confidence interval for the difference in group means, we can use
+`resample()` and `do()` to generate a bootstrap distribution in one of two ways.
+```{r}
+Boot.dist1 <- do(1000) * diffmean(age ~ sex, data = resample(HELPrct))
+Boot.dist2 <- do(1000) * diffmean(age ~ sex, data = resample(HELPrct, groups = sex))
+```
+\noindent
+In the second example, the resampling happens within the sex groups so that the marginal
+counts for each sex remain fixed.  This can be especially important if one of the groups
+is small, because otherwise some resamples might not include any observations of that
+group.
+
+```{r, include=FALSE}
+set.seed(123456)
+```
+```{r}
+favstats(age ~ sex, data = HELPrct)
+favstats(age ~ sex, data = resample(HELPrct))
+favstats(age ~ sex, data = resample(HELPrct, groups = sex))
+```
+
+Using either bootstrap distribution, two simple confidence intervals can be 
+computed.
+We typically introduce percentile confidence intervals first.
+A percentile confidence interval is calculated
+by determining the range of a central portion of the bootstrap distribution, which can
+be automated using `cdata()`.
+Visually inspecting the bootstrap distribution for skew and bias is an important
+step to make sure the percentile interval is not being applied in a situation where 
+it may perform poorly.
+```{r}
+histogram( ~ diffmean, data = Boot.dist2, v = D)
+qqmath( ~ diffmean, data = Boot.dist2)
+cdata( ~ diffmean, p = 0.95, data = Boot.dist2)
+```
+
+Alternatively, we can compute a confidence interval based on a bootstrap 
+estimate of the standard error.
+```{r}
+SE <- sd( ~ diffmean, data = Boot.dist2); SE
+D + c(-1,1) * 2 * SE
+```
+\noindent
+The primary pedagogical value of the bootstrap standard error approach is its close
+connection to the standard formula-based confidence interval methods.
+How to replace the constant 2 with an appropriate value to create more accurate intervals
+or to allow for different confidence levels is a matter of some subtlety
+\citep{Hesterberg:2015}.  The simplest method is to use quantiles 
+of a normal distribution, but this will undercover. Replacing the normal distribution
+with an appropriate t-distribution will widen intervals and can improve coverage, but 
+the t-distribution is only correct in a few cases -- such as when estimating the mean
+of a normal population -- and can perform badly when the population is skewed.
+See the Discussion Section for more on this.
+
+
+Calculating simple confidence intervals can be further automated using an extension to `confint()`.
+```{r}
+confint(Boot.dist2, method = c("percentile", "stderr"))
+```
+
+
+
+\end{document}
