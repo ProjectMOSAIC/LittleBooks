@@ -179,6 +179,9 @@ knit_hooks$set(document = function(x) {
 <<child='TheTemplate.Rnw', eval=TRUE>>=
 @
 
+<<child='SBI.Rnw', eval=TRUE>>=
+@
+
 <<child='RForStudents.Rnw', eval=TRUE>>=
 @
 
