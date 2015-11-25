@@ -71,7 +71,7 @@ this from the model.
 \Rindex{makeFun()}%
 The \function{makeFun()} and \function{plotFun()} functions from the \pkg{mosaic} package 
 can be used to display the predicted values from a regression model.  For this example, we might 
-display the predicted CESD values for a range of MCS (mental component score) values a hypothethical 36 year old male and female subject might have from the parallel
+display the predicted CESD values for a range of MCS (mental component score) values a hypothetical 36 year old male and female subject might have from the parallel
 slopes (no interaction) model.
 <<makeFUN>>=
 lmfunction <- makeFun(lmnointeract)
