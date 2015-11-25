@@ -1,6 +1,6 @@
 <<echo=FALSE,include=FALSE>>=
 opts_chunk$set( fig.path="figures/RForInstructors-", tidy=FALSE ) 
-set_parent('Master-Starting.Rnw')
+set_parent("MOSAIC-StartTeaching.Rnw")
 set.seed(123)
 require(fastR)
 @
