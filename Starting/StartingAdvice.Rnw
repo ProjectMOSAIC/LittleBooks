@@ -1,6 +1,6 @@
 <<echo=FALSE,include=FALSE>>=
 opts_chunk$set( fig.path="figures/RIntro-" ) 
-set_parent('Master-Starting.Rnw')
+set_parent('MOSAIC-StartTeaching.Rnw')
 set.seed(123)
 @
 
@@ -93,9 +93,9 @@ seeks to make more things simpler and more similar to each other so that student
 can more easily become independent, creative users of \R.  But even if you don't
 choose to do things exactly the way we do, we recommend using 
 ``Less Volume, More Creativity" as a guideline.}
+
 Use a few methods frequently and students will learn how to use them well, flexibly, 
 even creatively. 
-
 Focus on a small number of data types: numerical vectors, character
 strings, factors, and data frames.   Choose functions that employ
 a similar framework and style to increase the ability of students
