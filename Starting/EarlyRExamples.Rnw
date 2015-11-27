@@ -221,7 +221,7 @@ get quite a few correct -- maybe even all 10.  But how likely is that?
 
 Let's try an experiment.  I'll flip 10 coins.  You guess which are heads and
 which are tails, and we'll see how you do.  
-\marginnote{Have each student make a guess by writing down a sequence
+\TeachingTip{Have each student make a guess by writing down a sequence
 of 10 H's or T's while you flip the coin behind a barrier so that the students
 cannot see the results.  }
 
@@ -256,7 +256,7 @@ do the flipping for us.
 
 The \function{rflip()} function can flip one coin
 
-\marginnote[3cm]{There is a subtle switch here.  Before we were asking how 
+\Note[3cm]{There is a subtle switch here.  Before we were asking how 
 many of the students H's and T's matched the flipped coin.  Now we are 
 using H to simulate a correct guess and T to simulate an incorrect guess.
 This makes simulating easier.}
@@ -274,13 +274,14 @@ rflip(10)
 
 Typing \code{rflip(10)} a bunch of times is almost as tedious as flipping all those coins.   But it is not too hard to 
 tell \R\ to \function{do()} this a bunch of times.
-\marginnote{Notice that \function{do()} is clever about what information it records.  Rather than recording all of the individual tosses, it is only recording the number of flips, the number of heads, and the number of tails.}%
+\Note{Notice that \function{do()} is clever about what information it records.  Rather than recording all of the individual tosses, it is only recording the number of flips, the number of heads, and the number of tails.}%
 <<flip2,cache=TRUE,message=FALSE,warning=FALSE>>=
 do(3) * rflip(10)
 @
 
+\newpage
 \noindent
-Let's get \R\ to \function{do()} it for us 10,000 times and make a table of the results.
+Now let's get \R\ to \function{do()} it for us 10,000 times and make a table of the results.
 
 <<seed123,echo=FALSE,results="hide">>=
 set.seed(123)
@@ -292,26 +293,25 @@ perform 10,000 or more simulations live in class.  For more complicated things (
 might require fitting a model and extracting information from it at each iteration)
 you might prefer a smaller number for live demonstrations.  
 
-When you cover 
-inference for a proportion, it is a good idea to use those methods to revisit
-the question of how many replications are required in that context.}
+When you cover inference for a proportion, it is a good idea to use those methods to 
+revisit the question of how many replications are required in that context.}
+
+
 <<lady-dolots,cache=TRUE>>=
 # store the results of 10000 simulated ladies
 random.ladies <- do(10000) * rflip(10)
 @
 
 <<echo=FALSE>>=
-options( width=60 )
-
 <<lady-table, tidy=FALSE>>=
 tally(~heads, data=random.ladies)
-# We can also display table using percentages
+# We can also display a table using percentages
 tally(~heads, data=random.ladies, format="prop")  
 @
 
 We can display this table graphically using a plot called a \term{histogram}
 with bins of width~1.
-\marginnote{The \pkg{mosaic} package adds some additional
+\Note{The \pkg{mosaic} package adds some additional
 features to \function{histogram()}.  In particular, the 
 \option{width} and \option{center} arguments, which make it easier to control
 the bins, are only available if you are using the \pkg{mosaic} package.}
@@ -354,17 +354,15 @@ design change things?
 
 We could simulate this by shuffling a deck of 10 cards and dealing five of them.
 
-\begin{widestuff}
+\Note{The use of \function{factor} here lets \R\ 
+know that the possible values are `M' and `T', even when only one
+or the other appears in a given random sample.}
 <<lady-five-cards>>=
 cards <- 
   factor(c("M","M","M","M","M","T","T","T","T","T"))
 tally(~deal(cards, 5))
 @
-\end{widestuff}
 
-\marginnote[-1cm]{The use of \function{factor} here lets \R\ 
-know that the possible values are `M' and `T', even when only one
-or the other appears in a given random sample.}
 <<lady-five,cache=TRUE>>=
 results <- do(10000) * tally(~deal(cards, 5))
 tally(~ M, data=results)
@@ -376,8 +374,9 @@ tally(~ M, data=results, format="perc")
 
 \label{sec:Births78Intro}
 The \dataframe{Births78} data set contains the number of births in the United States for each day of 1978.  
-\marginnote{The use of the phrase ``depends on'' is intentional.  
-Later we will emphasize how \texttt{\~} can often be interpreted as ``depends on''.}
+\Note{The use of the phrase ``depends on'' is intentional.  
+Later we will emphasize how \code{y ~ x} can often be interpreted as 
+``\code{y} depends on \code{x}''.}
 A scatter plot of births by day of year reveals some interesting patterns. Let's see how the number of births depends on the day of the year.
 
 <<births1,out.width=".8\\textwidth",fig.width=5>>=
@@ -427,20 +426,21 @@ xyplot(sat ~ expend, data=SAT)
 @
 
 The implication, that spending less might give better results, is not justified. Expenditures are confounded with the proportion of students who take the exam, and scores are higher in states where fewer students take the exam.
-<<out.width=".47\\textwidth">>=
+<<out.width = ".47\\textwidth">>=
 xyplot(expend ~ frac, data=SAT)
 xyplot(sat ~ frac, data=SAT)
 @
 
 It is interesting to look at the original plot if we place the states into two groups depending on whether more or fewer than 40\% of students take the SAT:
-<<out.width=".47\\textwidth">>=
+<<>>=
 SAT <- mutate(SAT, 
         fracGroup = derivedFactor( 
           hi = (frac > 40), 
           lo = (frac <=40) ))
 @
 
-<<out.width=".47\\textwidth">>=
+<<out.width = ".47\\textwidth">>=
+xyplot(expend ~ frac, data=SAT)
 xyplot( sat ~ expend | fracGroup , data=SAT, 
         type=c("p","r") )
 xyplot( sat ~ expend, groups = fracGroup , data=SAT, 
@@ -474,17 +474,17 @@ Is there a relationship between infestation and Wilt disease?
 
 The accompanying table shows a cross tabulation the number of plants that
 developed symptoms of Wilt disease.
-
+\newpage
 
 <<eval=TRUE, message=FALSE, tidy=FALSE>>=
 tally(outcome ~ treatment, data = Mites, margins = TRUE)
 @
-\vspace*{-5mm}
 
+\noindent
 Some questions for students:
 \begin{enumerate}
 \setlength\itemsep{1mm}
-  \item Here, what do you think is the explanatory variable?  Response variable? 
+  \item What do you think is the explanatory variable?  Response variable? 
   \item What proportion of the plants in the study with mites developed Wilt disease?
   \item What proportion of the plants in the study with no mites developed Wilt disease?
   \item Relative risk is the ratio of two risk proportions.  What is the relative risk 
@@ -560,11 +560,11 @@ simulations very quickly.
 \begin{boxedText}
 	\centerline{\textbf{Computational Simulation}}
 
-<<eval=TRUE,tidy=FALSE,out.width="0.65\\textwidth",warning=FALSE,message=FALSE>>=
+<<eval=TRUE,tidy=FALSE,warning=FALSE,message=FALSE>>=
 tally(outcome ~ treatment, data=Mites)
 X <- tally(outcome ~ treatment, data=Mites)[1,1]; X
 nullDist <- do(1000) * 
-    tally(outcome ~ shuffle(treatment), data=Mites)[1,1]
+  tally(outcome ~ shuffle(treatment), data=Mites)[1,1]
 histogram(~ result, data=nullDist, width=1, 
           type="density", fit="normal", v=15) 
 @
