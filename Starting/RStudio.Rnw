@@ -1,8 +1,8 @@
 
 <<echo=FALSE,include=FALSE>>=
-opts_chunk$set( fig.path="figures/RStudio-" ) 
-set_parent('Master-Starting.Rnw')
+set_parent('MOSAIC-StartTeaching.Rnw')
 set.seed(123)
+knitr::opts_chunk$set( fig.path="figures/RStudio-" ) 
 @
 
 \chapter{Getting Started with RStudio}
@@ -55,7 +55,7 @@ interface to \R\ that has several advantages over other the default \R\ interfac
 		 over the output format.  Depending on the level of the course, 
 		 students can use either of these for homework and projects.  
 		 \authNote{NH (via rjp): Add some pointers to more information?}
-		 \marginnote{To use Markdown or \pkg{knitr}/\LaTeX\ requires that 
+		 \Note{To use Markdown or \pkg{knitr}/\LaTeX\ requires that 
 		 the \pkg{knitr} package be installed on your system.  
 		 See Section~\ref{sec:installingPackages} for instructions
 		 on installing packages.}
@@ -150,8 +150,9 @@ you will see something like the following.
 Notice that \Rstudio\ divides its world into four panels.  Several of the panels
 are further subdivided into multiple tabs.  Which tabs appear in which panels
 can be customized by the user.
-\marginnote{We find it convenient to put the console in the upper left rather than the default location (lower right) so that students can see it better when we project our \R\ 
-session in class.}
+\TeachingTip{We find it convenient to put the console in the upper left rather 
+than the default location (lower left) so that students can see it better when 
+we project our \R{} session in class.}
 
 \section{Using R as a Calculator in the Console}
 \R\ can do much more than a simple calculator, and we will introduce 
@@ -183,19 +184,17 @@ You can save values to named variables for later reuse.
 <<rs-variables1a,tidy=FALSE>>=
 product = 15.3 * 23.4   # save result
 product                 # display the result
-product <- 15.3 * 23.4  # <- can be used instead of =
+product <- 15.3 * 23.4  # <- instead of =
 product                     
 @
 \TeachingTip[-2cm]{It's best to settle on using 
 one or the other of the right-to-left assignment operators rather than to switch
-back and forth.  The authors have different preferences:
-two of us find the equal sign to be simpler for students and more 
-intuitive, while the other prefers the arrow operator because it
-represents visually what is happening in an assignment, because it
-can also be used in a left to right manner, and because it makes 
-a clear distinction between the assignment operator, the use of \code{=}
-to provide values to arguments of functions, and the use of \code{==} to test
-for equality.}%
+back and forth.  Here we will adopt the arrow operator because
+it represents visually what is happening in an assignment, 
+because it can also be used in a left to right manner, 
+and because it makes a clear distinction between the assignment operator, 
+the use of \code{=} to provide values to arguments of functions, 
+and the use of \code{==} to test for equality.}%
 
 Once variables are defined, they can be referenced in other operations
 and functions.
@@ -203,11 +202,11 @@ and functions.
 
 
 <<rs-variables2,tidy=FALSE>>=
-0.5 * product           # half of the product
-log(product)            # (natural) log of the product
-log10(product)          # base 10 log of the product
-log2(product)           # base 2 log of the product
-log(product, base=2)    # another way for base 2 log
+0.5 * product        # half of the product
+log(product)         # (natural) log of the product
+log10(product)       # base 10 log of the product
+log2(product)        # base 2 log of the product
+log(product, base=2) # another way for base 2 log
 @
 \authNote{can we come up with a better (e.g. less mathematical) example?}
 
@@ -215,7 +214,8 @@ The semi-colon can be used to place multiple commands on one line.
 One frequent use of this is to save and print a value all in one go:
 
 <<rs-variables-semi,tidy=FALSE>>=
-product <- 15.3 * 23.4; product  # store and show result
+# store and show result
+product <- 15.3 * 23.4; product  
 @
 
 
@@ -240,16 +240,29 @@ for students to create homework and reports that include text, \R\ code, \R\ out
 
 To create a new RMarkdown file, select \tab{File}, then \tab{New File}, then \tab{RMarkdown}.
 The file will be opened with a short template document that illustrates the mark up language.
-Click on \tab{Compile HTML} to convert this to an HTML file.  There is a button the 
-provides a brief description of the mark commands supported, and the \RStudio\ web site 
-includes more extensive tutorials on using RMarkdown.
+If you can click on \tab{From Template} before creating the file, you will be given a list
+of template documents available in packages.
+If the the \pkg{mosaic} package is loaded, this list will include templates that 
+make sure the \pkg{mosaic} package is loaded and change the defaults size for 
+plots to be somewhat smaller than the generic RStudio default.  
+The fancy version demonstrates many of the features of RMarkdown.
+(The \RStudio\ web site includes extensive tutorials on using RMarkdown that 
+demonstrate a wider range of features.)
+The plain templates are designed to quickly create new documents starting 
+from a nearly blank slate.
+
+The process of running the \R{} code and combining text, \R{} code, output, and graphics
+into a single file is called ``knitting".  
+Click on \tab{Knit} to convert the RMarkdown document into an HTML, PDF, 
+or Word file.  
+
 
 %
 It is important to remember that unlike \R\ scripts, which are executed in the
 console and have access to the console environment,  RMarkdown and \pkg{knitr}/\LaTeX\
 files do not have access to the console environment.  
-\Caution{RMarkdown, and \pkg{knitr}/\LaTeX\ files do not have access to the console environment, 
-so the code in them must be self-contained.}%
+\Caution{RMarkdown, and \pkg{knitr}/\LaTeX\ files do not have access 
+to the console environment, so the code in them must be self-contained.}%
 This is a good feature because it forces
 the files to be self-contained, which makes them transferable and respects good
 reproducible research practices.  But beginners, especially if they adopt a
@@ -257,10 +270,11 @@ strategy of trying things out in the console and copying and pasting successful
 code from the console to their file, will often create files that are
 incomplete and therefore do not compile correctly.
 
-One good strategy for getting student to use RMarkdown is to provide them with a template
-that includes the boiler plate you want them to use, loads any \R\ packages that they will
-need, sets any \pkg{knitr} or \R\ settings they way you prefer them, and has placeholders for the 
-work you want them to do.
+One good strategy for getting students to use RMarkdown is to provide them with an example
+document that includes the boiler plate you want them to use, 
+loads any \R\ packages that they will need, 
+sets any \pkg{knitr} or \R\ settings they way you prefer them, 
+and has placeholders for the work you want them to do.
 
 
 \section{The Other Panels and Tabs}
@@ -322,11 +336,12 @@ can stay in the environment essentially indefinitely.
 \marginnote{If you haven't been entering these example commands at your console, go back and do it!}
 
 Plots created in the console are displayed in the \tab{Plots} tab.  For example,
-<<>>=
-# this will make lattice graphics available to the session
+<<fig.width = 4.5>>=
+# this will make lattice graphics available 
 require(mosaic)       
 xyplot( births ~ dayofyear, data=Births78)
 @
+\noindent
 will display the number of births in the United States for each day in 1978.
 From the \tab{Plots} tab, you can navigate to previous plots and also export plots 
 in various formats or copy them to the cliboard after interactively resizing them.
