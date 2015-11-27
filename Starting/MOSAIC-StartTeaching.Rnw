@@ -1,5 +1,47 @@
 \documentclass[openany]{tufte-book}
 
+<<include=FALSE>>=
+#setCacheDir("cache")
+require(MASS)
+require(grDevices) 
+require(datasets) 
+require(stats) 
+require(lattice)
+require(grid) 
+# require(fastR)	# commented out by NH on 7/12/2012
+require(mosaic) 
+require(mosaicData) 
+trellis.par.set(theme=col.mosaic(bw=FALSE))
+trellis.par.set(fontsize=list(text=9))
+options(format.R.blank=FALSE) 
+options(width=60)
+options(digits=3)
+require(vcd)
+require(knitr)
+opts_chunk$set(  tidy=FALSE,
+			     size='small',
+                 dev="pdf",
+                 fig.path="figures/fig-",  
+                 fig.width=3, fig.height=2,
+                 fig.align="center",
+                 fig.show="hold",
+                 comment=NA)
+knit_theme$set("greyscale0")
+@
+
+<<include=FALSE>>=
+includeChapter <- FALSE # don't show chapters not yet being paginated.
+showEdited <- FALSE  # displaying chapters already paginated for printing
+knit_hooks$set(document = function(x) { 
+			   sub('\\usepackage[]{color}', '\\usepackage[]{xcolor}', 
+			   x, fixed = TRUE) 
+}) 
+
+#knit_hooks$set(document = function(x) { 
+#  gsub('(\\\\end\\{knitrout\\})\n', '\\1', x) 
+#}) 
+@
+
 
 \usepackage{../include/RBook}
 \usepackage{pdfpages}
@@ -93,47 +135,6 @@
 % stupid hack to get rid of unwanted space before next line when there is not
 % a blank line following an R chunk.
 \renewenvironment{knitrout}{}{\noindent\ignorespaces\!\!}
-
-<<include=FALSE>>=
-#setCacheDir("cache")
-require(MASS)
-require(grDevices) 
-require(datasets) 
-require(stats) 
-require(lattice)
-require(grid) 
-# require(fastR)	# commented out by NH on 7/12/2012
-require(mosaic) 
-require(mosaicData) 
-trellis.par.set(theme=col.mosaic(bw=FALSE))
-trellis.par.set(fontsize=list(text=9))
-options(format.R.blank=FALSE) 
-options(width=70)
-require(vcd)
-require(knitr)
-opts_chunk$set(  tidy=FALSE,
-			     size='small',
-                 dev="pdf",
-                 fig.path="figures/fig-",  
-                 fig.width=3, fig.height=2,
-                 fig.align="center",
-                 fig.show="hold",
-                 comment=NA)
-knit_theme$set("greyscale0")
-@
-
-<<include=FALSE>>=
-includeChapter <- FALSE # don't show chapters not yet being paginated.
-showEdited <- FALSE  # displaying chapters already paginated for printing
-knit_hooks$set(document = function(x) { 
-			   sub('\\usepackage[]{color}', '\\usepackage[]{xcolor}', 
-			   x, fixed = TRUE) 
-}) 
-
-#knit_hooks$set(document = function(x) { 
-#  gsub('(\\\\end\\{knitrout\\})\n', '\\1', x) 
-#}) 
-@
 
 %\maketitle
 
