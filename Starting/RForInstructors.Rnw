@@ -1,5 +1,5 @@
 <<echo=FALSE,include=FALSE>>=
-opts_chunk$set( fig.path="figures/RForInstructors-", tidy=FALSE ) 
+opts_chunk$set(fig.path="figures/RForInstructors-", tidy=FALSE) 
 set_parent("MOSAIC-StartTeaching.Rnw")
 set.seed(123)
 require(fastR)
@@ -96,12 +96,12 @@ you can selectively copy portions of your history to a script file
 	  idiom.
 <<idiom, tidy=FALSE>>=
 # compute, save, display idiom
-footModel <- lm( length ~ width, data=KidsFeet ); footModel
+footModel <- lm(length ~ width, data=KidsFeet); footModel
 @
 
 <<idiom2, tidy=FALSE>>=
 # alternative that reflects the order of operations
-lm( length ~ width, data=KidsFeet ) -> footModel; footModel
+lm(length ~ width, data=KidsFeet) -> footModel; footModel
 @
 
 	  Often there are multiple ways to do the same thing in \R,
@@ -340,7 +340,7 @@ each vector must have the same \rterm{length} (contain the same number of items)
 \Rindex{length()}
 Lists can be created using the \function{list()} function.
 <<>>=
-l <- list( 1, "two", 3.2, list(1, 2)); l
+l <- list(1, "two", 3.2, list(1, 2)); l
 length(l)          # Note: l has 4 elements, not 5
 @
 Items in a list can be accessed with the double square bracket (\code{[[ ]]}).
@@ -557,7 +557,7 @@ The operations listed below can be helpful when writing your own functions.
   &
   Returns a \verb!logical! indicating whether any elements of \verb!x! 
   are true.
-  Typical use: \verb!if ( any(y > 5) ) { ...}!.
+  Typical use: \verb!if (any(y > 5)) { ...}!.
   \\ \hline
   \verb!na.omit(x)! & Returns a vector with missing values removed.
   \\ \hline
@@ -750,8 +750,8 @@ resample(1:6, size=20)
 For working with cards, the \pkg{mosaicData} package provides a vector named \variable{Cards}
 and \function{deal()} as an alternative name for \function{sample()}.
 <<>>=
-deal( Cards, 5 )    # poker hand
-deal( Cards, 13 )   # bridge, anyone?
+deal(Cards, 5)    # poker hand
+deal(Cards, 13)   # bridge, anyone?
 @
 If you want to sort the hands nicely, you can create a factor from \variable{Cards}
 first:
@@ -760,7 +760,7 @@ first:
 
 \begin{widestuff}
 <<>>=
-hand <- deal( factor(Cards, levels=Cards), 13 ) 
+hand <- deal(factor(Cards, levels=Cards), 13) 
 sort(hand)       # sorted by suit, then by denomination
 @
 \end{widestuff}
@@ -829,7 +829,7 @@ sample from the desired distribution and make a histogram of the resulting
 sample.
 <<>>=
 x1 <- rnorm(500, mean=10, sd=2)
-histogram(~x1, width=.5)    
+histogram( ~ x1, width=.5)    
 @
 This works, but the resulting plot has a fair amount of noise.
 
@@ -837,8 +837,8 @@ The \function{ppoints()} function returns evenly spaced probabilities and
 allows us to obtain theoretical quantiles of the normal distribution instead. 
 The resulting plot now illustrates the idealized sample from a normal distribution.
 <<>>=
-x2 <- qnorm( ppoints(500), mean=10, sd=2 )
-histogram(~x2, width=.5)
+x2 <- qnorm(ppoints(500), mean=10, sd=2)
+histogram( ~ x2, width=.5)
 @
 This is not what real data will look like (even if it comes from a normal population),
 but it can be better for illustrative purposes to remove the noise.
@@ -938,7 +938,7 @@ head(Births, 3)
 
 
 <<Births-plot,fig.width=6,out.width="\\textwidth", tidy=FALSE>>=
-xyplot( births ~ date, Births, groups=weekend, auto.key=list(space='right') )
+xyplot(births ~ date, Births, groups=weekend, auto.key=list(space='right'))
 @
 
 \marginnote{Number of US births in 1978 colored by day of week.}
@@ -962,24 +962,24 @@ since completing their education and that their age at graduation is 6 more
 than the number of years of education obtained.  
 <<>>=
 CPS85 <- mutate(CPS85, workforce.years = age - 6 - educ)
-favstats(~workforce.years, data=CPS85)
+favstats( ~ workforce.years, data=CPS85)
 @
 
 In fact this is what was done for all but one of the cases to create the \variable{exper} 
 variable that is already in the \dataframe{CPS85} data.
 <<>>=
-tally(~ (exper - workforce.years), data=CPS85)
+tally( ~ (exper - workforce.years), data=CPS85)
 @
 
 With categorical variables, sometimes we want to modify the coding scheme.
 <<tidy=FALSE>>=
-HELP2 <- mutate( HELPrct, 
-  newsex = factor(female, labels=c('M','F')) )
+HELP2 <- mutate(HELPrct, 
+  newsex = factor(female, labels=c('M','F')))
 @
 It's a good idea to do some sort of sanity check to make sure that the recoding
 worked the way you intended
 <<>>=
-tally( ~ newsex + female, data=HELP2 )
+tally( ~ newsex + female, data=HELP2)
 @
 
 The \function{derivedFactor()} function can simplify creating factors based 
@@ -1058,7 +1058,7 @@ of variables to keep or discard.
 \Rindex{number_range()}%
 
 <<>>=
-head( select(HELPrct, contains("risk")), 2 )
+head(select(HELPrct, contains("risk")), 2)
 @
 
 The nested functions in the previous command make the code a bit hard to read, and things
@@ -1076,9 +1076,9 @@ explicitly pass along outputs of one function as an argument to the next.
 
 Here are a few more examples:
 <<>>=
-HELPrct %>% select( ends_with("e"))   %>% head(2)
-HELPrct %>% select( starts_with("h")) %>% head(2)
-HELPrct %>% select( matches("i[12]")) %>% head(2)  # regex matching
+HELPrct %>% select(ends_with("e"))   %>% head(2)
+HELPrct %>% select(starts_with("h")) %>% head(2)
+HELPrct %>% select(matches("i[12]")) %>% head(2)  # regex matching
 @
 
 \subsection{Renaming variables}
@@ -1155,7 +1155,7 @@ only certain rows from a data frame.
 <<faithful-long-xy>>=
 # any logical can be used to create subsets
 faithful2 %>% filter(duration > 3) -> faithfulLong 
-xyplot( time_til_next ~ duration, faithfulLong )
+xyplot(time_til_next ~ duration, faithfulLong)
 @
 
 \end{center}
@@ -1164,10 +1164,10 @@ xyplot( time_til_next ~ duration, faithfulLong )
 If all we want to do is produce a graph and don't need to save the 
 subset, the plot above could also be made with one of the following
 <<eval=FALSE, tidy=FALSE, fig.keep="last", fig.show="hide">>=
-xyplot( time_til_next ~ duration, 
-        data = faithful2 %>% filter( duration > 3) )
-xyplot( time_til_next ~ duration, data = faithful2, 
-        subset=duration > 3 )
+xyplot(time_til_next ~ duration, 
+       data = faithful2 %>% filter(duration > 3))
+xyplot(time_til_next ~ duration, data = faithful2, 
+       subset=duration > 3)
 @
 
 \subsection{Summarising a data frame}
@@ -1194,27 +1194,27 @@ package are probably easier for this particular task, but using \pkg{dplyr} is m
 OLD <- options(width=110)
 @
 <<results='hide',eval=FALSE>>=
-favstats( age ~ sex + substance, data=HELPrct, .format="table" )
+favstats(age ~ sex + substance, data=HELPrct, .format="table")
 @
 <<echo=FALSE>>=
-favstats( age ~ sex + substance, data=HELPrct) %>% data.frame
+favstats(age ~ sex + substance, data=HELPrct) %>% data.frame
 @
 <<results='hide',eval=FALSE>>=
-mean( age ~ sex + substance, data=HELPrct, .format="table" )
+mean(age ~ sex + substance, data=HELPrct, .format="table")
 @
 <<echo=FALSE>>=
-mean( age ~ sex + substance, data=HELPrct) -> foo
-foo <- data.frame( group=names(foo), mean=foo )
+mean(age ~ sex + substance, data=HELPrct) -> foo
+foo <- data.frame(group=names(foo), mean=foo)
 row.names(foo) <- NULL
 foo
 @
 
 <<results='hide',eval=FALSE>>=
-sd( age ~ sex + substance, data=HELPrct, .format="table" )
+sd(age ~ sex + substance, data=HELPrct, .format="table")
 @
 <<echo=FALSE>>=
-sd( age ~ sex + substance, data=HELPrct) -> foo
-foo <- data.frame( group=names(foo), sd=foo )
+sd(age ~ sex + substance, data=HELPrct) -> foo
+foo <- data.frame(group=names(foo), sd=foo)
 row.names(foo) <- NULL
 foo
 @
@@ -1286,7 +1286,7 @@ The difference between an inner join and a left join is that the inner join only
 
 Now we are ready to begin our analysis.
 <<fusion1-xtabs>>=
-tally(~t2d + genotype + marker, data=fusion1m)
+tally( ~ t2d + genotype + marker, data=fusion1m)
 @
 
 \begin{problem}
@@ -1322,7 +1322,7 @@ genome browser to find all the known genes on chromosome~1.
 \begin{widestuff}
 <<echo=FALSE, include=FALSE>>=
 library(RMySQL)
-OLD <- options( width=100 )
+OLD <- options(width=100)
 @
 
 <<tidy=FALSE, message=FALSE,warning=FALSE>>=
@@ -1338,8 +1338,8 @@ KnownGene <- tbl(UCSCdata, "knownGene")
 # Get the gene name, chromosome, start and end sites for genes on Chromosome 1
 Chrom1 <-
   KnownGene %>% 
-  select( name, chrom, txStart, txEnd ) %>%
-  filter( chrom == "chr1" )
+  select(name, chrom, txStart, txEnd) %>%
+  filter(chrom == "chr1")
 @
 <<echo=FALSE>>=
 options(OLD)
@@ -1367,7 +1367,7 @@ But certain things do not work unless we collect the results from the data based
 \Rindex{collect()}
 <<tidy=FALSE, warning=FALSE>>=
 Chrom1df <- collect(Chrom1l)       # collect into a data frame
-histogram( ~length, data=Chrom1df, xlab="gene length (kb)" )
+histogram( ~ length, data=Chrom1df, xlab="gene length (kb)")
 @
 
 
@@ -1585,7 +1585,7 @@ mystats <- function(x) {
     return(result)
 }
 mystats((1:20)^2)
-aggregate(Sepal.Length~Species, data=iris, FUN=mystats)
+aggregate(Sepal.Length ~ Species, data=iris, FUN=mystats)
 @
 
 \end{widestuff}
@@ -1766,7 +1766,7 @@ can read the data into \R\ directly from the URL:
 <<out.width=".5\\textwidth">>=
 Fires <- read.csv("http://www.calvin.edu/~rpruim/data/Fires.csv")
 head(Fires)
-xyplot( Acres/Fires ~ Year, data=Fires, ylab="acres per fire",
+xyplot(Acres/Fires ~ Year, data=Fires, ylab="acres per fire",
         type=c("p","smooth"))
 @
 
@@ -1891,7 +1891,7 @@ text2 <- 'Do you use "scare quotes"?'
 used.  One common reason for this is a typing error.  This is easily corrected by retyping the
 name with the correct spelling.
 <<>>=
-histogram( ~ aeg, data=HELPrct )
+histogram( ~ aeg, data=HELPrct)
 @
 
 Another reason for an object-not-found error is using unquoted 
@@ -1950,11 +1950,11 @@ Here is a brief summary of the commands introduced in this chapter.
 
 \begin{widestuff}
 <<tidy=FALSE,results='hide',fig.keep='none'>>=
-source( "file.R" )                               # execute commands in a file
+source("file.R")                                 # execute commands in a file
 
 x <- 1:10                                        # create vector with numbers 1 through 10
-M <- matrix( 1:12, nrow=3 )                      # create a 3 x 4 matrix
-data.frame(number = 1:26, letter=letters[1:26] ) # create a data frame
+M <- matrix(1:12, nrow=3)                        # create a 3 x 4 matrix
+data.frame(number = 1:26, letter=letters[1:26])  # create a data frame
 @
 \end{widestuff}
 
@@ -1965,8 +1965,8 @@ length(x)                                 # returns length of vector or list
 dim(HELPrct)                              # dimension of a matrix, array, or data frame
 nrow(HELPrct)                             # number of rows
 ncol(HELPrct)                             # number of columns
-names( HELPrct )                          # variable names in data frame
-row.names( HELPrct )                      # row names in a data frame
+names(HELPrct)                            # variable names in data frame 
+row.names(HELPrct)                        # row names in a data frame
 attributes(x)                             # returns attributes of x
 @
 \end{widestuff}
@@ -1993,7 +1993,7 @@ sort(x)                                   # returns elements of x in sorted orde
 order(x)                                  # x[ order(x) ] is x in sorted order
 rev(x)                                    # returns elements of x in reverse order
 diff(x)                                   # returns differences between consecutive elements
-paste( "Group", 1:3, sep="" )             # same as c("Group1", "Group2", "Group3")
+paste("Group", 1:3, sep="")               # same as c("Group1", "Group2", "Group3")
 @
 \end{widestuff}
 
