@@ -1,8 +1,6 @@
 <<echo=FALSE,include=FALSE>>=
 opts_chunk$set(fig.path="figures/RForStudents-") 
 set_parent("MOSAIC-StartTeaching.Rnw")
-require(mosaic)
-require(mosaicData)
 set.seed(123)
 @
 
@@ -40,6 +38,15 @@ is nothing left to take away.
 
 \bigskip
 
+\marginnote{Mike McCarthy, head coach of the Green Bay Packers football team
+uses ``Less Volume, More Creativity" as a mantra for his coaching staff
+as they prepare the game plan each week.  As an illustration of the principle
+at work, when asked by a fan how many pass plays the team prepares for a 
+given opponent, the coach answered,
+``When I first got into the NFL we had 150 passes in our game plan. 
+I've put a sign on all of the coordinators' doors -- Less volume, more creativity. 
+We function with more concepts with less volume. 
+[Now] We're more around 50 [passes] in a game plan.}
 \noindent
 One key to successfully introducing \R\ is finding a set of commands that is
 \begin{itemize}
@@ -47,6 +54,7 @@ One key to successfully introducing \R\ is finding a set of commands that is
     \item {coherent}, and  % commands should be as similar as possible
 	\item {powerful}. % can do what needs doing 
 \end{itemize}
+
 
 This chapter provides an extensive example of this ``Less Volume, More Creativity" 
 approach.  
@@ -98,13 +106,15 @@ Sometimes the \code{y} is not needed:
 <<eval=FALSE>>=
 goal( ~ x, data=mydata )
 @
+\noindent
 The formula may also include a third part
 <<eval=FALSE>>=
 goal( y ~ x | z , data=mydata )
 @
+\noindent
 We can unify all of these into one form:
 <<eval=FALSE>>=
-goal ( formula , data=mydata )
+goal( formula , data=mydata )
 @
 
 The template can be applied to create numerical summaries, graphical summaries, or model fits
@@ -926,7 +936,7 @@ Suppose we want to display the following table (based on data from the
 \myindex{Current Population Survey|see{\texttt{CPS85}}}
 \Rindex{tally()}
 <<>>=
-tally( ~sector, data=CPS85)
+tally( ~ sector, data=CPS85)
 @
 The \pkg{mosaic} function \function{bargraph()} can 
 display these tables as bar graphs, but there isn't enough room for the labels.

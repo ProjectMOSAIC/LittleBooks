@@ -17,7 +17,7 @@ require(NHANES)
 Resampling approaches have become increasingly important in statistical 
 education\cite{Tintle:TAS:2015}\cite{Hesterberg:2015}.
 The \pkg{mosaic} package  provides simplified functionality to support teaching inference
-based on randomization tests and bootstrap methods.  Our goal was to focus attention
+based on randomization tests and bootstrap methods.  Our goal is to focus attention
 on the important parts of these techniques (e.g., where randomness enters in and how to
 use the resulting distribution) while hiding some of the technical details
 involved in creating loops and accumulating values.
@@ -116,9 +116,9 @@ shuffle(1:10)
 shuffle(1:10)
 @
 
-Applying this to an explanatory variable allows us to test the hypothesis that
-the explanatory variable has, in fact, no explanatory power.  This idea can be used
-to test
+Applying \function{shuffle()} to an explanatory variable allows us to test the null 
+hypothesis that the explanatory variable has, in fact, no explanatory power.  
+This idea can be used to test
 \begin{itemize}
 \item
 the equivalence of two or more proportions,
@@ -189,9 +189,14 @@ with this example: including the observed test statistic in the null distributio
 and calculating 2-sided p-values.  
 \myindex{p-value!2-sided}%
 
-If the null hypothesis is true, then the test statistic computed from our original
-sample belongs to the sampling distribution and should be included when computing
-the p-value.  This has two advantages.  First, it ensures that our type I error rate 
+\Caution[-1cm]{If you are using a text book that covers randomization tests, you will
+need to check whether they include the test statistic computed from the original
+data in the null distribution or not.}
+If the null hypothesis is true, then not only our randomly generated data, but also
+the original data were generated in a world in which the null hypothesis is true.
+So it makes sense to add the original test statistic to the randomization distribution
+before calculating the p-value.
+This has two advantages.  First, it ensures that our type I error rate 
 is no larger than the nominal rate.  Second, it avoids reporting a p-value of 0 since there
 will always be at least one test statistic at least as extreme as the one computed from
 the original data, namely the one computed from the original data.
@@ -250,11 +255,11 @@ Two.Way.Table   <- do(999) *    chisq(y ~ shuffle(x),     data = Data)
 \end{widestuff}
 
 \Note[1.1cm]{The \function{chisq()} function computes the chi-squared statistic
-either from a fromula and data frame, from a table produced by \function{tally()}, 
+either from a formula and data frame, from a table produced by \function{tally()}, 
 or from an object produced by \function{chisq.test()}.}
 
 
-As an example, let's consider the proportion of subects in the Health Evaluation
+As an example, let's consider the proportion of subjects in the Health Evaluation
 and Linkage to Primary Care who were admitted to the substance abuse program
 for each of three substances: alcohol, cocaine, and heroin.  We'd like to know if
 there is evidence that these proportions differ for men and for women.
@@ -286,16 +291,12 @@ Both the histogram and our randomization p-value suggest that the differences ob
 between men and women are not statistically significant.
 
 
-
-As a specific example, let's test a null hypotheses that the proportion 
-of we can test the hypothesis that 
-
 \subsection{Testing a single mean}
 
 \Note{Somewhat surprisingly, this is the most 
 challenging hypothesis test to handle with our system.
 See below for one reason this doesn't bother us too much.}%
-One wrinkle in our system is the test for a sinlge mean.%
+One wrinkle in our system is the test for a single mean.%
 Let's illustrate with a test of $H_0: \mu = 98.6$ using our sample of 50 body 
 temperatures. Testing a null hypothesis of the form
 \begin{itemize}
@@ -336,7 +337,7 @@ Temp0.Null <-
   do(999) * mean( ~ BodyTemp, data = resample(BodyTemp50))
 @
 \noindent
-Unfortunatley, \code{Temp0.Null} is not a randomization distribution.  
+Unfortunately, \code{Temp0.Null} is not a randomization distribution.  
 Inspecting a histogram shows that the distribution is not centered at 0.
 <<>>=
 histogram( ~mean, data = Temp0.Null)
@@ -366,13 +367,13 @@ As before, we can now estimate a p-value by tallying how often we see a value at
 This time the p-value is quite small -- it would seem that 98.6 is not the mean 
 body temperature.
 
-Of all the randomization distributions, the randomization distribution used to test 
-hypotheses about a mean is the most awkward to create because of the shifting that 
+Of all the randomization distributions, randomization distributions used to test 
+hypotheses about a mean are the most awkward to create because of the shifting that 
 is required to center the distribution and the use of \code{resample()} (which can 
-cause confusion with bootstrap distributions).  
-But there is no case we'd rather have as our black sheep in the family, 
-primarily because a confidence interval is often much more appropriate than a 
-hypothesis test in this situation.
+cause confusion with bootstrap distributions).
+Fortunately, creating a confidince interval from a bootstrap distribution
+in this situation is straightforward, and we typically prefer confidence intervals
+to proportions in this situation.
 
 
 \section{The Bootstrap}
@@ -433,7 +434,7 @@ The primary value in introducing bootstrapping in introductory courses is pedago
 not scientific.  The percentile and standard error intervals introduced below are 
 readily accessible to students and can be applied in a wide range of situations.  But they
 are not the state of the art.
-In Section~\ref{sec:bootstrap-t} we will discuss briefly the bootstrap-t interval, a more accurate bootstrap method.  Other methods, such as BCa (bias corrected and accelerated)
+In Section~\ref{sec:bootstrap-t} we will briefly discuss the bootstrap-t interval, a more accurate bootstrap method.  Other methods, such as BCa (bias corrected and accelerated)
 or ABC (approximate bootstrap confidence) also improve upon the percentile and 
 standard error methods, but are beyond the scope of most introductory courses.
 
@@ -446,9 +447,10 @@ computing intervals using more sophisticated methods.
 \subsection{Bootstrap confidence intervals for a mean}
 
 \myindex{confidence interval}%
-Creating a randomization distribution for testing a hypothesis about a single mean
+Creating a randomization distribution to test a hypothesis about a single mean
 had some extra challenges.  
-Fortunately, creating a bootstrap distribution for a single mean is straightforward;
+Fortunately, a confidence interval is often preferable in this situation,
+and creating a bootstrap distribution for a single mean is straightforward:
 we simply compute the mean body temperature from many resampled versions of our 
 original data.
 
@@ -463,7 +465,7 @@ as the original, but some rows will be duplicated and others missing.
 
 \Caution{In less than ideal situations, we may need to adjust for bias 
 or use more sophisticated methods.  It is good for students to be in the habbit
-of checking these features of the boostrap distribution before using the 
+of checking these features of the bootstrap distribution before using the 
 simple bootstrap methods we present in this section.}
 Ideally, a bootstrap distribution should be unimodal, roughly symmetric, and 
 centered at the original estimate.
@@ -511,9 +513,10 @@ The simplest method is to use quantiles
 of a normal distribution, but this will undercover. Replacing the normal distribution
 with an appropriate t-distribution will widen intervals and can improve coverage, but 
 the t-distribution is only correct in a few cases -- such as when estimating the mean
-of a normal population -- and can perform badly when the population is skewed.\cite{Hesterberg:2015}.  
+of a normal population -- and can perform badly when the population is 
+skewed.\cite{Hesterberg:2015}  
 
-Because each of these methods of produces a confidence interval that depends only
+Because each of these methods produces a confidence interval that depends only
 on the distribution of the estimates computed from the resamples, they are easily
 implemented in wide variety of situations.  
 Calculating either of these simple confidence intervals from the bootstrap distribution
@@ -525,7 +528,7 @@ confint(Temp.Boot, method = c("percentile", "stderr"))
 @
 \end{widestuff}
 
-All that remains then the generation of the bootstrap distribution itself.
+All that remains then is the generation of the bootstrap distribution itself.
 
 \subsection{Bootstrap confidence intervals for the difference in means}
 
@@ -595,6 +598,7 @@ See Section~\ref{sec:improved-cis} for more on this.
 \Rindex{confint()}
 Calculating simple confidence intervals can be further automated using an extension to 
 \code{confint()}.
+<<>>=
 confint(Temp.Boot2b, method = c("percentile", "stderr"))
 @
 
@@ -603,6 +607,8 @@ confint(Temp.Boot2b, method = c("percentile", "stderr"))
 To illustrate the similarity among commands used to create 
 bootstrap distributions, we present five examples 
 that might appear in an introductory course.
+
+\medskip
 
 \begin{widestuff}
 <<eval = FALSE>>=
@@ -613,6 +619,8 @@ Two.Means       <- do(1000) * diffmean( y ~ x, data = resample(Data, groups = x)
 Correlation     <- do(1000) *      cor( y ~ x, data = resample(Data))
 @
 \end{widestuff}
+
+In the next section we discuss how to extend this to regression models.
 
 \section{Resampling for Regression}
 
@@ -662,6 +670,7 @@ the older debate over whether one should begin with quantitative or categorical 
 -- another way in which the two simulation-based books diverge.
 
 \section{Better Confidence Intervals}
+\label{sec:improved-cis}%
 
 \myindex{bootstrap-t}
 The percentile and ``t with bootstrap standard error" confidence intervals have been 
@@ -678,9 +687,9 @@ t = \frac{\hat{\theta} - \theta}{SE}
 $$
 using the boostrap distribution of
 $$
-t^* = \frac{\hat{\theta^*} - \hat{\theta}}{SE^*} \; ,
+t^* = \frac{\hat{\theta}^* - \hat{\theta}}{SE^*} \; ,
 $$
-where $\hat{\theta^*}$ and $SE^*$ are the estimate and estimated standard error
+where $\hat{\theta}^*$ and $SE^*$ are the estimate and estimated standard error
 computed from each bootstrap distribution.
 Implementing the bootstrap-t interval requires either an extra level of conceptual 
 framework or much more calculation to determine the values of $SE^*$.  If a standard error 
@@ -691,15 +700,16 @@ to estimate than confidence intervals, fewer resamples are required (per resampl
 at the second level; nevertheless, the additional computational overhead is significant.
 
 The \pkg{mosaic} package does not attempt to provide a general framework for the bootstrap-t
+\pagebreak
 or other ``second-order accurate" boostrap methods.
-Packages such as \pkg{resample}cite{resample}  and \pkg{boot}\cite{boot}
+Packages such as \pkg{resample}\cite{resample}  and \pkg{boot}\cite{boot,boot-book}
 are more appropriate for situations where speed and accuracy are of utmost importance.
 But the bootstrap-t confidence interval can be computed using 
-`confint()`, `do()` and `favstats()` in the case of estimating a single mean or 
+\code{confint()}, \code{do()} and \code{favstats()} in the case of estimating a single mean or 
 the difference between two means.
 
 In the example below, we analyse a data set from the \pkg{resample} package.  The 
-`Verizon` data set contains repair times for customers in CLEC (competitive) 
+\coe{Verizon} data set contains repair times for customers in CLEC (competitive) 
 and ILEC (incumbant) local exchange carrior.
 
 \begin{widestuff}
@@ -737,14 +747,14 @@ SE <- sd( ~ mean, data = BootT1); SE
 BootT1a <- 
   BootT1 %>% 
   mutate( T = (mean - mean(mean)) / (sd/sqrt(n)))
-q <- quantile(~ T, p = c(0.975, 0.025), data = BootT1) 
+q <- quantile(~ T, p = c(0.975, 0.025), data = BootT1a) 
 q
 estimate - q * SE
 densityplot( ~ T, data = BootT1a)
 plotDist("norm", add = TRUE, col="gray50")
 @
 
-For comparison, here are the intervals produced by `t.test()` and the percentile method.
+For comparison, here are the intervals produced by \code{t.test()} and the percentile method.
 
 \begin{widestuff}
 <<>>=
@@ -761,7 +771,7 @@ confint(BootT2b, method = "perc")
 \end{widestuff}
 
 \noindent
-The intervals produced by \code{t.test()r} are narrower, do the least to compensate for skew,
+The intervals produced by \code{t.test()} are narrower, do the least to compensate for skew,
 undercover, and miss more often in one direction than in the other\cite{Hesterberg:2015}.
 
 Even if these methods are not presented to students, it is good for instructors to
@@ -782,7 +792,8 @@ summaries easier.}
 
 \Rindex{NHANES}%
 As an example, we will use the \dataframe{NHANES} data.  This data set has 
-been adjusted to reflect the sampling weights used in the NHANES study and 
+been adjusted to reflect the sampling weights used in the 
+American National Health and Nutrition Examination surveys and
 is a reasonably good approximation to a simple random sample of size 10,000 
 from the US population.  For the purspose of this example, we will treat this
 as the entire population and consider samples drawn from it, focusing (for the moment)

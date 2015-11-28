@@ -717,8 +717,8 @@ be trained to follow good data organization practices:
 \item Use each subsequent row for one observational unit.
 \item Give the resulting data frame a good name.
 \end{itemize}
-Scientists may be disappointed that \R\ data frames don't keep track of additional 
-information, like the units in which the observations are recorded.  
+Some scientists may be disappointed that \R\ data frames don't keep track 
+of additional information, like the units in which the observations are recorded.  
 This sort of information should be recorded, 
 along with a description of the protocols used to collect the data, observations
 made during the data recording process, etc.  
@@ -779,6 +779,7 @@ Here is a brief summary of the commands introduced in this chapter.
 \Rindex{read.table()}
 \Rindex{read.csv()}
 \Rindex{read.file()}
+\Rindex{inspect()}
 <<tidy=FALSE,results='hide',fig.keep="none", message = FALSE>>=
 require(mosaic)                   # load the mosaic package
 require(mosaicData)               # load the mosaic data sets
@@ -790,7 +791,8 @@ data(iris)                        # (re)load the iris data set
 names(iris)                       # see the names of the variables in the iris data
 head(iris)                        # first few rows of the iris data set
 sample(iris, 3)                   # 3 randomly selected rows of the iris data set
-summary(iris)                     # summarize each variables in the iris data set
+inspect(iris)                     # summarize each variable in the iris data set
+summary(iris)                     # summarize each variable in the iris data set
 str(iris)                         # show the structure of the iris data set
 
 mydata <- read.table("file.txt")  # read data from a text file
