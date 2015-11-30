@@ -9,6 +9,7 @@ set.seed(123)
 options(digits = 3)
 trellis.par.set(theme = col.mosaic())
 require(NHANES)
+require(Lock5withR)
 @
 
 
@@ -32,7 +33,8 @@ Textbooks that use a simulation-based approach also begin their discussion of th
 inference process immediately, using other examples.\cite{Lock5:2012}\cite{Tintle:ISI:2015}
 Even when teaching a more traditional course, simulation of the lady tasting tea or 
 some other example can be introduced early in the course to help students begin
-to understand the key ideas involved in hypothesis testing.
+to understand the key ideas involved in hypothesis testing 
+and estimation.
 
 \section{Hypothesis Tests}
 
@@ -68,13 +70,21 @@ can be used instead of the standard two-sample $t$ test statistic
 \]
 
 In Step~3, we use randomization to approximate the sampling distribution of the 
-test statistic.  We have already seen an example of this in the lady tasting 
-tea example.\footnote{See Section~\ref{sec:lady-tasting-tea}.}  This example is a bit
-unusual, however.  Because the sampling distribution is so simple, it can be 
-completely specified without reference to the data:  
+test statistic.  Our lady tasting tea example demonstrates how this can be 
+done from first principles as early as the first day of class.%
+\footnote{See Section~\ref{sec:lady-tasting-tea}.}  
+This example is a bit unusual, however.  
+Because the sampling distribution is so simple, the simulation
+required to create a randomization distribution 
+is completely specified without reference to the data:  
 It's a binomial distribution with parameters determined by
 the sample size and the null hypothesis, and we can simulate 
 it with \code{rflip()}.
+%There is only one distribution for a given
+%proportion, but there are many distributions that can have 
+%a specified mean.  Similarly, if our null hypothesis is that
+%two proportions are equal, this doesn't specify what they 
+%are equal to.
 
 More typically, we will use randomization to create new simulated data
 sets that are like our original data in some ways, but make the null
@@ -132,6 +142,8 @@ For example, let's test whether young men and women have the same mean body temp
 using a data set that contains body temperatures for 50 college students, 25 men and 
 25 women.
 
+\medskip
+
 \begin{widestuff}
 <<>>=
 require(Lock5withR)
@@ -150,6 +162,8 @@ inspect(BodyTemp50)
 \item Compute a test statistic.
 \Rindex{diffmean()}%
 
+\medskip
+
 \begin{widestuff}
 <<>>=
 favstats( BodyTemp ~ Sex, data = BodyTemp50)
@@ -159,6 +173,8 @@ T <- diffmean( BodyTemp ~ Sex, data = BodyTemp50); T
 
 \item Use randomiztion to compute a p-value.
 \myindex{p-value}
+
+\medskip
 
 \begin{widestuff}
 <<>>=
@@ -180,9 +196,10 @@ that male and female college students have the same mean body temperature.
 
 In the preceding example,
 we hardly needed to compute a p-value because the histogram
-clearly showed that the observed test statistic (0.176) was not very unusual, so these data
-don't offer any reason to reject the null hypothesis that male and female college 
-students have the same mean body temperature.
+clearly showed that the observed test statistic (0.176) would not be unusual even if 
+the null hypothesis were true, 
+so these data don't offer any reason to reject the null hypothesis that male 
+and female college students have the same mean body temperature.
 
 Nevertheless, there are two issues related to p-value calculations that we want to address
 with this example: including the observed test statistic in the null distribution,
@@ -233,17 +250,23 @@ randomization distribution is skewed, is slightly more difficult to compute, and
 transformation invarient, so tests that are equivalent as 1-sided tests might not result
 in equivalent 2-sided tests.  
 It seems there is no reason to introduce this method to students.
+\TeachingTip{But this alternative might be covered in the text book you 
+are using, so students might use it even if you don't teach it.}
 
 \subsection{Some additional examples}
 
 The technique of shuffling an explanatory variable can be applied to a wide range of 
 situations.  The following templates illustrate the similarity among these.
 
+
+
 \Rindex{diffprop()}%
 \Rindex{diffmean()}%
 \Rindex{chisq()}%
 \Rindex{tally()}%
 \Rindex{lm()}%
+
+\medskip
 
 \begin{widestuff}
 <<eval = FALSE>>=
@@ -277,6 +300,8 @@ We can simulate a world in which the proportions vary only because of random sam
 variability using \function{shuffle()} to permute the \variable{sex} (or equivalently
 \variable{substance}) labels.
 
+\medskip
+
 \begin{widestuff}
 <<>>=
 T <- chisq(substance ~ shuffle(sex), data = HELPrct); T  # test statistic
@@ -296,14 +321,15 @@ between men and women are not statistically significant.
 \Note{Somewhat surprisingly, this is the most 
 challenging hypothesis test to handle with our system.
 See below for one reason this doesn't bother us too much.}%
-One wrinkle in our system is the test for a single mean.%
+One wrinkle in our system is the test for a single mean.
 Let's illustrate with a test of $H_0: \mu = 98.6$ using our sample of 50 body 
 temperatures. Testing a null hypothesis of the form
 \begin{itemize}
 \item
   $H_0$: $\mu = \mu_0$ 
 \end{itemize}
-is a bit of a special case.  Unlike the examples above, there is no 
+is a bit of a special case.  
+Unlike the examples above, there is no 
 explanatory variable to shuffle.  Unlike a test for a single proportion,
 the null hypothesis does not completely specify the sampling distribution.
 
@@ -338,32 +364,37 @@ Temp0.Null <-
 @
 \noindent
 Unfortunately, \code{Temp0.Null} is not a randomization distribution.  
-Inspecting a histogram shows that the distribution is not centered at 0.
+Inspecting a histogram shows that the distribution is not centered at 98.6,
+so we are not simulating a world in which the null hypothesis is true.
 <<>>=
 histogram( ~mean, data = Temp0.Null)
 @
 \noindent
 Instead it is centered at the mean of our original sample,
 \Sexpr{round(mean( ~ BodyTemp, data = BodyTemp50), 2)}.  This hints
-at a way to create a proper randomization distribution.  We can shift this by 
-$98.6 - \Sexpr{round(mean( ~ BodyTemp, data = BodyTemp50), 2)} =
+at a way to create a proper randomization distribution.  We can shift the distribution 
+by  $98.6 - \Sexpr{round(mean( ~ BodyTemp, data = BodyTemp50), 2)} =
 \Sexpr{98.6 - round(mean( ~ BodyTemp, data = BodyTemp50), 2)}$.
 That will result in a distribution that has the same shape as our data but a mean
 of 98.6, as the null hypothesis demands.
 
+\smallskip
+
 \begin{widestuff}
 <<>>=
-Temp1.Null <- do(999) * 
+Temp1.Null <- do(9999) * 
   mean( ~ BodyTemp + (98.6 - 98.26), data = resample(BodyTemp50))
 histogram( ~ mean, data = Temp1.Null, v = 98.26, center = 98.6)
 @
 
 \end{widestuff}
 As before, we can now estimate a p-value by tallying how often we see a value at least as small as 98.26.
-<<>>=
+<<cache = FALSE>>=
 2 * prop1( ~ (mean <= 98.26), data = Temp1.Null)
 @
 \noindent
+\Note{We used more replicates in this example
+to give us a better estimate of this small p-value.}%
 This time the p-value is quite small -- it would seem that 98.6 is not the mean 
 body temperature.
 
@@ -373,7 +404,7 @@ is required to center the distribution and the use of \code{resample()} (which c
 cause confusion with bootstrap distributions).
 Fortunately, creating a confidince interval from a bootstrap distribution
 in this situation is straightforward, and we typically prefer confidence intervals
-to proportions in this situation.
+to p-values in this situation.
 
 
 \section{The Bootstrap}
@@ -404,7 +435,7 @@ to see how much variability there is in estimates from sample to sample
 In practice, we will never have access to the entire population (or we wouldn't need
 to be making estimates). The key idea of the bootstrap is 
 to treat our sample as an approximate representation
-of the population, and generate an approximate sampling distribution by sampling
+of the population, and to generate an approximate sampling distribution by sampling
 (with replacement) \emph{from our sample}.
 \Note{We can use bootstrap methods to estimate the bias in the estimate
 as well.}%
@@ -414,10 +445,11 @@ Before we proceed, there are a few important things to note about this process.
 \begin{enumerate}
 \item Resampling does not provide a better estimate.
 
-Resampling is only used to estimate the \emph{variability} in our estimate, not in an
-attempt to improve the estimate itself.  If we attempted to improve our estimate using
-our bootstrap samples, we would just make things worse by producing an estimate of 
-our estimate.
+Resampling is only used to estimate the sample-to-sample \emph{variability} 
+in our estimate, not in an attempt to improve the estimate itself.  
+If we attempted to improve our estimate using our bootstrap samples, 
+we would just make things worse by producing an estimate of our estimate
+and essentially doubling any bias in the estimation.
 
 \item
 Resampling works better with large samples than with small samples.
@@ -434,8 +466,9 @@ The primary value in introducing bootstrapping in introductory courses is pedago
 not scientific.  The percentile and standard error intervals introduced below are 
 readily accessible to students and can be applied in a wide range of situations.  But they
 are not the state of the art.
-In Section~\ref{sec:bootstrap-t} we will briefly discuss the bootstrap-t interval, a more accurate bootstrap method.  Other methods, such as BCa (bias corrected and accelerated)
-or ABC (approximate bootstrap confidence) also improve upon the percentile and 
+In Section~\ref{sec:improved-cis} we will briefly discuss the bootstrap-t interval, 
+a more accurate bootstrap method.  Other methods, such as BCa (bias corrected and 
+accelerated) or ABC (approximate bootstrap confidence) also improve upon the percentile and 
 standard error methods, but are beyond the scope of most introductory courses.
 
 \Rindex{resample}%
@@ -463,7 +496,7 @@ When applied to a data frame, the \function{resample()} function samples
 rows with replacement to produce a new data frame with the same number of rows
 as the original, but some rows will be duplicated and others missing.
 
-\Caution{In less than ideal situations, we may need to adjust for bias 
+\Caution[-2cm]{In less than ideal situations, we may need to adjust for bias 
 or use more sophisticated methods.  It is good for students to be in the habbit
 of checking these features of the bootstrap distribution before using the 
 simple bootstrap methods we present in this section.}
@@ -504,6 +537,7 @@ estimate <- mean( ~ BodyTemp, data = BodyTemp50)
 estimate
 estimate + c(-1,1) * 2 * SE
 @
+
 This method does not perform as well as the percentile method,
 but can serve as a good bridge to the formula-based intervals often included even in
 a course that focuses on simulation-based methods.
@@ -522,6 +556,8 @@ implemented in wide variety of situations.
 Calculating either of these simple confidence intervals from the bootstrap distribution
 can be further automated using an extension to \code{confint()}.
 
+\medskip
+
 \begin{widestuff}
 <<>>=
 confint(Temp.Boot, method = c("percentile", "stderr"))
@@ -534,6 +570,8 @@ All that remains then is the generation of the bootstrap distribution itself.
 
 If we are interested in a confidence interval for the difference in group means, we can use
 \code{resample()} and \code{do()} to generate a bootstrap distribution in one of two ways.
+
+\medskip
 
 \begin{widestuff}
 <<>>=
@@ -582,22 +620,22 @@ estimate of the standard error.
 SE <- sd( ~ diffmean, data = Temp.Boot2b); SE
 D + c(-1,1) * 2 * SE
 @
+% \noindent
+% The primary pedagogical value of the bootstrap standard error approach is its close
+% connection to the standard formula-based confidence interval methods.
+% How to replace the constant 2 with an appropriate value to create more accurate intervals
+% or to allow for different confidence levels is a matter of some subtlety
+% \cite{Hesterberg:2015}.  The simplest method is to use quantiles 
+% of a normal distribution, but this will undercover. Replacing the normal distribution
+% with an appropriate t-distribution will widen intervals and can improve coverage, but 
+% the t-distribution is only correct in a few cases -- such as when estimating the mean
+% of a normal population -- and can perform badly when the population is skewed.
+% See Section~\ref{sec:improved-cis} for more on this.
+
+
 \noindent
-The primary pedagogical value of the bootstrap standard error approach is its close
-connection to the standard formula-based confidence interval methods.
-How to replace the constant 2 with an appropriate value to create more accurate intervals
-or to allow for different confidence levels is a matter of some subtlety
-\cite{Hesterberg:2015}.  The simplest method is to use quantiles 
-of a normal distribution, but this will undercover. Replacing the normal distribution
-with an appropriate t-distribution will widen intervals and can improve coverage, but 
-the t-distribution is only correct in a few cases -- such as when estimating the mean
-of a normal population -- and can perform badly when the population is skewed.
-See Section~\ref{sec:improved-cis} for more on this.
-
-
-\Rindex{confint()}
-Calculating simple confidence intervals can be further automated using an extension to 
-\code{confint()}.
+\Rindex{confint()}%
+Either interval can be computed using \code{confint()}, if we prefer.
 <<>>=
 confint(Temp.Boot2b, method = c("percentile", "stderr"))
 @
@@ -638,14 +676,16 @@ by adding to the fitted function a resampled residual.
 Both methods are simple to implement; 
 we either resample the data or resample the model itself.
 
+\medskip
+
 \Rindex{relm()}%
 \Rindex{resample()}%
 \begin{widestuff}
 <<>>=
-mod <- lm( length ~ width, data = KidsFeet)        # original model
-do(1) * mod                                        # see how do() treats it
-do(2) * lm( length ~ width, data = resample(KidsFeet))  # resampled data
-do(2) * lm( length ~ width, data = resample(mod))       # resampled residuals
+mod <- lm( length ~ width + sex, data = KidsFeet)         # original model
+do(1) * mod                                               # see how do() treats it
+do(2) * lm( length ~ width + sex, data = resample(KidsFeet))  # resampled data
+do(2) * lm( length ~ width + sex, data = resample(mod))       # resampled residuals
 do(2) * relm(mod)                 # abbreviated residual resampling
 @
 \end{widestuff}
@@ -655,7 +695,9 @@ From here it is straightforward to create a confidence interval for the slope
 <<>>=
 Kids.Boot <- do(1000) * relm(mod)
 cdata( ~ width, data = Kids.Boot, p = 0.95)
+confint( Kids.Boot, parm = "width")
 @
+
 
 \section{Which comes first: p-values or intervals?}
 
@@ -667,7 +709,28 @@ These two books differ in several other ways as well.
 It remains to be seen whether best practices will emerge or whether 
 some issues will remain a matter of personal preference.  This is not unlike
 the older debate over whether one should begin with quantitative or categorical data
--- another way in which the two simulation-based books diverge.
+-- another way in which these two simulation-based books diverge.
+
+\section{Dealing with Monte Carlo Variability}
+
+Because randomization and bootstrap distributions involve a random component, p-values
+and confidence intervals computed from the same data will vary.  
+For students (and graders), this can be disconcerting because there is no ``right" answer. 
+
+The amount of Monte Carlo variability depends on the number of replicates used to 
+create the randomization or bootstrap distribution.  And students will need some 
+guidance about how many replicates to use.  It is important that they not use too 
+few as this will introduce too much random noise into p-value and confidence interval
+calculations.  But each replicate costs time, and the marginal gain for each additional
+replicate decreases as the number of replicates incresases.  There is little reason to
+use millions of replicates (unless the goal is to estimate very small p-values). 
+We generally use roughly 1000 for routine or preliminary work and increase this to 
+10,000 when we want to reduce the effects of Monte Carlo variability.  
+
+In a laboratory setting, it can be instructive to have students compare their p-values
+or confidence intervals using 1,000 and 10,000 replicates.  Alternatively, the instructor
+can generate several p-values or confidence intervals to illustrate the same principle.
+
 
 \section{Better Confidence Intervals}
 \label{sec:improved-cis}%
@@ -700,7 +763,6 @@ to estimate than confidence intervals, fewer resamples are required (per resampl
 at the second level; nevertheless, the additional computational overhead is significant.
 
 The \pkg{mosaic} package does not attempt to provide a general framework for the bootstrap-t
-\pagebreak
 or other ``second-order accurate" boostrap methods.
 Packages such as \pkg{resample}\cite{resample}  and \pkg{boot}\cite{boot,boot-book}
 are more appropriate for situations where speed and accuracy are of utmost importance.
@@ -709,8 +771,10 @@ But the bootstrap-t confidence interval can be computed using
 the difference between two means.
 
 In the example below, we analyse a data set from the \pkg{resample} package.  The 
-\coe{Verizon} data set contains repair times for customers in CLEC (competitive) 
+\dataframe{Verizon} data set contains repair times for customers in CLEC (competitive) 
 and ILEC (incumbant) local exchange carrior.
+
+\medskip
 
 \begin{widestuff}
 <<>>=
@@ -740,7 +804,7 @@ confint(BootT2, method = "boot")
 \noindent
 This can also be accomplished manually, although the computations are a bit involved
 for the 2-sample case.  Here are the manual computations for the 1-sample case:
-<<>>=
+<<fig.keep = "last">>=
 estimate <- mean( ~ Time, data = ILEC) 
 estimate
 SE <- sd( ~ mean, data = BootT1); SE
@@ -756,13 +820,19 @@ plotDist("norm", add = TRUE, col="gray50")
 
 For comparison, here are the intervals produced by \code{t.test()} and the percentile method.
 
+\medskip
+
 \begin{widestuff}
 <<>>=
 confint(t.test( ~ Time, data = ILEC))
 BootT1b <- 
   do(1000) * mean( ~ Time, data = resample(ILEC))
 confint(BootT1b, method = "perc")
+@
+\end{widestuff}
 
+\begin{widestuff}
+<<>>=
 confint(t.test(Time ~ Group, data = Verizon))
 BootT2b <- 
   do(1000) * diffmean(Time ~ Group, data = resample(Verizon, groups = Group))
@@ -771,13 +841,15 @@ confint(BootT2b, method = "perc")
 \end{widestuff}
 
 \noindent
-The intervals produced by \code{t.test()} are narrower, do the least to compensate for skew,
-undercover, and miss more often in one direction than in the other\cite{Hesterberg:2015}.
+In a situation like this, the intervals produced by \code{t.test()} are narrower, 
+do the least to compensate for skew,
+undercover, and miss more often in one direction than in the other.
 
 Even if these methods are not presented to students, it is good for instructors to
 be at least somewhat familiar with the issues involved and some of the methods that 
-have been developed to handle them.  See \citep{Hesterberg:2015} for a more 
-thorough discussion of what instructors should know about the bootstrap. 
+have been developed to handle them.\cite{Hesterberg:2015}
+% for a more 
+% thorough discussion of what instructors should know about the bootstrap. 
 
 \section{Simulating sampling distributions}
 \label{sec:sampling-dists}%
@@ -786,16 +858,13 @@ We conclude this chapter with one more use of \code{sample()}.  If we treat a da
 frame as a population, \code{sample()} can be used to draw random samples of a 
 specified size to illustrate the idea of a sampling distribution.  We could 
 use this to illustrate the sampling distribution of a sample mean, for example.
-\Note{We are using \code{bind_rows()} to combine two sampling distributions (with 
-different sample sizes) into a single data frame to make graphical and numerical
-summaries easier.}
 
 \Rindex{NHANES}%
 As an example, we will use the \dataframe{NHANES} data.  This data set has 
 been adjusted to reflect the sampling weights used in the 
 American National Health and Nutrition Examination surveys and
 is a reasonably good approximation to a simple random sample of size 10,000 
-from the US population.  For the purspose of this example, we will treat this
+from the US population.  For the purpose of this example, we will treat this
 as the entire population and consider samples drawn from it, focusing (for the moment)
 on the \variable{Age} variable.
 
@@ -807,6 +876,8 @@ mean( ~ Age, data = NHANES)           # population mean
 We will consider samples of size 50 and size 200.  This can be used to demonstrate
 the role of sample size in the sampling distribution.
 
+\medskip
+
 \begin{widestuff}
 <<>>=
 mean( ~ Age, data = sample(NHANES, 50))  # mean of one sample
@@ -816,13 +887,26 @@ mean( ~ Age, data = sample(NHANES, 50))  # mean of another sample
 
 \begin{widestuff}
 <<>>=
+# We use bind_rows() to combine two sampling distributions 
+# (with different sample sizes) into a single data frame to 
+# make graphical and numerical summaries easier.
 SamplingDist <-
   bind_rows(
     do(2000) * c(mean = mean( ~ Age, data = sample(NHANES, 50)), n= 50),
     do(2000) * c(mean = mean( ~ Age, data = sample(NHANES, 200)), n= 200)
   )
+@
+\end{widestuff}
+
+\begin{widestuff}
+<<>>=
 mean( mean ~ n, data = SamplingDist)    # mean of sampling distribution
 sd( mean ~ n, data = SamplingDist)      # SE from sampling distribution
+@
+\end{widestuff}
+
+\begin{widestuff}
+<<>>=
 sd( ~ Age, data = NHANES) / c("50" = sqrt(50), "200" = sqrt(200))  # SE from formula
 histogram( ~ mean | factor(n), data = SamplingDist, 
            nint = 50, density = TRUE)
