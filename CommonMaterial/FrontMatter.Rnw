@@ -224,7 +224,7 @@ to develop deeper skills.  Establishing precursors in introductory courses help 
 In practice, most courses will incorporate elements of both 
 statistical computation and computational statistics, but the relative 
 proportions may differ dramatically from course to course.
-Where on the spectrum a course lies will be depend
+Where on the spectrum a course lies will depend
 on many factors including 
 the goals of the course, 
 the availability of technology for student use, 
