@@ -214,7 +214,7 @@ Just over 30\% of the days are weekends or holidays.
 \end{solution}
 \begin{problem}
 Use side-by-side boxplots to compare the distribution of \variable{volume} by day type in the \dataframe{RailTrail} dataset.
-Hint: you'll need to turn the numeric \variable{weekday} variable into a factor variable using \function{as.factor()}.
+Hint: you'll need to turn the numeric \variable{weekday} variable into a factor variable using \function{as.factor()} or use the {\tt horizontal=FALSE} option.
 What do you conclude?
 \end{problem}
 \begin{solution}
