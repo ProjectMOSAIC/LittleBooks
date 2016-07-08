@@ -19,7 +19,7 @@ level (see \function{?options} for more configuration possibilities).
 <<cesd1,cache=FALSE>>=
 require(mosaic)
 require(mosaicData)
-options(digits=3)
+options(digits=4)
 mean(~ cesd, data=HELPrct)
 @
 
