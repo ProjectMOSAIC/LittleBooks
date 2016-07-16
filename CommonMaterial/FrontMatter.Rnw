@@ -129,6 +129,8 @@ If you find that things look different on your computer, make sure that your
 version of \R{} and your packages are up to date and check for a newer version 
 of this document.
 
+Kudos to Joseph Cappelleri for many useful comments on earlier drafts of these materials.
+
 
 
 \chapter*{Project MOSAIC}
@@ -204,6 +206,8 @@ connections between the MOSAIC topics.
 
 More details can be found at \url{http://www.mosaic-web.org}.
 We welcome and encourage your participation in all of these initiatives.  
+
+
 
 \chapter*{Computational Statistics}
 
