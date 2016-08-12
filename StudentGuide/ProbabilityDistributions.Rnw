@@ -69,6 +69,11 @@ plotDist('norm', mean=100, sd=10, kind='cdf')
 <<tidy=FALSE>>=
 plotDist('exp', kind='histogram', xlab="x")
 @
+Note that this sets the rate parameter to 1 by default and is equivalent to the following command.
+<<eval=FALSE, tidy=FALSE>>=
+plotDist('exp', rate=1, kind='histogram', xlab="x")
+@
+
 <<tidy=FALSE,fig.keep='last'>>=
 plotDist('binom', size=25, prob=0.25, xlim=c(-1,26))
 @
