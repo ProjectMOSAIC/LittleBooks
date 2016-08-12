@@ -5,8 +5,13 @@ We can fit a two (or more) way ANOVA model, without or with an interaction,
 using the same modeling syntax.
 \Rindex{median()}%
 \Rindex{bwplot()}%
+\Rindex{factor()}%
+\Rindex{mutate()}%
 \Rindex{aov()}%
 <<help-aovplot>>=
+HELPrct <- mutate(HELPrct, subgrp = factor(substance,
+  levels=c("alcohol", "cocaine", "heroin"),
+  labels=c("A", "C", "H")))
 median(cesd ~ substance | sex, data=HELPrct)
 bwplot(cesd ~ subgrp | sex, data=HELPrct)
 @
