@@ -33,3 +33,5 @@ Others that are in progress include
  
   * Start Modeling with R
 
+
+There is a spanish language translation of the *Student's Guide to R* available at https://github.com/jarochoeltrocho/MOSAIC-LittleBooks-Spanish (kudos to Francisco Javier Jara Ávila, https://github.com/jarochoeltrocho)
