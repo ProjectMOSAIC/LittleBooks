@@ -1,0 +1,225 @@
+
+\ProvidesPackage{RBook}[2013/04/04 Mosaic R Books style]
+
+\makeatletter
+\def\IfClass#1#2#3{\@ifundefined{opt@#1.cls}{#3}{#2}}
+\makeatother
+\IfClass{tufte-book}{\setcounter{secnumdepth}{3}}{\relax}
+\IfClass{tufte-book}{\def\subsubsection#1{\newthought{#1}}}{}
+
+\RequirePackage{import}
+\RequirePackage{graphicx}
+\RequirePackage{alltt}
+\RequirePackage{mparhack}
+\RequirePackage{xstring}
+
+\RequirePackage{etoolbox}
+\RequirePackage{multicol}
+\RequirePackage{xcolor}
+\RequirePackage{framed}
+\RequirePackage{hyperref}
+\RequirePackage{fancyhdr}
+
+\RequirePackage{probstat}
+\RequirePackage[answerdelayed,exercisedelayed,lastexercise,chapter]{problems}
+\RequirePackage{longtable}
+\RequirePackage{language}
+
+\RequirePackage{tikz}
+\usetikzlibrary{shadows}
+\usetikzlibrary{decorations}
+\usetikzlibrary{shapes.multipart}
+\usetikzlibrary{shapes.symbols}
+\usetikzlibrary{shapes.misc}
+\usetikzlibrary{shapes.geometric}
+
+\RequirePackage[utf8]{inputenc}
+\RequirePackage{underscore}
+
+\newcommand{\mymarginpar}[1]{%
+\vadjust{\smash{\llap{\parbox[t]{\marginparwidth}{#1}\kern\marginparsep}}}}
+
+\newcommand{\tikzNote}[3]{%
+\marginpar[%
+\hspace*{0.5in}
+\parbox{1.2in}{\begin{tikzpicture}
+\node at (0,0) [#3]
+{\parbox{1.05in}{\footnotesize {\sc #1 }{\raggedright #2}}};
+\end{tikzpicture}}
+]{%
+\parbox{1.2in}{\begin{tikzpicture}
+\node at (0,0) [#3]
+{\parbox{1.05in}{\footnotesize {\sc #1 }{\raggedright #2}}};
+\end{tikzpicture}}}\ignorespaces
+}%
+
+\renewcommand{\tikzNote}[4][0pt]{
+\marginnote[#1]{
+\textsc{#2}
+
+\noindent #3
+}%
+}
+
+%\newcommand{\InstructorNote}[3][]{%
+%\tikzNote[#1]{#2}{#3}{double copy shadow={opacity=.5},tape,fill=blue!10,draw=blue,thick}
+%}
+
+\newcommand{\InstructorNote}[2][0pt]{%
+  \tikzNote[#1]{}{#2}{tape,fill=blue!10,draw=blue,thick}%
+}
+
+\newcommand{\DiggingDeeper}[2][0pt]{%
+\tikzNote[#1]{\centerline{Digging Deeper}}{#2}{tape,fill=blue!10,draw=blue,thick}%
+}
+
+
+\newcommand{\TeachingTip}[2][0pt]{%
+\tikzNote[#1]{\centerline{Teaching Tip}}{#2}{tape,fill=blue!10,draw=blue,thick}%
+}
+
+
+\newcommand{\FoodForThought}[2][0pt]{%
+\tikzNote[#1]{}{#2}{rectangle,fill=green!10,draw=green,thick}%
+}
+
+\newcommand{\SuggestionBox}[2][0pt]{%
+  \tikzNote[#1]{\centerline{Suggestion Box}}{#2}{rectangle,fill=green!10,draw=green,thick}%
+}
+
+\newcommand{\Caution}[2][0pt]{%
+  \tikzNote[#1]{\centerline{Caution!}}{#2}{chamfered rectangle,fill=red!10,draw=red,thick}%
+}
+
+\newcommand{\Pointer}[2][0pt]{%
+\tikzNote[#1]{\centerline{More Info}}{#2}{}%
+}
+
+\newcommand{\Note}[2][0pt]{%
+\tikzNote[#1]{\centerline{Note}}{#2}{}%
+}
+
+\newcommand{\BlankNote}[1][0pt]{%
+\tikzNote[#1]{}{}{}%
+}
+
+
+
+\newcounter{examplenum}[chapter]
+\newenvironment{example}[1][\relax]{
+\refstepcounter{examplenum}
+\textbf{Example \thechapter.\arabic{examplenum}.{#1}}
+}{%
+\hfill {\Large $\diamond$}
+%\centerline{\rule{5in}{.5pt}}
+}
+
+
+\newcounter{myenumi}
+\newcommand{\saveenumi}{\setcounter{myenumi}{\value{enumi}}}
+\newcommand{\reuseenumi}{\setcounter{enumi}{\value{myenumi}}}
+
+\newcommand{\cran}{\href{http://www.R-project.org/}{CRAN}}
+
+%%%%%%%% tufte-book work-arounds %%%%%%%%%
+\makeatletter
+\newenvironment{widestuff}%
+{
+\hspace*{-2ex}\begin{minipage}{\@tufte@fullwidth}}%
+{\end{minipage}}
+\makeatother
+
+%%%%%%%% Some R Stuff %%%%%%%%%%%%%%%
+\newcommand{\rterm}[1]{\textbf{#1}}
+\def\R{{\sf R}}
+\def\Rstudio{{\sf RStudio}}
+\def\RStudio{{\sf RStudio}}
+\def\term#1{\textbf{#1}}
+\def\tab#1{{\sf #1}}
+
+%%%%%%%%%%%%% some boxed elements %%%%%%%%%%%%%%%%
+
+\newlength{\tempfmlength}
+\newsavebox{\fmbox}
+\newenvironment{fmpage}[1]
+{
+\medskip
+\setlength{\tempfmlength}{#1}
+\begin{lrbox}{\fmbox}
+\begin{minipage}{#1}
+\vspace*{.02\tempfmlength}
+\hfill
+\begin{minipage}{.95 \tempfmlength}}
+{\end{minipage}\hfill
+\vspace*{.015\tempfmlength}
+\end{minipage}\end{lrbox}\fbox{\usebox{\fmbox}}
+\medskip
+}
+
+\newenvironment{boxedText}[1][.98\textwidth]%
+{%
+\begin{center}
+\begin{fmpage}{#1}
+}%
+{%
+\end{fmpage}
+\end{center}
+}
+
+\newenvironment{boxedTable}[2][tbp]%
+{%
+\begin{table}[#1]
+  \refstepcounter{table}
+  \begin{center}
+\begin{fmpage}{.98\textwidth}
+  \begin{center}
+	\sf \large Box~\expandafter\thetable. #2
+\end{center}
+\medskip
+}%
+{%
+\end{fmpage}
+\end{center}
+\end{table}		% need to do something about exercises that follow boxedTable
+}
+
+%%% indexing %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newcommand{\printindex}[1]{\relax}
+%\newcommand{\indexchap}[1]{\relax}
+%\RequirePackage{amsmidx}
+\RequirePackage{makeidx}
+
+\newcommand{\exampleidx}[1]{{\it #1}}
+\newcommand{\defidx}[1]{{\bf #1}}
+\newcommand{\mainidx}[1]{{\bf #1}}
+\newcommand{\probidx}[1]{{{\underline{#1}}}}
+\makeindex
+%\makeindex{Rindex}
+%\makeindex{mainIndex}
+%\newcommand{\Rindex}[1]{\index{Rindex}{#1@\texttt{#1}}}
+%\newcommand{\myindex}[1]{\index{mainIndex}{#1}}
+%\newcommand{\mathindex}[1]{\index{mainIndex}{$#1$}}
+\newcommand{\Rindex}[1]{\index{#1@\texttt{#1}}}
+\newcommand{\myindex}[1]{\index{#1}}
+\newcommand{\mathindex}[1]{\index{$#1$}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% probably don't need this --rjp
+\makeatletter
+\newcommand\gobblepar{%
+    \@ifnextchar\par%
+        {\expandafter\gobblepar\@gobble}%
+        {}}
+\makeatother
+
+\pagestyle{fancy}
+
+%% allow more of page to be used for a figure or table
+\renewcommand{\textfraction}{0.05}
+\renewcommand{\topfraction}{0.8}
+\renewcommand{\bottomfraction}{0.8}
+\renewcommand{\floatpagefraction}{0.75}
+\setcounter{topnumber}{4}
+\setcounter{bottomnumber}{4}
+\setcounter{totalnumber}{8} 
+

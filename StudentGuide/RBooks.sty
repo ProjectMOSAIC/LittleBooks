@@ -1,0 +1,183 @@
+\documentclass[open-any,12pt]{tufte-book}
+\setcounter{secnumdepth}{3}
+\usepackage{import}
+\usepackage{graphicx}
+
+\usepackage{alltt}
+\usepackage{mparhack}
+\usepackage{xstring}
+
+\usepackage{etoolbox}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage{framed}
+\usepackage{hyperref}
+%%%%%%%%%%%% Things Danny omitted %%%%%%%%%%%%%%%%%%%%%
+\usepackage{fancyhdr}
+
+%\newdimen\Rwidth
+%\Rwidth=\textwidth
+
+%\usepackage[margin=.5in,outer=1.5in,inner=.9in,includehead,includefoot,paperwidth=7.25in,paperheight=9.5in]{geometry}
+\usepackage{probstat}
+\usepackage[shownotes]{authNote}
+% \usepackage[hidenotes]{authNote}
+\usepackage[answerdelayed,exercisedelayed,lastexercise,chapter]{problems}
+\usepackage{longtable}
+\usepackage{language}
+
+\usepackage{tikz}
+\usetikzlibrary{shadows}
+\usetikzlibrary{decorations}
+\usetikzlibrary{shapes.multipart}
+\usetikzlibrary{shapes.symbols}
+\usetikzlibrary{shapes.misc}
+\usetikzlibrary{shapes.geometric}
+
+\newcommand{\mymarginpar}[1]{%
+\vadjust{\smash{\llap{\parbox[t]{\marginparwidth}{#1}\kern\marginparsep}}}}
+
+\newcommand{\tikzNote}[3]{%
+\marginpar[%
+\hspace*{0.5in}
+\parbox{1.2in}{\begin{tikzpicture}
+\node at (0,0) [#3]
+{\parbox{1.05in}{\footnotesize {\sc #1 }{\raggedright #2}}};
+\end{tikzpicture}}
+]{%
+\parbox{1.2in}{\begin{tikzpicture}
+\node at (0,0) [#3]
+{\parbox{1.05in}{\footnotesize {\sc #1 }{\raggedright #2}}};
+\end{tikzpicture}}}
+}
+
+\renewcommand{\tikzNote}[3]{
+\marginnote{
+\textsc{#1}
+
+#2
+}
+}
+
+\newcommand{\InstructorNote}[2][\relax]{%
+\tikzNote{#1}{#2}{double copy shadow={opacity=.5},tape,fill=blue!10,draw=blue,thick}
+}
+
+\renewcommand{\InstructorNote}[2][\relax]{%
+\tikzNote{#1}{#2}{tape,fill=blue!10,draw=blue,thick}
+}
+
+\newcommand{\DiggingDeeper}[2][\centerline{Digging Deeper}]{%
+\tikzNote{#1}{#2}{tape,fill=blue!10,draw=blue,thick}
+}
+
+
+\newcommand{\TeachingTip}[2][\centerline{Teaching Tip}]{%
+\tikzNote{#1}{#2}{tape,fill=blue!10,draw=blue,thick}
+}
+
+
+\newcommand{\FoodForThought}[2][\relax]{%
+\tikzNote{#1}{#2}{rectangle,fill=green!10,draw=green,thick}
+}
+
+\newcommand{\SuggestionBox}[2][\centerline{Suggestion Box}]{%
+\tikzNote{#1}{#2}{rectangle,fill=green!10,draw=green,thick}
+}
+
+\newcommand{\Caution}[2][\centerline{Caution!}]{%
+\tikzNote{#1}{#2}{chamfered rectangle,fill=red!10,draw=red,thick}
+}
+
+\newcounter{examplenum}[chapter]
+\newenvironment{example}[1][\relax]{
+\refstepcounter{examplenum}
+\textbf{Example \thechapter.\arabic{examplenum}.{#1}}
+}{%
+\hfill {\Large $\diamond$}
+%\centerline{\rule{5in}{.5pt}}
+}
+
+\usepackage[utf8]{inputenc}
+
+\newcounter{myenumi}
+\newcommand{\saveenumi}{\setcounter{myenumi}{\value{enumi}}}
+\newcommand{\reuseenumi}{\setcounter{enumi}{\value{myenumi}}}
+
+\newcommand{\cran}{\href{http://www.R-project.org/}{CRAN}}
+%%%%%%%% Some R Stuff %%%%%%%%%%%%%%%
+\newcommand{\rterm}[1]{\textbf{#1}}
+\def\R{{\sf R}}
+\def\Rstudio{{\sf RStudio}}
+\def\RStudio{{\sf RStudio}}
+\def\term#1{\textbf{#1}}
+\def\tab#1{{\sf #1}}
+
+%%%%%%%%%%%%% some boxed elements %%%%%%%%%%%%%%%%
+
+\newlength{\tempfmlength}
+\newsavebox{\fmbox}
+\newenvironment{fmpage}[1]
+{
+\medskip
+\setlength{\tempfmlength}{#1}
+\begin{lrbox}{\fmbox}
+\begin{minipage}{#1}
+\vspace*{.02\tempfmlength}
+\hfill
+\begin{minipage}{.95 \tempfmlength}}
+{\end{minipage}\hfill
+\vspace*{.015\tempfmlength}
+\end{minipage}\end{lrbox}\fbox{\usebox{\fmbox}}
+\medskip
+}
+
+\newenvironment{boxedText}[1][.98\textwidth]%
+{%
+\begin{center}
+\begin{fmpage}{#1}
+}%
+{%
+\end{fmpage}
+\end{center}
+}
+
+\newenvironment{boxedTable}[2][tbp]%
+{%
+\begin{table}[#1]
+  \refstepcounter{table}
+  \begin{center}
+\begin{fmpage}{.98\textwidth}
+  \begin{center}
+	\sf \large Box~\expandafter\thetable. #2
+\end{center}
+\medskip
+}%
+{%
+\end{fmpage}
+\end{center}
+\end{table}		% need to do something about exercises that follow boxedTable
+}
+
+%%% indexing %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%
+\newcommand{\printindex}[1]{\relax}
+\newcommand{\indexchap}[1]{\relax}
+\usepackage{amsmidx}
+\newcommand{\exampleidx}[1]{{\it #1}}
+\newcommand{\defidx}[1]{{\bf #1}}
+\newcommand{\mainidx}[1]{{\bf #1}}
+\newcommand{\probidx}[1]{{{\underline{#1}}}}
+\makeindex{Rindex}
+\makeindex{mainIndex}
+\newcommand{\Rindex}[1]{\index{Rindex}{#1@\texttt{#1}}}
+\newcommand{\myindex}[1]{\index{mainIndex}{#1}}
+\newcommand{\mathindex}[1]{\index{mainIndex}{$#1$}}
+
+
+\pagestyle{fancy}
+
+
+\begin{document}
+
+\end{document}
