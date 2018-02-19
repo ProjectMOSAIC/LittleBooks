@@ -56,10 +56,12 @@ alpha <- 1-pbinom(16, size=25, prob=0.5); alpha
 @
 
 First we find the rejection region.  
+\Rindex{qnorm()}%
+\Rindex{xqnorm()}%
 <<tidy=FALSE>>=
 n <- 25; sigma <- 1 # given
 stderr <- sigma/sqrt(n)
-zstar <- qnorm(1-alpha, mean=0, sd=1)
+zstar <- xqnorm(1-alpha, mean=0, sd=1)
 zstar
 crit <- zstar*stderr
 crit
@@ -81,6 +83,7 @@ power
 The power of the test based on normal theory is \Sexpr{round(power,3)}.
 To provide a check (or for future calculations of this sort) we can use the 
 \function{power.t.test()} function.
+\Rindex{power.t.test()}%
 <<>>=
 power.t.test(n=25, delta=.3, sd=1, sig.level=alpha, alternative="one.sided",
 type="one.sample")$power
