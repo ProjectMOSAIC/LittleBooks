@@ -80,7 +80,8 @@ The \function{histogram()} function is used to create a histogram. Here we use t
 \vspace{-4mm}
 \begin{center}
 <<cesd-hist>>=
-histogram(~ cesd, data=HELPrct)
+gf_histogram(~ cesd, data = HELPrct, binwidth = 2.4) %>%
+  gf_labs(title = "") 
 @
 \end{center}
 

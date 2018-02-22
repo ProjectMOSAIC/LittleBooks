@@ -1,0 +1,4195 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.7.24)  22 FEB 2018 12:20
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**MOSAIC-StudentGuide.tex
+(./MOSAIC-StudentGuide.tex
+LaTeX2e <2015/01/01> patch level 2
+Babel <3.9l> and hyphenation patterns for 79 languages loaded.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tufte-latex/tufte-book.cls
+Document Class: tufte-book 2015/06/21 v3.5.2 Tufte-book class
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tufte-latex/tufte-common.def
+File: tufte-common.def 2015/06/21 v3.5.2 Common code for the Tufte-LaTeX styles
+
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/local/texlive/2015/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks14
+\XKV@tempa@toks=\toks15
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/xkeyval/keyval.tex))
+\XKV@depth=\count79
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/xifthen/xifthen.sty
+Package: xifthen 2009/04/17 v1.3 Extended ifthen features
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/etex-pkg/etex.sty
+Package: etex 2015/07/08 v2.3 eTeX basic definition package (PEB,DPC)
+\et@xins=\count80
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count81
+\calc@Bcount=\count82
+\calc@Adimen=\dimen102
+\calc@Bdimen=\dimen103
+\calc@Askip=\skip41
+\calc@Bskip=\skip42
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count83
+\calc@Cskip=\skip43
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/ifmtarg/ifmtarg.sty
+Package: ifmtarg 2009/09/02 v1.2a check for an empty argument
+))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/hardwrap/hardwrap.sty
+Package: hardwrap 2011/02/12 v0.2 Hard wrap messages
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/ifplatform/ifplatform.sty
+Package: ifplatform 2010/10/22 v0.4 Testing for the operating system
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/catchfile.sty
+Package: catchfile 2011/03/01 v1.6 Catch the contents of a file (HO)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+))
+
+Package ifplatform Warning: 
+    shell escape is disabled, so I can only detect \ifwindows.
+
+) (/usr/local/texlive/2015/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\hw@charcount=\count84
+\hw@wordcount=\count85
+\hw@maxprintline=\count86
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/ifxetex/ifxetex.sty))
+Class tufte-book Info: Loading the base class `book'
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/bk10.clo
+File: bk10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count87
+\c@chapter=\count88
+\c@section=\count89
+\c@subsection=\count90
+\c@subsubsection=\count91
+\c@paragraph=\count92
+\c@subparagraph=\count93
+\c@figure=\count94
+\c@table=\count95
+\abovecaptionskip=\skip44
+\belowcaptionskip=\skip45
+\bibindent=\dimen104
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2011/12/15 v2.10.0 Sectioning titles
+\ttl@box=\box26
+\beforetitleunit=\skip46
+\aftertitleunit=\skip47
+\ttl@plus=\dimen105
+\ttl@minus=\dimen106
+\ttl@toksa=\toks16
+\titlewidth=\dimen107
+\titlewidthlast=\dimen108
+\titlewidthfirst=\dimen109
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/titlesec/titletoc.sty
+Package: titletoc 2011/12/15 v1.6 TOC entries
+\ttl@leftsep=\dimen110
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2012/05/28 v1.13 Bundle oberdiek, subset hyperref (HO)
+
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2012/05/28 v1.13 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2012/05/28 v1.13 Construct package bundles (HO)
+Package hobsub Info: Skipping package `infwarerr' (already loaded).
+Package hobsub Info: Skipping package `ltxcmds' (already loaded).
+Package hobsub Info: Skipping package `ifluatex' (already loaded).
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+Package: intcalc 2007/09/27 v1.1 Expandable calculations with integers (HO)
+Package hobsub Info: Skipping package `ifpdf' (already loaded).
+Package hobsub Info: Skipping package `etexcmds' (already loaded).
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+Package hobsub Info: Skipping package `pdftexcmds' (already loaded).
+Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO
+)
+Package: bitset 2011/01/30 v1.1 Handle bit-vector datatype (HO)
+Package: uniquecounter 2011/01/30 v1.2 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
+Package: hopatch 2012/05/28 v1.2 Wrapper for package hooks (HO)
+Package: xcolor-patch 2011/01/30 xcolor patch
+Package: atveryend 2011/06/30 v1.8 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
+Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
+Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+)
+\@linkdim=\dimen111
+\Hy@linkcounter=\count96
+\Hy@pagecounter=\count97
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
+)
+\Hy@SavedSpaceFactor=\count98
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Option `unicode' set `true' on input line 4319.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2012/11/06 v6.83m Hyperref: PDF Unicode definition (HO)
+)
+Package hyperref Info: Option `hyperfootnotes' set `false' on input line 4319.
+Package hyperref Info: Hyper figures OFF on input line 4443.
+Package hyperref Info: Link nesting OFF on input line 4448.
+Package hyperref Info: Hyper index ON on input line 4451.
+Package hyperref Info: Plain pages OFF on input line 4458.
+Package hyperref Info: Backreferencing OFF on input line 4463.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4688.
+\c@Hy@tempcnt=\count99
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip10
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5041.
+\XeTeXLinkMargin=\dimen112
+\Fld@menulength=\count100
+\Field@Width=\dimen113
+\Fld@charsize=\dimen114
+Package hyperref Info: Hyper figures OFF on input line 6295.
+Package hyperref Info: Link nesting OFF on input line 6300.
+Package hyperref Info: Hyper index ON on input line 6303.
+Package hyperref Info: backreferencing OFF on input line 6310.
+Package hyperref Info: Link coloring OFF on input line 6315.
+Package hyperref Info: Link coloring with OCG OFF on input line 6320.
+Package hyperref Info: PDF/A mode OFF on input line 6325.
+LaTeX Info: Redefining \ref on input line 6365.
+LaTeX Info: Redefining \pageref on input line 6369.
+\Hy@abspage=\count101
+\c@Item=\count102
+)
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
+\Fld@listcount=\count103
+\c@bookmark@seq@number=\count104
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip48
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/ms/ragged2e.sty
+Package: ragged2e 2009/05/21 v2.1 ragged2e Package (MS)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/ms/everysel.sty
+Package: everysel 2011/10/28 v1.2 EverySelectfont Package (MS)
+)
+\CenteringLeftskip=\skip49
+\RaggedLeftLeftskip=\skip50
+\RaggedRightLeftskip=\skip51
+\CenteringRightskip=\skip52
+\RaggedLeftRightskip=\skip53
+\RaggedRightRightskip=\skip54
+\CenteringParfillskip=\skip55
+\RaggedLeftParfillskip=\skip56
+\RaggedRightParfillskip=\skip57
+\JustifyingParfillskip=\skip58
+\CenteringParindent=\skip59
+\RaggedLeftParindent=\skip60
+\RaggedRightParindent=\skip61
+\JustifyingParindent=\skip62
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+\Gm@cnth=\count105
+\Gm@cntv=\count106
+\c@Gm@tempcnt=\count107
+\Gm@bindingoffset=\dimen115
+\Gm@wd@mp=\dimen116
+\Gm@odd@mp=\dimen117
+\Gm@even@mp=\dimen118
+\Gm@layoutwidth=\dimen119
+\Gm@layoutheight=\dimen120
+\Gm@layouthoffset=\dimen121
+\Gm@layoutvoffset=\dimen122
+\Gm@dimlist=\toks17
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/changepage/changepage.sty
+Package: changepage 2009/10/20 v1.0c check page and change page layout
+\c@cp@cntr=\count108
+\cp@tempcnt=\count109
+)
+\@tufte@overhang=\skip63
+\@tufte@fullwidth=\skip64
+\@tufte@caption@fill=\skip65
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/paralist/paralist.sty
+Package: paralist 2013/06/09 v2.4 Extended list environments
+\pltopsep=\skip66
+\plpartopsep=\skip67
+\plitemsep=\skip68
+\plparsep=\skip69
+\pl@lab=\toks18
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/textcase/textcase.sty
+Package: textcase 2004/10/07 v0.07 Text only upper/lower case changing (DPC)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/microtype/letterspace.sty
+Package: letterspace 2013/05/23 v2.5a Robust letterspacing (RS)
+LaTeX Info: Redefining \lsstyle on input line 307.
+LaTeX Info: Redefining \lslig on input line 308.
+LaTeX Info: Redefining \textls on input line 333.
+\MT@outer@kern=\dimen123
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2011/12/19 v6.7a set line spacing
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Package option `usenames' ignored on input line 216.
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+\Gread@gobject=\count110
+)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 2014/10/14 v3.0j Driver-dependent file (DPC,SPQR)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/xcolor/svgnam.def
+File: svgnam.def 2007/01/21 v2.11 Predefined colors according to SVG 1.1 (UK)
+))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip70
+\bibsep=\skip71
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count111
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/natbib/bibentry.sty
+Package: bibentry 2007/10/30 1.5 (PWD)
+)
+(./MOSAIC-StudentGuide.bbl)
+\c@@tufte@num@bibkeys=\count112
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/sauerj/optparams.sty
+Package: optparams 2004/08/14 v0.9 multiple optional parameters in macros
+)
+\@tufte@sidenote@vertical@offset=\skip72
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/placeins/placeins.sty
+Package: placeins 2005/04/18  v 2.2
+)
+\@tufte@margin@floatbox=\box27
+\@tufte@figure@box=\box28
+\@tufte@caption@box=\box29
+\@tufte@caption@vertical@offset=\skip73
+\@tufte@float@contents@width=\skip74
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/mathpazo.sty
+Package: mathpazo 2005/04/12 PSNFSS-v9.2a Palatino w/ Pazo Math (D.Puga, WaS) 
+\symupright=\mathgroup4
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/helvet.sty
+Package: helvet 2005/04/12 PSNFSS-v9.2a (WaS) 
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/bera/beramono.sty
+Package: beramono 2004/01/31 (WaS)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/t1enc.def
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
+Package textcomp Info: Sub-encoding information:
+(textcomp)               5 = only ISO-Adobe without \textcurrency
+(textcomp)               4 = 5 + \texteuro
+(textcomp)               3 = 4 + \textohm
+(textcomp)               2 = 3 + \textestimated + \textcurrency
+(textcomp)               1 = TS1 - \textcircled - \t
+(textcomp)               0 = TS1 (full)
+(textcomp)             Font families with sub-encoding setting implement
+(textcomp)             only a restricted character set as indicated.
+(textcomp)             Family '?' is the default used for unknown fonts.
+(textcomp)             See the documentation for details.
+Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 79.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/ts1enc.def
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+)
+LaTeX Info: Redefining \oldstylenums on input line 334.
+Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 349.
+Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 350.
+Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 351.
+Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 352.
+Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 353.
+Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 354.
+Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 355.
+Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 356.
+Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 357.
+Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 358.
+Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 359.
+Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 360.
+Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 361.
+Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 362.
+Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 363.
+Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 364.
+Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 365.
+Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 366.
+Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 367.
+Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 368.
+Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 369.
+Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 370.
+Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 371.
+Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 372.
+
+Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 373.
+Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 374.
+Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 375.
+Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 376.
+Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 377.
+Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 378.
+Package textcomp Info: Setting lmr sub-encoding to TS1/0 on input line 379.
+Package textcomp Info: Setting lmdh sub-encoding to TS1/0 on input line 380.
+Package textcomp Info: Setting lmss sub-encoding to TS1/0 on input line 381.
+Package textcomp Info: Setting lmssq sub-encoding to TS1/0 on input line 382.
+Package textcomp Info: Setting lmvtt sub-encoding to TS1/0 on input line 383.
+Package textcomp Info: Setting lmtt sub-encoding to TS1/0 on input line 384.
+Package textcomp Info: Setting qhv sub-encoding to TS1/0 on input line 385.
+Package textcomp Info: Setting qag sub-encoding to TS1/0 on input line 386.
+Package textcomp Info: Setting qbk sub-encoding to TS1/0 on input line 387.
+Package textcomp Info: Setting qcr sub-encoding to TS1/0 on input line 388.
+Package textcomp Info: Setting qcs sub-encoding to TS1/0 on input line 389.
+Package textcomp Info: Setting qpl sub-encoding to TS1/0 on input line 390.
+Package textcomp Info: Setting qtm sub-encoding to TS1/0 on input line 391.
+Package textcomp Info: Setting qzc sub-encoding to TS1/0 on input line 392.
+Package textcomp Info: Setting qhvc sub-encoding to TS1/0 on input line 393.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 394.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 395.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 396.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 397.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 398.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 399.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 400.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 401.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 402.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 403.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 404.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 405.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 406.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+\fancy@headwidth=\skip75
+\f@ncyO@elh=\skip76
+\f@ncyO@erh=\skip77
+\f@ncyO@olh=\skip78
+\f@ncyO@orh=\skip79
+\f@ncyO@elf=\skip80
+\f@ncyO@erf=\skip81
+\f@ncyO@olf=\skip82
+\f@ncyO@orf=\skip83
+)
+\tufteskipamount=\skip84
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2015/03/31 v1.8m multicolumn formatting (FMi)
+\c@tracingmulticols=\count113
+\mult@box=\box30
+\multicol@leftmargin=\dimen124
+\c@unbalance=\count114
+\c@collectmore=\count115
+\doublecol@number=\count116
+\multicoltolerance=\count117
+\multicolpretolerance=\count118
+\full@width=\dimen125
+\page@free=\dimen126
+\premulticols=\dimen127
+\postmulticols=\dimen128
+\multicolsep=\skip85
+\multicolbaselineskip=\skip86
+\partial@page=\box31
+\last@line=\box32
+\maxbalancingoverflow=\dimen129
+\mult@rightbox=\box33
+\mult@grightbox=\box34
+\mult@gfirstbox=\box35
+\mult@firstbox=\box36
+\@tempa=\box37
+\@tempa=\box38
+\@tempa=\box39
+\@tempa=\box40
+\@tempa=\box41
+\@tempa=\box42
+\@tempa=\box43
+\@tempa=\box44
+\@tempa=\box45
+\@tempa=\box46
+\@tempa=\box47
+\@tempa=\box48
+\@tempa=\box49
+\@tempa=\box50
+\@tempa=\box51
+\@tempa=\box52
+\@tempa=\box53
+\c@columnbadness=\count119
+\c@finalcolumnbadness=\count120
+\last@try=\dimen130
+\multicolovershoot=\dimen131
+\multicolundershoot=\dimen132
+\mult@nat@firstbox=\box54
+\colbreak@box=\box55
+\mc@col@check@num=\count121
+)))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 94.
+)
+\Gin@req@height=\dimen133
+\Gin@req@width=\dimen134
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/framed/framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip87
+\fb@frw=\dimen135
+\fb@frh=\dimen136
+\FrameRule=\dimen137
+\FrameSep=\dimen138
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/alltt.sty
+Package: alltt 1997/06/16 v2.0g defines alltt environment
+)
+(../include/RBook.sty
+
+LaTeX Warning: You have requested package `../include/RBook',
+               but the package provides `RBook'.
+
+Package: RBook 2013/04/04 Mosaic R Books style
+(/usr/local/texlive/2015/texmf-dist/tex/latex/import/import.sty
+Package: import 2009/03/23  v 5.1
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/mparhack/mparhack.sty
+Package: mparhack 2005/04/17 v1.4 (T. Sgouros and S. Ulrich)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/xstring/xstring.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/xstring/xstring.tex
+\@xs@message=\write3
+\integerpart=\count122
+\decimalpart=\count123
+)
+Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2015/05/04 v2.2 e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count124
+)
+(./probstat.sty
+Package: probstat 
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip88
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks19
+\ex@=\dimen139
+))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen140
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count125
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count126
+\leftroot@=\count127
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count128
+\DOTSCASE@=\count129
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box56
+\strutbox@=\box57
+\big@size=\dimen141
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count130
+\c@MaxMatrixCols=\count131
+\dotsspace@=\muskip11
+\c@parentequation=\count132
+\dspbrk@lvl=\count133
+\tag@help=\toks20
+\row@=\count134
+\column@=\count135
+\maxfields@=\count136
+\andhelp@=\toks21
+\eqnshift@=\dimen142
+\alignsep@=\dimen143
+\tagshift@=\dimen144
+\tagwidth@=\dimen145
+\totwidth@=\dimen146
+\lineht@=\dimen147
+\@envbody=\toks22
+\multlinegap=\skip89
+\multlinetaggap=\skip90
+\mathdisplay@stack=\toks23
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/bm.sty
+Package: bm 2014/10/28 v1.1c Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup5
+\symboldletters=\mathgroup6
+\symboldsymbols=\mathgroup7
+\symboldupright=\mathgroup8
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 141.
+LaTeX Info: Redefining \bm on input line 207.
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2008/02/07
+
+Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
+<2008/02/07> (tvz)
+\FV@CodeLineNo=\count137
+\FV@InFile=\read1
+\FV@TabBox=\box58
+\c@FancyVerbLine=\count138
+\FV@StepNumber=\count139
+\FV@OutFile=\write4
+)
+\cwidth=\skip91
+) (./problems.sty
+
+LaTeX Warning: You have requested package `problems',
+               but the package provides `amsprobs'.
+
+Package: amsprobs 2007/12/11 v0.1 problems package (R. Pruim (based on P.Pichau
+reau))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+)
+\problemset@bin=\box59
+\problem@bin=\box60
+\solution@bin=\box61
+\solutionset@bin=\box62
+\studentsolution@bin=\box63
+\studentsolutionset@bin=\box64
+\c@problemNum=\count140
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
+\LTleft=\skip92
+\LTright=\skip93
+\LTpre=\skip94
+\LTpost=\skip95
+\LTchunksize=\count141
+\LTcapwidth=\dimen148
+\LT@head=\box65
+\LT@firsthead=\box66
+\LT@foot=\box67
+\LT@lastfoot=\box68
+\LT@cols=\count142
+\LT@rows=\count143
+\c@LT@tables=\count144
+\c@LT@chunks=\count145
+\LT@p@ftn=\toks24
+)
+(./language.sty
+Package: language 
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
+x
+\pgfutil@everybye=\toks25
+\pgfutil@tempdima=\dimen149
+\pgfutil@tempdimb=\dimen150
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-li
+sts.tex))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box69
+(/usr/local/texlive/2015/texmf-dist/tex/latex/ms/everyshi.sty
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+Package: pgfrcs 2013/12/20 v3.0.0 (rcs-revision 1.28)
+))
+Package: pgf 2013/12/18 v3.0.0 (rcs-revision 1.14)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2013/11/30 v3.0.0 (rcs-revision 1.47)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks26
+\pgfkeys@temptoks=\toks27
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.c
+ode.tex
+\pgfkeys@tmptoks=\toks28
+))
+\pgf@x=\dimen151
+\pgf@y=\dimen152
+\pgf@xa=\dimen153
+\pgf@ya=\dimen154
+\pgf@xb=\dimen155
+\pgf@yb=\dimen156
+\pgf@xc=\dimen157
+\pgf@yc=\dimen158
+\w@pgf@writea=\write5
+\r@pgf@reada=\read2
+\c@pgf@counta=\count146
+\c@pgf@countb=\count147
+\c@pgf@countc=\count148
+\c@pgf@countd=\count149
+\t@pgf@toka=\toks29
+\t@pgf@tokb=\toks30
+\t@pgf@tokc=\toks31
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
+)
+Driver file for pgf: pgfsys-pdftex.def
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.d
+ef
+File: pgfsys-pdftex.def 2013/07/18  (rcs-revision 1.33)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-p
+df.def
+File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
+)))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
+code.tex
+File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
+\pgfsyssoftpath@smallbuffer@items=\count150
+\pgfsyssoftpath@bigbuffer@items=\count151
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.
+code.tex
+File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
+))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2010/04/11 v3.0.0 (rcs-revision 1.7)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen159
+\pgfmath@count=\count152
+\pgfmath@box=\box70
+\pgfmath@toks=\toks32
+\pgfmath@stack@operand=\toks33
+\pgfmath@stack@operation=\toks34
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.
+tex
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic
+.code.tex)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigo
+nometric.code.tex)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.rando
+m.code.tex)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.compa
+rison.code.tex)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.
+code.tex)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round
+.code.tex)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.
+code.tex)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integ
+erarithmetics.code.tex)))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count153
+))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
+de.tex
+File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
+\pgf@picminx=\dimen160
+\pgf@picmaxx=\dimen161
+\pgf@picminy=\dimen162
+\pgf@picmaxy=\dimen163
+\pgf@pathminx=\dimen164
+\pgf@pathmaxx=\dimen165
+\pgf@pathminy=\dimen166
+\pgf@pathmaxy=\dimen167
+\pgf@xx=\dimen168
+\pgf@xy=\dimen169
+\pgf@yx=\dimen170
+\pgf@yy=\dimen171
+\pgf@zx=\dimen172
+\pgf@zy=\dimen173
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconst
+ruct.code.tex
+File: pgfcorepathconstruct.code.tex 2013/10/07  (rcs-revision 1.29)
+\pgf@path@lastx=\dimen174
+\pgf@path@lasty=\dimen175
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage
+.code.tex
+File: pgfcorepathusage.code.tex 2013/12/13  (rcs-revision 1.23)
+\pgf@shorten@end@additional=\dimen176
+\pgf@shorten@start@additional=\dimen177
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
+de.tex
+File: pgfcorescopes.code.tex 2013/10/09  (rcs-revision 1.44)
+\pgfpic=\box71
+\pgf@hbox=\box72
+\pgf@layerbox@main=\box73
+\pgf@picture@serial@count=\count154
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
+ate.code.tex
+File: pgfcoregraphicstate.code.tex 2013/09/19  (rcs-revision 1.11)
+\pgflinewidth=\dimen178
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransform
+ations.code.tex
+File: pgfcoretransformations.code.tex 2013/10/10  (rcs-revision 1.17)
+\pgf@pt@x=\dimen179
+\pgf@pt@y=\dimen180
+\pgf@pt@temp=\dimen181
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.cod
+e.tex
+File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.c
+ode.tex
+File: pgfcoreobjects.code.tex 2006/10/11  (rcs-revision 1.2)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathproce
+ssing.code.tex
+File: pgfcorepathprocessing.code.tex 2013/09/09  (rcs-revision 1.9)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.co
+de.tex
+File: pgfcorearrows.code.tex 2013/11/07  (rcs-revision 1.40)
+\pgfarrowsep=\dimen182
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.cod
+e.tex
+File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
+\pgf@max=\dimen183
+\pgf@sys@shading@range@num=\count155
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
+e.tex
+File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.
+code.tex
+File: pgfcoreexternal.code.tex 2013/07/15  (rcs-revision 1.20)
+\pgfexternal@startupbox=\box74
+))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.co
+de.tex
+File: pgfcorelayers.code.tex 2013/07/18  (rcs-revision 1.7)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretranspare
+ncy.code.tex
+File: pgfcoretransparency.code.tex 2013/09/30  (rcs-revision 1.5)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.
+code.tex
+File: pgfcorepatterns.code.tex 2013/11/07  (rcs-revision 1.5)
+)))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
+e.tex
+File: pgfmoduleshapes.code.tex 2013/10/31  (rcs-revision 1.34)
+\pgfnodeparttextbox=\box75
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
+tex
+File: pgfmoduleplot.code.tex 2013/07/31  (rcs-revision 1.12)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-0-65.sty
+Package: pgfcomp-version-0-65 2007/07/03 v3.0.0 (rcs-revision 1.7)
+\pgf@nodesepstart=\dimen184
+\pgf@nodesepend=\dimen185
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-1-18.sty
+Package: pgfcomp-version-1-18 2007/07/23 v3.0.0 (rcs-revision 1.1)
+))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)
+) (/usr/local/texlive/2015/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2013/12/13 v3.0.0 (rcs-revision 1.25)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
+\pgffor@iter=\dimen186
+\pgffor@skip=\dimen187
+\pgffor@stack=\toks35
+\pgffor@toks=\toks36
+))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.cod
+e.tex
+Package: tikz 2013/12/13 v3.0.0 (rcs-revision 1.142)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothan
+dlers.code.tex
+File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.0 (rcs-revision 1.20)
+\pgf@plot@mark@count=\count156
+\pgfplotmarksize=\dimen188
+)
+\tikz@lastx=\dimen189
+\tikz@lasty=\dimen190
+\tikz@lastxsaved=\dimen191
+\tikz@lastysaved=\dimen192
+\tikzleveldistance=\dimen193
+\tikzsiblingdistance=\dimen194
+\tikz@figbox=\box76
+\tikz@figbox@bg=\box77
+\tikz@tempbox=\box78
+\tikz@tempbox@bg=\box79
+\tikztreelevel=\count157
+\tikznumberofchildren=\count158
+\tikznumberofcurrentchild=\count159
+\tikz@fig@count=\count160
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.cod
+e.tex
+File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
+\pgfmatrixcurrentrow=\count161
+\pgfmatrixcurrentcolumn=\count162
+\pgf@matrix@numberofcolumns=\count163
+)
+\tikz@expandcount=\count164
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.0 (rcs-revision 1.2)
+)))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshadows.code.tex
+File: tikzlibraryshadows.code.tex 2008/01/13 v3.0.0 (rcs-revision 1.3)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryfadings.code.tex
+File: tikzlibraryfadings.code.tex 2009/11/15 v3.0.0 (rcs-revision 1.2)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/libraries/pgflibraryfadings
+.code.tex
+File: pgflibraryfadings.code.tex 2008/02/07 v3.0.0 (rcs-revision 1.3)
+)))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarydecorations.code.tex
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/modules/pgfmoduledecoration
+s.code.tex
+\pgfdecoratedcompleteddistance=\dimen195
+\pgfdecoratedremainingdistance=\dimen196
+\pgfdecoratedinputsegmentcompleteddistance=\dimen197
+\pgfdecoratedinputsegmentremainingdistance=\dimen198
+\pgf@decorate@distancetomove=\dimen199
+\pgf@decorate@repeatstate=\count165
+\pgfdecorationsegmentamplitude=\dimen200
+\pgfdecorationsegmentlength=\dimen201
+)
+\tikz@lib@dec@box=\box80
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshapes.multipart.code.tex
+File: tikzlibraryshapes.multipart.code.tex 2008/01/09 v3.0.0 (rcs-revision 1.1)
+
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
+shapes.multipart.code.tex
+File: pgflibraryshapes.multipart.code.tex 2010/01/07 v3.0.0 (rcs-revision 1.2)
+\pgfnodepartlowerbox=\box81
+\pgfnodeparttwobox=\box82
+\pgfnodepartthreebox=\box83
+\pgfnodepartfourbox=\box84
+\pgfnodeparttwentybox=\box85
+\pgfnodepartnineteenbox=\box86
+\pgfnodeparteighteenbox=\box87
+\pgfnodepartseventeenbox=\box88
+\pgfnodepartsixteenbox=\box89
+\pgfnodepartfifteenbox=\box90
+\pgfnodepartfourteenbox=\box91
+\pgfnodepartthirteenbox=\box92
+\pgfnodeparttwelvebox=\box93
+\pgfnodepartelevenbox=\box94
+\pgfnodeparttenbox=\box95
+\pgfnodepartninebox=\box96
+\pgfnodeparteightbox=\box97
+\pgfnodepartsevenbox=\box98
+\pgfnodepartsixbox=\box99
+\pgfnodepartfivebox=\box100
+))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshapes.symbols.code.tex
+File: tikzlibraryshapes.symbols.code.tex 2008/01/09 v3.0.0 (rcs-revision 1.1)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
+shapes.symbols.code.tex
+File: pgflibraryshapes.symbols.code.tex 2013/09/11 v3.0.0 (rcs-revision 1.6)
+))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshapes.misc.code.tex
+File: tikzlibraryshapes.misc.code.tex 2008/01/09 v3.0.0 (rcs-revision 1.1)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
+shapes.misc.code.tex
+File: pgflibraryshapes.misc.code.tex 2013/07/18 v3.0.0 (rcs-revision 1.5)
+))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshapes.geometric.code.tex
+File: tikzlibraryshapes.geometric.code.tex 2008/01/09 v3.0.0 (rcs-revision 1.1)
+
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
+shapes.geometric.code.tex
+File: pgflibraryshapes.geometric.code.tex 2008/06/26 v3.0.0 (rcs-revision 1.1)
+))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2015/03/17 v1.2c Input encoding file
+\inpenc@prehook=\toks37
+\inpenc@posthook=\toks38
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def
+File: utf8.def 2015/06/27 v1.1n UTF-8 support for inputenc
+Now handling font encoding OML ...
+... no UTF-8 mapping file for font encoding OML
+Now handling font encoding T1 ...
+... processing UTF-8 mapping file for font encoding T1
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/t1enc.dfu
+File: t1enc.dfu 2015/06/27 v1.1n UTF-8 support for inputenc
+   defining Unicode char U+00A1 (decimal 161)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00AB (decimal 171)
+   defining Unicode char U+00BB (decimal 187)
+   defining Unicode char U+00BF (decimal 191)
+   defining Unicode char U+00C0 (decimal 192)
+   defining Unicode char U+00C1 (decimal 193)
+   defining Unicode char U+00C2 (decimal 194)
+   defining Unicode char U+00C3 (decimal 195)
+   defining Unicode char U+00C4 (decimal 196)
+   defining Unicode char U+00C5 (decimal 197)
+   defining Unicode char U+00C6 (decimal 198)
+   defining Unicode char U+00C7 (decimal 199)
+   defining Unicode char U+00C8 (decimal 200)
+   defining Unicode char U+00C9 (decimal 201)
+   defining Unicode char U+00CA (decimal 202)
+   defining Unicode char U+00CB (decimal 203)
+   defining Unicode char U+00CC (decimal 204)
+   defining Unicode char U+00CD (decimal 205)
+   defining Unicode char U+00CE (decimal 206)
+   defining Unicode char U+00CF (decimal 207)
+   defining Unicode char U+00D0 (decimal 208)
+   defining Unicode char U+00D1 (decimal 209)
+   defining Unicode char U+00D2 (decimal 210)
+   defining Unicode char U+00D3 (decimal 211)
+   defining Unicode char U+00D4 (decimal 212)
+   defining Unicode char U+00D5 (decimal 213)
+   defining Unicode char U+00D6 (decimal 214)
+   defining Unicode char U+00D8 (decimal 216)
+   defining Unicode char U+00D9 (decimal 217)
+   defining Unicode char U+00DA (decimal 218)
+   defining Unicode char U+00DB (decimal 219)
+   defining Unicode char U+00DC (decimal 220)
+   defining Unicode char U+00DD (decimal 221)
+   defining Unicode char U+00DE (decimal 222)
+   defining Unicode char U+00DF (decimal 223)
+   defining Unicode char U+00E0 (decimal 224)
+   defining Unicode char U+00E1 (decimal 225)
+   defining Unicode char U+00E2 (decimal 226)
+   defining Unicode char U+00E3 (decimal 227)
+   defining Unicode char U+00E4 (decimal 228)
+   defining Unicode char U+00E5 (decimal 229)
+   defining Unicode char U+00E6 (decimal 230)
+   defining Unicode char U+00E7 (decimal 231)
+   defining Unicode char U+00E8 (decimal 232)
+   defining Unicode char U+00E9 (decimal 233)
+   defining Unicode char U+00EA (decimal 234)
+   defining Unicode char U+00EB (decimal 235)
+   defining Unicode char U+00EC (decimal 236)
+   defining Unicode char U+00ED (decimal 237)
+   defining Unicode char U+00EE (decimal 238)
+   defining Unicode char U+00EF (decimal 239)
+   defining Unicode char U+00F0 (decimal 240)
+   defining Unicode char U+00F1 (decimal 241)
+   defining Unicode char U+00F2 (decimal 242)
+   defining Unicode char U+00F3 (decimal 243)
+   defining Unicode char U+00F4 (decimal 244)
+   defining Unicode char U+00F5 (decimal 245)
+   defining Unicode char U+00F6 (decimal 246)
+   defining Unicode char U+00F8 (decimal 248)
+   defining Unicode char U+00F9 (decimal 249)
+   defining Unicode char U+00FA (decimal 250)
+   defining Unicode char U+00FB (decimal 251)
+   defining Unicode char U+00FC (decimal 252)
+   defining Unicode char U+00FD (decimal 253)
+   defining Unicode char U+00FE (decimal 254)
+   defining Unicode char U+00FF (decimal 255)
+   defining Unicode char U+0102 (decimal 258)
+   defining Unicode char U+0103 (decimal 259)
+   defining Unicode char U+0104 (decimal 260)
+   defining Unicode char U+0105 (decimal 261)
+   defining Unicode char U+0106 (decimal 262)
+   defining Unicode char U+0107 (decimal 263)
+   defining Unicode char U+010C (decimal 268)
+   defining Unicode char U+010D (decimal 269)
+   defining Unicode char U+010E (decimal 270)
+   defining Unicode char U+010F (decimal 271)
+   defining Unicode char U+0110 (decimal 272)
+   defining Unicode char U+0111 (decimal 273)
+   defining Unicode char U+0118 (decimal 280)
+   defining Unicode char U+0119 (decimal 281)
+   defining Unicode char U+011A (decimal 282)
+   defining Unicode char U+011B (decimal 283)
+   defining Unicode char U+011E (decimal 286)
+   defining Unicode char U+011F (decimal 287)
+   defining Unicode char U+0130 (decimal 304)
+   defining Unicode char U+0131 (decimal 305)
+   defining Unicode char U+0132 (decimal 306)
+   defining Unicode char U+0133 (decimal 307)
+   defining Unicode char U+0139 (decimal 313)
+   defining Unicode char U+013A (decimal 314)
+   defining Unicode char U+013D (decimal 317)
+   defining Unicode char U+013E (decimal 318)
+   defining Unicode char U+0141 (decimal 321)
+   defining Unicode char U+0142 (decimal 322)
+   defining Unicode char U+0143 (decimal 323)
+   defining Unicode char U+0144 (decimal 324)
+   defining Unicode char U+0147 (decimal 327)
+   defining Unicode char U+0148 (decimal 328)
+   defining Unicode char U+014A (decimal 330)
+   defining Unicode char U+014B (decimal 331)
+   defining Unicode char U+0150 (decimal 336)
+   defining Unicode char U+0151 (decimal 337)
+   defining Unicode char U+0152 (decimal 338)
+   defining Unicode char U+0153 (decimal 339)
+   defining Unicode char U+0154 (decimal 340)
+   defining Unicode char U+0155 (decimal 341)
+   defining Unicode char U+0158 (decimal 344)
+   defining Unicode char U+0159 (decimal 345)
+   defining Unicode char U+015A (decimal 346)
+   defining Unicode char U+015B (decimal 347)
+   defining Unicode char U+015E (decimal 350)
+   defining Unicode char U+015F (decimal 351)
+   defining Unicode char U+0160 (decimal 352)
+   defining Unicode char U+0161 (decimal 353)
+   defining Unicode char U+0162 (decimal 354)
+   defining Unicode char U+0163 (decimal 355)
+   defining Unicode char U+0164 (decimal 356)
+   defining Unicode char U+0165 (decimal 357)
+   defining Unicode char U+016E (decimal 366)
+   defining Unicode char U+016F (decimal 367)
+   defining Unicode char U+0170 (decimal 368)
+   defining Unicode char U+0171 (decimal 369)
+   defining Unicode char U+0178 (decimal 376)
+   defining Unicode char U+0179 (decimal 377)
+   defining Unicode char U+017A (decimal 378)
+   defining Unicode char U+017B (decimal 379)
+   defining Unicode char U+017C (decimal 380)
+   defining Unicode char U+017D (decimal 381)
+   defining Unicode char U+017E (decimal 382)
+   defining Unicode char U+200C (decimal 8204)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201A (decimal 8218)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
+   defining Unicode char U+201E (decimal 8222)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+2039 (decimal 8249)
+   defining Unicode char U+203A (decimal 8250)
+   defining Unicode char U+2423 (decimal 9251)
+)
+Now handling font encoding OT1 ...
+... processing UTF-8 mapping file for font encoding OT1
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/ot1enc.dfu
+File: ot1enc.dfu 2015/06/27 v1.1n UTF-8 support for inputenc
+   defining Unicode char U+00A1 (decimal 161)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00B8 (decimal 184)
+   defining Unicode char U+00BF (decimal 191)
+   defining Unicode char U+00C5 (decimal 197)
+   defining Unicode char U+00C6 (decimal 198)
+   defining Unicode char U+00D8 (decimal 216)
+   defining Unicode char U+00DF (decimal 223)
+   defining Unicode char U+00E6 (decimal 230)
+   defining Unicode char U+00EC (decimal 236)
+   defining Unicode char U+00ED (decimal 237)
+   defining Unicode char U+00EE (decimal 238)
+   defining Unicode char U+00EF (decimal 239)
+   defining Unicode char U+00F8 (decimal 248)
+   defining Unicode char U+0131 (decimal 305)
+   defining Unicode char U+0141 (decimal 321)
+   defining Unicode char U+0142 (decimal 322)
+   defining Unicode char U+0152 (decimal 338)
+   defining Unicode char U+0153 (decimal 339)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
+)
+Now handling font encoding OMS ...
+... processing UTF-8 mapping file for font encoding OMS
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/omsenc.dfu
+File: omsenc.dfu 2015/06/27 v1.1n UTF-8 support for inputenc
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+)
+Now handling font encoding OMX ...
+... no UTF-8 mapping file for font encoding OMX
+Now handling font encoding U ...
+... no UTF-8 mapping file for font encoding U
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+Now handling font encoding TS1 ...
+... processing UTF-8 mapping file for font encoding TS1
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/ts1enc.dfu
+File: ts1enc.dfu 2015/06/27 v1.1n UTF-8 support for inputenc
+   defining Unicode char U+00A2 (decimal 162)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00A4 (decimal 164)
+   defining Unicode char U+00A5 (decimal 165)
+   defining Unicode char U+00A6 (decimal 166)
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00A8 (decimal 168)
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AC (decimal 172)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00AF (decimal 175)
+   defining Unicode char U+00B0 (decimal 176)
+   defining Unicode char U+00B1 (decimal 177)
+   defining Unicode char U+00B2 (decimal 178)
+   defining Unicode char U+00B3 (decimal 179)
+   defining Unicode char U+00B4 (decimal 180)
+   defining Unicode char U+00B5 (decimal 181)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+00B9 (decimal 185)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+00BC (decimal 188)
+   defining Unicode char U+00BD (decimal 189)
+   defining Unicode char U+00BE (decimal 190)
+   defining Unicode char U+00D7 (decimal 215)
+   defining Unicode char U+00F7 (decimal 247)
+   defining Unicode char U+0192 (decimal 402)
+   defining Unicode char U+02C7 (decimal 711)
+   defining Unicode char U+02D8 (decimal 728)
+   defining Unicode char U+02DD (decimal 733)
+   defining Unicode char U+0E3F (decimal 3647)
+   defining Unicode char U+2016 (decimal 8214)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+203B (decimal 8251)
+   defining Unicode char U+203D (decimal 8253)
+   defining Unicode char U+2044 (decimal 8260)
+   defining Unicode char U+204E (decimal 8270)
+   defining Unicode char U+2052 (decimal 8274)
+   defining Unicode char U+20A1 (decimal 8353)
+   defining Unicode char U+20A4 (decimal 8356)
+   defining Unicode char U+20A6 (decimal 8358)
+   defining Unicode char U+20A9 (decimal 8361)
+   defining Unicode char U+20AB (decimal 8363)
+   defining Unicode char U+20AC (decimal 8364)
+   defining Unicode char U+20B1 (decimal 8369)
+   defining Unicode char U+2103 (decimal 8451)
+   defining Unicode char U+2116 (decimal 8470)
+   defining Unicode char U+2117 (decimal 8471)
+   defining Unicode char U+211E (decimal 8478)
+   defining Unicode char U+2120 (decimal 8480)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2126 (decimal 8486)
+   defining Unicode char U+2127 (decimal 8487)
+   defining Unicode char U+212E (decimal 8494)
+   defining Unicode char U+2190 (decimal 8592)
+   defining Unicode char U+2191 (decimal 8593)
+   defining Unicode char U+2192 (decimal 8594)
+   defining Unicode char U+2193 (decimal 8595)
+   defining Unicode char U+2329 (decimal 9001)
+   defining Unicode char U+232A (decimal 9002)
+   defining Unicode char U+2422 (decimal 9250)
+   defining Unicode char U+25E6 (decimal 9702)
+   defining Unicode char U+25EF (decimal 9711)
+   defining Unicode char U+266A (decimal 9834)
+)
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+02C6 (decimal 710)
+   defining Unicode char U+02DC (decimal 732)
+   defining Unicode char U+200C (decimal 8204)
+   defining Unicode char U+2026 (decimal 8230)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2423 (decimal 9251)
+))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/underscore/underscore.sty
+Package: underscore 2006/09/13
+LaTeX Info: Redefining \_ on input line 42.
+)
+\c@examplenum=\count166
+\c@myenumi=\count167
+\tempfmlength=\skip96
+\fmbox=\box101
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/makeidx.sty
+Package: makeidx 2014/09/29 v1.0m Standard LaTeX package
+)
+\@indexfile=\write6
+\openout6 = `MOSAIC-StudentGuide.idx'.
+
+
+Writing index file MOSAIC-StudentGuide.idx
+) (/usr/local/texlive/2015/texmf-dist/tex/latex/pdfpages/pdfpages.sty
+Package: pdfpages 2015/06/15 v0.4y Insert pages of external PDF documents (AM)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/eso-pic/eso-pic.sty
+Package: eso-pic 2015/07/21 v2.0g eso-pic (RN)
+)
+\AM@pagewidth=\dimen202
+\AM@pageheight=\dimen203
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/pdfpages/pppdftex.def
+File: pppdftex.def 2015/06/15 v0.4y Pdfpages driver for pdfTeX (AM)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/pdflscape.sty
+Package: pdflscape 2008/08/11 v0.10 Display of landscape pages in PDF (HO)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 80.
+)
+\AM@pagebox=\box102
+\AM@toc@title=\toks39
+\c@AM@survey=\count168
+\AM@templatesizebox=\box103
+)
+(./authNote.sty
+Package: authNote 2005/06/14 1.0 (RJP)
+\tempTok=\toks40
+\c@noteNum=\count169
+\noteFile=\write7
+\openout7 = `MOSAIC-StudentGuide.notes'.
+
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/upquote/upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
+tim
+)
+(./MOSAIC-StudentGuide.aux)
+\openout1 = `MOSAIC-StudentGuide.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 139.
+LaTeX Font Info:    ... okay on input line 139.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 139.
+LaTeX Font Info:    ... okay on input line 139.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 139.
+LaTeX Font Info:    ... okay on input line 139.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 139.
+LaTeX Font Info:    ... okay on input line 139.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 139.
+LaTeX Font Info:    ... okay on input line 139.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 139.
+LaTeX Font Info:    ... okay on input line 139.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 139.
+LaTeX Font Info:    ... okay on input line 139.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 139.
+LaTeX Font Info:    ... okay on input line 139.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 139.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 139.
+
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/ts1cmr.fd
+File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 139.
+LaTeX Font Info:    Try loading font information for T1+pplj on input line 139.
+
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/t1pplj.fd
+File: t1pplj.fd 2004/09/06 font definitions for T1/pplj.
+)
+\AtBeginShipoutBox=\box104
+Package hyperref Info: Link coloring OFF on input line 139.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
+)
+\c@section@level=\count170
+)
+LaTeX Info: Redefining \ref on input line 139.
+LaTeX Info: Redefining \pageref on input line 139.
+LaTeX Info: Redefining \nameref on input line 139.
+
+(./MOSAIC-StudentGuide.out) (./MOSAIC-StudentGuide.out)
+\@outlinefile=\write8
+\openout8 = `MOSAIC-StudentGuide.out'.
+
+
+ABD: EverySelectfont initializing macros
+LaTeX Info: Redefining \selectfont on input line 139.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: letterpaper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: twoside asymmetric 
+* h-part:(L,W,R)=(72.26999pt, 312.0pt, 230.02501pt)
+* v-part:(T,H,B)=(72.26999pt, 616.0pt, 106.7pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=312.0pt
+* \textheight=616.0pt
+* \oddsidemargin=0.0pt
+* \evensidemargin=0.0pt
+* \topmargin=-42.0pt
+* \headheight=14.0pt
+* \headsep=28.0pt
+* \topskip=10.0pt
+* \footskip=25.29494pt
+* \marginparwidth=144.0pt
+* \marginparsep=24.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count171
+\scratchdimen=\dimen204
+\scratchbox=\box105
+\nofMPsegments=\count172
+\nofMParguments=\count173
+\everyMPshowfont=\toks41
+\MPscratchCnt=\count174
+\MPscratchDim=\dimen205
+\MPnumerator=\count175
+\makeMPintoPDFobject=\count176
+\everyMPtoPDFconversion=\toks42
+)
+\langwohyphens=\language80
+ (/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+)
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+ABD: EveryShipout initializing macros
+<Cover/frontice.pdf, id=280, 614.295pt x 794.97pt>
+File: Cover/frontice.pdf Graphic file (type pdf)
+ <use Cover/frontice.pdf>
+Package pdftex.def Info: Cover/frontice.pdf used on input line 152.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: Cover/frontice.pdf Graphic file (type pdf)
+
+<use Cover/frontice.pdf>
+Package pdftex.def Info: Cover/frontice.pdf used on input line 152.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+
+<Cover/frontice.pdf, id=283, page=1, 614.295pt x 794.97pt>
+File: Cover/frontice.pdf Graphic file (type pdf)
+
+<use Cover/frontice.pdf, page 1>
+Package pdftex.def Info: Cover/frontice.pdf, page1 used on input line 152.
+(pdftex.def)             Requested size: 514.7091pt x 794.96806pt.
+File: Cover/frontice.pdf Graphic file (type pdf)
+ <use Cover/frontice.pdf, page 1>
+Package pdftex.def Info: Cover/frontice.pdf, page1 used on input line 152.
+(pdftex.def)             Requested size: 515.3374pt x 795.93848pt.
+File: Cover/frontice.pdf Graphic file (type pdf)
+
+<use Cover/frontice.pdf, page 1>
+Package pdftex.def Info: Cover/frontice.pdf, page1 used on input line 152.
+(pdftex.def)             Requested size: 515.3374pt x 795.93848pt.
+File: Cover/frontice.pdf Graphic file (type pdf)
+ <use Cover/frontice.pdf, page 1>
+Package pdftex.def Info: Cover/frontice.pdf, page1 used on input line 152.
+(pdftex.def)             Requested size: 515.3374pt x 795.93848pt.
+File: Cover/frontice.pdf Graphic file (type pdf)
+
+<use Cover/frontice.pdf, page 1>
+Package pdftex.def Info: Cover/frontice.pdf, page1 used on input line 152.
+(pdftex.def)             Requested size: 515.3374pt x 795.93848pt.
+ [1
+
+ <./Cover/frontice.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 157--157
+\T1/pplj/m/n/12 Copyright (c) 2015 by Nicholas J. Hor-ton, Ran-dall
+ []
+
+LaTeX Font Info:    Try loading font information for OT1+pplx on input line 157
+.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ot1pplx.fd
+File: ot1pplx.fd 2004/09/06 font definitions for OT1/pplx.
+)
+LaTeX Font Info:    Try loading font information for OML+zplm on input line 157
+.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/omlzplm.fd
+File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
+)
+LaTeX Font Info:    Try loading font information for OMS+zplm on input line 157
+.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/omszplm.fd
+File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
+)
+LaTeX Font Info:    Try loading font information for OMX+zplm on input line 157
+.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/omxzplm.fd
+File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
+)
+LaTeX Font Info:    Try loading font information for OT1+zplm on input line 157
+.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ot1zplm.fd
+File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
+)
+LaTeX Font Info:    Try loading font information for T1+fvm on input line 166.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/bera/t1fvm.fd
+File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
+)
+LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
+(Font)              scaled to size 10.20007pt on input line 166.
+
+Underfull \hbox (badness 10000) in paragraph at lines 166--166
+\T1/pplj/m/n/12 This ma-te-rial is copy-righted by the au-thors un-der a
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 166--166
+\T1/pplj/m/n/12 Cre-ative Com-mons At-tri-bu-tion 3.0 Un-ported Li-cense.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 166--166
+\T1/pplj/m/n/12 You are free to \T1/pplj/m/it/12 Share \T1/pplj/m/n/12 (to copy
+, dis-tribute and trans-mit
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 166--166
+\T1/pplj/m/n/12 the work) and to \T1/pplj/m/it/12 Remix \T1/pplj/m/n/12 (to ada
+pt the work) if you
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 166--166
+\T1/pplj/m/n/12 at-tribute our work. More de-tailed in-for-ma-tion about
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 166--166
+\T1/pplj/m/n/12 the li-cens-ing is avail-able at this web page: []$\T1/fvm/m/n/
+12 http :
+ []
+
+LaTeX Font Info:    Font shape `T1/pplj/bx/n' in size <12> not available
+(Font)              Font shape `T1/pplj/b/n' tried instead on input line 171.
+[2{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+(./MOSAIC-StudentGuide.toc [3
+
+])
+\tf@toc=\write9
+\openout9 = `MOSAIC-StudentGuide.toc'.
+
+ [4]
+LaTeX Font Info:    Try loading font information for T1+phv on input line 185.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/t1phv.fd
+File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
+)
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 10.79993pt on input line 185.
+LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
+(Font)              scaled to size 8.50006pt on input line 188.
+
+
+LaTeX Warning: Marginpar on page 5 moved.
+
+
+LaTeX Warning: Marginpar on page 5 moved.
+
+
+LaTeX Warning: Marginpar on page 5 moved.
+
+
+LaTeX Warning: Marginpar on page 5 moved.
+
+
+LaTeX Warning: Marginpar on page 5 moved.
+
+
+Overfull \hbox (2.91pt too wide) in paragraph at lines 199--199
+ []  
+ []
+
+
+LaTeX Warning: Marginpar on page 5 moved.
+
+[5
+
+]
+Overfull \hbox (4.44028pt too wide) in paragraph at lines 217--218
+[]\T1/pplj/m/n/12 Updated ver-sions will be posted at []$\T1/fvm/m/n/12 http : 
+/ / mosaic-[]web . 
+ []
+
+
+Overfull \hbox (2.91pt too wide) in paragraph at lines 243--243
+ []  
+ []
+
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 8.99994pt on input line 243.
+
+LaTeX Warning: Marginpar on page 6 moved.
+
+[6]
+
+LaTeX Warning: Marginpar on page 7 moved.
+
+
+Overfull \hbox (2.91pt too wide) in paragraph at lines 288--288
+ []  
+ []
+
+
+LaTeX Warning: Marginpar on page 7 moved.
+
+LaTeX Font Info:    Try loading font information for TS1+pplj on input line 294
+.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ts1pplj.fd
+File: ts1pplj.fd 2004/09/06 font definitions for TS1/pplj.
+) [7] [8
+
+]
+[9] [10]
+
+LaTeX Warning: Marginpar on page 11 moved.
+
+[11
+
+]
+
+LaTeX Warning: Marginpar on page 12 moved.
+
+[12]
+Chapter 1.
+
+LaTeX Warning: Marginpar on page 13 moved.
+
+
+LaTeX Warning: Marginpar on page 13 moved.
+
+[13
+
+]
+
+LaTeX Warning: Marginpar on page 14 moved.
+
+LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
+(Font)              scaled to size 9.30756pt on input line 467.
+LaTeX Font Info:    Font shape `T1/fvm/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/fvm/b/n' tried instead on input line 468.
+LaTeX Font Info:    Font shape `T1/fvm/b/n' will be
+(Font)              scaled to size 9.30756pt on input line 468.
+LaTeX Font Info:    Font shape `T1/fvm/m/it' in size <10.95> not available
+(Font)              Font shape `T1/fvm/m/sl' tried instead on input line 468.
+LaTeX Font Info:    Font shape `T1/fvm/m/sl' will be
+(Font)              scaled to size 9.30756pt on input line 468.
+
+Overfull \hbox (12.98267pt too wide) in paragraph at lines 468--468
+[][]\T1/fvm/m/n/10.95 > [][]\T1/fvm/b/n/10.95 install.packages[][]\T1/fvm/m/n/1
+0.95 ([][]"mosaic"[][])[]    []\T1/fvm/m/sl/10.95 # note the quotation marks[][
+] 
+ []
+
+
+LaTeX Warning: Marginpar on page 14 moved.
+
+
+LaTeX Warning: Marginpar on page 14 moved.
+
+
+LaTeX Warning: Marginpar on page 14 moved.
+
+
+LaTeX Warning: Marginpar on page 14 moved.
+
+
+LaTeX Warning: Marginpar on page 14 moved.
+
+[14]
+Chapter 2.
+
+LaTeX Warning: Marginpar on page 15 moved.
+
+
+Overfull \hbox (2.91pt too wide) in paragraph at lines 526--526
+ []  
+ []
+
+
+Overfull \hbox (2.91pt too wide) in paragraph at lines 537--537
+ []  
+ []
+
+
+LaTeX Warning: Marginpar on page 15 moved.
+
+
+LaTeX Warning: Marginpar on page 15 moved.
+
+[15
+
+]
+
+LaTeX Warning: Marginpar on page 16 moved.
+
+[16]
+
+LaTeX Warning: Marginpar on page 17 moved.
+
+
+LaTeX Warning: Marginpar on page 17 moved.
+
+
+LaTeX Warning: Marginpar on page 17 moved.
+
+<rstudio-login.png, id=475, 647.41875pt x 512.91624pt>
+File: rstudio-login.png Graphic file (type png)
+ <use rstudio-login.png>
+Package pdftex.def Info: rstudio-login.png used on input line 603.
+(pdftex.def)             Requested size: 313.65154pt x 248.49016pt.
+
+Overfull \hbox (16.64787pt too wide) in paragraph at lines 603--604
+[][]  
+ []
+
+<rstudio-init.png, id=476, 929.4725pt x 618.31pt>
+File: rstudio-init.png Graphic file (type png)
+ <use rstudio-init.png>
+Package pdftex.def Info: rstudio-init.png used on input line 608.
+(pdftex.def)             Requested size: 313.65154pt x 208.64703pt.
+
+Overfull \hbox (16.64787pt too wide) in paragraph at lines 608--609
+[][]  
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [17 <./rstudio-login.png> <./rstudio-init.png>]
+
+LaTeX Warning: Marginpar on page 18 moved.
+
+
+Overfull \hbox (18.58582pt too wide) in paragraph at lines 675--675
+[][]\T1/fvm/m/n/10.95 > [][]product[] []<-[] []15.3[] []*[] []23.4[]      []\T1
+/fvm/m/sl/10.95 # <- can be used instead of =[][] 
+ []
+
+[18]
+Overfull \hbox (24.18896pt too wide) in paragraph at lines 697--697
+[][]\T1/fvm/m/n/10.95 > [][]\T1/fvm/b/n/10.95 log[][]\T1/fvm/m/n/10.95 (product
+)[]                []\T1/fvm/m/sl/10.95 # (natural) log of the product[][] 
+ []
+
+
+Overfull \hbox (12.98267pt too wide) in paragraph at lines 703--703
+[][]\T1/fvm/m/n/10.95 > [][]\T1/fvm/b/n/10.95 log10[][]\T1/fvm/m/n/10.95 (produ
+ct)[]              []\T1/fvm/m/sl/10.95 # base 10 log of the product[][] 
+ []
+
+
+Overfull \hbox (7.37952pt too wide) in paragraph at lines 709--709
+[][]\T1/fvm/m/n/10.95 > [][]\T1/fvm/b/n/10.95 log2[][]\T1/fvm/m/n/10.95 (produc
+t)[]               []\T1/fvm/m/sl/10.95 # base 2 log of the product[][] 
+ []
+
+
+Overfull \hbox (80.22046pt too wide) in paragraph at lines 715--715
+[][]\T1/fvm/m/n/10.95 > [][]\T1/fvm/b/n/10.95 log[][]\T1/fvm/m/n/10.95 (product
+,[] []base[][]=[][]2[][])[]        []\T1/fvm/m/sl/10.95 # base 2 log of the pro
+duct, another way[][] 
+ []
+
+
+Overfull \hbox (35.39526pt too wide) in paragraph at lines 729--729
+[][]\T1/fvm/m/n/10.95 > [][]product[] []<-[] []15.3[] []*[] []23.4[][]; product
+[]    []\T1/fvm/m/sl/10.95 # save result and show it[][] 
+ []
+
+
+Overfull \hbox (1.93149pt too wide) in paragraph at lines 742--744
+\T1/pplj/m/n/12 of R and pack-ages that are loaded and []\T1/fvm/m/n/12 RStudio
+.Version()[] 
+ []
+
+
+Overfull \hbox (35.39526pt too wide) in paragraph at lines 790--790
+[]\T1/fvm/m/n/10.95 [1] grid      stats     graphics  grDevices utils     datas
+ets[] 
+ []
+
+
+Overfull \hbox (7.37952pt too wide) in paragraph at lines 790--790
+[]\T1/fvm/m/n/10.95 [1] mosaic_1.1.1      Matrix_1.2-12     mosaicData_0.14.0[]
+ 
+ []
+
+[19]
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 12.9599pt on input line 796.
+ [20] <markdown1.png, id=497, 489.83pt x 506.89375pt>
+File: markdown1.png Graphic file (type png)
+ <use markdown1.png>
+Package pdftex.def Info: markdown1.png used on input line 815.
+(pdftex.def)             Requested size: 313.65154pt x 324.58105pt.
+
+Overfull \hbox (16.64787pt too wide) in paragraph at lines 815--816
+[][]  
+ []
+
+[21 <./markdown1.png>] <markdown2.png, id=503, 734.745pt x 549.05125pt>
+File: markdown2.png Graphic file (type png)
+
+<use markdown2.png>
+Package pdftex.def Info: markdown2.png used on input line 821.
+(pdftex.def)             Requested size: 313.65154pt x 234.38673pt.
+
+Overfull \hbox (16.64787pt too wide) in paragraph at lines 821--822
+[][]  
+ []
+
+<markdown3.png, id=504, 507.8975pt x 341.275pt>
+File: markdown3.png Graphic file (type png)
+ <use markdown3.png>
+Package pdftex.def Info: markdown3.png used on input line 826.
+(pdftex.def)             Requested size: 313.65154pt x 210.76031pt.
+
+Overfull \hbox (16.64787pt too wide) in paragraph at lines 826--827
+[][]  
+ []
+
+<markdown4.png, id=505, 799.98875pt x 505.89pt>
+File: markdown4.png Graphic file (type png)
+ <use markdown4.png>
+Package pdftex.def Info: markdown4.png used on input line 830.
+(pdftex.def)             Requested size: 313.65154pt x 198.34612pt.
+
+Overfull \hbox (16.64787pt too wide) in paragraph at lines 830--831
+[][]  
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [22 <./markdown2.png> <./markdown3.png>]
+Overfull \hbox (0.7643pt too wide) in paragraph at lines 832--835
+[]\T1/pplj/m/n/12 There is a but-ton (marked with a ques-tion mark) which 
+ []
+
+
+Overfull \hbox (2.91pt too wide) in paragraph at lines 837--837
+ []  
+ []
+
+
+LaTeX Warning: Marginpar on page 23 moved.
+
+[23 <./markdown4.png>] [24]
+Overfull \hbox (24.18896pt too wide) in paragraph at lines 907--907
+[][]\T1/fvm/m/n/10.95 > [][]\T1/fvm/m/sl/10.95 # this will make lattice graphic
+s available to the session[][] 
+ []
+
+<figures/FrontMatter-unnamed-chunk-21-1.pdf, id=524, 289.08pt x 172.645pt>
+File: figures/FrontMatter-unnamed-chunk-21-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-unnamed-chunk-21-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-unnamed-chunk-21-1.pdf used on inp
+ut line 914.
+(pdftex.def)             Requested size: 289.07928pt x 172.65245pt.
+ [25 <./figures/FrontMatter-unnamed-chunk-21-1.pdf>] [26
+
+]
+Chapter 3.
+
+Overfull \hbox (2.91pt too wide) in paragraph at lines 976--976
+ []  
+ []
+
+
+LaTeX Warning: Marginpar on page 27 moved.
+
+[27]
+Overfull \hbox (2.91pt too wide) in paragraph at lines 1045--1045
+ []  
+ []
+
+
+LaTeX Warning: Marginpar on page 28 moved.
+
+[28]
+Overfull \hbox (12.98267pt too wide) in paragraph at lines 1090--1090
+[][]\T1/fvm/m/n/10.95 > [][]\T1/fvm/b/n/10.95 gf_histogram[][]\T1/fvm/m/n/10.95
+ ([][]~[] []cesd,[] []data[] []= HELPrct,[] []binwidth[] []=[] []2.4[][])[] []%
+>%[][] 
+ []
+
+<figures/FrontMatter-cesd-hist-1.pdf, id=549, 289.08pt x 172.645pt>
+File: figures/FrontMatter-cesd-hist-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-cesd-hist-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-cesd-hist-1.pdf used on input line
+ 1095.
+(pdftex.def)             Requested size: 289.07928pt x 172.65245pt.
+
+<figures/FrontMatter-cesd-hist2-1.pdf, id=550, 289.08pt x 172.645pt>
+File: figures/FrontMatter-cesd-hist2-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-cesd-hist2-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-cesd-hist2-1.pdf used on input lin
+e 1114.
+(pdftex.def)             Requested size: 289.07928pt x 172.65245pt.
+
+Underfull \vbox (badness 2005) has occurred while \output is active []
+
+ [29 <./figures/FrontMatter-cesd-hist-1.pdf>]
+Overfull \hbox (2.91pt too wide) in paragraph at lines 1154--1154
+ []  
+ []
+
+
+LaTeX Warning: Marginpar on page 30 moved.
+
+LaTeX Font Info:    Try loading font information for TS1+fvm on input line 1161
+.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/bera/ts1fvm.fd
+File: ts1fvm.fd 2004/09/07 scalable font definitions for TS1/fvm.
+)
+LaTeX Font Info:    Font shape `TS1/fvm/m/n' will be
+(Font)              scaled to size 9.30756pt on input line 1161.
+ [30 <./figures/FrontMatter-cesd-hist2-1.pdf>]
+<figures/FrontMatter-women-cesd-hist-1.pdf, id=570, 289.08pt x 172.645pt>
+File: figures/FrontMatter-women-cesd-hist-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-women-cesd-hist-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-women-cesd-hist-1.pdf used on inpu
+t line 1200.
+(pdftex.def)             Requested size: 289.07928pt x 172.65245pt.
+
+<figures/FrontMatter-cesd-male-female-1.pdf, id=571, 289.08pt x 172.645pt>
+File: figures/FrontMatter-cesd-male-female-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-cesd-male-female-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-cesd-male-female-1.pdf used on inp
+ut line 1216.
+(pdftex.def)             Requested size: 289.07928pt x 172.65245pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [31 <./figures/FrontMatter-women-cesd-hist-1.pdf>]
+<figures/FrontMatter-cesd-dotlayout-1.pdf, id=582, 289.08pt x 172.645pt>
+File: figures/FrontMatter-cesd-dotlayout-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-cesd-dotlayout-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-cesd-dotlayout-1.pdf used on input
+ line 1234.
+(pdftex.def)             Requested size: 289.07928pt x 172.65245pt.
+
+<figures/FrontMatter-subsmale-1.pdf, id=583, 289.08pt x 172.645pt>
+File: figures/FrontMatter-subsmale-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-subsmale-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-subsmale-1.pdf used on input line 
+1256.
+(pdftex.def)             Requested size: 289.07928pt x 172.65245pt.
+
+<figures/FrontMatter-cesd-dot-1.pdf, id=584, 289.08pt x 129.48375pt>
+File: figures/FrontMatter-cesd-dot-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-cesd-dot-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-cesd-dot-1.pdf used on input line 
+1275.
+(pdftex.def)             Requested size: 289.07928pt x 129.48933pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [32 <./figures/FrontMatter-cesd-male-female-1.pdf> <./figures/FrontMatter-cesd
+-dotlayout-1.pdf>]
+<figures/FrontMatter-cesd-dotwidth-1.pdf, id=600, 289.08pt x 129.48375pt>
+File: figures/FrontMatter-cesd-dotwidth-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-cesd-dotwidth-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-cesd-dotwidth-1.pdf used on input 
+line 1293.
+(pdftex.def)             Requested size: 289.07928pt x 129.48933pt.
+
+Overfull \hbox (57.80786pt too wide) in paragraph at lines 1310--1310
+[][] []  []\T1/fvm/m/n/10.95 data[][]=[][]\T1/fvm/b/n/10.95 filter[][]\T1/fvm/m
+/n/10.95 (HELPrct, (sex[][]==[][]"female"[][])[] []&[] [](homeless[][]==[][]"ho
+meless"[][])))[][] 
+ []
+
+<figures/FrontMatter-cesd-dot4-1.pdf, id=601, 289.08pt x 172.645pt>
+File: figures/FrontMatter-cesd-dot4-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-cesd-dot4-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-cesd-dot4-1.pdf used on input line
+ 1314.
+(pdftex.def)             Requested size: 289.07928pt x 172.65245pt.
+ [33 <./figures/FrontMatter-cesd-dot-1.pdf> <./figures/FrontMatter-cesd-dotwidt
+h-1.pdf> <./figures/FrontMatter-cesd-dot4-1.pdf>]
+
+LaTeX Warning: Marginpar on page 34 moved.
+
+
+Overfull \hbox (2.91pt too wide) in paragraph at lines 1329--1329
+ []  
+ []
+
+
+LaTeX Warning: Marginpar on page 34 moved.
+
+<figures/FrontMatter-dens1-1.pdf, id=622, 289.08pt x 172.645pt>
+File: figures/FrontMatter-dens1-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-dens1-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-dens1-1.pdf used on input line 135
+0.
+(pdftex.def)             Requested size: 289.07928pt x 172.65245pt.
+ [34 <./figures/FrontMatter-dens1-1.pdf>]
+<figures/FrontMatter-poly-1.pdf, id=633, 289.08pt x 172.645pt>
+File: figures/FrontMatter-poly-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-poly-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-poly-1.pdf used on input line 1372
+.
+(pdftex.def)             Requested size: 180.67499pt x 107.90285pt.
+
+
+LaTeX Warning: Marginpar on page 35 moved.
+
+<figures/FrontMatter-norm1-1.pdf, id=635, 361.35pt x 172.645pt>
+File: figures/FrontMatter-norm1-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-norm1-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-norm1-1.pdf used on input line 140
+6.
+(pdftex.def)             Requested size: 312.0pt x 149.06715pt.
+ [35 <./figures/FrontMatter-poly-1.pdf> <./figures/FrontMatter-norm1-1.pdf>]
+Overfull \hbox (2.91pt too wide) in paragraph at lines 1452--1452
+ []  
+ []
+
+
+LaTeX Warning: Marginpar on page 36 moved.
+
+
+LaTeX Warning: Marginpar on page 36 moved.
+
+
+LaTeX Warning: Marginpar on page 36 moved.
+
+[36]
+Overfull \hbox (12.98267pt too wide) in paragraph at lines 1505--1505
+[][]\T1/fvm/m/n/10.95 > [][]trials[] []<-[] []\T1/fvm/b/n/10.95 do[][]\T1/fvm/m
+/n/10.95 ([][]1000[][])[] []*[] []\T1/fvm/b/n/10.95 mean[][]\T1/fvm/m/n/10.95 (
+[][]~[] []cesd,[] []data[][]=[][]\T1/fvm/b/n/10.95 resample[][]\T1/fvm/m/n/10.9
+5 (female))[][] 
+ []
+
+[37] [38
+
+]
+Chapter 4.
+
+Overfull \hbox (2.91pt too wide) in paragraph at lines 1533--1533
+ []  
+ []
+
+
+LaTeX Warning: Marginpar on page 39 moved.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [39]
+Overfull \hbox (24.18896pt too wide) in paragraph at lines 1603--1603
+[]\T1/fvm/m/n/10.95 number of successes = 210, number of trials = 450, p-value 
+=[] 
+ []
+
+
+Overfull \hbox (85.82361pt too wide) in paragraph at lines 1603--1603
+[]\T1/fvm/m/n/10.95 alternative hypothesis: true probability of success is not 
+equal to 0.5[] 
+ []
+
+
+Overfull \hbox (35.39526pt too wide) in paragraph at lines 1611--1611
+[][]\T1/fvm/m/n/10.95 > [][]result[] []<-[] []\T1/fvm/b/n/10.95 binom.test[][]\
+T1/fvm/m/n/10.95 ([][]~[] [](homeless[][]==[][]"homeless"[][]),[] []data[][]=HE
+LPrct)[][] 
+ []
+
+
+Overfull \hbox (35.39526pt too wide) in paragraph at lines 1627--1627
+[]\T1/fvm/m/n/10.95 data:  HELPrct$(homeless == "homeless")  [with success = TR
+UE][] 
+ []
+
+
+Overfull \hbox (24.18896pt too wide) in paragraph at lines 1627--1627
+[]\T1/fvm/m/n/10.95 number of successes = 210, number of trials = 450, p-value 
+=[] 
+ []
+
+
+Overfull \hbox (85.82361pt too wide) in paragraph at lines 1627--1627
+[]\T1/fvm/m/n/10.95 alternative hypothesis: true probability of success is not 
+equal to 0.5[] 
+ []
+
+[40]
+Overfull \hbox (1.77637pt too wide) in paragraph at lines 1642--1642
+[]\T1/fvm/m/n/10.95 [1] "statistic"   "parameter"   "p.value"     "conf.int"[] 
+
+ []
+
+
+Overfull \hbox (7.37952pt too wide) in paragraph at lines 1642--1642
+[]\T1/fvm/m/n/10.95 [5] "estimate"    "null.value"  "alternative" "data.name"[]
+ 
+ []
+
+
+Overfull \hbox (2.91pt too wide) in paragraph at lines 1680--1680
+ []  
+ []
+
+
+LaTeX Warning: Marginpar on page 41 moved.
+
+
+Overfull \hbox (57.80786pt too wide) in paragraph at lines 1710--1710
+[][]\T1/fvm/m/n/10.95 > [][]\T1/fvm/b/n/10.95 prop.test[][]\T1/fvm/m/n/10.95 ([
+][]~[] [](homeless[][]==[][]"homeless"[][]),[] []correct[][]=[][]FALSE[][],[] [
+]data[][]=HELPrct)[][] 
+ []
+
+
+Overfull \hbox (35.39526pt too wide) in paragraph at lines 1724--1724
+[]\T1/fvm/m/n/10.95 data:  HELPrct$(homeless == "homeless")  [with success = TR
+UE][] 
+ []
+
+[41]
+Overfull \hbox (2.91pt too wide) in paragraph at lines 1727--1727
+ []  
+ []
+
+
+Underfull \hbox (badness 5331) in paragraph at lines 1727--1727
+\T1/pplj/m/n/10 We write 
+ []
+
+
+Overfull \hbox (12.79993pt too wide) in paragraph at lines 1726--1732
+\T1/pplj/m/n/12 vari-able in the same way that []\T1/fvm/m/n/12 tally()[] \T1/p
+plj/m/n/12 would.   []\T1/fvm/m/n/12 prop.test()[] 
+ []
+
+
+LaTeX Warning: Marginpar on page 42 moved.
+
+
+LaTeX Warning: Marginpar on page 42 moved.
+
+
+LaTeX Warning: Marginpar on page 42 moved.
+
+[42]
+Overfull \hbox (2.91pt too wide) in paragraph at lines 1779--1779
+ []  
+ []
+
+
+LaTeX Warning: Marginpar on page 43 moved.
+
+
+Overfull \hbox (7.37952pt too wide) in paragraph at lines 1816--1816
+[][]\T1/fvm/m/n/10.95 > [][]chisq[] []<-[] []\T1/fvm/b/n/10.95 sum[][]\T1/fvm/m
+/n/10.95 ((observed[] []-[] []expected)[][]^[][]2[][]/[][](expected)); chisq[][
+] 
+ []
+
+
+LaTeX Warning: Marginpar on page 43 moved.
+
+<figures/FrontMatter-chisqplotDist-1.pdf, id=680, 289.08pt x 172.645pt>
+File: figures/FrontMatter-chisqplotDist-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-chisqplotDist-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-chisqplotDist-1.pdf used on input 
+line 1841.
+(pdftex.def)             Requested size: 289.07928pt x 172.65245pt.
+
+Underfull \vbox (badness 5924) has occurred while \output is active []
+
+ [43]
+
+LaTeX Warning: Marginpar on page 44 moved.
+
+[44 <./figures/FrontMatter-chisqplotDist-1.pdf>]
+Chapter 5.
+
+LaTeX Warning: Marginpar on page 45 moved.
+
+<figures/FrontMatter-HELPrct-xyplot-1.pdf, id=696, 289.08pt x 216.81pt>
+File: figures/FrontMatter-HELPrct-xyplot-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-HELPrct-xyplot-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-HELPrct-xyplot-1.pdf used on input
+ line 1920.
+(pdftex.def)             Requested size: 289.07928pt x 216.81938pt.
+
+Overfull \hbox (2.91pt too wide) in paragraph at lines 1929--1929
+ []  
+ []
+
+[45
+
+ <./figures/FrontMatter-HELPrct-xyplot-1.pdf>]
+
+LaTeX Warning: Marginpar on page 46 moved.
+
+<figures/FrontMatter-unnamed-chunk-34-1.pdf, id=706, 289.08pt x 172.645pt>
+File: figures/FrontMatter-unnamed-chunk-34-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-unnamed-chunk-34-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-unnamed-chunk-34-1.pdf used on inp
+ut line 1950.
+(pdftex.def)             Requested size: 289.07928pt x 172.65245pt.
+
+Overfull \hbox (2.60661pt too wide) in paragraph at lines 1989--1992
+\T1/pplj/m/n/12 vari-ants (e.g., Spear-man) can be spec-i-fied us-ing the []\T1
+/fvm/m/n/12 method[] 
+ []
+
+[46 <./figures/FrontMatter-unnamed-chunk-34-1.pdf>]
+
+LaTeX Warning: Marginpar on page 47 moved.
+
+<figures/FrontMatter-unnamed-chunk-37-1.pdf, id=716, 289.08pt x 216.81pt>
+File: figures/FrontMatter-unnamed-chunk-37-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-unnamed-chunk-37-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-unnamed-chunk-37-1.pdf used on inp
+ut line 2015.
+(pdftex.def)             Requested size: 289.07928pt x 216.81938pt.
+
+
+LaTeX Warning: Marginpar on page 47 moved.
+
+[47 <./figures/FrontMatter-unnamed-chunk-37-1.pdf>]
+
+LaTeX Warning: Marginpar on page 48 moved.
+
+
+LaTeX Warning: Marginpar on page 48 moved.
+
+[48] <figures/FrontMatter-lmhist-1.pdf, id=731, 289.08pt x 172.645pt>
+File: figures/FrontMatter-lmhist-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-lmhist-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-lmhist-1.pdf used on input line 21
+41.
+(pdftex.def)             Requested size: 289.07928pt x 172.65245pt.
+
+<figures/FrontMatter-HELPrct-resid-qq-1.pdf, id=732, 289.08pt x 172.645pt>
+File: figures/FrontMatter-HELPrct-resid-qq-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-HELPrct-resid-qq-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-HELPrct-resid-qq-1.pdf used on inp
+ut line 2158.
+(pdftex.def)             Requested size: 289.07928pt x 172.65245pt.
+
+Overfull \hbox (102.63306pt too wide) in paragraph at lines 2171--2171
+[][]\T1/fvm/m/n/10.95 > [][]\T1/fvm/b/n/10.95 xyplot[][]\T1/fvm/m/n/10.95 ([][]
+\T1/fvm/b/n/10.95 resid[][]\T1/fvm/m/n/10.95 (cesdmodel)[] []~[] []\T1/fvm/b/n/
+10.95 fitted[][]\T1/fvm/m/n/10.95 (cesdmodel),[] []type[][]=[][]\T1/fvm/b/n/10.
+95 c[][]\T1/fvm/m/n/10.95 ([][]"p"[][],[] []"smooth"[][],[] []"r"[][]),[][] 
+ []
+
+<figures/FrontMatter-HELPrct-resid-plot-1.pdf, id=733, 289.08pt x 172.645pt>
+File: figures/FrontMatter-HELPrct-resid-plot-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-HELPrct-resid-plot-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-HELPrct-resid-plot-1.pdf used on i
+nput line 2176.
+(pdftex.def)             Requested size: 289.07928pt x 172.65245pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [49 <./figures/FrontMatter-lmhist-1.pdf> <./figures/FrontMatter-HELPrct-resid-
+qq-1.pdf>]
+<figures/FrontMatter-mplotc1-1.pdf, id=749, 289.08pt x 172.645pt>
+File: figures/FrontMatter-mplotc1-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-mplotc1-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-mplotc1-1.pdf used on input line 2
+201.
+(pdftex.def)             Requested size: 289.07928pt x 172.65245pt.
+
+<figures/FrontMatter-mplotc2-1.pdf, id=750, 289.08pt x 172.645pt>
+File: figures/FrontMatter-mplotc2-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-mplotc2-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-mplotc2-1.pdf used on input line 2
+217.
+(pdftex.def)             Requested size: 289.07928pt x 172.65245pt.
+
+Underfull \vbox (badness 8189) has occurred while \output is active []
+
+ [50 <./figures/FrontMatter-HELPrct-resid-plot-1.pdf> <./figures/FrontMatter-mp
+lotc1-1.pdf>] <figures/FrontMatter-mplotc3-1.pdf, id=768, 289.08pt x 172.645pt>
+File: figures/FrontMatter-mplotc3-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-mplotc3-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-mplotc3-1.pdf used on input line 2
+236.
+(pdftex.def)             Requested size: 289.07928pt x 172.65245pt.
+
+<figures/FrontMatter-mplotc4-1.pdf, id=769, 289.08pt x 172.645pt>
+File: figures/FrontMatter-mplotc4-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-mplotc4-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-mplotc4-1.pdf used on input line 2
+253.
+(pdftex.def)             Requested size: 289.07928pt x 172.65245pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [51 <./figures/FrontMatter-mplotc2-1.pdf> <./figures/FrontMatter-mplotc3-1.pdf
+>]
+<figures/FrontMatter-mplotc5-1.pdf, id=785, 289.08pt x 172.645pt>
+File: figures/FrontMatter-mplotc5-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-mplotc5-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-mplotc5-1.pdf used on input line 2
+272.
+(pdftex.def)             Requested size: 289.07928pt x 172.65245pt.
+
+<figures/FrontMatter-mplotc6-1.pdf, id=786, 289.08pt x 172.645pt>
+File: figures/FrontMatter-mplotc6-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-mplotc6-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-mplotc6-1.pdf used on input line 2
+290.
+(pdftex.def)             Requested size: 289.07928pt x 172.65245pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [52 <./figures/FrontMatter-mplotc4-1.pdf> <./figures/FrontMatter-mplotc5-1.pdf
+>]
+Overfull \hbox (113.83936pt too wide) in paragraph at lines 2306--2306
+[][]\T1/fvm/m/n/10.95 > [][]\T1/fvm/b/n/10.95 xyplot[][]\T1/fvm/m/n/10.95 (cesd
+[] []~[] []mcs,[] []panel[][]=panel.lmbands,[] []cex[][]=[][]0.2[][],[] []band.
+lwd[][]=[][]2[][],[] []data[][]=HELPrct)[][] 
+ []
+
+<figures/FrontMatter-HELPxyplot1-1.pdf, id=801, 289.08pt x 172.645pt>
+File: figures/FrontMatter-HELPxyplot1-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-HELPxyplot1-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-HELPxyplot1-1.pdf used on input li
+ne 2310.
+(pdftex.def)             Requested size: 289.07928pt x 172.65245pt.
+ [53 <./figures/FrontMatter-mplotc6-1.pdf> <./figures/FrontMatter-HELPxyplot1-1
+.pdf>] [54
+
+]
+Chapter 6.
+
+Overfull \hbox (7.37952pt too wide) in paragraph at lines 2363--2363
+[][]\T1/fvm/m/n/10.95 > [][]\T1/fvm/b/n/10.95 tally[][]\T1/fvm/m/n/10.95 ([][]~
+[] []sex[] []|[] []homeless,[] []margins[][]=[][]TRUE[][],[] []format[][]=[][]"
+percent"[][],[][] 
+ []
+
+[55]
+Overfull \hbox (35.39526pt too wide) in paragraph at lines 2394--2394
+[][]\T1/fvm/m/n/10.95 > [][]\T1/fvm/b/n/10.95 oddsRatio[][]\T1/fvm/m/n/10.95 ([
+][]\T1/fvm/b/n/10.95 tally[][]\T1/fvm/m/n/10.95 ([][]~[] [](homeless[][]==[][]"
+housed"[][])[] []+[] []sex,[] []margins[][]=[][]FALSE[][],[][] 
+ []
+
+
+Overfull \hbox (2.91pt too wide) in paragraph at lines 2450--2450
+ []  
+ []
+
+[56]
+
+LaTeX Warning: Marginpar on page 57 moved.
+
+
+LaTeX Warning: Marginpar on page 57 moved.
+
+
+LaTeX Warning: Marginpar on page 57 moved.
+
+<figures/FrontMatter-mosaicplot-1.pdf, id=833, 289.08pt x 252.945pt>
+File: figures/FrontMatter-mosaicplot-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-mosaicplot-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-mosaicplot-1.pdf used on input lin
+e 2467.
+(pdftex.def)             Requested size: 289.07928pt x 252.95595pt.
+
+Overfull \hbox (7.23045pt too wide) in paragraph at lines 2476--2476
+ |[]\T1/pplj/m/it/17.28 Creating ta-bles from sum-mary statis-tics| 
+ []
+
+
+Overfull \hbox (18.58582pt too wide) in paragraph at lines 2484--2484
+[][] []  []\T1/fvm/b/n/10.95 do[][]\T1/fvm/m/n/10.95 ([][]40[][])[]  []*[] []\T
+1/fvm/b/n/10.95 data.frame[][]\T1/fvm/m/n/10.95 ([][]sex[][]=[][]"female"[][],[
+] []homeless[][]=[][]"homeless"[][]),[][] 
+ []
+
+
+Overfull \hbox (18.58582pt too wide) in paragraph at lines 2485--2485
+[][] []  []\T1/fvm/b/n/10.95 do[][]\T1/fvm/m/n/10.95 ([][]169[][])[] []*[] []\T
+1/fvm/b/n/10.95 data.frame[][]\T1/fvm/m/n/10.95 ([][]sex[][]=[][]"male"[][],[] 
+  []homeless[][]=[][]"homeless"[][]),[][] 
+ []
+
+
+Overfull \hbox (7.37952pt too wide) in paragraph at lines 2486--2486
+[][] []  []\T1/fvm/b/n/10.95 do[][]\T1/fvm/m/n/10.95 ([][]67[][])[]  []*[] []\T
+1/fvm/b/n/10.95 data.frame[][]\T1/fvm/m/n/10.95 ([][]sex[][]=[][]"female"[][],[
+] []homeless[][]=[][]"housed"[][]),[][] 
+ []
+
+
+Overfull \hbox (1.77637pt too wide) in paragraph at lines 2487--2487
+[][] []  []\T1/fvm/b/n/10.95 do[][]\T1/fvm/m/n/10.95 ([][]177[][])[] []*[] []\T
+1/fvm/b/n/10.95 data.frame[][]\T1/fvm/m/n/10.95 ([][]sex[][]=[][]"male"[][],[] 
+  []homeless[][]=[][]"housed"[][])[][] 
+ []
+
+[57 <./figures/FrontMatter-mosaicplot-1.pdf>]
+Overfull \hbox (35.39526pt too wide) in paragraph at lines 2515--2515
+[]\T1/fvm/m/n/10.95 data:  tally(~homeless + sex, margins = FALSE, data = HELPr
+ct)[] 
+ []
+
+
+LaTeX Warning: Marginpar on page 58 moved.
+
+[58]
+Overfull \hbox (2.91pt too wide) in paragraph at lines 2572--2572
+ []  
+ []
+
+
+LaTeX Warning: Marginpar on page 59 moved.
+
+
+Overfull \hbox (35.39526pt too wide) in paragraph at lines 2592--2592
+[]\T1/fvm/m/n/10.95 data:  tally(~homeless + sex, margins = FALSE, data = HELPr
+ct)[] 
+ []
+
+
+Overfull \hbox (7.37952pt too wide) in paragraph at lines 2592--2592
+[]\T1/fvm/m/n/10.95 alternative hypothesis: true odds ratio is not equal to 1[]
+ 
+ []
+
+[59] [60
+
+]
+Chapter 7.
+
+Overfull \hbox (10.44452pt too wide) in paragraph at lines 2599--2599
+ |[]\T1/pplj/m/it/17.28 A di-choto-mous pre-dic-tor: nu-mer-i-cal and
+ []
+
+<figures/FrontMatter-cesd-box-1.pdf, id=858, 289.08pt x 108.405pt>
+File: figures/FrontMatter-cesd-box-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-cesd-box-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-cesd-box-1.pdf used on input line 
+2649.
+(pdftex.def)             Requested size: 289.07928pt x 108.40968pt.
+ [61]
+
+LaTeX Warning: Marginpar on page 62 moved.
+
+
+Overfull \hbox (1.77637pt too wide) in paragraph at lines 2673--2673
+[][]\T1/fvm/m/n/10.95 > [][]\T1/fvm/b/n/10.95 xyplot[][]\T1/fvm/m/n/10.95 (sex[
+] []~[] []length,[] []alpha[][]=[][].6[][],[] []cex[][]=[][]1.4[][],[] []data[]
+[]=KidsFeet)[][] 
+ []
+
+<figures/FrontMatter-KidsFeet-xy-1.pdf, id=864, 289.08pt x 108.405pt>
+File: figures/FrontMatter-KidsFeet-xy-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-KidsFeet-xy-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-KidsFeet-xy-1.pdf used on input li
+ne 2677.
+(pdftex.def)             Requested size: 289.07928pt x 108.40968pt.
+
+Overfull \hbox (57.80786pt too wide) in paragraph at lines 2708--2708
+[]\T1/fvm/m/n/10.95 alternative hypothesis: true difference in means is not equ
+al to 0[] 
+ []
+
+[62 <./figures/FrontMatter-cesd-box-1.pdf> <./figures/FrontMatter-KidsFeet-xy-1
+.pdf>]
+Overfull \hbox (57.80786pt too wide) in paragraph at lines 2731--2731
+[]\T1/fvm/m/n/10.95 alternative hypothesis: true difference in means is not equ
+al to 0[] 
+ []
+
+
+LaTeX Warning: Marginpar on page 63 moved.
+
+[63]
+Overfull \hbox (29.79211pt too wide) in paragraph at lines 2775--2775
+[]\T1/fvm/m/n/10.95 alternative hypothesis: true location shift is not equal to
+ 0[] 
+ []
+
+
+Overfull \hbox (2.91pt too wide) in paragraph at lines 2838--2838
+ []  
+ []
+
+[64]
+
+LaTeX Warning: Marginpar on page 65 moved.
+
+
+Overfull \hbox (40.99841pt too wide) in paragraph at lines 2860--2860
+[]    \T1/fvm/m/n/10.95 min      Q1  median     Q3   max    mean     sd   n mis
+sing[] 
+ []
+
+
+Overfull \hbox (40.99841pt too wide) in paragraph at lines 2860--2860
+[] \T1/fvm/m/n/10.95 -2.204 -0.5272 0.06015 0.6475 2.299 0.05017 0.8714 500    
+   0[] 
+ []
+
+<figures/FrontMatter-permute-HELPrct-1.pdf, id=890, 289.08pt x 172.645pt>
+File: figures/FrontMatter-permute-HELPrct-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-permute-HELPrct-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-permute-HELPrct-1.pdf used on inpu
+t line 2869.
+(pdftex.def)             Requested size: 289.07928pt x 172.65245pt.
+ [65 <./figures/FrontMatter-permute-HELPrct-1.pdf>]
+<figures/FrontMatter-cesd-oneway-1.pdf, id=901, 433.62pt x 136.51pt>
+File: figures/FrontMatter-cesd-oneway-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-cesd-oneway-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-cesd-oneway-1.pdf used on input li
+ne 2898.
+(pdftex.def)             Requested size: 312.0pt x 98.2267pt.
+ [66 <./figures/FrontMatter-cesd-oneway-1.pdf>]
+Overfull \hbox (1.77637pt too wide) in paragraph at lines 3007--3007
+[]  \T1/fvm/m/n/10.95 substance min Q1 median Q3 max  mean    sd   n missing[] 
+
+ []
+
+
+Overfull \hbox (1.77637pt too wide) in paragraph at lines 3007--3007
+[]\T1/fvm/m/n/10.95 1   alcohol   4 26     36 42  58 34.37 12.05 177       0[] 
+
+ []
+
+
+Overfull \hbox (1.77637pt too wide) in paragraph at lines 3007--3007
+[]\T1/fvm/m/n/10.95 2   cocaine   1 19     30 39  60 29.42 13.40 152       0[] 
+
+ []
+
+
+Overfull \hbox (1.77637pt too wide) in paragraph at lines 3007--3007
+[]\T1/fvm/m/n/10.95 3    heroin   4 28     35 43  56 34.87 11.20 124       0[] 
+
+ []
+
+[67] <figures/FrontMatter-help-hsd3-1.pdf, id=916, 433.62pt x 252.945pt>
+File: figures/FrontMatter-help-hsd3-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-help-hsd3-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-help-hsd3-1.pdf used on input line
+ 3048.
+(pdftex.def)             Requested size: 312.0pt x 182.00833pt.
+ [68 <./figures/FrontMatter-help-hsd3-1.pdf>]
+Chapter 8.
+
+LaTeX Warning: Marginpar on page 69 moved.
+
+
+Overfull \hbox (18.58582pt too wide) in paragraph at lines 3079--3079
+[][]\T1/fvm/m/n/10.95 > [][]logitmod[] []<-[] []\T1/fvm/b/n/10.95 glm[][]\T1/fv
+m/m/n/10.95 (homeless[] []~[] []age[] []+[] []female,[] []family[][]=binomial,[
+][] 
+ []
+
+
+Overfull \hbox (1.77637pt too wide) in paragraph at lines 3097--3097
+[]\T1/fvm/m/n/10.95 (Dispersion parameter for binomial family taken to be 1)[] 
+
+ []
+
+[69
+
+]
+Overfull \hbox (35.39526pt too wide) in paragraph at lines 3126--3126
+[][]\T1/fvm/m/n/10.95 > [][]mymodsubage[] []<-[] []\T1/fvm/b/n/10.95 glm[][]\T1
+/fvm/m/n/10.95 ((homeless[][]==[][]"homeless"[][])[] []~[] []age[] []+[] []subs
+tance,[][] 
+ []
+
+
+Overfull \hbox (46.60156pt too wide) in paragraph at lines 3128--3128
+[][]\T1/fvm/m/n/10.95 > [][]mymodage[] []<-[] []\T1/fvm/b/n/10.95 glm[][]\T1/fv
+m/m/n/10.95 ((homeless[][]==[][]"homeless"[][])[] []~[] []age,[] []family[][]=b
+inomial,[][] 
+ []
+
+
+Overfull \hbox (1.77637pt too wide) in paragraph at lines 3147--3147
+[]\T1/fvm/m/n/10.95 (Dispersion parameter for binomial family taken to be 1)[] 
+
+ []
+
+
+Overfull \hbox (63.41101pt too wide) in paragraph at lines 3154--3154
+[]     \T1/fvm/m/n/10.95 (Intercept)              age substancecocaine  substan
+ceheroin[] 
+ []
+
+
+Overfull \hbox (63.41101pt too wide) in paragraph at lines 3154--3154
+[]          \T1/fvm/m/n/10.95 0.9504           1.0101           0.4725         
+  0.4593[] 
+ []
+
+[70]
+Overfull \hbox (119.4425pt too wide) in paragraph at lines 3174--3174
+[][]\T1/fvm/m/n/10.95 > [][]\T1/fvm/b/n/10.95 tally[][]\T1/fvm/m/n/10.95 ([][]~
+[] []homeless[] []|[] []substance,[] []format[][]=[][]"percent"[][],[] []margin
+s[][]=[][]TRUE[][],[] []data[][]=HELPrct)[][] 
+ []
+
+[71] [72
+
+]
+Chapter 9.
+
+Overfull \hbox (29.79211pt too wide) in paragraph at lines 3214--3214
+[][]\T1/fvm/m/n/10.95 > [][]\T1/fvm/b/n/10.95 title[][]\T1/fvm/m/n/10.95 ([][]"
+Product-Limit Survival Estimates (time to linkage)"[][])[][] 
+ []
+
+<figures/FrontMatter-help-km-1.pdf, id=946, 433.62pt x 281.05pt>
+File: figures/FrontMatter-help-km-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-help-km-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-help-km-1.pdf used on input line 3
+218.
+(pdftex.def)             Requested size: 312.0pt x 202.23146pt.
+ [73 <./figures/FrontMatter-help-km-1.pdf>]
+Overfull \hbox (29.79211pt too wide) in paragraph at lines 3239--3239
+[][]\T1/fvm/m/n/10.95 > [][]\T1/fvm/b/n/10.95 summary[][]\T1/fvm/m/n/10.95 ([][
+]\T1/fvm/b/n/10.95 coxph[][]\T1/fvm/m/n/10.95 ([][]\T1/fvm/b/n/10.95 Surv[][]\T
+1/fvm/m/n/10.95 (dayslink, linkstatus)[] []~[] []age[] []+[] []substance,[][] 
+ []
+
+
+Overfull \hbox (29.79211pt too wide) in paragraph at lines 3265--3265
+[]\T1/fvm/m/n/10.95 coxph(formula = Surv(dayslink, linkstatus) ~ age + substanc
+e,[] 
+ []
+
+
+Overfull \hbox (18.58582pt too wide) in paragraph at lines 3265--3265
+[]                     \T1/fvm/m/n/10.95 coef exp(coef) se(coef)     z Pr(>|z|)
+[] 
+ []
+
+
+Overfull \hbox (18.58582pt too wide) in paragraph at lines 3265--3265
+[]\T1/fvm/m/n/10.95 age               0.00893   1.00897  0.01026  0.87     0.38
+[] 
+ []
+
+
+Overfull \hbox (18.58582pt too wide) in paragraph at lines 3265--3265
+[]\T1/fvm/m/n/10.95 substancecocaine  0.18045   1.19775  0.18100  1.00     0.32
+[] 
+ []
+
+
+Overfull \hbox (18.58582pt too wide) in paragraph at lines 3265--3265
+[]\T1/fvm/m/n/10.95 substanceheroin  -0.28970   0.74849  0.21725 -1.33     0.18
+[] 
+ []
+
+
+Overfull \hbox (7.37952pt too wide) in paragraph at lines 3265--3265
+[]                 \T1/fvm/m/n/10.95 exp(coef) exp(-coef) lower .95 upper .95[]
+ 
+ []
+
+
+Overfull \hbox (7.37952pt too wide) in paragraph at lines 3265--3265
+[]\T1/fvm/m/n/10.95 age                  1.009      0.991     0.989      1.03[]
+ 
+ []
+
+
+Overfull \hbox (7.37952pt too wide) in paragraph at lines 3265--3265
+[]\T1/fvm/m/n/10.95 substancecocaine     1.198      0.835     0.840      1.71[]
+ 
+ []
+
+
+Overfull \hbox (7.37952pt too wide) in paragraph at lines 3265--3265
+[]\T1/fvm/m/n/10.95 substanceheroin      0.748      1.336     0.489      1.15[]
+ 
+ []
+
+[74]
+Chapter 10.
+
+Overfull \hbox (18.58582pt too wide) in paragraph at lines 3297--3297
+[]\T1/fvm/m/n/10.95 alcohol.female cocaine.female  heroin.female   alcohol.male
+[] 
+ []
+
+
+Overfull \hbox (18.58582pt too wide) in paragraph at lines 3297--3297
+[]          \T1/fvm/m/n/10.95 40.0           35.0           39.0           33.0
+[] 
+ []
+
+
+Overfull \hbox (18.58582pt too wide) in paragraph at lines 3297--3297
+[]  \T1/fvm/m/n/10.95 cocaine.male    heroin.male         female           male
+[] 
+ []
+
+
+Overfull \hbox (18.58582pt too wide) in paragraph at lines 3297--3297
+[]          \T1/fvm/m/n/10.95 29.0           34.5           38.0           32.5
+[] 
+ []
+
+<figures/FrontMatter-help-aovplot-1.pdf, id=962, 289.08pt x 172.645pt>
+File: figures/FrontMatter-help-aovplot-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-help-aovplot-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-help-aovplot-1.pdf used on input l
+ine 3303.
+(pdftex.def)             Requested size: 289.07928pt x 172.65245pt.
+ [75
+
+ <./figures/FrontMatter-help-aovplot-1.pdf>]
+<figures/FrontMatter-help-interaction-1.pdf, id=972, 289.08pt x 172.645pt>
+File: figures/FrontMatter-help-interaction-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-help-interaction-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-help-interaction-1.pdf used on inp
+ut line 3350.
+(pdftex.def)             Requested size: 289.07928pt x 172.65245pt.
+
+
+LaTeX Warning: Marginpar on page 76 moved.
+
+[76 <./figures/FrontMatter-help-interaction-1.pdf>]
+Overfull \hbox (12.98267pt too wide) in paragraph at lines 3380--3380
+[][]\T1/fvm/m/n/10.95 > [][]lmnointeract[] []<-[] []\T1/fvm/b/n/10.95 lm[][]\T1
+/fvm/m/n/10.95 (cesd[] []~[] []mcs[] []+[] []age[] []+[] []sex,[] []data[][]=HE
+LPrct)[][] 
+ []
+
+
+Overfull \hbox (57.80786pt too wide) in paragraph at lines 3402--3402
+[][]\T1/fvm/m/n/10.95 > [][]lminteract[] []<-[] []\T1/fvm/b/n/10.95 lm[][]\T1/f
+vm/m/n/10.95 (cesd[] []~[] []mcs[] []+[] []age[] []+[] []sex[] []+[] []mcs[][]:
+[][]sex,[] []data[][]=HELPrct)[][] 
+ []
+
+[77]
+Overfull \hbox (7.37952pt too wide) in paragraph at lines 3483--3483
+[][] []  []\T1/fvm/m/n/10.95 xlim[][]=[][]\T1/fvm/b/n/10.95 c[][]\T1/fvm/m/n/10
+.95 ([][]0[][],[] []60[][]),[] []lwd[][]=[][]2[][],[] []ylab[][]=[][]"predicted
+ CESD"[][],[] []add[][]=[][]TRUE[][])[][] 
+ []
+
+<figures/FrontMatter-plotFUN-1.pdf, id=986, 289.08pt x 172.645pt>
+File: figures/FrontMatter-plotFUN-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-plotFUN-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-plotFUN-1.pdf used on input line 3
+489.
+(pdftex.def)             Requested size: 289.07928pt x 172.65245pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [78]
+<figures/FrontMatter-unnamed-chunk-50-1.pdf, id=991, 289.08pt x 172.645pt>
+File: figures/FrontMatter-unnamed-chunk-50-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-unnamed-chunk-50-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-unnamed-chunk-50-1.pdf used on inp
+ut line 3512.
+(pdftex.def)             Requested size: 289.07928pt x 172.65245pt.
+
+Overfull \hbox (2.91pt too wide) in paragraph at lines 3522--3522
+ []  
+ []
+
+
+LaTeX Warning: Marginpar on page 79 moved.
+
+
+LaTeX Warning: Marginpar on page 79 moved.
+
+
+LaTeX Warning: Marginpar on page 79 moved.
+
+
+LaTeX Warning: Marginpar on page 79 moved.
+
+[79 <./figures/FrontMatter-plotFUN-1.pdf> <./figures/FrontMatter-unnamed-chunk-
+50-1.pdf>]
+Overfull \hbox (1.77637pt too wide) in paragraph at lines 3547--3547
+[][]\T1/fvm/m/n/10.95 > [][]\T1/fvm/b/n/10.95 histogram[][]\T1/fvm/m/n/10.95 ([
+][]~[] []residuals,[] []xlab[][]=[][]"residuals"[][],[] []fit[][]=[][]"normal"[
+][],[][] 
+ []
+
+<figures/FrontMatter-unnamed-chunk-52-1.pdf, id=1013, 289.08pt x 172.645pt>
+File: figures/FrontMatter-unnamed-chunk-52-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-unnamed-chunk-52-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-unnamed-chunk-52-1.pdf used on inp
+ut line 3552.
+(pdftex.def)             Requested size: 289.07928pt x 172.65245pt.
+
+Overfull \hbox (57.80786pt too wide) in paragraph at lines 3581--3581
+[]  \T1/fvm/m/n/10.95 age anysubstatus anysub cesd d1 daysanysub dayslink drugr
+isk e2b[] 
+ []
+
+
+Overfull \hbox (57.80786pt too wide) in paragraph at lines 3581--3581
+[]\T1/fvm/m/n/10.95 1  43            0     no   16 15        191      414      
+  0  NA[] 
+ []
+
+
+Overfull \hbox (57.80786pt too wide) in paragraph at lines 3581--3581
+[]\T1/fvm/m/n/10.95 2  27           NA   <NA>   40  1         NA      365      
+  3   2[] 
+ []
+
+
+Overfull \hbox (52.20471pt too wide) in paragraph at lines 3581--3581
+[]  \T1/fvm/m/n/10.95 female  sex g1b homeless i1 i2  id indtot linkstatus link
+   mcs[] 
+ []
+
+
+Overfull \hbox (52.20471pt too wide) in paragraph at lines 3581--3581
+[]\T1/fvm/m/n/10.95 1      0 male  no homeless 24 36  44     41          0   no
+ 15.86[] 
+ []
+
+
+Overfull \hbox (52.20471pt too wide) in paragraph at lines 3581--3581
+[]\T1/fvm/m/n/10.95 2      0 male  no homeless 18 18 420     37          0   no
+ 57.49[] 
+ []
+
+
+Overfull \hbox (29.79211pt too wide) in paragraph at lines 3581--3581
+[]    \T1/fvm/m/n/10.95 pcs pss_fr racegrp satreat sexrisk substance treat subg
+rp[] 
+ []
+
+
+Overfull \hbox (29.79211pt too wide) in paragraph at lines 3581--3581
+[]\T1/fvm/m/n/10.95 1 71.39      3   white      no       7   cocaine   yes     
+ C[] 
+ []
+
+
+Overfull \hbox (29.79211pt too wide) in paragraph at lines 3581--3581
+[]\T1/fvm/m/n/10.95 2 37.75      8   white     yes       3    heroin    no     
+ H[] 
+ []
+
+
+Overfull \hbox (18.58582pt too wide) in paragraph at lines 3591--3591
+[][] []  []\T1/fvm/m/n/10.95 xlab[][]=[][]"predicted values"[][],[] []main[][]=
+[][]"predicted vs. residuals"[][],[][] 
+ []
+
+<figures/FrontMatter-unnamed-chunk-54-1.pdf, id=1014, 289.08pt x 172.645pt>
+File: figures/FrontMatter-unnamed-chunk-54-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-unnamed-chunk-54-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-unnamed-chunk-54-1.pdf used on inp
+ut line 3596.
+(pdftex.def)             Requested size: 289.07928pt x 172.65245pt.
+ [80 <./figures/FrontMatter-unnamed-chunk-52-1.pdf>]
+Overfull \hbox (1.77637pt too wide) in paragraph at lines 3606--3606
+[][]\T1/fvm/m/n/10.95 > [][]\T1/fvm/b/n/10.95 xyplot[][]\T1/fvm/m/n/10.95 (resi
+duals[] []~[] []mcs,[] []xlab[][]=[][]"mental component score"[][],[][] 
+ []
+
+<figures/FrontMatter-unnamed-chunk-55-1.pdf, id=1025, 289.08pt x 172.645pt>
+File: figures/FrontMatter-unnamed-chunk-55-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-unnamed-chunk-55-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-unnamed-chunk-55-1.pdf used on inp
+ut line 3612.
+(pdftex.def)             Requested size: 289.07928pt x 172.65245pt.
+
+Overfull \hbox (5.18398pt too wide) in paragraph at lines 3621--3629
+\T1/pplj/m/n/12 in-cludes the counts of cross-ings of a rail trail in Northamp-
+ 
+ []
+
+
+Overfull \hbox (40.99841pt too wide) in paragraph at lines 3638--3638
+[][]\T1/fvm/m/n/10.95 > [][]\T1/fvm/b/n/10.95 densityplot[][]\T1/fvm/m/n/10.95 
+([][]~[] []avgtemp,[] []xlab[][]=[][]"Average daily temp (degrees F)"[][],[][] 
+
+ []
+
+<figures/FrontMatter-unnamed-chunk-56-1.pdf, id=1026, 289.08pt x 172.645pt>
+File: figures/FrontMatter-unnamed-chunk-56-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-unnamed-chunk-56-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-unnamed-chunk-56-1.pdf used on inp
+ut line 3643.
+(pdftex.def)             Requested size: 289.07928pt x 172.65245pt.
+
+Overfull \hbox (10.25624pt too wide) in paragraph at lines 3620--3652
+[]\T1/pplj/m/n/12 The as-sump-tions of nor-mal-ity, lin-ear-ity and ho-moscedas
+- 
+ []
+
+<figures/FrontMatter-unnamed-chunk-57-1.pdf, id=1027, 289.08pt x 172.645pt>
+File: figures/FrontMatter-unnamed-chunk-57-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-unnamed-chunk-57-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-unnamed-chunk-57-1.pdf used on inp
+ut line 3675.
+(pdftex.def)             Requested size: 289.07928pt x 172.65245pt.
+
+Overfull \hbox (35.39526pt too wide) in paragraph at lines 3703--3703
+[][]\T1/fvm/m/n/10.95 > [][]\T1/fvm/b/n/10.95 densityplot[][]\T1/fvm/m/n/10.95 
+([][]~[] []volume,[] []xlab[][]=[][]"# of crossings"[][],[] []data[][]=RailTrai
+l)[][] 
+ []
+
+
+Overfull \hbox (40.99841pt too wide) in paragraph at lines 3711--3711
+[]  \T1/fvm/m/n/10.95 hightemp lowtemp avgtemp spring summer fall cloudcover pr
+ecip[] 
+ []
+
+
+Overfull \hbox (40.99841pt too wide) in paragraph at lines 3711--3711
+[]\T1/fvm/m/n/10.95 1       77      52    64.5      1      0    0          5   
+   0[] 
+ []
+
+<figures/FrontMatter-unnamed-chunk-58-1.pdf, id=1028, 289.08pt x 172.645pt>
+File: figures/FrontMatter-unnamed-chunk-58-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-unnamed-chunk-58-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-unnamed-chunk-58-1.pdf used on inp
+ut line 3714.
+(pdftex.def)             Requested size: 289.07928pt x 172.65245pt.
+
+Overfull \hbox (26.74792pt too wide) in paragraph at lines 3755--3759
+\T1/pplj/m/n/12 fac-tor vari-able us-ing []\T1/fvm/m/n/12 as.factor()[] \T1/ppl
+j/m/n/12 or use the \T1/fvm/m/n/12 horizontal=FALSE 
+ []
+
+<figures/FrontMatter-unnamed-chunk-60-1.pdf, id=1029, 289.08pt x 172.645pt>
+File: figures/FrontMatter-unnamed-chunk-60-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-unnamed-chunk-60-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-unnamed-chunk-60-1.pdf used on inp
+ut line 3768.
+(pdftex.def)             Requested size: 289.07928pt x 172.65245pt.
+
+Overfull \hbox (203.48975pt too wide) in paragraph at lines 3779--3779
+[][]\T1/fvm/m/n/10.95 > [][]RailTrail[] []<-[] []\T1/fvm/b/n/10.95 mutate[][]\T
+1/fvm/m/n/10.95 (RailTrail,[] []daytype[] []=[] []\T1/fvm/b/n/10.95 ifelse[][]\
+T1/fvm/m/n/10.95 (weekday[][]==[][]1[][],[] []"weekday"[][],[] []"weekend/holid
+ay"[][]))[][] 
+ []
+
+<figures/FrontMatter-unnamed-chunk-61-1.pdf, id=1030, 289.08pt x 172.645pt>
+File: figures/FrontMatter-unnamed-chunk-61-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-unnamed-chunk-61-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-unnamed-chunk-61-1.pdf used on inp
+ut line 3784.
+(pdftex.def)             Requested size: 289.07928pt x 172.65245pt.
+
+Overfull \hbox (35.39526pt too wide) in paragraph at lines 3803--3803
+[][]\T1/fvm/m/n/10.95 > [][]\T1/fvm/b/n/10.95 densityplot[][]\T1/fvm/m/n/10.95 
+(volume[] []~[] []weekday,[] []auto.key[][]=[][]TRUE[][],[] []data[][]=RailTrai
+l)[][] 
+ []
+
+<figures/FrontMatter-unnamed-chunk-62-1.pdf, id=1031, 289.08pt x 172.645pt>
+File: figures/FrontMatter-unnamed-chunk-62-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-unnamed-chunk-62-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-unnamed-chunk-62-1.pdf used on inp
+ut line 3807.
+(pdftex.def)             Requested size: 289.07928pt x 172.65245pt.
+
+Overfull \hbox (6.92572pt too wide) in paragraph at lines 3816--3819
+\T1/pplj/b/n/12 10.7. \T1/pplj/m/n/12 Cre-ate a scat-ter-plot of []\T1/fvm/m/n/
+12 volume[] \T1/pplj/m/n/12 as a func-tion of []\T1/fvm/m/n/12 avgtemp[] 
+ []
+
+
+Overfull \hbox (57.80786pt too wide) in paragraph at lines 3824--3824
+[][]\T1/fvm/m/n/10.95 > [][]\T1/fvm/b/n/10.95 xyplot[][]\T1/fvm/m/n/10.95 (volu
+me[] []~[] []avgtemp,[] []xlab[][]=[][]"average temperature (degrees F)"[][],[]
+[] 
+ []
+
+<figures/FrontMatter-unnamed-chunk-63-1.pdf, id=1032, 289.08pt x 172.645pt>
+File: figures/FrontMatter-unnamed-chunk-63-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-unnamed-chunk-63-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-unnamed-chunk-63-1.pdf used on inp
+ut line 3829.
+(pdftex.def)             Requested size: 289.07928pt x 172.65245pt.
+
+Overfull \hbox (9.90213pt too wide) in paragraph at lines 3840--3846
+\T1/pplj/m/n/12 sion model for []\T1/fvm/m/n/12 volume[] \T1/pplj/m/n/12 as a f
+unc-tion of []\T1/fvm/m/n/12 cloudcover[]\T1/pplj/m/n/12 , []\T1/fvm/m/n/12 avg
+temp[]\T1/pplj/m/n/12 , 
+ []
+
+
+Overfull \hbox (164.2677pt too wide) in paragraph at lines 3851--3851
+[][]\T1/fvm/m/n/10.95 > [][]fm[] []<-[] []\T1/fvm/b/n/10.95 lm[][]\T1/fvm/m/n/1
+0.95 (volume[] []~[] []cloudcover[] []+[] []avgtemp[] []+[] []weekday[] []+[] [
+]avgtemp[][]:[][]weekday,[] []data[][]=RailTrail)[][] 
+ []
+
+
+Overfull \hbox (85.82361pt too wide) in paragraph at lines 3875--3875
+[]\T1/fvm/m/n/10.95 lm(formula = volume ~ cloudcover + avgtemp + weekday + avgt
+emp:weekday,[] 
+ []
+
+
+Overfull \hbox (63.41101pt too wide) in paragraph at lines 3896--3896
+[]     \T1/fvm/m/n/10.95 (Intercept)       cloudcover          avgtemp         
+weekday1[] 
+ []
+
+
+Overfull \hbox (63.41101pt too wide) in paragraph at lines 3896--3896
+[]         \T1/fvm/m/n/10.95 378.834          -17.198            2.313         
+-321.116[] 
+ []
+
+
+Overfull \hbox (1.77637pt too wide) in paragraph at lines 3909--3910
+[]\T1/fvm/m/n/10.95 Warning in model.frame.default(Terms, newdata, na.action 
+ []
+
+
+Overfull \hbox (1.77637pt too wide) in paragraph at lines 3909--3910
+\T1/fvm/m/n/10.95 = na.action, xlev = object$xlevels): variable 'weekday' 
+ []
+
+
+Overfull \hbox (1.77637pt too wide) in paragraph at lines 3911--3911
+[]\T1/fvm/b/n/10.95 Error: variable 'weekday' was fitted with type "factor" 
+ []
+
+
+Overfull \hbox (125.04565pt too wide) in paragraph at lines 3926--3926
+[][]\T1/fvm/m/n/10.95 > [][]\T1/fvm/b/n/10.95 plotFun[][]\T1/fvm/m/n/10.95 ([][
+]\T1/fvm/b/n/10.95 myfun[][]\T1/fvm/m/n/10.95 ([][]cloudcover[][]=[][]10[][], a
+vgtemp,[] []weekday[][]=[][]0[][])[] []~[] []avgtemp,[] []lwd[][]=[][]2[][],[] 
+[]add[][]=[][]TRUE[][])[][] 
+ []
+
+
+Overfull \hbox (164.2677pt too wide) in paragraph at lines 3927--3927
+[][]\T1/fvm/m/n/10.95 > [][]\T1/fvm/b/n/10.95 plotFun[][]\T1/fvm/m/n/10.95 ([][
+]\T1/fvm/b/n/10.95 myfun[][]\T1/fvm/m/n/10.95 ([][]cloudcover[][]=[][]10[][], a
+vgtemp,[] []weekday[][]=[][]1[][])[] []~[] []avgtemp,[] []lty[][]=[][]2[][],[] 
+[]lwd[][]=[][]3[][],[] []add[][]=[][]TRUE[][])[][] 
+ []
+
+<figures/FrontMatter-unnamed-chunk-67-1.pdf, id=1033, 289.08pt x 172.645pt>
+File: figures/FrontMatter-unnamed-chunk-67-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-unnamed-chunk-67-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-unnamed-chunk-67-1.pdf used on inp
+ut line 3931.
+(pdftex.def)             Requested size: 289.07928pt x 172.65245pt.
+
+<figures/FrontMatter-unnamed-chunk-67-2.pdf, id=1034, 289.08pt x 172.645pt>
+File: figures/FrontMatter-unnamed-chunk-67-2.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-unnamed-chunk-67-2.pdf>
+Package pdftex.def Info: figures/FrontMatter-unnamed-chunk-67-2.pdf used on inp
+ut line 3932.
+(pdftex.def)             Requested size: 289.07928pt x 172.65245pt.
+
+<figures/FrontMatter-unnamed-chunk-67-3.pdf, id=1035, 289.08pt x 172.645pt>
+File: figures/FrontMatter-unnamed-chunk-67-3.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-unnamed-chunk-67-3.pdf>
+Package pdftex.def Info: figures/FrontMatter-unnamed-chunk-67-3.pdf used on inp
+ut line 3933.
+(pdftex.def)             Requested size: 289.07928pt x 172.65245pt.
+
+<figures/FrontMatter-unnamed-chunk-68-1.pdf, id=1036, 289.08pt x 172.645pt>
+File: figures/FrontMatter-unnamed-chunk-68-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-unnamed-chunk-68-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-unnamed-chunk-68-1.pdf used on inp
+ut line 3956.
+(pdftex.def)             Requested size: 289.07928pt x 172.65245pt.
+
+Overfull \hbox (24.18896pt too wide) in paragraph at lines 3973--3973
+[][]\T1/fvm/m/n/10.95 > [][]\T1/fvm/b/n/10.95 xyplot[][]\T1/fvm/m/n/10.95 ([][]
+\T1/fvm/b/n/10.95 resid[][]\T1/fvm/m/n/10.95 (fm)[] []~[] []\T1/fvm/b/n/10.95 f
+itted[][]\T1/fvm/m/n/10.95 (fm),[] []type[][]=[][]\T1/fvm/b/n/10.95 c[][]\T1/fv
+m/m/n/10.95 ([][]"p"[][],[] []"r"[][],[] []"smooth"[][]))[][] 
+ []
+
+<figures/FrontMatter-unnamed-chunk-69-1.pdf, id=1037, 289.08pt x 172.645pt>
+File: figures/FrontMatter-unnamed-chunk-69-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-unnamed-chunk-69-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-unnamed-chunk-69-1.pdf used on inp
+ut line 3977.
+(pdftex.def)             Requested size: 289.07928pt x 172.65245pt.
+
+Overfull \hbox (97.0299pt too wide) in paragraph at lines 3993--3993
+[][]\T1/fvm/m/n/10.95 > [][]\T1/fvm/b/n/10.95 xyplot[][]\T1/fvm/m/n/10.95 ([][]
+\T1/fvm/b/n/10.95 resid[][]\T1/fvm/m/n/10.95 (fm)[] []~[] []avgtemp,[] []type[]
+[]=[][]\T1/fvm/b/n/10.95 c[][]\T1/fvm/m/n/10.95 ([][]"p"[][],[] []"r"[][],[] []
+"smooth"[][]),[] []data[][]=RailTrail)[][] 
+ []
+
+<figures/FrontMatter-unnamed-chunk-70-1.pdf, id=1038, 289.08pt x 172.645pt>
+File: figures/FrontMatter-unnamed-chunk-70-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-unnamed-chunk-70-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-unnamed-chunk-70-1.pdf used on inp
+ut line 3997.
+(pdftex.def)             Requested size: 289.07928pt x 172.65245pt.
+ [81 <./figures/FrontMatter-unnamed-chunk-54-1.pdf> <./figures/FrontMatter-unna
+med-chunk-55-1.pdf>] [82
+
+]
+Chapter 11.
+<figures/FrontMatter-probdist-1.pdf, id=1071, 433.62pt x 289.08pt>
+File: figures/FrontMatter-probdist-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-probdist-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-probdist-1.pdf used on input line 
+4039.
+(pdftex.def)             Requested size: 312.0pt x 208.0095pt.
+ [83 <./figures/FrontMatter-probdist-1.pdf>]
+<figures/FrontMatter-unnamed-chunk-72-1.pdf, id=1081, 289.08pt x 172.645pt>
+File: figures/FrontMatter-unnamed-chunk-72-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-unnamed-chunk-72-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-unnamed-chunk-72-1.pdf used on inp
+ut line 4082.
+(pdftex.def)             Requested size: 289.07928pt x 172.65245pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [84 <./figures/FrontMatter-unnamed-chunk-72-1.pdf>]
+Overfull \hbox (2.91pt too wide) in paragraph at lines 4121--4121
+ []  
+ []
+
+
+LaTeX Warning: Marginpar on page 85 moved.
+
+<figures/FrontMatter-unnamed-chunk-73-1.pdf, id=1091, 289.08pt x 172.645pt>
+File: figures/FrontMatter-unnamed-chunk-73-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-unnamed-chunk-73-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-unnamed-chunk-73-1.pdf used on inp
+ut line 4131.
+(pdftex.def)             Requested size: 289.07928pt x 172.65245pt.
+
+<figures/FrontMatter-unnamed-chunk-74-1.pdf, id=1092, 289.08pt x 172.645pt>
+File: figures/FrontMatter-unnamed-chunk-74-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-unnamed-chunk-74-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-unnamed-chunk-74-1.pdf used on inp
+ut line 4145.
+(pdftex.def)             Requested size: 289.07928pt x 172.65245pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [85 <./figures/FrontMatter-unnamed-chunk-73-1.pdf>]
+<figures/FrontMatter-unnamed-chunk-76-1.pdf, id=1103, 289.08pt x 172.645pt>
+File: figures/FrontMatter-unnamed-chunk-76-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-unnamed-chunk-76-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-unnamed-chunk-76-1.pdf used on inp
+ut line 4168.
+(pdftex.def)             Requested size: 289.07928pt x 172.65245pt.
+
+Overfull \hbox (57.80786pt too wide) in paragraph at lines 4185--4185
+[][]\T1/fvm/m/n/10.95 > [][]\T1/fvm/b/n/10.95 plotDist[][]\T1/fvm/m/n/10.95 ([]
+[]"binom"[][],[] []size[][]=[][]100[][],[] []prob[][]=[][].3[][],[] []col[][]=[
+][]"black"[][],[] []lwd[][]=[][]3[][],[] []pch[][]=[][]16[][])[][] 
+ []
+
+<figures/FrontMatter-unnamed-chunk-77-1.pdf, id=1104, 289.08pt x 172.645pt>
+File: figures/FrontMatter-unnamed-chunk-77-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-unnamed-chunk-77-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-unnamed-chunk-77-1.pdf used on inp
+ut line 4191.
+(pdftex.def)             Requested size: 289.07928pt x 172.65245pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [86 <./figures/FrontMatter-unnamed-chunk-74-1.pdf> <./figures/FrontMatter-unna
+med-chunk-76-1.pdf>]
+Overfull \hbox (74.61731pt too wide) in paragraph at lines 4212--4212
+[][]\T1/fvm/m/n/10.95 > [][]f[] []<-[] []\T1/fvm/b/n/10.95 makeFun[][]\T1/fvm/m
+/n/10.95 ([][]2[][]*[][]\T1/fvm/b/n/10.95 exp[][]\T1/fvm/m/n/10.95 ([][]-[][]2[
+][]*[][]x)[] []~[] []x)[]   []\T1/fvm/m/sl/10.95 # exponential with rate parame
+ter 2[][] 
+ []
+
+<figures/FrontMatter-unnamed-chunk-78-1.pdf, id=1119, 289.08pt x 172.645pt>
+File: figures/FrontMatter-unnamed-chunk-78-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-unnamed-chunk-78-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-unnamed-chunk-78-1.pdf used on inp
+ut line 4219.
+(pdftex.def)             Requested size: 289.07928pt x 172.65245pt.
+ [87 <./figures/FrontMatter-unnamed-chunk-77-1.pdf> <./figures/FrontMatter-unna
+med-chunk-78-1.pdf>] [88
+
+]
+Chapter 12.
+[89] <figures/FrontMatter-pnorm2-1.pdf, id=1146, 361.35pt x 136.51pt>
+File: figures/FrontMatter-pnorm2-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-pnorm2-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-pnorm2-1.pdf used on input line 43
+42.
+(pdftex.def)             Requested size: 312.0pt x 117.86705pt.
+ [90 <./figures/FrontMatter-pnorm2-1.pdf>] <figures/FrontMatter-unnamed-chunk-8
+0-1.pdf, id=1156, 289.08pt x 172.645pt>
+File: figures/FrontMatter-unnamed-chunk-80-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-unnamed-chunk-80-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-unnamed-chunk-80-1.pdf used on inp
+ut line 4417.
+(pdftex.def)             Requested size: 289.07928pt x 172.65245pt.
+ [91 <./figures/FrontMatter-unnamed-chunk-80-1.pdf>]
+Overfull \hbox (125.04565pt too wide) in paragraph at lines 4452--4452
+[][]\T1/fvm/m/n/10.95 > [][]\T1/fvm/b/n/10.95 power.t.test[][]\T1/fvm/m/n/10.95
+ ([][]n[][]=[][]25[][],[] []delta[][]=[][].3[][],[] []sd[][]=[][]1[][],[] []sig
+.level[][]=alpha,[] []alternative[][]=[][]"one.sided"[][],[][] 
+ []
+
+
+LaTeX Warning: Marginpar on page 92 moved.
+
+
+Overfull \hbox (24.18896pt too wide) in paragraph at lines 4518--4518
+[][]\T1/fvm/m/n/10.95 > [][]\T1/fvm/b/n/10.95 power.t.test[][]\T1/fvm/m/n/10.95
+ ([][]delta[][]=[][].25[][],[] []sd[][]=[][]1[][],[] []sig.level[][]=alpha,[] [
+]power[][]=[][]0.90[][])[][] 
+ []
+
+[92]
+Chapter 13.
+
+LaTeX Warning: Marginpar on page 93 moved.
+
+
+LaTeX Warning: Marginpar on page 93 moved.
+
+
+Overfull \hbox (35.39526pt too wide) in paragraph at lines 4596--4596
+[]          \T1/fvm/m/n/10.95 name   class min  Q1 median  Q3 max  mean     sd 
+  n[] 
+ []
+
+
+Overfull \hbox (35.39526pt too wide) in paragraph at lines 4596--4596
+[]\T1/fvm/m/n/10.95 1 Sepal.Length numeric 4.3 5.1   5.80 6.4 7.9 5.843 0.8281 
+150[] 
+ []
+
+
+Overfull \hbox (35.39526pt too wide) in paragraph at lines 4596--4596
+[]\T1/fvm/m/n/10.95 2  Sepal.Width numeric 2.0 2.8   3.00 3.3 4.4 3.057 0.4359 
+150[] 
+ []
+
+
+Overfull \hbox (35.39526pt too wide) in paragraph at lines 4596--4596
+[]\T1/fvm/m/n/10.95 3 Petal.Length numeric 1.0 1.6   4.35 5.1 6.9 3.758 1.7653 
+150[] 
+ []
+
+
+Overfull \hbox (35.39526pt too wide) in paragraph at lines 4596--4596
+[]\T1/fvm/m/n/10.95 4  Petal.Width numeric 0.1 0.3   1.30 1.8 2.5 1.199 0.7622 
+150[] 
+ []
+
+[93
+
+]
+
+LaTeX Warning: Marginpar on page 94 moved.
+
+[94]
+Overfull \hbox (12.98267pt too wide) in paragraph at lines 4677--4677
+[][]\T1/fvm/m/n/10.95 > [][]CPS85[] []<-[] []\T1/fvm/b/n/10.95 mutate[][]\T1/fv
+m/m/n/10.95 (CPS85,[] []workforce.years[] []= age[] []-[] []6[] []-[] []educ)[]
+[] 
+ []
+
+
+Overfull \hbox (12.98267pt too wide) in paragraph at lines 4718--4718
+[]\T1/fvm/m/n/10.95 [10] "age"             "sector"          "workforce.years"[
+] 
+ []
+
+
+Overfull \hbox (29.79211pt too wide) in paragraph at lines 4720--4720
+[][]\T1/fvm/m/n/10.95 > [][]CPS1[] []<-[] []\T1/fvm/b/n/10.95 select[][]\T1/fvm
+/m/n/10.95 (CPS85,[] []select[] []=[] []-[][]\T1/fvm/b/n/10.95 matches[][]\T1/f
+vm/m/n/10.95 ([][]"workforce.years"[][]))[][] 
+ []
+
+
+Overfull \hbox (63.41101pt too wide) in paragraph at lines 4726--4726
+[] \T1/fvm/m/n/10.95 [1] "wage"     "educ"     "race"     "sex"      "hispanic"
+ "south"[] 
+ []
+
+
+Overfull \hbox (7.37952pt too wide) in paragraph at lines 4726--4726
+[] \T1/fvm/m/n/10.95 [7] "married"  "exper"    "union"    "age"      "sector"[]
+ 
+ []
+
+[95]
+Overfull \hbox (63.41101pt too wide) in paragraph at lines 4734--4734
+[][]\T1/fvm/m/n/10.95 > [][]CPS1[] []<-[] []\T1/fvm/b/n/10.95 select[][]\T1/fvm
+/m/n/10.95 (CPS85,[] []select[] []=[] []-[][]\T1/fvm/b/n/10.95 matches[][]\T1/f
+vm/m/n/10.95 ([][]"workforce.years|exper"[][]))[][] 
+ []
+
+
+Overfull \hbox (12.98267pt too wide) in paragraph at lines 4756--4756
+[]\T1/fvm/m/n/10.95 [10] "age"             "sector"          "workforce.years"[
+] 
+ []
+
+
+Overfull \hbox (40.99841pt too wide) in paragraph at lines 4765--4765
+[] \T1/fvm/m/n/10.95 [1] "wage"      "educ"      "race"      "sex"       "hispa
+nic"[] 
+ []
+
+
+Overfull \hbox (12.98267pt too wide) in paragraph at lines 4765--4765
+[] \T1/fvm/m/n/10.95 [6] "south"     "married"   "exper"     "union"     "age"[
+] 
+ []
+
+
+LaTeX Warning: Marginpar on page 96 moved.
+
+[96]
+Overfull \hbox (24.18896pt too wide) in paragraph at lines 4808--4808
+[][]\T1/fvm/m/n/10.95 > [][]\T1/fvm/b/n/10.95 xyplot[][]\T1/fvm/m/n/10.95 (time
+.til.next[] []~[] []duration,[] []alpha[][]=[][]0.5[][],[] []data[][]=faithful)
+[][] 
+ []
+
+<figures/FrontMatter-mr-faithful-xy-1.pdf, id=1192, 289.08pt x 172.645pt>
+File: figures/FrontMatter-mr-faithful-xy-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-mr-faithful-xy-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-mr-faithful-xy-1.pdf used on input
+ line 4812.
+(pdftex.def)             Requested size: 289.07928pt x 172.65245pt.
+
+Overfull \hbox (4.07553pt too wide) in paragraph at lines 4849--4851
+\T1/pplj/m/n/12 We can also use []\T1/fvm/m/n/12 filter()[] \T1/pplj/m/n/12 to 
+re-duce the size of a dataframe 
+ []
+
+
+<figures/FrontMatter-mr-faithful-long-xy-1.pdf, id=1193, 289.08pt x 172.645pt>
+File: figures/FrontMatter-mr-faithful-long-xy-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-mr-faithful-long-xy-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-mr-faithful-long-xy-1.pdf used on 
+input line 4863.
+(pdftex.def)             Requested size: 289.07928pt x 172.65245pt.
+ [97 <./figures/FrontMatter-mr-faithful-xy-1.pdf>]
+Overfull \hbox (2.91pt too wide) in paragraph at lines 4902--4902
+ []  
+ []
+
+
+LaTeX Warning: Marginpar on page 98 moved.
+
+
+Overfull \hbox (10.79993pt too wide) in paragraph at lines 4912--4914
+\T1/pplj/m/n/12 con-tains phe-no-types (in-clud-ing type 2 di-a-betes case/cont
+rol 
+ []
+
+[98 <./figures/FrontMatter-mr-faithful-long-xy-1.pdf>]
+Overfull \hbox (108.2362pt too wide) in paragraph at lines 4929--4929
+[]    \T1/fvm/m/n/10.95 id     marker markerID allele1 allele2 genotype Adose C
+dose Gdose Tdose[] 
+ []
+
+
+Overfull \hbox (108.2362pt too wide) in paragraph at lines 4929--4929
+[]\T1/fvm/m/n/10.95 1 1002 RS12255372        1       3       3       GG     0  
+   0     2     0[] 
+ []
+
+
+Overfull \hbox (108.2362pt too wide) in paragraph at lines 4929--4929
+[]\T1/fvm/m/n/10.95 2 1009 RS12255372        1       3       3       GG     0  
+   0     2     0[] 
+ []
+
+
+Overfull \hbox (108.2362pt too wide) in paragraph at lines 4929--4929
+[]\T1/fvm/m/n/10.95 3 1012 RS12255372        1       3       3       GG     0  
+   0     2     0[] 
+ []
+
+
+Overfull \hbox (119.4425pt too wide) in paragraph at lines 4938--4938
+[]    \T1/fvm/m/n/10.95 id     t2d   bmi sex   age smoker chol waist weight hei
+ght    whr sbp dbp[] 
+ []
+
+
+Overfull \hbox (119.4425pt too wide) in paragraph at lines 4938--4938
+[]\T1/fvm/m/n/10.95 1 1002    case 32.86   F 70.76 former 4.57 112.0   85.6  16
+1.4 0.9868 135  77[] 
+ []
+
+
+Overfull \hbox (119.4425pt too wide) in paragraph at lines 4938--4938
+[]\T1/fvm/m/n/10.95 2 1009    case 27.39   F 53.92  never 7.32  93.5   77.4  16
+8.1 0.9397 158  88[] 
+ []
+
+
+Overfull \hbox (119.4425pt too wide) in paragraph at lines 4938--4938
+[]\T1/fvm/m/n/10.95 3 1012 control 30.47   M 53.86 former 5.02 104.0   94.6  17
+6.2 0.9327 143  89[] 
+ []
+
+
+Overfull \hbox (186.6803pt too wide) in paragraph at lines 4961--4961
+[]    \T1/fvm/m/n/10.95 id     marker markerID allele1 allele2 genotype Adose C
+dose Gdose Tdose     t2d   bmi[] 
+ []
+
+
+Overfull \hbox (186.6803pt too wide) in paragraph at lines 4961--4961
+[]\T1/fvm/m/n/10.95 1 1002 RS12255372        1       3       3       GG     0  
+   0     2     0    case 32.86[] 
+ []
+
+
+Overfull \hbox (186.6803pt too wide) in paragraph at lines 4961--4961
+[]\T1/fvm/m/n/10.95 2 1009 RS12255372        1       3       3       GG     0  
+   0     2     0    case 27.39[] 
+ []
+
+
+Overfull \hbox (186.6803pt too wide) in paragraph at lines 4961--4961
+[]\T1/fvm/m/n/10.95 3 1012 RS12255372        1       3       3       GG     0  
+   0     2     0 control 30.47[] 
+ []
+
+
+Overfull \hbox (12.98267pt too wide) in paragraph at lines 4961--4961
+[]  \T1/fvm/m/n/10.95 sex   age smoker chol waist weight height    whr sbp dbp[
+] 
+ []
+
+
+Overfull \hbox (12.98267pt too wide) in paragraph at lines 4961--4961
+[]\T1/fvm/m/n/10.95 1   F 70.76 former 4.57 112.0   85.6  161.4 0.9868 135  77[
+] 
+ []
+
+
+Overfull \hbox (12.98267pt too wide) in paragraph at lines 4961--4961
+[]\T1/fvm/m/n/10.95 2   F 53.92  never 7.32  93.5   77.4  168.1 0.9397 158  88[
+] 
+ []
+
+
+Overfull \hbox (12.98267pt too wide) in paragraph at lines 4961--4961
+[]\T1/fvm/m/n/10.95 3   M 53.86 former 5.02 104.0   94.6  176.2 0.9327 143  89[
+] 
+ []
+
+
+Overfull \hbox (1.13448pt too wide) in paragraph at lines 4987--4989
+[]\T1/pplj/m/n/12 Note that []\T1/fvm/m/n/12 fusion1[] \T1/pplj/m/n/12 and []\T
+1/fvm/m/n/12 fusion2[] \T1/pplj/m/n/12 have the same columns. 
+ []
+
+
+Overfull \hbox (125.04565pt too wide) in paragraph at lines 4996--4996
+[] \T1/fvm/m/n/10.95 [1] "id"       "marker"   "markerID" "allele1"  "allele2" 
+ "genotype" "Adose"[] 
+ []
+
+
+Overfull \hbox (125.04565pt too wide) in paragraph at lines 5003--5003
+[] \T1/fvm/m/n/10.95 [1] "id"       "marker"   "markerID" "allele1"  "allele2" 
+ "genotype" "Adose"[] 
+ []
+
+[99]
+
+LaTeX Warning: Marginpar on page 100 moved.
+
+
+Overfull \hbox (147.45825pt too wide) in paragraph at lines 5093--5093
+[]  \T1/fvm/m/n/10.95 state deathRate.1951 deathRate.1952 deathRate.1953 deathR
+ate.1954 deathRate.1955[] 
+ []
+
+
+Overfull \hbox (147.45825pt too wide) in paragraph at lines 5093--5093
+[]\T1/fvm/m/n/10.95 1    cn           13.0           10.8           12.8       
+    10.8           14.0[] 
+ []
+
+
+Overfull \hbox (147.45825pt too wide) in paragraph at lines 5093--5093
+[]\T1/fvm/m/n/10.95 2    ma           10.2           10.0           11.0       
+    10.5           11.8[] 
+ []
+
+
+Overfull \hbox (147.45825pt too wide) in paragraph at lines 5093--5093
+[]\T1/fvm/m/n/10.95 3    ny           13.9           13.8           14.4       
+    13.0           13.5[] 
+ []
+
+
+Overfull \hbox (147.45825pt too wide) in paragraph at lines 5093--5093
+[]\T1/fvm/m/n/10.95 4    ri            8.0            8.5            8.5       
+     7.5           10.0[] 
+ []
+
+
+Overfull \hbox (29.79211pt too wide) in paragraph at lines 5093--5093
+[]  \T1/fvm/m/n/10.95 deathRate.1956 deathRate.1957 deathRate.1958 deathRate.19
+59[] 
+ []
+
+
+Overfull \hbox (29.79211pt too wide) in paragraph at lines 5093--5093
+[]\T1/fvm/m/n/10.95 1           12.1           11.9           10.1           10
+.0[] 
+ []
+
+
+Overfull \hbox (29.79211pt too wide) in paragraph at lines 5093--5093
+[]\T1/fvm/m/n/10.95 2           11.0           10.2           11.8           11
+.0[] 
+ []
+
+
+Overfull \hbox (29.79211pt too wide) in paragraph at lines 5093--5093
+[]\T1/fvm/m/n/10.95 3           13.4           13.3           13.0           12
+.9[] 
+ []
+
+
+Overfull \hbox (29.79211pt too wide) in paragraph at lines 5093--5093
+[]\T1/fvm/m/n/10.95 4            8.2            9.4            8.6            9
+.0[] 
+ []
+
+[100]
+Overfull \hbox (4.526pt too wide) in paragraph at lines 5106--5106
+ |[]\T1/pplj/m/it/14.4 Creating cat-e-gor-i-cal vari-able from a quan-ti-ta-
+ []
+
+<figures/FrontMatter-unnamed-chunk-100-1.pdf, id=1225, 289.08pt x 172.645pt>
+File: figures/FrontMatter-unnamed-chunk-100-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-unnamed-chunk-100-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-unnamed-chunk-100-1.pdf used on in
+put line 5132.
+(pdftex.def)             Requested size: 289.07928pt x 172.65245pt.
+
+Underfull \vbox (badness 5274) has occurred while \output is active []
+
+ [101]
+
+LaTeX Warning: Marginpar on page 102 moved.
+
+<figures/FrontMatter-unnamed-chunk-101-1.pdf, id=1231, 289.08pt x 172.645pt>
+File: figures/FrontMatter-unnamed-chunk-101-1.pdf Graphic file (type pdf)
+
+<use figures/FrontMatter-unnamed-chunk-101-1.pdf>
+Package pdftex.def Info: figures/FrontMatter-unnamed-chunk-101-1.pdf used on in
+put line 5153.
+(pdftex.def)             Requested size: 289.07928pt x 172.65245pt.
+ [102 <./figures/FrontMatter-unnamed-chunk-100-1.pdf> <./figures/FrontMatter-un
+named-chunk-101-1.pdf>]
+Overfull \hbox (1.77637pt too wide) in paragraph at lines 5204--5204
+[][]\T1/fvm/m/n/10.95 > [][]HELPrct[] []<-[] []\T1/fvm/b/n/10.95 mutate[][]\T1/
+fvm/m/n/10.95 (HELPrct,[] []subnew[] []=[] []\T1/fvm/b/n/10.95 relevel[][]\T1/f
+vm/m/n/10.95 (substance,[][] 
+ []
+
+
+Overfull \hbox (18.58582pt too wide) in paragraph at lines 5241--5241
+[]  \T1/fvm/m/n/10.95 substance min Q1 median    Q3 max  mean    sd   n missing
+[] 
+ []
+
+
+Overfull \hbox (18.58582pt too wide) in paragraph at lines 5241--5241
+[]\T1/fvm/m/n/10.95 1   alcohol  20 33   38.0 43.00  58 38.20 7.652 177       0
+[] 
+ []
+
+
+Overfull \hbox (18.58582pt too wide) in paragraph at lines 5241--5241
+[]\T1/fvm/m/n/10.95 2   cocaine  23 30   33.5 37.25  60 34.49 6.693 152       0
+[] 
+ []
+
+
+Overfull \hbox (18.58582pt too wide) in paragraph at lines 5241--5241
+[]\T1/fvm/m/n/10.95 3    heroin  19 27   33.0 39.00  55 33.44 7.986 124       0
+[] 
+ []
+
+
+Overfull \hbox (24.18896pt too wide) in paragraph at lines 5269--5269
+[][]\T1/fvm/m/n/10.95 > [][]HELPmerged[] []<-[] []\T1/fvm/b/n/10.95 left_join[]
+[]\T1/fvm/m/n/10.95 (ageGroup, HELPrct,[] []by[][]=[][]"substance"[][])[][] 
+ []
+
+
+Overfull \hbox (40.99841pt too wide) in paragraph at lines 5277--5277
+[]  \T1/fvm/m/n/10.95 substance   min    Q1 median    Q3   max  mean sd   n mis
+sing[] 
+ []
+
+
+Overfull \hbox (40.99841pt too wide) in paragraph at lines 5277--5277
+[]\T1/fvm/m/n/10.95 1   alcohol 38.20 38.20  38.20 38.20 38.20 38.20  0 177    
+   0[] 
+ []
+
+
+Overfull \hbox (40.99841pt too wide) in paragraph at lines 5277--5277
+[]\T1/fvm/m/n/10.95 2   cocaine 34.49 34.49  34.49 34.49 34.49 34.49  0 152    
+   0[] 
+ []
+
+
+Overfull \hbox (40.99841pt too wide) in paragraph at lines 5277--5277
+[]\T1/fvm/m/n/10.95 3    heroin 33.44 33.44  33.44 33.44 33.44 33.44  0 124    
+   0[] 
+ []
+
+[103]
+Overfull \hbox (40.99841pt too wide) in paragraph at lines 5304--5304
+[][]\T1/fvm/m/n/10.95 > [][]smaller[] []<-[] []\T1/fvm/b/n/10.95 select[][]\T1/
+fvm/m/n/10.95 (HELPmiss, cesd, drugrisk, indtot, mcs, pcs,[][] 
+ []
+
+
+Overfull \hbox (85.82361pt too wide) in paragraph at lines 5331--5331
+[]      \T1/fvm/m/n/10.95 cesd         drugrisk         indtot          mcs    
+         pcs[] 
+ []
+
+
+Overfull \hbox (108.2362pt too wide) in paragraph at lines 5331--5331
+[] \T1/fvm/m/n/10.95 Min.   : 1.0   Min.   : 0.00   Min.   : 4.0   Min.   : 6.7
+6   Min.   :14.1[] 
+ []
+
+
+Overfull \hbox (108.2362pt too wide) in paragraph at lines 5331--5331
+[] \T1/fvm/m/n/10.95 1st Qu.:25.0   1st Qu.: 0.00   1st Qu.:32.0   1st Qu.:21.6
+6   1st Qu.:40.4[] 
+ []
+
+
+Overfull \hbox (108.2362pt too wide) in paragraph at lines 5331--5331
+[] \T1/fvm/m/n/10.95 Median :34.0   Median : 0.00   Median :37.5   Median :28.5
+6   Median :48.9[] 
+ []
+
+
+Overfull \hbox (108.2362pt too wide) in paragraph at lines 5331--5331
+[] \T1/fvm/m/n/10.95 Mean   :32.9   Mean   : 1.87   Mean   :35.7   Mean   :31.5
+5   Mean   :48.1[] 
+ []
+
+
+Overfull \hbox (108.2362pt too wide) in paragraph at lines 5331--5331
+[] \T1/fvm/m/n/10.95 3rd Qu.:41.0   3rd Qu.: 1.00   3rd Qu.:41.0   3rd Qu.:40.6
+4   3rd Qu.:57.0[] 
+ []
+
+
+Overfull \hbox (108.2362pt too wide) in paragraph at lines 5331--5331
+[] \T1/fvm/m/n/10.95 Max.   :60.0   Max.   :21.00   Max.   :45.0   Max.   :62.1
+8   Max.   :74.8[] 
+ []
+
+
+Overfull \hbox (91.42676pt too wide) in paragraph at lines 5331--5331
+[]                \T1/fvm/m/n/10.95 NA\TS1/fvm/m/n/10.95 '\T1/fvm/m/n/10.95 s  
+ :2       NA\TS1/fvm/m/n/10.95 '\T1/fvm/m/n/10.95 s   :14     NA\TS1/fvm/m/n/10
+.95 '\T1/fvm/m/n/10.95 s   :2       NA\TS1/fvm/m/n/10.95 '\T1/fvm/m/n/10.95 s  
+ :2[] 
+ []
+
+[104] [105] [106]
+Chapter 14.
+
+LaTeX Warning: Marginpar on page 107 moved.
+
+[107
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 5448--5448
+[]\T1/pplj/m/n/12 Table 14.1: An-no-tated de-scrip-tion of vari-ables in the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5452--5452
+[]|\T1/pplj/m/n/12 age at base-line (in years) (range
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5453--5454
+[]|\T1/pplj/m/n/12 see also
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5455--5455
+[]|\T1/pplj/m/n/12 Center for Epi-demi-o-logic Stud-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5455--5455
+\T1/pplj/m/n/12 ies De-pres-sion scale (range 0--60,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5455--5455
+\T1/pplj/m/n/12 higher scores in-di-cate more de-pres-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5456--5456
+[]|\T1/pplj/m/n/12 how many times hos-pi-tal-ized for
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5456--5456
+\T1/pplj/m/n/12 med-i-cal prob-lems (life-time) (range
+ []
+
+
+Overfull \hbox (1.65347pt too wide) in paragraph at lines 5457--5457
+[]|[]\T1/fvm/m/n/12 daysanysub[]| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5457--5457
+[]|\T1/pplj/m/n/12 time (in days) to first use of any
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5457--5457
+[]|\T1/pplj/m/n/12 see also
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5458--5458
+[]|\T1/pplj/m/n/12 time (in days) to link-age to pri-mary
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5458--5459
+[]|\T1/pplj/m/n/12 see also
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5460--5460
+[]|\T1/pplj/m/n/12 Risk-Assessment Bat-tery (RAB)
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5462--5462
+[]|\T1/pplj/m/n/12 number of times in past 6 months
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5462--5462
+\T1/pplj/m/n/12 en-tered a detox pro-gram (range
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5463--5463
+[]|\T1/pplj/m/n/12 gender of re-spon-dent (0=male,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5465--5465
+[]|\T1/pplj/m/n/12 experienced se-ri-ous thoughts of
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5465--5465
+\T1/pplj/m/n/12 sui-cide (last 30 days, val-ues 0=no,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5467--5467
+[]|\T1/pplj/m/n/12 1 or more nights on the street or
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5467--5467
+\T1/pplj/m/n/12 shel-ter in past 6 months (0=no,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5469--5469
+[]|\T1/pplj/m/n/12 average num-ber of drinks (stan-dard
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5469--5469
+\T1/pplj/m/n/12 units) con-sumed per day (in the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5471--5471
+[]|\T1/pplj/m/n/12 maximum num-ber of drinks (stan-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5471--5471
+\T1/pplj/m/n/12 dard units) con-sumed per day (in
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5473--5473
+[]|\T1/pplj/m/n/12 random sub-ject iden-ti-fier (range
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5475--5475
+[]|\T1/pplj/m/n/12 Inventory of Drug Use Con-se-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5475--5475
+\T1/pplj/m/n/12 quences (In-DUC) to-tal score (range
+ []
+
+
+Overfull \hbox (1.65347pt too wide) in paragraph at lines 5477--5477
+[]|[]\T1/fvm/m/n/12 linkstatus[]| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5477--5477
+[]|\T1/pplj/m/n/12 post-detox link-age to pri-mary care
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5479--5479
+[]|\T1/pplj/m/n/12 SF-36 Men-tal Com-po-nent Score
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5479--5479
+\T1/pplj/m/n/12 (range 7-62, higher scores are bet-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5481--5481
+[]|\T1/pplj/m/n/12 SF-36 Phys-i-cal Com-po-nent Score
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5481--5481
+\T1/pplj/m/n/12 (range 14-75, higher scores are
+ []
+
+
+Overfull \hbox (76.8144pt too wide) in alignment at lines 5447--5482
+ [] [] [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5483--5483
+[]|\T1/pplj/m/n/12 perceived so-cial sup-ports (friends,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5485--5485
+[]|\T1/pplj/m/n/12 race/ethnicity (black, white, his-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5486--5486
+[]|\T1/pplj/m/n/12 any BSAS sub-stance abuse treat-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5488--5488
+[]|\T1/pplj/m/n/12 Risk-Assessment Bat-tery (RAB) sex
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5490--5490
+[]|\T1/pplj/m/n/12 primary sub-stance of abuse (al-co-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5492--5492
+[]|\T1/pplj/m/n/12 randomization group (ran-dom-ize to
+ []
+
+
+Overfull \hbox (76.8144pt too wide) in alignment at lines 5482--5494
+ [] [] [] 
+ []
+
+[108] [109] [110
+
+]
+Chapter 15.
+
+Underfull \vbox (badness 5862) has occurred while \output is active []
+
+ [111]
+[112 <./figures/FrontMatter-unnamed-chunk-56-1.pdf>] [113]
+(./MOSAIC-StudentGuide.bbl [114]
+Chapter 16.
+pdfTeX warning (ext4): destination with the same identifier (name{cite.baum:201
+4}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.4 \bibitem[BcRB{\etalchar{+}}14]{baum:2014}
+                                             pdfTeX warning (ext4): destination
+ with the same identifier (name{cite.hort:2015}) has been already used, duplica
+te ignored
+<to be read again> 
+                   \relax 
+l.11 \bibitem[HBW15]{hort:2015}
+                               pdfTeX warning (ext4): destination with the same
+ identifier (name{cite.kert:hort:frie:2003}) has been already used, duplicate i
+gnored
+<to be read again> 
+                   \relax 
+l.18 ...[KHF{\etalchar{+}}03]{kert:hort:frie:2003}
+                                                  pdfTeX warning (ext4): destin
+ation with the same identifier (name{cite.lieb:save:2002}) has been already use
+d, duplicate ignored
+<to be read again> 
+                   \relax 
+l.24 \bibitem[LSS{\etalchar{+}}02]{lieb:save:2002}
+                                                  pdfTeX warning (ext4): destin
+ation with the same identifier (name{cite.moor:mcca:2007}) has been already use
+d, duplicate ignored
+<to be read again> 
+                   \relax 
+l.31 \bibitem[MM07]{moor:mcca:2007}
+                                   pdfTeX warning (ext4): destination with the 
+same identifier (name{cite.nola:temp:2010}) has been already used, duplicate ig
+nored
+<to be read again> 
+                   \relax 
+l.36 \bibitem[NT10]{nola:temp:2010}
+                                    [115
+
+]pdfTeX warning (ext4): destination with the same identifier (name{cite.Sleuth2
+}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.41 \bibitem[RS02]{Sleuth2}
+                            pdfTeX warning (ext4): destination with the same id
+entifier (name{cite.same:lars:hort:2003}) has been already used, duplicate igno
+red
+<to be read again> 
+                   \relax 
+l.46 ...[SLH{\etalchar{+}}03]{same:lars:hort:2003}
+                                                  pdfTeX warning (ext4): destin
+ation with the same identifier (name{cite.Tufte:2001:Visual}) has been already 
+used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.53 \bibitem[Tuf01]{Tufte:2001:Visual}
+                                       pdfTeX warning (ext4): destination with 
+the same identifier (name{cite.ASAcurriculum2014}) has been already used, dupli
+cate ignored
+<to be read again> 
+                   \relax 
+l.58 \bibitem[Wor14]{ASAcurriculum2014}
+                                       ) (./MOSAIC-StudentGuide.ind [116]
+Chapter 17.
+[117
+
+] [118]) [119]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 5514.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 5514.
+ (./MOSAIC-StudentGuide.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 5514.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 5514.
+
+Package rerunfilecheck Info: File `MOSAIC-StudentGuide.out' has not changed.
+(rerunfilecheck)             Checksum: EF36A9D6E6AA2F449A0103B6AEDD3B4C;10685.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 5514.
+ ) 
+Here is how much of TeX's memory you used:
+ 27799 strings out of 493093
+ 503695 string characters out of 6134995
+ 675199 words of memory out of 5000000
+ 30321 multiletter control sequences out of 15000+600000
+ 108811 words of font info for 180 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 62i,18n,80p,947b,635s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
+exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/te
+xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texl
+ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texli
+ve/2015/texmf-dist/fonts/type1/public/fpl/fplbj8a.pfb></usr/local/texlive/2015/
+texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/local/texlive/2015/texm
+f-dist/fonts/type1/public/fpl/fplrc8a.pfb></usr/local/texlive/2015/texmf-dist/f
+onts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/ty
+pe1/public/bera/fvmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/publ
+ic/bera/fvmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/bera/
+fvmro8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvr8a
+.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></
+usr/local/texlive/2015/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/loc
+al/texlive/2015/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on MOSAIC-StudentGuide.pdf (119 pages, 1319445 bytes).
+PDF statistics:
+ 1758 PDF objects out of 2073 (max. 8388607)
+ 1441 compressed objects within 15 object streams
+ 236 named destinations out of 1000 (max. 500000)
+ 2014 words of extra memory for PDF output out of 10000 (max. 10000000)
+

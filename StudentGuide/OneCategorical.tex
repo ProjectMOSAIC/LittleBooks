@@ -1,0 +1,299 @@
+\section{Numerical summaries}
+
+\myindex{categorical variables}
+\myindex{contingency tables}
+\myindex{tables}
+
+\DiggingDeeper{The \emph{Start Teaching with R} companion book introduces the formula notation used throughout this book. See also \emph{Start Teaching with R} for the connections to statistical modeling.}
+
+The \function{tally()} function can be used to calculate
+counts, percentages and proportions for a categorical variable.
+
+\Rindex{tally()}%
+\Rindex{margins option}%
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{tally}\hlstd{(}\hlopt{~} \hlstd{homeless,} \hlkwc{data}\hlstd{=HELPrct)}
+\end{alltt}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in tally(\textasciitilde{}homeless, data = HELPrct): could not find function "{}tally"{}}}\begin{alltt}
+\hlkwd{tally}\hlstd{(}\hlopt{~} \hlstd{homeless,} \hlkwc{margins}\hlstd{=}\hlnum{TRUE}\hlstd{,} \hlkwc{data}\hlstd{=HELPrct)}
+\end{alltt}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in tally(\textasciitilde{}homeless, margins = TRUE, data = HELPrct): could not find function "{}tally"{}}}\begin{alltt}
+\hlkwd{tally}\hlstd{(}\hlopt{~} \hlstd{homeless,} \hlkwc{format}\hlstd{=}\hlstr{"percent"}\hlstd{,} \hlkwc{data}\hlstd{=HELPrct)}
+\end{alltt}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in tally(\textasciitilde{}homeless, format = "{}percent"{}, data = HELPrct): could not find function "{}tally"{}}}\begin{alltt}
+\hlkwd{tally}\hlstd{(}\hlopt{~} \hlstd{homeless,} \hlkwc{format}\hlstd{=}\hlstr{"proportion"}\hlstd{,} \hlkwc{data}\hlstd{=HELPrct)}
+\end{alltt}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in tally(\textasciitilde{}homeless, format = "{}proportion"{}, data = HELPrct): could not find function "{}tally"{}}}\end{kframe}
+\end{knitrout}
+
+\section{The binomial test}
+
+\myindex{binomial test}%
+\Rindex{binom.test()}%
+An exact confidence interval for a proportion (as well as a test of the null 
+hypothesis that the population proportion is equal to a particular value [by default 0.5]) can be calculated
+using the \function{binom.test()} function.
+The standard \function{binom.test()} requires us to tabulate.
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{binom.test}\hlstd{(}\hlnum{209}\hlstd{,} \hlnum{209} \hlopt{+} \hlnum{244}\hlstd{)}
+\end{alltt}
+\begin{verbatim}
+## 
+## 	Exact binomial test
+## 
+## data:  209 and 209 + 244
+## number of successes = 209, number of trials = 453, p-value =
+## 0.1101
+## alternative hypothesis: true probability of success is not equal to 0.5
+## 95 percent confidence interval:
+##  0.4147418 0.5085030
+## sample estimates:
+## probability of success 
+##              0.4613687
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+The \pkg{mosaic} package provides a formula interface that avoids the need to pre-tally
+the data.
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{result} \hlkwb{<-} \hlkwd{binom.test}\hlstd{(}\hlopt{~} \hlstd{(homeless}\hlopt{==}\hlstr{"homeless"}\hlstd{),} \hlkwc{data}\hlstd{=HELPrct)}
+\end{alltt}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in binom.test(\textasciitilde{}(homeless == "{}homeless"{}), data = HELPrct): unused argument (data = HELPrct)}}\begin{alltt}
+\hlstd{result}
+\end{alltt}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(expr, envir, enclos): object 'result' not found}}\end{kframe}
+\end{knitrout}
+
+As is generally the case with commands of this sort, 
+there are a number of useful quantities available from 
+the object returned by the function.  
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{names}\hlstd{(result)}
+\end{alltt}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(expr, envir, enclos): object 'result' not found}}\end{kframe}
+\end{knitrout}
+These can be extracted using the {\tt \$} operator or an extractor function.
+For example, the user can extract the confidence interval or p-value.
+\Rindex{confint()}%
+\Rindex{pval()}%
+\Rindex{print()}%
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{result}\hlopt{$}\hlstd{statistic}
+\end{alltt}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(expr, envir, enclos): object 'result' not found}}\begin{alltt}
+\hlkwd{confint}\hlstd{(result)}
+\end{alltt}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in confint(result): object 'result' not found}}\begin{alltt}
+\hlkwd{pval}\hlstd{(result)}
+\end{alltt}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in pval(result): could not find function "{}pval"{}}}\end{kframe}
+\end{knitrout}
+\DiggingDeeper{Most of the objects in \R\ have a \function{print()}
+method.  So when we get \code{result}, what we are seeing displayed in the console is
+\code{print(result)}.  There may be a good deal of additional information
+lurking inside the object itself.  
+
+In some situations, such as graphics, the object is returned \emph{invisibly}, so nothing prints.  That avoids your having to look at a long printout not intended for human consumption. You can still assign the returned object to a variable and process it later, even if nothing shows up on the screen.  This is sometimes helpful for \pkg{lattice} graphics functions.}%
+
+
+\section{The proportion test}
+
+A similar interval and test can be calculated using the function \function{prop.test()}.
+\Rindex{prop.test()}%
+\Rindex{correct option}%
+Here is a count of the number of people at each of the two levels of \variable{homeless}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{tally}\hlstd{(}\hlopt{~} \hlstd{homeless,} \hlkwc{data}\hlstd{=HELPrct)}
+\end{alltt}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in tally(\textasciitilde{}homeless, data = HELPrct): could not find function "{}tally"{}}}\end{kframe}
+\end{knitrout}
+
+The \function{prop.test} function will carry out the calculations of the proportion test and report the result.
+
+\hfill
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{prop.test}\hlstd{(}\hlopt{~} \hlstd{(homeless}\hlopt{==}\hlstr{"homeless"}\hlstd{),} \hlkwc{correct}\hlstd{=}\hlnum{FALSE}\hlstd{,} \hlkwc{data}\hlstd{=HELPrct)}
+\end{alltt}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in prop.test(\textasciitilde{}(homeless == "{}homeless"{}), correct = FALSE, data = HELPrct): unused argument (data = HELPrct)}}\end{kframe}
+\end{knitrout}
+In this statement, prop.test is examining the \variable{homeless} variable in the same way that \function{tally} would. \Pointer{We write \code{homeless=="homeless"} to define unambiguously which proportion we are considering. We could also have written \code{homeless=="housed"}. }
+\function{prop.test} can also work directly with numerical counts, the way \function{binom.test()} does.
+\InstructorNote{\function{prop.test()} calculates a Chi-squared statistic.
+Most introductory texts use a $z$-statistic.  They are mathematically equivalent in terms of inferential statements, but you may need to address the discrepancy with your students.}%
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{prop.test}\hlstd{(}\hlnum{209}\hlstd{,} \hlnum{209} \hlopt{+} \hlnum{244}\hlstd{,} \hlkwc{correct}\hlstd{=}\hlnum{FALSE}\hlstd{)}
+\end{alltt}
+\begin{verbatim}
+## 
+## 	1-sample proportions test without continuity correction
+## 
+## data:  209 out of 209 + 244, null probability 0.5
+## X-squared = 2.7042, df = 1, p-value = 0.1001
+## alternative hypothesis: true p is not equal to 0.5
+## 95 percent confidence interval:
+##  0.4159798 0.5074072
+## sample estimates:
+##         p 
+## 0.4613687
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+\section{Goodness of fit tests}
+
+A variety of goodness of fit tests can be calculated against a reference  distribution.  For the HELP data, we could test the null hypothesis that there is an equal proportion of subjects in each substance abuse group back in the original populations.
+
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{tally}\hlstd{(}\hlopt{~} \hlstd{substance,} \hlkwc{format}\hlstd{=}\hlstr{"percent"}\hlstd{,} \hlkwc{data}\hlstd{=HELPrct)}
+\end{alltt}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in tally(\textasciitilde{}substance, format = "{}percent"{}, data = HELPrct): could not find function "{}tally"{}}}\begin{alltt}
+\hlstd{observed} \hlkwb{<-} \hlkwd{tally}\hlstd{(}\hlopt{~} \hlstd{substance,} \hlkwc{data}\hlstd{=HELPrct)}
+\end{alltt}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in tally(\textasciitilde{}substance, data = HELPrct): could not find function "{}tally"{}}}\begin{alltt}
+\hlstd{observed}
+\end{alltt}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(expr, envir, enclos): object 'observed' not found}}\end{kframe}
+\end{knitrout}
+
+\Caution[-1cm]{In addition to the \option{format} option, there is an option \option{margins} to include marginal totals in the table. The default in \function{tally} is \option{margins=FALSE}. Try it out!}
+\Rindex{chisq.test()}%
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{p} \hlkwb{<-} \hlkwd{c}\hlstd{(}\hlnum{1}\hlopt{/}\hlnum{3}\hlstd{,} \hlnum{1}\hlopt{/}\hlnum{3}\hlstd{,} \hlnum{1}\hlopt{/}\hlnum{3}\hlstd{)}   \hlcom{# equivalent to rep(1/3, 3)}
+\hlkwd{chisq.test}\hlstd{(observed,} \hlkwc{p}\hlstd{=p)}
+\end{alltt}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in is.data.frame(x): object 'observed' not found}}\begin{alltt}
+\hlstd{total} \hlkwb{<-} \hlkwd{sum}\hlstd{(observed); total}
+\end{alltt}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(expr, envir, enclos): object 'observed' not found}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(expr, envir, enclos): object 'total' not found}}\begin{alltt}
+\hlstd{expected} \hlkwb{<-} \hlstd{total}\hlopt{*}\hlstd{p; expected}
+\end{alltt}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(expr, envir, enclos): object 'total' not found}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(expr, envir, enclos): object 'expected' not found}}\end{kframe}
+\end{knitrout}
+
+We can also calculate the $\chi^2$ statistic manually, as a function of observed and expected values.
+
+\Rindex{sum()}%
+\Rindex{pchisq()}%
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{chisq} \hlkwb{<-} \hlkwd{sum}\hlstd{((observed} \hlopt{-} \hlstd{expected)}\hlopt{^}\hlnum{2}\hlopt{/}\hlstd{(expected)); chisq}
+\end{alltt}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(expr, envir, enclos): object 'observed' not found}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(expr, envir, enclos): object 'chisq' not found}}\begin{alltt}
+\hlnum{1} \hlopt{-} \hlkwd{pchisq}\hlstd{(chisq,} \hlkwc{df}\hlstd{=}\hlnum{2}\hlstd{)}
+\end{alltt}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in pchisq(chisq, df = 2): object 'chisq' not found}}\end{kframe}
+\end{knitrout}
+\FoodForThought[-2cm]{The \function{pchisq} function calculates the probability that a $\chi^2$ random variable with \function{df} degrees is freedom is less than or equal to a given value.  Here we calculate the complement to find the area to the right of the observed Chi-square statistic.}%
+
+It may be helpful to consult a graph of the statistic, where the shaded area represents the value to the right of the observed value.
+
+\Rindex{plotDist()}%
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{plotDist}\hlstd{(}\hlstr{"chisq"}\hlstd{,} \hlkwc{df}\hlstd{=}\hlnum{2}\hlstd{,} \hlkwc{groups} \hlstd{= x} \hlopt{>} \hlnum{9.31}\hlstd{,} \hlkwc{type}\hlstd{=}\hlstr{"h"}\hlstd{)}
+\end{alltt}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in plotDist("{}chisq"{}, df = 2, groups = x > 9.31, type = "{}h"{}): could not find function "{}plotDist"{}}}\end{kframe}
+\end{knitrout}
+
+
+Alternatively, the \pkg{mosaic} package provides a version of \function{chisq.test()} with more verbose output.
+\Rindex{xchisq.test()}%
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{xchisq.test}\hlstd{(observed,} \hlkwc{p}\hlstd{=p)}
+\end{alltt}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in xchisq.test(observed, p = p): could not find function "{}xchisq.test"{}}}\end{kframe}
+\end{knitrout}
+\FoodForThought[-1.5cm]{\code{x} in \function{xchisq.test} stands for eXtra.}
+
+\FoodForThought{Objects in the workspace are listed in the {\sc Environment} tab in \RStudio.  If you want to clean up that listing, remove objects that are no longer needed with \function{rm}.}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcom{# clean up variables no longer needed}
+\hlkwd{rm}\hlstd{(observed, p, total, chisq)}
+\end{alltt}
+
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning in rm(observed, p, total, chisq): object 'observed' not found}}
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning in rm(observed, p, total, chisq): object 'total' not found}}
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning in rm(observed, p, total, chisq): object 'chisq' not found}}\end{kframe}
+\end{knitrout}

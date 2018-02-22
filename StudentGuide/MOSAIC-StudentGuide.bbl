@@ -1,0 +1,65 @@
+\newcommand{\etalchar}[1]{$^{#1}$}
+\begin{thebibliography}{BcRB{\etalchar{+}}14}
+
+\bibitem[BcRB{\etalchar{+}}14]{baum:2014}
+B.S. Baumer, M.~\c{C}etinkaya Rundel, A.~Bray, L.~Loi, and N.~J. Horton.
+\newblock {R Markdown}: Integrating a reproducible analysis tool into
+  introductory statistics.
+\newblock {\em Technology Innovations in Statistics Education}, 8(1):281--283,
+  2014.
+
+\bibitem[HBW15]{hort:2015}
+N.J. Horton, B.S. Baumer, and H.~Wickham.
+\newblock Setting the stage for data science: integration of data management
+  skills in introductory and second courses in statistics
+  (\url{http://arxiv.org/abs/1401.3269}).
+\newblock {\em CHANCE}, 28(2):40--50, 2015.
+
+\bibitem[KHF{\etalchar{+}}03]{kert:hort:frie:2003}
+S.~G. Kertesz, N.~J. Horton, P.~D. Friedmann, R.~Saitz, and J.~H. Samet.
+\newblock Slowing the revolving door: stabilization programs reduce homeless
+  persons' substance use after detoxification.
+\newblock {\em Journal of Substance Abuse Treatment}, 24(3):197--207, 2003.
+
+\bibitem[LSS{\etalchar{+}}02]{lieb:save:2002}
+J.~Liebschutz, J.~B. Savetsky, R.~Saitz, N.~J. Horton, C.~Lloyd-Travaglini, and
+  J.~H. Samet.
+\newblock The relationship between sexual and physical abuse and substance
+  abuse consequences.
+\newblock {\em Journal of Substance Abuse Treatment}, 22(3):121--128, 2002.
+
+\bibitem[MM07]{moor:mcca:2007}
+D.~S. Moore and G.~P. McCabe.
+\newblock {\em Introduction to the Practice of Statistics}.
+\newblock W.H.Freeman and Company, 6th edition, 2007.
+
+\bibitem[NT10]{nola:temp:2010}
+D.~Nolan and D.~{Temple Lang}.
+\newblock Computing in the statistics curriculum.
+\newblock {\em The American Statistician}, 64(2):97--107, 2010.
+
+\bibitem[RS02]{Sleuth2}
+F.~Ramsey and D.~Schafer.
+\newblock {\em Statistical Sleuth: A Course in Methods of Data Analysis}.
+\newblock Cengage, 2nd edition, 2002.
+
+\bibitem[SLH{\etalchar{+}}03]{same:lars:hort:2003}
+J.~H. Samet, M.~J. Larson, N.~J. Horton, K.~Doyle, M.~Winter, and R.~Saitz.
+\newblock Linking alcohol and drug dependent adults to primary medical care:
+  {A} randomized controlled trial of a multidisciplinary health intervention in
+  a detoxification unit.
+\newblock {\em Addiction}, 98(4):509--516, 2003.
+
+\bibitem[Tuf01]{Tufte:2001:Visual}
+E.~R. Tufte.
+\newblock {\em The Visual Display of Quantitative Information}.
+\newblock Graphics Press, Cheshire, CT, 2nd edition, 2001.
+
+\bibitem[Wor14]{ASAcurriculum2014}
+ASA Undergraduate~Guidelines Workgroup.
+\newblock 2014 curriculum guidelines for undergraduate programs in statistical
+  science.
+\newblock Technical report, American Statistical Association, November 2014.
+\newblock \url{http://www.amstat.org/education/curriculumguidelines.cfm}.
+
+\end{thebibliography}
