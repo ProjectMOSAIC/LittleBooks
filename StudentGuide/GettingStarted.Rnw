@@ -291,7 +291,8 @@ the following commands display the number of births in the United States for eac
 # this will make lattice graphics available to the session
 # as well as the Births78 dataset
 require(mosaic)
-xyplot(births ~ dayofyear, data=Births78)
+gf_point(births ~ dayofyear, data = Births78) %>% 
+gf_labs(title = "", caption = "")
 @
 From the \tab{Plots} tab, you can navigate to previous plots and also export plots 
 in various formats after interactively resizing them.
