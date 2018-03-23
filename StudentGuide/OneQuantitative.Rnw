@@ -74,21 +74,21 @@ favstats(~ cesd, data=HELPrct)
 @
 
 \section{Graphical summaries}
-The \function{histogram()} function is used to create a histogram. Here we use the formula interface (as discussed in the \emph{Start Modeling with R} book) to specify that we want a histogram of the CESD scores.
+The \function{gf_histogram()} function is used to create a histogram. Here we use the formula interface (as discussed in the \emph{Start Modeling with R} book) to specify that we want a histogram of the CESD scores.
 
 \Rindex{histogram()}%
 \vspace{-4mm}
 \begin{center}
 <<cesd-hist>>=
-histogram(~ cesd, data=HELPrct)
+gf_histogram(~ cesd, data = HELPrct, binwidth = 5.9) 
 @
 \end{center}
 
-We can use the \function{width} and \function{center} options to control the location of the bins.
+We can use the \function{binwidth} and \function{center} options to control the location of the bins.
 
 \begin{center}
 <<cesd-hist2>>=
-histogram(~ cesd, width=5, center=2.5, data=HELPrct)
+gf_histogram(~ cesd, data = HELPrct, binwidth = 5, center = 2.5) 
 @
 \end{center}
 
@@ -124,20 +124,23 @@ Subsets can also be generated and used ``on the fly" (this time including
 an overlaid normal density):
 \Rindex{fit option}%
 <<women-cesd-hist,tidy=FALSE,message=FALSE>>=
-histogram(~ cesd, fit="normal",
-  data=filter(HELPrct, sex=='female'))  
+gf_dhistogram(~ cesd, data = filter(HELPrct, sex == "female"), binwidth = 7.1) %>%
+  gf_dens(color = "blue")
 @
 
 Alternatively, we can make side-by-side plots to compare multiple subsets.
 <<cesd-male-female>>=
-histogram(~ cesd | sex, data=HELPrct)
+gf_dhistogram(~ cesd, data = HELPrct, binwidth = 5.9) %>%
+gf_facet_wrap(~ sex)
 @
 
 The layout can be rearranged.
 \Rindex{layout option}%
 \begin{center}
 <<cesd-dotlayout>>=
-histogram(~ cesd | sex, layout=c(1, 2), data=HELPrct)   
+histogram(~ cesd | sex, layout=c(1, 2), data=HELPrct)  
+gf_dhistogram(~ cesd, data = HELPrct, binwidth = 5.9) %>%
+gf_facet_wrap(~ sex)
 @
 \end{center}
 \begin{problem}
