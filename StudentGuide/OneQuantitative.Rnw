@@ -131,7 +131,7 @@ gf_dhistogram(~ cesd, data = filter(HELPrct, sex == "female"), binwidth = 7.1) %
 Alternatively, we can make side-by-side plots to compare multiple subsets.
 <<cesd-male-female>>=
 gf_dhistogram(~ cesd, data = HELPrct, binwidth = 5.9) %>%
-gf_facet_wrap(~ sex)
+  gf_facet_wrap(~ sex)
 @
 
 The layout can be rearranged.
@@ -140,7 +140,7 @@ The layout can be rearranged.
 <<cesd-dotlayout>>=
 histogram(~ cesd | sex, layout=c(1, 2), data=HELPrct)  
 gf_dhistogram(~ cesd, data = HELPrct, binwidth = 5.9) %>%
-gf_facet_wrap(~ sex)
+  gf_facet_wrap(~ sex)
 @
 \end{center}
 \begin{problem}
