@@ -125,7 +125,7 @@ an overlaid normal density):
 \Rindex{fit option}%
 <<women-cesd-hist,tidy=FALSE,message=FALSE>>=
 gf_dhistogram(~ cesd, data = filter(HELPrct, sex == "female"), binwidth = 7.1) %>%
-  gf_dens(color = "blue")
+  gf_dens(adjust = 5)
 @
 
 Alternatively, we can make side-by-side plots to compare multiple subsets.
@@ -138,9 +138,8 @@ The layout can be rearranged.
 \Rindex{layout option}%
 \begin{center}
 <<cesd-dotlayout>>=
-histogram(~ cesd | sex, layout=c(1, 2), data=HELPrct)  
 gf_dhistogram(~ cesd, data = HELPrct, binwidth = 5.9) %>%
-gf_facet_wrap(~ sex)
+gf_facet_grid(sex ~ .)
 @
 \end{center}
 \begin{problem}
@@ -150,8 +149,9 @@ group, just for the male subjects, with an overlaid normal density.
 \end{problem}%
 \begin{solution}
 <<subsmale, tidy=FALSE>>=
-histogram(~ cesd | substance, fit="normal", 
-  data=filter(HELPrct, sex=='male'))
+gf_dhistogram(~ cesd | substance, binwidth = 5,
+  data=filter(HELPrct, sex=='male')) %>%
+  gf_dens(adjust = 5)
 @
 \end{solution}%
 We can control the number of bins in a number of ways.  These can be specified 
@@ -159,14 +159,14 @@ as the total number.
 \Rindex{nint option}%
 \begin{center}
 <<cesd-dot,fig.height=1.8>>=
-histogram(~ cesd, nint=20, data=female)   
+gf_dhistogram(~ cesd, bins = 20, data = filter(HELPrct, sex == "female"))
 @
 \end{center}
 The width of the bins can be specified.
 \Rindex{width option}%
 \begin{center}
 <<cesd-dotwidth,fig.height=1.8>>=
-histogram(~ cesd, width=2, data=female)   
+gf_dhistogram(~ cesd, binwidth = 2, data = filter(HELPrct, sex == "female"))
 @
 \end{center}
 
@@ -175,8 +175,8 @@ for a smaller subset of subjects (homeless females).  We also demonstrate
 how to change the x-axis label.
 \Rindex{dotPlot()}%
 <<cesd-dot4,tidy=FALSE>>=
-dotPlot(~ cesd, xlab="CESD score", 
-  data=filter(HELPrct, (sex=="female") & (homeless=="homeless")))
+gf_dotplot(~ cesd, binwidth = 10, data = filter(HELPrct, sex == "female", homeless == "homeless")) %>%
+  gf_labs(x = "CESD score")
 @
 
 
@@ -202,6 +202,7 @@ ladd(grid.text(x=0.2, y=0.8, 'only females'))
 ladd(panel.mathdensity(args=list(mean=mean(cesd), 
   sd=sd(cesd)), col="red"), data=female)
 ladd(panel.abline(v=60, lty=2, lwd=2, col="grey"))
+gf_dens(~ cesd, data = filter(HELPrct, sex == "female"))
 @
 \end{center}
 
@@ -212,7 +213,7 @@ A third option is a frequency polygon, where  the graph is created by joining th
 \Rindex{freqpolygon()}%
 \begin{center}
 <<poly,tidy=FALSE,fig.keep="last",out.width="2.5in">>=
-freqpolygon(~ cesd, data=female)
+ gf_freqpoly(~ cesd, data = filter(HELPrct, sex == "female"), binwidth = 3.8)
 @
 \end{center}
 
