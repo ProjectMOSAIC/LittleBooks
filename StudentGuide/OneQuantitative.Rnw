@@ -19,8 +19,8 @@ level (see \function{?options} for more configuration possibilities).
 <<cesd1,cache=FALSE>>=
 require(mosaic)
 require(mosaicData)
-options(digits=4)
-mean(~ cesd, data=HELPrct)
+options(digits = 4)
+mean(~ cesd, data = HELPrct)
 @
 
 \myindex{Start Teaching with R@\emph{Start Teaching with R}}%
@@ -41,11 +41,11 @@ mean(HELPrct$cesd)
 \Rindex{var()}%
 Similar functionality exists for other summary statistics.
 <<cesd2,cache=FALSE>>=
-sd(~ cesd, data=HELPrct)
+sd(~ cesd, data = HELPrct)
 @
 <<cesd2b,cache=FALSE>>=
-sd(~ cesd, data=HELPrct)^2
-var(~ cesd, data=HELPrct)
+sd(~ cesd, data = HELPrct)^2
+var(~ cesd, data = HELPrct)
 @
 
 It is also straightforward to calculate quantiles of the distribution.
@@ -53,7 +53,7 @@ It is also straightforward to calculate quantiles of the distribution.
 \myindex{quantiles}%
 \Rindex{median()}%
 <<cesd3>>=
-median(~ cesd, data=HELPrct)
+median(~ cesd, data = HELPrct)
 @
 
 By default, the \function{quantile()} function displays the quartiles, but can be given a vector of quantiles to display.  
@@ -70,13 +70,13 @@ with(HELPrct, quantile(cesd, c(.025, .975)))
 \Rindex{favstats()}%
 Finally, the \function{favstats()} function in the \pkg{mosaic} package provides a concise summary of  many useful statistics.
 <<>>=
-favstats(~ cesd, data=HELPrct)
+favstats(~ cesd, data = HELPrct)
 @
 
 \section{Graphical summaries}
 The \function{gf_histogram()} function is used to create a histogram. Here we use the formula interface (as discussed in the \emph{Start Modeling with R} book) to specify that we want a histogram of the CESD scores.
 
-\Rindex{histogram()}%
+\Rindex{gf_histogram()}%
 \vspace{-4mm}
 \begin{center}
 <<cesd-hist>>=
@@ -97,8 +97,8 @@ gf_histogram(~ cesd, data = HELPrct, binwidth = 5, center = 2.5)
 \Rindex{format option}%
 In the \variable{HELPrct} dataset, approximately one quarter of the subjects are female.  
 <<>>=
-tally(~ sex, data=HELPrct)
-tally(~ sex, format="percent", data=HELPrct)
+tally(~ sex, data = HELPrct)
+tally(~ sex, format = "percent", data = HELPrct)
 @
 
 It is straightforward to restrict our attention to just the female subjects.
@@ -112,8 +112,8 @@ the \function{stem()} function is used to create a stem and leaf plot.
 \Rindex{filter()}%
 \Rindex{dplyr package}%
 <<cesd-stem>>=
-female <- filter(HELPrct, sex=='female')
-male <- filter(HELPrct, sex=='male')
+female <- filter(HELPrct, sex == 'female')
+male <- filter(HELPrct, sex == 'male')
 with(female, stem(cesd))
 @
 
@@ -150,7 +150,7 @@ group, just for the male subjects, with an overlaid normal density.
 \begin{solution}
 <<subsmale, tidy=FALSE>>=
 gf_dhistogram(~ cesd | substance, binwidth = 5,
-  data=filter(HELPrct, sex=='male')) %>%
+  data=filter(HELPrct, sex == "male")) %>%
   gf_dens(adjust = 5)
 @
 \end{solution}%
@@ -159,23 +159,23 @@ as the total number.
 \Rindex{nint option}%
 \begin{center}
 <<cesd-dot,fig.height=1.8>>=
-gf_dhistogram(~ cesd, bins = 20, data = filter(HELPrct, sex == "female"))
+gf_dhistogram(~ cesd, bins = 20, data = female)
 @
 \end{center}
 The width of the bins can be specified.
 \Rindex{width option}%
 \begin{center}
 <<cesd-dotwidth,fig.height=1.8>>=
-gf_dhistogram(~ cesd, binwidth = 2, data = filter(HELPrct, sex == "female"))
+gf_dhistogram(~ cesd, binwidth = 2, data = female)
 @
 \end{center}
 
-The \function{dotPlot()} function is used to create a dotplot
+The \function{gf_dotplot()} function is used to create a dotplot
 for a smaller subset of subjects (homeless females).  We also demonstrate
 how to change the x-axis label.
 \Rindex{dotPlot()}%
 <<cesd-dot4,tidy=FALSE>>=
-gf_dotplot(~ cesd, binwidth = 10, data = filter(HELPrct, sex == "female", homeless == "homeless")) %>%
+gf_dotplot(~ cesd, binwidth = 5, data = filter(HELPrct, sex == "female", homeless == "homeless")) %>%
   gf_labs(x = "CESD score")
 @
 
@@ -202,7 +202,7 @@ ladd(grid.text(x=0.2, y=0.8, 'only females'))
 ladd(panel.mathdensity(args=list(mean=mean(cesd), 
   sd=sd(cesd)), col="red"), data=female)
 ladd(panel.abline(v=60, lty=2, lwd=2, col="grey"))
-gf_dens(~ cesd, data = filter(HELPrct, sex == "female"))
+gf_dens(~ cesd, data = female)
 @
 \end{center}
 
@@ -210,10 +210,10 @@ gf_dens(~ cesd, data = filter(HELPrct, sex == "female"))
 \myindex{polygons}%
 
 A third option is a frequency polygon, where  the graph is created by joining the midpoints of the top of the bars of a histogram.
-\Rindex{freqpolygon()}%
+\Rindex{gf_freqpoly()}%
 \begin{center}
 <<poly,tidy=FALSE,fig.keep="last",out.width="2.5in">>=
- gf_freqpoly(~ cesd, data = filter(HELPrct, sex == "female"), binwidth = 3.8)
+ gf_freqpoly(~ cesd, data = female, binwidth = 3.8)
 @
 \end{center}
 
@@ -223,7 +223,7 @@ A third option is a frequency polygon, where  the graph is created by joining th
 The most famous density curve is a normal distribution.  The \function{xpnorm()} function displays the probability that a random variable is less than the first argument, for a normal distribution with mean given by the second argument and standard deviation by the third. More information about probability distributions can be found in section \ref{sec:probability}.
 
 <<norm1,fig.width=5,fig.height=2.4>>=
-xpnorm(1.96, mean=0, sd=1)
+xpnorm(1.96, mean = 0, sd = 1)
 @
 
 
@@ -236,8 +236,8 @@ xpnorm(1.96, mean=0, sd=1)
 We can calculate a 95\% confidence interval for the mean CESD 
 score for females by using a t-test:
 <<tinterval>>=
-t.test(~ cesd, data=female)
-confint(t.test(~ cesd, data=female))
+t.test(~ cesd, data = female)
+confint(t.test(~ cesd, data = female))
 @
 
 \DiggingDeeper{More details and examples can be found in the 
@@ -247,7 +247,7 @@ confint(t.test(~ cesd, data=female))
 But it's also straightforward to calculate this using a bootstrap.
 The statistic that we want to resample is the mean.  
 <<calculuatemean>>=
-mean(~ cesd, data=female)
+mean(~ cesd, data = female)
 @
 
 One resampling trial can be carried out:
@@ -255,7 +255,7 @@ One resampling trial can be carried out:
 creating a resampled dataframe with the same number of rows.}
 \Rindex{resample()}%
 <<resamplemean>>=
-mean(~ cesd, data=resample(female))
+mean(~ cesd, data = resample(female))
 @
 \FoodForThought{Even though a single trial is of little use, it's smart having
 students do the calculation to show that they are (usually!) getting a different
@@ -263,7 +263,7 @@ result than without resampling.}
 
 Another will yield different results:
 <<>>=
-mean(~ cesd, data=resample(female))
+mean(~ cesd, data = resample(female))
 @
 
 Now conduct 1000 resampling trials, saving the results in an object
@@ -271,7 +271,7 @@ called \texttt{trials}:
 \Rindex{do()}%
 \Rindex{qdata()}%
 <<bootint>>=
-trials <- do(1000) * mean(~ cesd, data=resample(female))
+trials <- do(1000) * mean(~ cesd, data = resample(female))
 head(trials, 3)
-qdata(~ mean, c(.025, .975), data=trials)
+qdata(~ mean, c(.025, .975), data = trials)
 @
