@@ -112,9 +112,9 @@ the \function{stem()} function is used to create a stem and leaf plot.
 \Rindex{filter()}%
 \Rindex{dplyr package}%
 <<cesd-stem>>=
-female <- filter(HELPrct, sex == 'female')
-male <- filter(HELPrct, sex == 'male')
-with(female, stem(cesd))
+Female <- filter(HELPrct, sex == 'female')
+Male <- filter(HELPrct, sex == 'male')
+with(Female, stem(cesd))
 @
 
 \Rindex{dplyr package}%
@@ -125,7 +125,7 @@ an overlaid normal density):
 \Rindex{fit option}%
 <<women-cesd-hist,tidy=FALSE,message=FALSE>>=
 gf_dhistogram(~ cesd, data = filter(HELPrct, sex == "female"), binwidth = 7.1) %>%
-  gf_dens(adjust = 5)
+  gf_fitdistr(dist = dnorm)
 @
 
 Alternatively, we can make side-by-side plots to compare multiple subsets.
@@ -151,7 +151,7 @@ group, just for the male subjects, with an overlaid normal density.
 <<subsmale, tidy=FALSE>>=
 gf_dhistogram(~ cesd | substance, binwidth = 5,
   data=filter(HELPrct, sex == "male")) %>%
-  gf_dens(adjust = 5)
+  gf_fitdistr(dist = dnorm)
 @
 \end{solution}%
 We can control the number of bins in a number of ways.  These can be specified 
@@ -159,14 +159,14 @@ as the total number.
 \Rindex{nint option}%
 \begin{center}
 <<cesd-dot,fig.height=1.8>>=
-gf_dhistogram(~ cesd, bins = 20, data = female)
+gf_dhistogram(~ cesd, bins = 20, data = Female)
 @
 \end{center}
 The width of the bins can be specified.
 \Rindex{width option}%
 \begin{center}
 <<cesd-dotwidth,fig.height=1.8>>=
-gf_dhistogram(~ cesd, binwidth = 2, data = female)
+gf_dhistogram(~ cesd, binwidth = 2, data = Female)
 @
 \end{center}
 
@@ -197,12 +197,11 @@ Here we adorn a density plot with some additions to demonstrate how to build up 
 \Rindex{lty option}%
 \Rindex{lwd option}%
 <<dens1,tidy=FALSE,fig.keep="last">>=
-densityplot(~ cesd, data=female)
-ladd(grid.text(x=0.2, y=0.8, 'only females'))
-ladd(panel.mathdensity(args=list(mean=mean(cesd), 
-  sd=sd(cesd)), col="red"), data=female)
-ladd(panel.abline(v=60, lty=2, lwd=2, col="grey"))
-gf_dens(~ cesd, data = female)
+gf_dens(~ cesd, data = Female) %>%
+  gf_refine(annotate(geom = "text", x = 10, y = .025, label = "only females")) %>%
+  gf_fitdistr(dist = dnorm) %>%
+  gf_vline(xintercept = 60) +
+  xlim(0, 80)
 @
 \end{center}
 
@@ -213,7 +212,7 @@ A third option is a frequency polygon, where  the graph is created by joining th
 \Rindex{gf_freqpoly()}%
 \begin{center}
 <<poly,tidy=FALSE,fig.keep="last",out.width="2.5in">>=
- gf_freqpoly(~ cesd, data = female, binwidth = 3.8)
+ gf_freqpoly(~ cesd, data = Female, binwidth = 3.8)
 @
 \end{center}
 
@@ -236,8 +235,8 @@ xpnorm(1.96, mean = 0, sd = 1)
 We can calculate a 95\% confidence interval for the mean CESD 
 score for females by using a t-test:
 <<tinterval>>=
-t.test(~ cesd, data = female)
-confint(t.test(~ cesd, data = female))
+t.test(~ cesd, data = Female)
+confint(t.test(~ cesd, data = Female))
 @
 
 \DiggingDeeper{More details and examples can be found in the 
@@ -247,7 +246,7 @@ confint(t.test(~ cesd, data = female))
 But it's also straightforward to calculate this using a bootstrap.
 The statistic that we want to resample is the mean.  
 <<calculuatemean>>=
-mean(~ cesd, data = female)
+mean(~ cesd, data = Female)
 @
 
 One resampling trial can be carried out:
@@ -255,7 +254,7 @@ One resampling trial can be carried out:
 creating a resampled dataframe with the same number of rows.}
 \Rindex{resample()}%
 <<resamplemean>>=
-mean(~ cesd, data = resample(female))
+mean(~ cesd, data = resample(Female))
 @
 \FoodForThought{Even though a single trial is of little use, it's smart having
 students do the calculation to show that they are (usually!) getting a different
@@ -263,7 +262,7 @@ result than without resampling.}
 
 Another will yield different results:
 <<>>=
-mean(~ cesd, data = resample(female))
+mean(~ cesd, data = resample(Female))
 @
 
 Now conduct 1000 resampling trials, saving the results in an object
@@ -271,7 +270,7 @@ called \texttt{trials}:
 \Rindex{do()}%
 \Rindex{qdata()}%
 <<bootint>>=
-trials <- do(1000) * mean(~ cesd, data = resample(female))
+trials <- do(1000) * mean(~ cesd, data = resample(Female))
 head(trials, 3)
 qdata(~ mean, c(.025, .975), data = trials)
 @
