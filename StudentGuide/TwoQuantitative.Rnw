@@ -19,8 +19,8 @@ as the plotting character and slightly thicker line.
 \Rindex{type option}%
 \begin{center}
 <<HELPrct-xyplot,fig.height=3,tidy=FALSE>>=
-females <- filter(HELPrct, female == 1)
-gf_point(cesd ~ mcs, data = females, shape = 1) %>%
+Female <- filter(HELPrct, female == 1)
+gf_point(cesd ~ mcs, data = Female, shape = 1) %>%
   gf_smooth(se = FALSE, size = 2)
 @
 \end{center}
@@ -53,8 +53,8 @@ Correlations can be calculated for a pair of variables, or for a matrix of varia
 \myindex{correlation}%
 \Rindex{cor()}%
 <<>>=
-cor(cesd, mcs, data = females)
-smallHELP <- select(females, cesd, mcs, pcs)
+cor(cesd ~ mcs, data = Female)
+smallHELP <- select(Female, cesd, mcs, pcs)
 cor(smallHELP)
 @
 \myindex{Pearson correlation}%
@@ -63,7 +63,7 @@ cor(smallHELP)
 By default, Pearson correlations are provided. Other variants (e.g., Spearman) can be specified using the
 \option{method} option.
 <<>>=
-cor(cesd, mcs, method = "spearman", data = females)
+cor(cesd ~ mcs, method = "spearman", data = Female)
 @
 
 \section{Pairs plots}
@@ -74,7 +74,9 @@ A pairs plot (scatterplot matrix) can be calculated for each pair of a set of va
 \FoodForThought{The \pkg{GGally} package has support for more elaborate pairs plots.}
 \Rindex{splom()}%
 <<fig.height=3>>=
+require(GGally)
 splom(smallHELP, cex = 0.3)
+ggpairs(smallHELP)
 @
 
 \section{Simple linear regression}
@@ -94,7 +96,7 @@ and predictors.  Here we consider fitting the model \model{\variable{cesd}}{\var
 \Rindex{lm()}%
 \Rindex{coef()}%
 <<>>=
-cesdmodel <- lm(cesd ~ mcs, data = females)
+cesdmodel <- lm(cesd ~ mcs, data = Female)
 coef(cesdmodel)
 @
 \InstructorNote{It's important to pick good names for modeling
