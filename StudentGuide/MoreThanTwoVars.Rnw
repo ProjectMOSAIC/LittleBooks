@@ -26,10 +26,8 @@ significant main effects terms for \variable{substance} group and
 \variable{sex}.
 
 <<help-interaction,tidy=FALSE>>=
-xyplot(cesd ~ substance, groups=sex, lwd=2,
-  auto.key=list(columns=2, lines=TRUE, points=FALSE), 
-  type='a', data=HELPrct)
-gf_line(cesd ~ substance, color = ~ sex, lwd = 2, data = HELPrct)
+mod <- lm(cesd ~ substance + sex + substance*sex, data = HELPrct)
+plotModel(mod)
 @
 \Rindex{auto.key option}%
 
@@ -90,16 +88,14 @@ lmfunction <- makeFun(lmnointeract)
 \Rindex{add option}%
 We can now plot the predicted values separately for male and female subjects over a range of MCS (mental component score) values, along
 with the observed data for all of the 36 year olds.  
+% XX NH Replace with ggformula in future
 <<plotFUN,tidy=FALSE,fig.keep='last'>>=
-xyplot(cesd ~ mcs, groups=sex, auto.key=TRUE, 
+xyplot(cesd ~ mcs, groups = sex, auto.key = TRUE, 
   data=filter(HELPrct, age==36))
 plotFun(lmfunction(mcs, age=36, sex="male") ~ mcs, 
   xlim=c(0, 60), lwd=2, ylab="predicted CESD", add=TRUE)
 plotFun(lmfunction(mcs, age=36, sex="female") ~ mcs, 
   xlim=c(0, 60), lty=2, lwd=3, add=TRUE)
-
-gf_point(cesd ~mcs, color = ~sex, data = filter(HELPrct, age == 36), shape = 1) +
-  gf_line(gf_lm(mcs, age = 36, sex = "male") ~ mcs)
 @
 
 

@@ -17,13 +17,8 @@ require(survival)
 require(broom)
 fit <- survfit(Surv(dayslink, linkstatus) ~ treat, 
   data = HELPrct)
-plot(fit, conf.int=FALSE, lty=1:2, lwd=2, 
-  xlab="time (in days)", ylab="P(not linked)")
-legend(20, 0.4, legend=c("Control", "Treatment"), 
-  lty=c(1,2), lwd=2)
-title("Product-Limit Survival Estimates (time to linkage)")
 fit <- broom::tidy(fit)
-gf_step(fit, estimate ~ time, linetype = ~ strata, title = "Product-Limit Survival Estimates (time to linkage)", xlab = "time (in days", ylab = "P(not linked)", legend = c("Control", "Treatment"))
+gf_step(fit, estimate ~ time, linetype = ~ strata, title = "Product-Limit Survival Estimates (time to linkage)", xlab = "time (in days)", ylab = "P(not linked)")
 @
 \end{center}
 
