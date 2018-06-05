@@ -81,21 +81,19 @@ slopes (no interaction) model.
 lmfunction <- makeFun(lmnointeract)
 @
 
-\Rindex{xyplot()}%
-\Rindex{auto.key option}%
+\Rindex{gf\_point()}%
+\Rindex{gf\_fun()}%
 \Rindex{ylab option}%
-\Rindex{groups option}%
-\Rindex{add option}%
+\Rindex{color option}%
+\Rindex{linetype option}%
+\Rindex{xlim option}%
+\Rindex{size option}%
 We can now plot the predicted values separately for male and female subjects over a range of MCS (mental component score) values, along
 with the observed data for all of the 36 year olds.  
-% XX NH Replace with ggformula in future
 <<plotFUN,tidy=FALSE,fig.keep='last'>>=
-xyplot(cesd ~ mcs, groups = sex, auto.key = TRUE, 
-  data=filter(HELPrct, age==36))
-plotFun(lmfunction(mcs, age=36, sex="male") ~ mcs, 
-  xlim=c(0, 60), lwd=2, ylab="predicted CESD", add=TRUE)
-plotFun(lmfunction(mcs, age=36, sex="female") ~ mcs, 
-  xlim=c(0, 60), lty=2, lwd=3, add=TRUE)
+gf_point(cesd ~ mcs, color = ~ sex, data = filter(HELPrct, age == 36)) %>%
+  gf_fun(lmfunction(mcs, age = 36, sex = "male") ~ mcs, xlim = c(0, 60), size = 1.5, ylab = "redicted CESD") %>%
+  gf_fun(lmfunction(mcs, age = 36, sex = "female") ~ mcs, xlim = c(0, 60), linetype = 2, size = 2)
 @
 
 
@@ -296,17 +294,15 @@ myfun(cloudcover = 0, avgtemp = 60, weekday = 1)
 We expect just over 480 crossings on a day with these characteristics.
 \end{solution}
 \begin{problem}
-Use \function{makeFun()} and \function{plotFun()} to display predicted values for the number of crossings
+Use \function{makeFun()} and \function{gf\_fun()} to display predicted values for the number of crossings
 on weekdays and weekends/holidays for average temperatures between 30 and 80 degrees and a cloudy day 
 (\variable{cloudcover=10}).  
 \end{problem}
 \begin{solution}
-% XX NH Replace with ggformula in future
 <<>>=
-myfun <- makeFun(fm)
-xyplot(volume ~ avgtemp, data=RailTrail)
-plotFun(myfun(cloudcover=10, avgtemp, weekday=0) ~ avgtemp, lwd=2, add=TRUE)
-plotFun(myfun(cloudcover=10, avgtemp, weekday=1) ~ avgtemp, lty=2, lwd=3, add=TRUE)
+gf_point(volume ~ avgtemp, data = RailTrail) %>%
+  gf_fun(myfun(cloudcover=10, avgtemp, weekday=0) ~ avgtemp, size = 1.5) %>%
+  gf_fun(myfun(cloudcover=10, avgtemp, weekday=1) ~ avgtemp, linetype = 2, size = 2)
 @
 We
 interpret this as being a steeper slope (stronger association) on weekdays rather than weekends.

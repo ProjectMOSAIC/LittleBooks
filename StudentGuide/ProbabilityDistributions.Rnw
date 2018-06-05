@@ -99,13 +99,15 @@ function (in this case an exponential random variable).
 \Rindex{gf\_histogram()}%
 \Rindex{binwidth option}%
 \Rindex{center option}%
-\Rindex{add option}%
-% XX NH Replace with ggformula in future
+\Rindex{gf\_fun()}%
+\Rindex{color option}%
+\Rindex{size option}%
+\Rindex{xlim option}%
 <<fig.keep="last">>=
 f <- makeFun(2 * exp(-2 * x) ~ x)   # exponential with rate parameter 2
 x <- rexp(1000, rate = 2)
-gf_histogram(~ x, binwidth = 0.2, center = 0.1)
-plotFun(f(x) ~ x, col="red", lwd=2, add=TRUE)
+gf_dhistogram(~ x, binwidth = 0.2, center = 0.1) %>%
+  gf_fun(f(x) ~ x, color = "red", size = 2, xlim = c(0, 3))
 @
 \begin{problem}
 Generate a sample of 1000 exponential random variables with rate parameter
