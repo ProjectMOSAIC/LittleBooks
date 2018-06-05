@@ -4,7 +4,7 @@
 We can fit a two (or more) way ANOVA model, without or with an interaction,
 using the same modeling syntax.
 \Rindex{median()}%
-\Rindex{bwplot()}%
+\Rindex{gf\_boxplot()}%
 \Rindex{factor()}%
 \Rindex{mutate()}%
 \Rindex{aov()}%
@@ -24,7 +24,7 @@ summary(aov(cesd ~ substance * sex, data = HELPrct))
 There's little evidence for the interaction, though there are statistically
 significant main effects terms for \variable{substance} group and 
 \variable{sex}.
-
+\Rindex{plotModel()}%
 <<help-interaction,tidy=FALSE>>=
 mod <- lm(cesd ~ substance + sex + substance*sex, data = HELPrct)
 plotModel(mod)
@@ -123,7 +123,8 @@ fitted values and residuals to the dataset.
 \FoodForThought[-1cm]{The \function{mplot} function can also be used to create these graphs.}
 \Rindex{resid()}%
 \Rindex{fitted()}%
-\Rindex{abs()}%
+\Rindex{gf\_dhistogram()}%
+\Rindex{gf\_fitdistr()}%
 \InstructorNote{Here we are adding two new variables into an existing dataset. It's often a good practice to give the resulting dataframe a new name.}
 <<tidy=FALSE>>=
 HELPrct <- mutate(HELPrct, 
@@ -143,7 +144,6 @@ filter(HELPrct, abs(residuals) > 25)
 @
 
 \Rindex{cex option}%
-\Rindex{type option}%
 <<tidy=FALSE>>=
 gf_point(residuals ~ pred, cex = .3, xlab = "predicted values", title = "predicted vs. residuals", data = HELPrct) %>%
   gf_smooth(se = FALSE) %>%
@@ -165,8 +165,7 @@ Describe the distribution of the variable \variable{avgtemp} in terms of its
 center, spread and shape.
 <<tidy=FALSE>>=
 favstats(~ avgtemp, data=RailTrail)
-densityplot(~ avgtemp, xlab="Average daily temp (degrees F)", 
-  data=RailTrail)
+gf_dens(~ avgtemp, xlab = "Average daily temp(degrees F)", data = RailTrail)
 @
 \end{problem}
 \begin{solution}
@@ -181,7 +180,8 @@ center, spread and shape.
 \begin{solution}
 <<>>=
 favstats(~ cloudcover, data=RailTrail)
-densityplot(~ cloudcover, data=RailTrail)
+gf_dens(~ cloudcover, data=RailTrail) +
+  xlim(-5, 15)
 @
 The distribution of cloud cover is ungainly (almost triangular), with increasing probability for more
 cloudcover.  The mean is 5.8 oktas (out of 10), with standard deviation of 3.2 oktas.  It tends to be
@@ -196,7 +196,8 @@ center, spread and shape.
 \begin{solution}
 <<>>=
 favstats(~ volume, data=RailTrail)
-densityplot(~ volume, xlab="# of crossings", data=RailTrail)
+gf_dens(~ volume, xlab="# of crossings", data=RailTrail) +
+  xlim(0, 900)
 filter(RailTrail, volume > 700)
 @
 The distribution of daily crossings is approximately normally
@@ -224,12 +225,12 @@ What do you conclude?
 \end{problem}
 \begin{solution}
 <<>>=
-bwplot(volume ~ as.factor(weekday), data=RailTrail)
+gf_boxplot(volume ~ as.factor(weekday), data=RailTrail)
 @
 or
 <<>>=
 RailTrail <- mutate(RailTrail, daytype = ifelse(weekday==1, "weekday", "weekend/holiday"))
-bwplot(volume ~ daytype, data=RailTrail)
+gf_boxplot(volume ~ daytype, data=RailTrail)
 @
 We see that the weekend/holidays tend to have more users.
 \end{solution}
@@ -242,6 +243,7 @@ What do you conclude?
 \begin{solution}
 <<>>=
 densityplot(volume ~ weekday, auto.key=TRUE, data=RailTrail)
+#gf_dens(~ volume, color = ~ weekday, data = RailTrail)
 @
 We see that the weekend/holidays tend to have more users.
 \end{solution}
@@ -253,6 +255,10 @@ smoother (lowess curve).  What do you observe about the relationship?
 <<>>=
 xyplot(volume ~ avgtemp, xlab="average temperature (degrees F)", 
   type=c("p", "r", "smooth"), lwd=2, data=RailTrail)
+mod2 <- lm(volume ~ avgtemp, data = RailTrail)
+gf_point(volume ~ avgtemp, xlab = "average temperature (degrees F)", data = RailTrail) %>%
+  gf_smooth(size = 2, se = FALSE)
+plotModel(mod2)
 @
 We see that there is a positive relationship between these two variables, but the association is 
 somewhat nonlinear (which makes sense as we wouldn't continue to predict an increase in usage when the 
@@ -295,6 +301,7 @@ on weekdays and weekends/holidays for average temperatures between 30 and 80 deg
 (\variable{cloudcover=10}).  
 \end{problem}
 \begin{solution}
+% XX NH Replace with ggformula in future
 <<>>=
 myfun <- makeFun(fm)
 xyplot(volume ~ avgtemp, data=RailTrail)
@@ -311,7 +318,8 @@ density) to assess the normality of the residuals.
 \end{problem}
 \begin{solution}
 <<>>=
-histogram(~ resid(fm), fit="normal")
+gf_dhistogram(~resid(fm), bins = 7) %>%
+  gf_fitdistr(dist = dnorm)
 @
 The distribution is approximately normal.
 \end{solution}
@@ -321,7 +329,9 @@ on the linearity of the model and assumption of equal variance.
 \end{problem}
 \begin{solution}
 <<>>=
-xyplot(resid(fm) ~ fitted(fm), type=c("p", "r", "smooth"))
+gf_point(resid(fm) ~ fitted(fm)) %>%
+  gf_smooth(se = FALSE) %>%
+  gf_hline(yintercept = 0)
 @
 The association is fairly linear, except in the tails.  There's some evidence that the variability of the residuals increases with larger fitted values.
 \end{solution}
@@ -330,7 +340,9 @@ Using the same model generate a scatterplot of the residuals versus average temp
 \end{problem}
 \begin{solution}
 <<>>=
-xyplot(resid(fm) ~ avgtemp, type=c("p", "r", "smooth"), data=RailTrail)
+gf_point(resid(fm) ~ avgtemp, data = RailTrail) %>%
+  gf_smooth(se = FALSE) %>%
+  gf_hline(yintercept = 0)
 @
 The association is somewhat non-linear.  There's some evidence that the variability of the residuals increases with larger fitted values.
 \end{solution}
