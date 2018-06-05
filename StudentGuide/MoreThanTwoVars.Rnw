@@ -164,7 +164,7 @@ how it changes as a function of temperature and day of the week.
 Describe the distribution of the variable \variable{avgtemp} in terms of its
 center, spread and shape.
 <<tidy=FALSE>>=
-favstats(~ avgtemp, data=RailTrail)
+favstats(~ avgtemp, data = RailTrail)
 gf_dens(~ avgtemp, xlab = "Average daily temp(degrees F)", data = RailTrail)
 @
 \end{problem}
@@ -179,8 +179,8 @@ center, spread and shape.
 \end{problem}
 \begin{solution}
 <<>>=
-favstats(~ cloudcover, data=RailTrail)
-gf_dens(~ cloudcover, data=RailTrail) +
+favstats(~ cloudcover, data = RailTrail)
+gf_dens(~ cloudcover, data = RailTrail) +
   xlim(-5, 15)
 @
 The distribution of cloud cover is ungainly (almost triangular), with increasing probability for more
@@ -195,8 +195,8 @@ center, spread and shape.
 \end{problem}
 \begin{solution}
 <<>>=
-favstats(~ volume, data=RailTrail)
-gf_dens(~ volume, xlab="# of crossings", data=RailTrail) +
+favstats(~ volume, data = RailTrail)
+gf_dens(~ volume, xlab = "# of crossings", data = RailTrail) +
   xlim(0, 900)
 filter(RailTrail, volume > 700)
 @
@@ -213,8 +213,8 @@ What percentage of the days are weekends/holidays?
 \end{problem}
 \begin{solution}
 <<>>=
-tally(~ weekday, data=RailTrail)
-tally(~ weekday, format="percent", data=RailTrail)
+tally(~ weekday, data = RailTrail)
+tally(~ weekday, format = "percent", data = RailTrail)
 @
 Just over 30\% of the days are weekends or holidays.
 \end{solution}
@@ -225,12 +225,12 @@ What do you conclude?
 \end{problem}
 \begin{solution}
 <<>>=
-gf_boxplot(volume ~ as.factor(weekday), data=RailTrail)
+gf_boxplot(volume ~ as.factor(weekday), data = RailTrail)
 @
 or
 <<>>=
-RailTrail <- mutate(RailTrail, daytype = ifelse(weekday==1, "weekday", "weekend/holiday"))
-gf_boxplot(volume ~ daytype, data=RailTrail)
+RailTrail <- mutate(RailTrail, daytype = ifelse(weekday == 1, "weekday", "weekend/holiday"))
+gf_boxplot(volume ~ daytype, data = RailTrail)
 @
 We see that the weekend/holidays tend to have more users.
 \end{solution}
@@ -273,7 +273,7 @@ Is there evidence to retain the interaction term at the $\alpha=0.05$ level?
 \end{problem}
 \begin{solution}
 <<>>=
-fm <- lm(volume ~ cloudcover + avgtemp + weekday + avgtemp:weekday, data=RailTrail)
+fm <- lm(volume ~ cloudcover + avgtemp + weekday + avgtemp:weekday, data = RailTrail)
 summary(fm)
 @
 The interaction between average temperature and day-type is statistically significant (p=0.016).  We 
@@ -291,7 +291,7 @@ coef(fm)
 \begin{solution}
 <<>>=
 myfun <- makeFun(fm)
-myfun(cloudcover=0, avgtemp=60, weekday=1)
+myfun(cloudcover = 0, avgtemp = 60, weekday = 1)
 @
 We expect just over 480 crossings on a day with these characteristics.
 \end{solution}

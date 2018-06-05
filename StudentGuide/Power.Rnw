@@ -19,9 +19,9 @@ a positive value.  Let's consider values between 15 and 19.
 
 <<pbinom>>=
 xvals <- 15:19
-probs <- 1 - pbinom(xvals, size=25, prob=0.5)
+probs <- 1 - pbinom(xvals, size = 25, prob = 0.5)
 cbind(xvals, probs)
-qbinom(.95, size=25, prob=0.5)
+qbinom(.95, size = 25, prob = 0.5)
 @
 So we see that if we decide to reject when the number of positive values is
 17 or larger, we will have an $\alpha$ level of \Sexpr{round(1-pbinom(16, 25, 0.5), 3)},
@@ -29,12 +29,12 @@ which is near the nominal value in the problem.
 
 We calculate the power of the sign test as follows. The probability that $X_i > 0$, given that $H_A$ is true is given by:
 <<pnorm1>>=
-1 - pnorm(0, mean=0.3, sd=1)
+1 - pnorm(0, mean = 0.3, sd = 1)
 @
 We can view this graphically using the command:
 \begin{center}
 <<pnorm2,fig.width=5,fig.height=1.9>>= 
-xpnorm(0, mean=0.3, sd=1, lower.tail=FALSE)
+xpnorm(0, mean = 0.3, sd = 1, lower.tail = FALSE)
 @
 \end{center}
 The power under the alternative is equal to the probability of getting 17 or more positive values,
@@ -42,7 +42,7 @@ given that $p=0.6179$:
 
 \Rindex{pbinom()}%
 <<pbinom2>>=
-1 - pbinom(16, size=25, prob=0.6179)
+1 - pbinom(16, size = 25, prob = 0.6179)
 @
 The power is modest at best.
 
@@ -52,18 +52,20 @@ We next calculate the power of the test based on normal theory.  To keep the com
 fair, we will set our $\alpha$ level equal to 0.05388.
 
 <<tidy=FALSE>>=
-alpha <- 1-pbinom(16, size=25, prob=0.5); alpha
+alpha <- 1 - pbinom(16, size = 25, prob = 0.5)
+alpha
 @
 
 First we find the rejection region.  
 \Rindex{qnorm()}%
 \Rindex{xqnorm()}%
 <<tidy=FALSE>>=
-n <- 25; sigma <- 1 # given
+n <- 25
+sigma <- 1 # given
 stderr <- sigma/sqrt(n)
-zstar <- xqnorm(1-alpha, mean=0, sd=1)
+zstar <- xqnorm(1 - alpha, mean = 0, sd = 1)
 zstar
-crit <- zstar*stderr
+crit <- zstar * stderr
 crit
 @
 
@@ -76,7 +78,7 @@ under the alternative hypothesis
 to the right of this cutoff.
 
 <<>>=
-power <- 1 - pnorm(crit, mean=0.3, sd=stderr)
+power <- 1 - pnorm(crit, mean = 0.3, sd = stderr)
 power
 @
 
@@ -85,8 +87,8 @@ To provide a check (or for future calculations of this sort) we can use the
 \function{power.t.test()} function.
 \Rindex{power.t.test()}%
 <<>>=
-power.t.test(n=25, delta=.3, sd=1, sig.level=alpha, alternative="one.sided",
-type="one.sample")$power
+power.t.test(n = 25, delta = .3, sd = 1, sig.level = alpha, alternative = "one.sided",
+type = "one.sample")$power
 @
 
 This analytic (formula-based approach) yields a similar estimate to the value that we calculated directly.  
@@ -109,7 +111,7 @@ alpha <- 0.01
 <<power>>=
 n
 alpha
-power.t.test(n=n, delta=.5, sd=1, sig.level=alpha)
+power.t.test(n = n, delta = .5, sd = 1, sig.level = alpha)
 @
 \end{solution}
 \begin{problem}
@@ -120,7 +122,7 @@ difference between means is 25\% of the standard deviation in the groups
 \end{problem}
 \begin{solution}
 <<power2>>=
-power.t.test(delta=.25, sd=1, sig.level=alpha, power=0.90)
+power.t.test(delta = .25, sd = 1, sig.level = alpha, power = 0.90)
 @
 \end{solution}
 
