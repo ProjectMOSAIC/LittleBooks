@@ -19,9 +19,9 @@ as the plotting character and slightly thicker line.
 \Rindex{type option}%
 \begin{center}
 <<HELPrct-xyplot,fig.height=3,tidy=FALSE>>=
-females <- filter(HELPrct, female==1)
-xyplot(cesd ~ mcs, type=c("p","smooth"), pch=1, 
-  cex=0.6, lwd=3, data=females)
+Female <- filter(HELPrct, female == 1)
+gf_point(cesd ~ mcs, data = Female, shape = 1) %>%
+  gf_smooth(se = FALSE, size = 2)
 @
 \end{center}
 \DiggingDeeper{The \emph{Start Modeling with R} companion book will be helpful if you are unfamiliar with the
@@ -36,11 +36,11 @@ requires a panel function to be written.
 \Rindex{panel.text()}%
 \Rindex{rownames()}%
 <<tidy=FALSE>>=
-panel.labels <- function(x, y, labels='x',...) { 
-  panel.text(x, y, labels, cex=0.4, ...)
+panel.labels <- function(x, y, labels = 'x',...) { 
+  panel.text(x, y, labels, cex = 0.4, ...)
 }
-xyplot(Murder ~ Assault, panel=panel.labels, 
-  labels=rownames(USArrests), data=USArrests)
+gf_text(Murder ~ Assault, panel = panel.labels, 
+  label = rownames(USArrests), data = USArrests)
 @
 
 
@@ -53,8 +53,8 @@ Correlations can be calculated for a pair of variables, or for a matrix of varia
 \myindex{correlation}%
 \Rindex{cor()}%
 <<>>=
-cor(cesd, mcs, data=females)
-smallHELP <- select(females, cesd, mcs, pcs)
+cor(cesd ~ mcs, data = Female)
+smallHELP <- select(Female, cesd, mcs, pcs)
 cor(smallHELP)
 @
 \myindex{Pearson correlation}%
@@ -63,7 +63,7 @@ cor(smallHELP)
 By default, Pearson correlations are provided. Other variants (e.g., Spearman) can be specified using the
 \option{method} option.
 <<>>=
-cor(cesd, mcs, method="spearman", data=females)
+cor(cesd ~ mcs, method = "spearman", data = Female)
 @
 
 \section{Pairs plots}
@@ -74,7 +74,9 @@ A pairs plot (scatterplot matrix) can be calculated for each pair of a set of va
 \FoodForThought{The \pkg{GGally} package has support for more elaborate pairs plots.}
 \Rindex{splom()}%
 <<fig.height=3>>=
-splom(smallHELP, cex=0.3)
+require(GGally)
+splom(smallHELP, cex = 0.3)
+ggpairs(smallHELP)
 @
 
 \section{Simple linear regression}
@@ -94,7 +96,7 @@ and predictors.  Here we consider fitting the model \model{\variable{cesd}}{\var
 \Rindex{lm()}%
 \Rindex{coef()}%
 <<>>=
-cesdmodel <- lm(cesd ~ mcs, data=females)
+cesdmodel <- lm(cesd ~ mcs, data = Female)
 coef(cesdmodel)
 @
 \InstructorNote{It's important to pick good names for modeling
@@ -109,7 +111,7 @@ To simplify the output, we turn off the option to display significance stars.
 \Rindex{rsquared()}%
 \Rindex{coef()}%
 <<>>=
-options(show.signif.stars=FALSE)
+options(show.signif.stars = FALSE)
 coef(cesdmodel)
 msummary(cesdmodel)
 coef(summary(cesdmodel))
@@ -136,56 +138,57 @@ returns a vector of predicted values.}
 \Rindex{density option}%
 \begin{center}
 <<lmhist>>=
-histogram(~ residuals(cesdmodel), density=TRUE)
+gf_histogram(~ residuals(cesdmodel), density=TRUE)
 @
 \end{center}
 \Rindex{qqmath()}%
 \begin{center}
 <<HELPrct-resid-qq>>=
-qqmath(~ resid(cesdmodel))
+gf_qq(~ resid(cesdmodel))
 @
 \end{center}
 \Rindex{alpha option}%
 \begin{center}
 <<HELPrct-resid-plot>>=
-xyplot(resid(cesdmodel) ~ fitted(cesdmodel), type=c("p", "smooth", "r"), 
-       alpha=0.5, cex=0.3, pch=20)
+gf_point(resid(cesdmodel) ~ fitted(cesdmodel), alpha = 0.5, cex = 0.3, pch = 20) %>%
+  gf_smooth(se = FALSE) %>%
+  gf_hline(yintercept = 0)
 @
 \end{center}
 
-The \function{mplot()} function can facilitate creating a variety of useful plots, including the same residuals vs. fitted scatterplots, by specifying the \option{which=1} option.
+The \function{mplot()} function can facilitate creating a variety of useful plots, including the same residuals vs. fitted scatterplots, by specifying the \option{which = 1} option.
 \Rindex{mplot()}%
 \Rindex{which option}%
 <<mplotc1>>=
-mplot(cesdmodel, which=1)
+mplot(cesdmodel, which = 1)
 @
 
-It can also generate a normal quantile-quantile plot (\option{which=2}),
+It can also generate a normal quantile-quantile plot (\option{which = 2}),
 <<mplotc2, results='hide'>>=
-mplot(cesdmodel, which=2)
+mplot(cesdmodel, which = 2)
 @
 
 \myindex{scale versus location}%
 scale vs.\,location,
 <<mplotc3, results='hide'>>=
-mplot(cesdmodel, which=3)
+mplot(cesdmodel, which = 3)
 @
 
 \myindex{Cook's distance}%
 Cook's distance by observation number,
 <<mplotc4, results='hide'>>=
-mplot(cesdmodel, which=4)
+mplot(cesdmodel, which = 4)
 @
 
 \myindex{leverage}%
 residuals vs.\,leverage,
 <<mplotc5,results='hide'>>=
-mplot(cesdmodel, which=5)
+mplot(cesdmodel, which = 5)
 @
 
 and Cook's distance vs. leverage.
 <<mplotc6,results='hide'>>=
-mplot(cesdmodel, which=6)
+mplot(cesdmodel, which = 6)
 @
 
 \myindex{prediction bands}%
@@ -194,7 +197,7 @@ mplot(cesdmodel, which=6)
 Prediction bands can be added to a plot using the \function{panel.lmbands()} function.
 \begin{center}
 <<HELPxyplot1>>=
-xyplot(cesd ~ mcs, panel=panel.lmbands, cex=0.2, band.lwd=2, data=HELPrct)
+gf_point(cesd ~ mcs, panel = panel.lmbands, cex = 0.2, band.lwd = 2, data = HELPrct)
 @
 \end{center}
 

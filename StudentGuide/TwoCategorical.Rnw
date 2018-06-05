@@ -12,27 +12,28 @@ for homeless status (homeless one or more nights in the past 6 months or housed)
 and sex.
 
 <<homeless-sex>>=
-tally(~ homeless + sex, margins=FALSE, data=HELPrct)     
+tally(~ homeless + sex, margins = FALSE, data = HELPrct)     
 @
 
 We can also calculate column percentages:
 \Rindex{tally()}%
 <<homeless-sex-row,tidy=FALSE>>=
-tally(~ sex | homeless, margins=TRUE, format="percent", 
-  data=HELPrct)     
+tally(~ sex | homeless, margins = TRUE, format = "percent", 
+  data = HELPrct)     
 @
 
 We can calculate the odds ratio directly from the table:
 <<tidy=FALSE>>=
-OR <- (40/169)/(67/177); OR
+OR <- (40/169)/(67/177)
+OR
 @
 
 The
 \pkg{mosaic} package has a function which will calculate odds ratios:
 \Rindex{oddsRatio()}%
 <<tidy=FALSE>>=
-oddsRatio(tally(~ (homeless=="housed") + sex, margins=FALSE, 
-  data=HELPrct)) 
+oddsRatio(tally(~ (homeless == "housed") + sex, margins = FALSE, 
+  data = HELPrct)) 
 @
 
 The \function{CrossTable()} function in the \pkg{gmodels} package also displays
@@ -42,7 +43,7 @@ a cross classification table.
 <<crosstable, message=FALSE>>=
 require(gmodels)
 with(HELPrct, CrossTable(homeless, sex, 
-  prop.r=FALSE, prop.chisq=FALSE, prop.t=FALSE))
+  prop.r = FALSE, prop.chisq = FALSE, prop.t = FALSE))
 @
 
 Graphical summaries of cross classification tables may be helpful in visualizing
@@ -59,8 +60,8 @@ in the \pkg{vcd} package also makes mosaic plots.}
 \Rindex{mosaicplot()}%
 \begin{center}
 <<mosaicplot,fig.height=3.5,tidy=FALSE>>=
-mytab <- tally(~ homeless + sex, margins=FALSE, 
-  data=HELPrct)
+mytab <- tally(~ homeless + sex, margins = FALSE, 
+  data = HELPrct)
 mosaicplot(mytab)
 @
 \end{center}
@@ -71,20 +72,20 @@ Tables can be created from summary statistics using the \function{do} function.
 
 <<>>=
 HELPtable <- rbind(
-  do(40)  * data.frame(sex="female", homeless="homeless"),
-  do(169) * data.frame(sex="male",   homeless="homeless"),
-  do(67)  * data.frame(sex="female", homeless="housed"),
-  do(177) * data.frame(sex="male",   homeless="housed")
+  do(40)  * data.frame(sex = "female", homeless = "homeless"),
+  do(169) * data.frame(sex = "male",   homeless = "homeless"),
+  do(67)  * data.frame(sex = "female", homeless = "housed"),
+  do(177) * data.frame(sex = "male",   homeless = "housed")
 )
-tally(~ homeless + sex, data=HELPtable)
+tally(~ homeless + sex, data = HELPtable)
 @
 
 \section{Chi-squared tests}
 
 \Rindex{chisq.test()}%
 <<chisq1,tidy=FALSE>>=
-chisq.test(tally(~ homeless + sex, margins=FALSE,
-  data=HELPrct), correct=FALSE)
+chisq.test(tally(~ homeless + sex, margins = FALSE,
+  data = HELPrct), correct = FALSE)
 @
 
 There is a statistically significant association found: it is unlikely that we would observe
@@ -98,8 +99,8 @@ The \function{xchisq.test()} function provides additional details (observed, exp
 
 \Rindex{xchisq.test()}%
 <<chisq2,tidy=FALSE>>=
-xchisq.test(tally(~homeless + sex, margins=FALSE,
-  data=HELPrct), correct=FALSE)
+xchisq.test(tally(~ homeless + sex, margins = FALSE,
+  data = HELPrct), correct = FALSE)
 @
 
 We observe that there are fewer homeless women, and more homeless men that would be expected.
@@ -116,6 +117,6 @@ The \function{fisher.test()} function uses a different estimator (and different 
 on the profile likelihood).}
 \Rindex{fisher.test()}%
 <<help-fisher,tidy=FALSE>>=
-fisher.test(tally(~homeless + sex, margins=FALSE,
-  data=HELPrct))
+fisher.test(tally(~ homeless + sex, margins = FALSE,
+  data = HELPrct))
 @

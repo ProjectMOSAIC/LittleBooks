@@ -14,8 +14,8 @@ so we don't need to specify it here. The more verbose usage would be \code{famil
 \Rindex{exp()}%
 \Rindex{msummary()}%
 <<help-logit,tidy=FALSE>>=
-logitmod <- glm(homeless ~ age + female, family=binomial, 
-  data=HELPrct)
+logitmod <- glm(homeless ~ age + female, family = binomial, 
+  data = HELPrct)
 msummary(logitmod)
 exp(coef(logitmod))
 exp(confint(logitmod))
@@ -26,18 +26,18 @@ might be interested in the association of homeless status and age for each of th
 \Rindex{anova()}%
 \Rindex{test option}%
 <<tidy=FALSE>>=
-mymodsubage <- glm((homeless=="homeless") ~ age + substance, 
-  family=binomial, data=HELPrct)
-mymodage <- glm((homeless=="homeless") ~ age, family=binomial, 
-  data=HELPrct)
+mymodsubage <- glm((homeless == "homeless") ~ age + substance, 
+  family = binomial, data = HELPrct)
+mymodage <- glm((homeless == "homeless") ~ age, family = binomial, 
+  data = HELPrct)
 msummary(mymodsubage)
 exp(coef(mymodsubage))
-anova(mymodage, mymodsubage, test="Chisq")
+anova(mymodage, mymodsubage, test = "Chisq")
 @
 We observe that the cocaine and heroin groups are significantly less likely to be homeless than alcohol involved subjects, after controlling for age.  (A similar result is seen when considering just homeless status and substance.)
 
 <<>>=
-tally(~ homeless | substance, format="percent", margins=TRUE, data=HELPrct)
+tally(~ homeless | substance, format = "percent", margins = TRUE, data = HELPrct)
 @
 
 

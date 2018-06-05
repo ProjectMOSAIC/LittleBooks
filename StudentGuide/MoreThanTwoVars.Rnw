@@ -10,16 +10,16 @@ using the same modeling syntax.
 \Rindex{aov()}%
 <<help-aovplot>>=
 HELPrct <- mutate(HELPrct, subgrp = factor(substance,
-  levels=c("alcohol", "cocaine", "heroin"),
-  labels=c("A", "C", "H")))
-median(cesd ~ substance | sex, data=HELPrct)
-bwplot(cesd ~ subgrp | sex, data=HELPrct)
+  levels = c("alcohol", "cocaine", "heroin"),
+  labels = c("A", "C", "H")))
+median(cesd ~ substance | sex, data = HELPrct)
+gf_boxplot(cesd ~ subgrp | sex, data = HELPrct)
 @
 <<help-aov2>>=
-summary(aov(cesd ~ substance + sex, data=HELPrct))
+summary(aov(cesd ~ substance + sex, data = HELPrct))
 @
 <<help-aov3>>=
-summary(aov(cesd ~ substance * sex, data=HELPrct))
+summary(aov(cesd ~ substance * sex, data = HELPrct))
 @
 There's little evidence for the interaction, though there are statistically
 significant main effects terms for \variable{substance} group and 
@@ -29,6 +29,7 @@ significant main effects terms for \variable{substance} group and
 xyplot(cesd ~ substance, groups=sex, lwd=2,
   auto.key=list(columns=2, lines=TRUE, points=FALSE), 
   type='a', data=HELPrct)
+gf_line(cesd ~ substance, color = ~ sex, lwd = 2, data = HELPrct)
 @
 \Rindex{auto.key option}%
 
@@ -51,14 +52,14 @@ age (in years) and sex of the subject.
 
 \myindex{msummary()}%
 <<help-multreg>>=
-lmnointeract <- lm(cesd ~ mcs + age + sex, data=HELPrct)
+lmnointeract <- lm(cesd ~ mcs + age + sex, data = HELPrct)
 msummary(lmnointeract)
 @
 \myindex{anova()}%
 \myindex{interactions}%
 We can also fit a model that includes an interaction between MCS and sex.
 <<help-multreg2>>=
-lminteract <- lm(cesd ~ mcs + age + sex + mcs:sex, data=HELPrct)
+lminteract <- lm(cesd ~ mcs + age + sex + mcs:sex, data = HELPrct)
 msummary(lminteract)
 anova(lminteract)
 @
@@ -96,6 +97,9 @@ plotFun(lmfunction(mcs, age=36, sex="male") ~ mcs,
   xlim=c(0, 60), lwd=2, ylab="predicted CESD", add=TRUE)
 plotFun(lmfunction(mcs, age=36, sex="female") ~ mcs, 
   xlim=c(0, 60), lty=2, lwd=3, add=TRUE)
+
+gf_point(cesd ~mcs, color = ~sex, data = filter(HELPrct, age == 36), shape = 1) +
+  gf_line(gf_lm(mcs, age = 36, sex = "male") ~ mcs)
 @
 
 
@@ -107,7 +111,7 @@ confidence intervals).
 
 \Rindex{mplot()}%
 <<results='hide'>>=
-mplot(lmnointeract, rows=-1, which=7)
+mplot(lmnointeract, rows = -1, which = 7)
 @
 
 \FoodForThought[-4cm]{Darker dots indicate regression coefficients where the 95\% confidence interval does not include the null hypothesis value of zero.}
@@ -131,8 +135,8 @@ HELPrct <- mutate(HELPrct,
   pred = fitted(lmnointeract))
 @
 <<tidy=FALSE, message=FALSE>>=
-histogram(~ residuals, xlab="residuals", fit="normal", 
-  data=HELPrct)
+gf_dhistogram(~ residuals, data = HELPrct) %>%
+  gf_fitdistr(dist = dnorm)
 @
 
 We can identify the subset of observations with extremely large residuals.
@@ -145,14 +149,14 @@ filter(HELPrct, abs(residuals) > 25)
 \Rindex{cex option}%
 \Rindex{type option}%
 <<tidy=FALSE>>=
-xyplot(residuals ~ pred, ylab="residuals", cex=0.3,
-  xlab="predicted values", main="predicted vs. residuals",
-  type=c("p", "r", "smooth"), data=HELPrct)
+gf_point(residuals ~ pred, cex = .3, xlab = "predicted values", title = "predicted vs. residuals", data = HELPrct) %>%
+  gf_smooth(se = FALSE) %>%
+  gf_hline(yintercept = 0)
 @
 <<tidy=FALSE>>=
-xyplot(residuals ~ mcs, xlab="mental component score", 
-  ylab="residuals", cex=0.3,
-  type=c("p", "r", "smooth"), data=HELPrct)
+gf_point(residuals ~ mcs, cex = .3, xlab = "mental component score", title = "predicted vs. residuals", data = HELPrct) %>%
+  gf_smooth(se = FALSE) %>%
+  gf_hline(yintercept = 0)
 @
 
 The assumptions of normality, linearity and homoscedasticity seem reasonable here.

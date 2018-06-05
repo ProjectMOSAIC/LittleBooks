@@ -12,10 +12,10 @@ counts, percentages and proportions for a categorical variable.
 \Rindex{tally()}%
 \Rindex{margins option}%
 <<homeless-table>>=
-tally(~ homeless, data=HELPrct)      
-tally(~ homeless, margins=TRUE, data=HELPrct)      
-tally(~ homeless, format="percent", data=HELPrct)      
-tally(~ homeless, format="proportion", data=HELPrct)  
+tally(~ homeless, data = HELPrct)      
+tally(~ homeless, margins = TRUE, data = HELPrct)      
+tally(~ homeless, format = "percent", data = HELPrct)      
+tally(~ homeless, format = "proportion", data = HELPrct)  
 @
 
 \section{The binomial test}
@@ -32,7 +32,7 @@ binom.test(209, 209 + 244)
 The \pkg{mosaic} package provides a formula interface that avoids the need to pre-tally
 the data.
 <<binomtest>>=
-result <- binom.test(~ (homeless=="homeless"), data=HELPrct)
+result <- binom.test(~ (homeless == "homeless"), data = HELPrct)
 result
 @
 
@@ -68,7 +68,7 @@ A similar interval and test can be calculated using the function \function{prop.
 Here is a count of the number of people at each of the two levels of \variable{homeless}
 
 <<tidy=FALSE>>=
-tally(~ homeless, data=HELPrct)
+tally(~ homeless, data = HELPrct)
 @
 
 The \function{prop.test} function will carry out the calculations of the proportion test and report the result.
@@ -76,14 +76,14 @@ The \function{prop.test} function will carry out the calculations of the proport
 \hfill
 
 <<tidy=FALSE>>=
-prop.test(~ (homeless=="homeless"), correct=FALSE, data=HELPrct)
+prop.test(~ (homeless == "homeless"), correct = FALSE, data = HELPrct)
 @
 In this statement, prop.test is examining the \variable{homeless} variable in the same way that \function{tally} would. \Pointer{We write \code{homeless=="homeless"} to define unambiguously which proportion we are considering. We could also have written \code{homeless=="housed"}. }
 \function{prop.test} can also work directly with numerical counts, the way \function{binom.test()} does.
 \InstructorNote{\function{prop.test()} calculates a Chi-squared statistic.
 Most introductory texts use a $z$-statistic.  They are mathematically equivalent in terms of inferential statements, but you may need to address the discrepancy with your students.}%
 <<>>=
-prop.test(209, 209 + 244, correct=FALSE)
+prop.test(209, 209 + 244, correct = FALSE)
 @
 
 \section{Goodness of fit tests}
@@ -92,8 +92,8 @@ A variety of goodness of fit tests can be calculated against a reference  distri
 
 
 <<gofmore,tidy=FALSE>>=
-tally(~ substance, format="percent", data=HELPrct)
-observed <- tally(~ substance, data=HELPrct)
+tally(~ substance, format = "percent", data = HELPrct)
+observed <- tally(~ substance, data = HELPrct)
 observed
 @
 
@@ -101,9 +101,11 @@ observed
 \Rindex{chisq.test()}%
 <<tidy=FALSE>>=
 p <- c(1/3, 1/3, 1/3)   # equivalent to rep(1/3, 3)
-chisq.test(observed, p=p)
-total <- sum(observed); total
-expected <- total*p; expected
+chisq.test(observed, p = p)
+total <- sum(observed)
+total
+expected <- total*p
+expected
 @
 
 We can also calculate the $\chi^2$ statistic manually, as a function of observed and expected values.
@@ -111,7 +113,8 @@ We can also calculate the $\chi^2$ statistic manually, as a function of observed
 \Rindex{sum()}%
 \Rindex{pchisq()}%
 <<gof2,tidy=FALSE>>=
-chisq <- sum((observed - expected)^2/(expected)); chisq
+chisq <- sum((observed - expected)^2/(expected))
+chisq
 1 - pchisq(chisq, df=2)
 @
 \FoodForThought[-2cm]{The \function{pchisq} function calculates the probability that a $\chi^2$ random variable with \function{df} degrees is freedom is less than or equal to a given value.  Here we calculate the complement to find the area to the right of the observed Chi-square statistic.}%
@@ -120,14 +123,15 @@ It may be helpful to consult a graph of the statistic, where the shaded area rep
 
 \Rindex{plotDist()}%
 <<chisqplotDist>>=
-plotDist("chisq", df=2, groups = x > 9.31, type="h")
+plotDist("chisq", df = 2, groups = x > 9.31, type = "h")
+gf_dist("chisq", df = 2)
 @
 
 
 Alternatively, the \pkg{mosaic} package provides a version of \function{chisq.test()} with more verbose output.
 \Rindex{xchisq.test()}%
 <<>>=
-xchisq.test(observed, p=p)
+xchisq.test(observed, p = p)
 @
 \FoodForThought[-1.5cm]{\code{x} in \function{xchisq.test} stands for eXtra.}
 

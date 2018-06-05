@@ -5,13 +5,13 @@ The \function{mean()} function can be used to calculate the mean CESD score
 separately for males and females.
 \Rindex{mean()}%
 <<aggregate>>=
-mean(cesd ~ sex, data=HELPrct)
+mean(cesd ~ sex, data = HELPrct)
 @
 \Rindex{favstats()}%
 The \function{favstats()} function can provide more statistics by group.
 
 <<summary>>=
-favstats(cesd ~ sex, data=HELPrct)
+favstats(cesd ~ sex, data = HELPrct)
 @
 
 
@@ -26,7 +26,8 @@ page layout sometimes makes the other orientation preferable for these plots.}
 \Rindex{bwplot()}%
 \begin{center}
 <<cesd-box,fig.height=1.5>>=
-bwplot(sex ~ cesd, data=HELPrct)
+gf_boxplot(cesd ~ sex, data = HELPrct) %>% 
+gf_refine(coord_flip())
 @
 \end{center}
 
@@ -43,7 +44,7 @@ biologist.}
 \Rindex{cex option}%
 \begin{center}
 <<KidsFeet-xy,fig.height=1.5>>=
-xyplot(sex ~ length, alpha=.6, cex=1.4, data=KidsFeet) 
+gf_point(sex ~ length, alpha = .6, cex = 1.4, data = KidsFeet) 
 @
 \end{center}
 
@@ -53,20 +54,20 @@ The Student's two sample t-test can be run without (default) or with an equal va
 \Rindex{t.test()}%
 \Rindex{var.equal option}%
 <<HELPrct-nonpar,tidy=FALSE>>=
-t.test(cesd ~ sex, var.equal=FALSE, data=HELPrct)
+t.test(cesd ~ sex, var.equal = FALSE, data = HELPrct)
 @
 We see that there is a statistically significant difference between the two groups.
 
 We can repeat using the equal variance assumption.
 <<tidy=FALSE>>=
-t.test(cesd ~ sex, var.equal=TRUE, data=HELPrct)
+t.test(cesd ~ sex, var.equal = TRUE, data = HELPrct)
 @
 
 The groups can also be compared using the \function{lm()} function (also with an equal variance assumption).  The mosaic command \function{msummary()} provides a slightly terser version of the typical output from \function{summary()}.
 \Rindex{msummary()}%
 \Rindex{summary()}%
 <<>>=
-msummary(lm(cesd ~ sex, data=HELPrct))
+msummary(lm(cesd ~ sex, data = HELPrct))
 @
 
 \FoodForThought[1cm]{The \function{lm} function is part of a much more flexible modeling framework while \function{t.test} is essentially a dead end. \function{lm} uses of the equal variance assumption. See the companion book, {\em Start Modeling in R} for more details.}%
@@ -78,7 +79,7 @@ The same conclusion is reached using a non-parametric (Wilcoxon rank sum) test.
 
 \Rindex{wilcox.test()}%
 <<HELPrct-nonpar2>>=
-wilcox.test(cesd ~ sex, data=HELPrct)
+wilcox.test(cesd ~ sex, data = HELPrct)
 @
 
 
@@ -92,15 +93,15 @@ undertake a two-sided test comparing the ages at baseline by gender.  First we c
 \Rindex{diffmean()}%
 \Rindex{shuffle()}%
 <<>>=
-mean(age ~ sex, data=HELPrct)
-test.stat <- diffmean(age ~ sex, data=HELPrct)
+mean(age ~ sex, data = HELPrct)
+test.stat <- diffmean(age ~ sex, data = HELPrct)
 test.stat
 @
 We can calculate the same statistic after shuffling the group labels:
 <<>>=
-do(1) * diffmean(age ~ shuffle(sex), data=HELPrct)
-do(1) * diffmean(age ~ shuffle(sex), data=HELPrct)
-do(3) * diffmean(age ~ shuffle(sex), data=HELPrct)
+do(1) * diffmean(age ~ shuffle(sex), data = HELPrct)
+do(1) * diffmean(age ~ shuffle(sex), data = HELPrct)
+do(3) * diffmean(age ~ shuffle(sex), data = HELPrct)
 @
 
 \DiggingDeeper{More details and examples can be found in the
@@ -109,13 +110,14 @@ do(3) * diffmean(age ~ shuffle(sex), data=HELPrct)
 \Rindex{groups option}%
 <<permute-HELPrct,fig.keep='last', tidy=FALSE>>=
 rtest.stats <- do(500) * diffmean(age ~ shuffle(sex), 
-  data=HELPrct)
+  data = HELPrct)
+rtest.stats <- mutate(rtest.stats, diffmeantest = ifelse(diffmean >= test.stat, TRUE, FALSE))
 head(rtest.stats, 3)
-favstats(~ diffmean, data=rtest.stats)
-histogram(~ diffmean, n=40, xlim=c(-6, 6),
-  groups=diffmean >= test.stat, pch=16, cex=.8, 
-  data=rtest.stats)
-ladd(panel.abline(v=test.stat, lwd=3, col="red"))
+favstats(~ diffmean, data = rtest.stats)
+gf_histogram(~ diffmean, n = 40, xlim = c(-6, 6),
+  fill = ~ diffmeantest, pch = 16, cex = .8, 
+  data = rtest.stats) %>%
+  gf_vline(xintercept = ~ test.stat, color = "red", lwd = 3)
 @
 
 Here we don't see much evidence to contradict the null hypothesis that men and 
@@ -133,26 +135,26 @@ CESD scores by primary substance of abuse (heroin, cocaine, or alcohol) with a l
 \Rindex{bwplot()}%
 \begin{center}
 <<cesd-oneway,fig.width=6,fig.height=1.9>>=
-bwplot(cesd ~ substance, pch="|", data=HELPrct)
+gf_boxplot(cesd ~ substance, data = HELPrct)
 @
 \end{center}
 
 
 
 <<aggregate2>>=
-mean(cesd ~ substance, data=HELPrct)
+mean(cesd ~ substance, data = HELPrct)
 @
 \Rindex{aov()}%
 <<help-aov>>=
-anovamod <- aov(cesd ~ substance, data=HELPrct)
+anovamod <- aov(cesd ~ substance, data = HELPrct)
 summary(anovamod)
 @
 While still high (scores of 16 or more are generally considered to be 
 ``severe'' symptoms), the cocaine-involved group tend to have lower 
 scores than those whose primary substances are alcohol or heroin.
 <<help-aovlm>>=
-modintercept <- lm(cesd ~ 1, data=HELPrct)
-modsubstance <- lm(cesd ~ substance, data=HELPrct)
+modintercept <- lm(cesd ~ 1, data = HELPrct)
+modsubstance <- lm(cesd ~ substance, data = HELPrct)
 @
 
 The \function{anova()} command can summarize models.
@@ -182,7 +184,7 @@ Significant Differences (HSD).  Other options are available within the
 \pkg{multcomp} package.
 
 <<help-hsd>>=
-favstats(cesd ~ substance, data=HELPrct)
+favstats(cesd ~ substance, data = HELPrct)
 @
 \Rindex{TukeyHSD()}%
 \Rindex{factor()}%
@@ -192,9 +194,9 @@ favstats(cesd ~ substance, data=HELPrct)
 \Rindex{lm()}%
 <<help-hsd2,tidy=FALSE>>=
 HELPrct <- mutate(HELPrct, subgrp = factor(substance, 
-  levels=c("alcohol", "cocaine", "heroin"),
-  labels=c("A", "C", "H")))
-mod <- lm(cesd ~ subgrp, data=HELPrct)
+  levels = c("alcohol", "cocaine", "heroin"),
+  labels = c("A", "C", "H")))
+mod <- lm(cesd ~ subgrp, data = HELPrct)
 HELPHSD <- TukeyHSD(mod, "subgrp")
 HELPHSD
 @
