@@ -9,8 +9,11 @@ Extensive support for survival (time to event) analysis is available within the
 \myindex{Kaplan-Meier plot}%
 \Rindex{survfit()}%
 \Rindex{Surv()}%
-\Rindex{conf.int option}%
+\Rindex{gf\_step}%
 \Rindex{xlab option}%
+\Rindex{title option}%
+\Rindex{ylab option}%
+\Rindex{linetype option}%
 \begin{center}
 <<help-km,fig.width=6,fig.height=3.9,tidy=FALSE,message=FALSE>>=
 require(survival)

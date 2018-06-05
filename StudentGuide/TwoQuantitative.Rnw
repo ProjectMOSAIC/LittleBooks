@@ -12,11 +12,10 @@ with a lowess (locally weighted scatterplot smoother) line, using a circle
 as the plotting character and slightly thicker line.
 
 \InstructorNote{The lowess line can help to assess linearity of a relationship. This is added by specifying both points (using `p') and a lowess smoother.}
-\Rindex{xyplot()}%
-\Rindex{pch option}%
-\Rindex{cex option}%
-\Rindex{lwd option}%
-\Rindex{type option}%
+\Rindex{gf\_point()}%
+\Rindex{shape option}%
+\Rindex{size option}%
+\Rindex{gf\_smooth()}%
 \begin{center}
 <<HELPrct-xyplot,fig.height=3,tidy=FALSE>>=
 Female <- filter(HELPrct, female == 1)
@@ -35,6 +34,8 @@ requires a panel function to be written.
 \Rindex{panel.labels()}%
 \Rindex{panel.text()}%
 \Rindex{rownames()}%
+\Rindex{gf\_text()}%
+\Rindex{label option}%
 <<tidy=FALSE>>=
 panel.labels <- function(x, y, labels = 'x',...) { 
   panel.text(x, y, labels, cex = 0.4, ...)
@@ -72,10 +73,9 @@ cor(cesd ~ mcs, method = "spearman", data = Female)
 
 A pairs plot (scatterplot matrix) can be calculated for each pair of a set of variables.
 \FoodForThought{The \pkg{GGally} package has support for more elaborate pairs plots.}
-\Rindex{splom()}%
+\Rindex{ggpairs()}%
 <<fig.height=3>>=
 require(GGally)
-splom(smallHELP, cex = 0.3)
 ggpairs(smallHELP)
 @
 
@@ -141,13 +141,14 @@ returns a vector of predicted values.}
 gf_histogram(~ residuals(cesdmodel), density=TRUE)
 @
 \end{center}
-\Rindex{qqmath()}%
+\Rindex{gf\_qq()}%
 \begin{center}
 <<HELPrct-resid-qq>>=
 gf_qq(~ resid(cesdmodel))
 @
 \end{center}
 \Rindex{alpha option}%
+\Rindex{gf\_hline()}%
 \begin{center}
 <<HELPrct-resid-plot>>=
 gf_point(resid(cesdmodel) ~ fitted(cesdmodel), alpha = 0.5, cex = 0.3, pch = 20) %>%
