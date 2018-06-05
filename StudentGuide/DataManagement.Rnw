@@ -52,7 +52,7 @@ irisSmall <- select(iris, Species, Sepal.Length)
 <<mr-adding-variable,tidy=FALSE>>=
 # cut places data into bins
 irisSmall <- mutate(irisSmall, 
-  Length = cut(Sepal.Length, breaks=4:8))    
+  Length = cut(Sepal.Length, breaks = 4:8))    
 @
 
 \myindex{pipe operator}%
@@ -61,7 +61,7 @@ Multiple commands can be chained together using the {\tt \%>\%} (pipe) operator:
 <<>>=
 irisSmall <- iris %>%
   select(Species, Sepal.Length) %>%
-  mutate(Length = cut(Sepal.Length, breaks=4:8))
+  mutate(Length = cut(Sepal.Length, breaks = 4:8))
 @
 Note that in this usage the first argument to \function{select} is the first variable
 (as it inherits the data from the previous pipe).
@@ -85,12 +85,12 @@ using \function{mutate()}.
 \Rindex{mutate()}%
 <<>>=
 CPS85 <- mutate(CPS85, workforce.years = age - 6 - educ)
-favstats(~ workforce.years, data=CPS85)
+favstats(~ workforce.years, data = CPS85)
 @
 In fact this is what was done for all but one of the cases to create the \variable{exper} 
 variable that is already in the \dataframe{CPS85} data.
 <<>>=
-tally(~ (exper - workforce.years), data=CPS85)
+tally(~ (exper - workforce.years), data = CPS85)
 @
 
 \section{Dropping variables}
@@ -120,7 +120,7 @@ The column (variable) names for a dataframe can be changed using the \function{r
 \pkg{dplyr} package.
 <<>>=
 names(CPS85)
-CPSnew = rename(CPS85, workforce=workforce.years)
+CPSnew = rename(CPS85, workforce = workforce.years)
 names(CPSnew)
 @
 
@@ -141,13 +141,13 @@ so let's give it some better names.
 <<tidy=FALSE>>=
 faithful <- rename(faithful, 
   duration = eruptions, 
-  time.til.next=waiting)
+  time.til.next = waiting)
 names(faithful)
 @
 \myindex{faithful dataset}%
 \begin{center}
 <<"mr-faithful-xy">>=
-xyplot(time.til.next ~ duration, alpha=0.5, data=faithful)
+gf_point(time.til.next ~ duration, alpha=0.5, data = faithful)
 @
 \end{center}
 If the variable containing a dataframe is modified or used to store a different object,
@@ -177,7 +177,7 @@ data(faithful)
 names(faithful) <- c('duration', 'time.til.next')
 # any logical can be used to create subsets
 faithfulLong <- filter(faithful, duration > 3)        
-xyplot( time.til.next ~ duration, data=faithfulLong )
+gf_point(time.til.next ~ duration, data = faithfulLong)
 @
 \end{center}
 
@@ -203,7 +203,7 @@ head(sorted, 3)
 \myindex{dataframes!merging}%
 
 <<echo=FALSE>>=
-OLD <- options(width=90)
+OLD <- options(width = 90)
 @
 The \dataframe{fusion1} dataframe in the \pkg{fastR} package contains 
 genotype information for a SNP (single nucleotide polymorphism) in the gene \emph{TCF7L2}. The \dataframe{pheno} dataframe contains phenotypes (including type 2 diabetes case/control status) for an intersecting set of individuals. We can join (or merge) these together to explore the association between genotypes and phenotypes using \verb!merge()!.
@@ -222,7 +222,7 @@ head(pheno, 3)
 \Rindex{by.x option}%
 <<message=FALSE, warning=FALSE,tidy=FALSE>>=
 require(tidyr)
-fusion1m <- inner_join(fusion1, pheno, by='id')
+fusion1m <- inner_join(fusion1, pheno, by = 'id')
 head(fusion1m, 3)
 @
 \Rindex{tidyr package}%
@@ -230,7 +230,7 @@ head(fusion1m, 3)
 \myindex{fusion1 dataset}%
 Now we are ready to begin our analysis.
 <<"mr-fusion1-xtabs">>=
-tally(~t2d + genotype, data=fusion1m)
+tally(~t2d + genotype, data = fusion1m)
 @
 
 \begin{problem}
@@ -284,7 +284,7 @@ form a row in the dataframe.
 <<tidy=FALSE>>=
 stateTraffic <- longTraffic %>% 
   select(year, deathRate, state) %>%
-  mutate(year=paste("deathRate.", year, sep="")) %>%
+  mutate(year = paste("deathRate.", year, sep = "")) %>%
   spread(year, deathRate)
 stateTraffic
 @
@@ -309,10 +309,10 @@ with cuts at 20 and 40 for the CESD scale (which ranges from 0 to 60 points).
 \Rindex{include.lowest option}%
 \Rindex{breaks option}%
 <<tidy=FALSE>>=
-favstats(~ cesd, data=HELPrct)
+favstats(~ cesd, data = HELPrct)
 HELPrct <- mutate(HELPrct, cesdcut = cut(cesd, 
-  breaks=c(0, 20, 40, 60), include.lowest=TRUE))
-bwplot(cesd ~ cesdcut, data=HELPrct)
+  breaks = c(0, 20, 40, 60), include.lowest = TRUE))
+gf_boxplot(cesd ~ cesdcut, data = HELPrct)
 @
 \Rindex{ntiles()}%
 \FoodForThought{The \function{ntiles} function can be used to automate creation of groups in this manner.}
@@ -320,9 +320,9 @@ bwplot(cesd ~ cesdcut, data=HELPrct)
 It might be preferable to give better labels.
 <<tidy=FALSE>>=
 HELPrct <- mutate(HELPrct, cesdcut = cut(cesd, 
-  labels=c("low", "medium", "high"),
-  breaks=c(0, 20, 40, 60), include.lowest=TRUE))
-bwplot(cesd ~ cesdcut, pch="|", data=HELPrct)
+  labels = c("low", "medium", "high"),
+  breaks = c(0, 20, 40, 60), include.lowest = TRUE))
+gf_boxplot(cesd ~ cesdcut, data = HELPrct)
 @
 
 The \function{derivedFactor} function is even more general and can also be used for this purpose.
@@ -347,11 +347,11 @@ HELPrct <- mutate(HELPrct,
 By default R uses the first level in lexicographic order as the reference group for modeling.  This 
 can be overriden using the \function{relevel()} function (see also \function{reorder()}).
 <<tidy=FALSE>>=
-tally(~ substance, data=HELPrct)
-coef(lm(cesd ~ substance, data=HELPrct))
+tally(~ substance, data = HELPrct)
+coef(lm(cesd ~ substance, data = HELPrct))
 HELPrct <- mutate(HELPrct, subnew = relevel(substance, 
-  ref="heroin"))
-coef(lm(cesd ~ subnew, data=HELPrct))
+  ref = "heroin"))
+coef(lm(cesd ~ subnew, data = HELPrct))
 @
 
 \section{Group-wise statistics}
@@ -371,15 +371,15 @@ the median age of subjects by substance group.
 \Rindex{summarise()}%
 \Rindex{nrow()}%
 <<tidy=FALSE>>=
-favstats(age ~ substance, data=HELPrct)
+favstats(age ~ substance, data = HELPrct)
 ageGroup <- HELPrct %>% 
   group_by(substance) %>%
   summarise(agebygroup = mean(age))
 ageGroup
 nrow(ageGroup)
 nrow(HELPrct)
-HELPmerged <- left_join(ageGroup, HELPrct, by="substance") 
-favstats(agebygroup ~ substance, data=HELPmerged)
+HELPmerged <- left_join(ageGroup, HELPrct, by = "substance") 
+favstats(agebygroup ~ substance, data = HELPmerged)
 nrow(HELPmerged)
 @
 
@@ -414,13 +414,13 @@ Of the 470 subjects in the 6 variable dataframe, only the \code{drugrisk}, \code
 \Rindex{nrow()}%
 \Rindex{ncol()}%
 <<tidy=FALSE>>=
-favstats(~ mcs, data=smaller)
+favstats(~ mcs, data = smaller)
 with(smaller, sum(is.na(mcs)))
 nomiss <- na.omit(smaller)
 dim(nomiss)
 nrow(nomiss)
 ncol(nomiss)
-favstats(~ mcs, data=nomiss)
+favstats(~ mcs, data = nomiss)
 @
 
 Alternatively, we could generate the same dataset using logical conditions.
