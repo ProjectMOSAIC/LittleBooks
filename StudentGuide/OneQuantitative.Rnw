@@ -188,14 +188,14 @@ Here we adorn a density plot with some additions to demonstrate how to build up 
 
 \DiggingDeeper{The \function{plotFun()} function can also be used to annotate plots (see section \ref{sec:plotFun}).}
 \begin{center}
-\Rindex{densityplot()}%
-\Rindex{ladd()}%
-\Rindex{panel.mathdensity()}%
-\Rindex{panel.abline()}%
-\Rindex{col option}%
-\Rindex{grid.text()}%
-\Rindex{lty option}%
-\Rindex{lwd option}%
+\Rindex{gf\_dens()}%
+\Rindex{gf\_refine()}%
+\Rindex{gf\_vline()}%
+\Rindex{annotate()}%
+\Rindex{gf\_fitdistr()}%
+\Rindex{geom option}%
+\Rindex{dist option}%
+\Rindex{xintercept option}%
 <<dens1,tidy=FALSE,fig.keep="last">>=
 gf_dens(~ cesd, data = Female) %>%
   gf_refine(annotate(geom = "text", x = 10, y = .025, label = "only females")) %>%
