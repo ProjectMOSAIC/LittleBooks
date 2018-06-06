@@ -240,9 +240,7 @@ What do you conclude?
 \end{problem}
 \begin{solution}
 <<>>=
-densityplot(volume ~ weekday, auto.key=TRUE, data=RailTrail)
-#gf_dens(~ volume, color = ~ weekday, data = RailTrail)
-gf_density(~ volume, color = ~ weekday, fill = ~ weekday, data = RailTrail)
+gf_density(~ volume, color = ~ as.factor(weekday), fill = ~ as.factor(weekday), data = RailTrail)
 @
 We see that the weekend/holidays tend to have more users.
 \end{solution}
