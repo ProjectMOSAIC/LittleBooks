@@ -242,6 +242,7 @@ What do you conclude?
 <<>>=
 densityplot(volume ~ weekday, auto.key=TRUE, data=RailTrail)
 #gf_dens(~ volume, color = ~ weekday, data = RailTrail)
+gf_density(~ volume, color = ~ weekday, fill = ~ weekday, data = RailTrail)
 @
 We see that the weekend/holidays tend to have more users.
 \end{solution}
@@ -251,12 +252,10 @@ smoother (lowess curve).  What do you observe about the relationship?
 \end{problem}
 \begin{solution}
 <<>>=
-xyplot(volume ~ avgtemp, xlab="average temperature (degrees F)", 
-  type=c("p", "r", "smooth"), lwd=2, data=RailTrail)
 mod2 <- lm(volume ~ avgtemp, data = RailTrail)
-gf_point(volume ~ avgtemp, xlab = "average temperature (degrees F)", data = RailTrail) %>%
-  gf_smooth(size = 2, se = FALSE)
-plotModel(mod2)
+gf_point(volume ~ avgtemp, xlab = "average temperature (degrees F)", data = RailTrail) %>% 
+  gf_smooth(size = 2, se = FALSE) %>%
+  gf_fun(mod2, size = 2)
 @
 We see that there is a positive relationship between these two variables, but the association is 
 somewhat nonlinear (which makes sense as we wouldn't continue to predict an increase in usage when the 

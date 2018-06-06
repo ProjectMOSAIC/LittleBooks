@@ -325,15 +325,15 @@ HELPrct <- mutate(HELPrct, cesdcut = cut(cesd,
 gf_boxplot(cesd ~ cesdcut, data = HELPrct)
 @
 
-The \function{derivedFactor} function is even more general and can also be used for this purpose.
+The \function{case_when()} function is even more general and can also be used for this purpose.
 
-\Rindex{derivedFactor()}%
+\Rindex{case_when()}%
 <<>>=
 HELPrct <- mutate(HELPrct, 
-  anothercut = derivedFactor(
-    low = cesd >= 0 & cesd <= 20,
-    medium = cesd > 20 & cesd <= 40,
-    high = cesd > 40))
+  anothercut = case_when(
+    cesd >= 0 & cesd <= 20 ~ "low",
+    cesd > 20 & cesd <= 40 ~ "medium",
+    cesd > 40 ~ "high"))
 @
 
 
