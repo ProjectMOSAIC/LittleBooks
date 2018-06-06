@@ -16,14 +16,15 @@ favstats(cesd ~ sex, data = HELPrct)
 
 
 Boxplots are a particularly helpful graphical display to compare distributions.
-The \function{bwplot()} function can be used to display the boxplots for the
+The \function{gf\_plot()} function can be used to display the boxplots for the
 CESD scores separately by sex.  We see from both the numerical and graphical
 summaries that women tend to have slightly higher CESD scores than men.
 
 \FoodForThought[-3cm]{Although we usually put explanatory variables along the horizontal axis,
 page layout sometimes makes the other orientation preferable for these plots.}
 %\vspace{-8mm}
-\Rindex{bwplot()}%
+\Rindex{gf\_boxplot()}%
+\Rindex{gf\_refine()}%
 \begin{center}
 <<cesd-box,fig.height=1.5>>=
 gf_boxplot(cesd ~ sex, data = HELPrct) %>% 
@@ -32,14 +33,14 @@ gf_refine(coord_flip())
 \end{center}
 
 When sample sizes are small, there is no reason to summarize with a boxplot
-since  \function{xyplot()} can handle categorical predictors.
+since  \function{gf\_point()} can handle categorical predictors.
 Even with 10--20 observations in a group, a scatter plot is often quite readable.
 Setting the alpha level helps detect multiple observations with the same value.
 \FoodForThought{One of us once saw a biologist proudly present
 side-by-side boxplots.  Thinking a major victory had been won, he naively
 asked how many observations were in each group.  ``Four,'' replied the 
 biologist.}
-\Rindex{xyplot()}%
+\Rindex{gf\_point()}%
 \Rindex{alpha option}%
 \Rindex{cex option}%
 \begin{center}
@@ -107,7 +108,9 @@ do(3) * diffmean(age ~ shuffle(sex), data = HELPrct)
 \DiggingDeeper{More details and examples can be found in the
 \pkg{mosaic} package Resampling Vignette.}
 \Rindex{xlim option}%
-\Rindex{groups option}%
+\Rindex{fill option}%
+\Rindex{gf\_histogram}%
+\Rindex{gf\_vline}%
 <<permute-HELPrct,fig.keep='last', tidy=FALSE>>=
 rtest.stats <- do(500) * diffmean(age ~ shuffle(sex), 
   data = HELPrct)
@@ -132,7 +135,7 @@ Earlier comparisons were between two groups. We can also consider testing differ
 three or more groups using one-way ANOVA.  Here we compare
 CESD scores by primary substance of abuse (heroin, cocaine, or alcohol) with a line rather a dot to indicate the median.
 
-\Rindex{bwplot()}%
+\Rindex{gf\_boxplot()}%
 \begin{center}
 <<cesd-oneway,fig.width=6,fig.height=1.9>>=
 gf_boxplot(cesd ~ substance, data = HELPrct)

@@ -121,7 +121,7 @@ chisq
 
 It may be helpful to consult a graph of the statistic, where the shaded area represents the value to the right of the observed value.
 
-\Rindex{plotDist()}%
+\Rindex{gf_Dist()}%
 <<chisqplotDist>>=
 plotDist("chisq", df = 2, groups = x > 9.31, type = "h")
 gf_dist("chisq", df = 2)

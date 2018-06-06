@@ -9,7 +9,7 @@ It is straightforward to generate
 random samples from these distributions, which can be used 
 for simulation and exploration.
 <<probdist,fig.height=4,fig.width=6>>=
-xpnorm(1.96, mean=0, sd=1)    # P(Z < 1.96)
+xpnorm(1.96, mean = 0, sd = 1)    # P(Z < 1.96)
 @
 \Rindex{qnorm()}%
 \Rindex{dnorm()}%
@@ -19,14 +19,14 @@ xpnorm(1.96, mean=0, sd=1)    # P(Z < 1.96)
 \Rindex{integrate()}%
 <<>>=
 # value which satisfies P(Z < z) = 0.975
-qnorm(.975, mean=0, sd=1)   
+qnorm(.975, mean = 0, sd = 1)   
 integrate(dnorm, -Inf, 0)   # P(Z < 0)
 @
 
 A similar display is available for the F distribution.
 
 <<>>=
-xpf(3, df1=4, df2=20)
+xpf(3, df1 = 4, df2 = 20)
 @
 
 The following table displays the basenames for probability distributions 
@@ -62,20 +62,20 @@ Weibull        &  {\tt weibull}   \\ \hline
 \DiggingDeeper{The \function{fitdistr()} within the \pkg{MASS} package facilitates estimation
 of parameters for many distributions.}
 The \function{plotDist()} can be used to display distributions in a variety of ways.
-\Rindex{plotDist()}%
+\Rindex{gf_dist()}%
 <<tidy=FALSE>>=
-plotDist('norm', mean=100, sd=10, kind='cdf')
+gf_dist('norm', mean = 100, sd = 10, kind = 'cdf')
 @
 <<tidy=FALSE>>=
-plotDist('exp', kind='histogram', xlab="x")
+gf_dist('exp', kind = 'histogram', xlab = "x")
 @
 Note that this sets the rate parameter to 1 by default and is equivalent to the following command.
 <<eval=FALSE, tidy=FALSE>>=
-plotDist('exp', rate=1, kind='histogram', xlab="x")
+gf_dist('exp', rate = 1, kind = 'histogram', xlab = "x")
 @
 
 <<tidy=FALSE,fig.keep='last'>>=
-plotDist('binom', size=25, prob=0.25, xlim=c(-1,26))
+gf_dist('binom', size = 25, prob = 0.25, xlim = c(-1, 26))
 @
 
 Multiple distributions can be plotted on the same plot.
@@ -85,9 +85,9 @@ Multiple distributions can be plotted on the same plot.
 \Rindex{lwd option}%
 \Rindex{pch option}%
 <<tidy=FALSE,fig.keep='last'>>=
-plotDist("binom", size=100, prob=.3, col="black", lwd=3, pch=16)
-plotDist("norm", mean=30, sd=sqrt(100 * .3 * .7), 
-  groups = abs(x - 30) > 6 , type="h", under=TRUE)
+gf_dist("binom", size = 100, prob = .3, col = "black", lwd = 1.5, pch = 16)
+plotDist("norm", mean = 30, sd = sqrt(100 * .3 * .7), 
+  groups = abs(x - 30) > 6 , type = "h", under = TRUE)
 @
 
 The \function{plotFun()} function can be used to plot an arbitrary 
@@ -96,15 +96,18 @@ function (in this case an exponential random variable).
 \Rindex{makeFun()}%
 \Rindex{rexp()}%
 \Rindex{plotFun()}%
-\Rindex{histogram()}%
-\Rindex{width option}%
+\Rindex{gf\_histogram()}%
+\Rindex{binwidth option}%
 \Rindex{center option}%
-\Rindex{add option}%
+\Rindex{gf\_fun()}%
+\Rindex{color option}%
+\Rindex{size option}%
+\Rindex{xlim option}%
 <<fig.keep="last">>=
-f <- makeFun(2*exp(-2*x) ~ x)   # exponential with rate parameter 2
-x <- rexp(1000, rate=2)
-histogram(~ x, width=0.2, center=0.1)
-plotFun(f(x) ~ x, col="red", lwd=2, add=TRUE)
+f <- makeFun(2 * exp(-2 * x) ~ x)   # exponential with rate parameter 2
+x <- rexp(1000, rate = 2)
+gf_dhistogram(~ x, binwidth = 0.2, center = 0.1) %>%
+  gf_fun(f(x) ~ x, color = "red", size = 2, xlim = c(0, 3))
 @
 \begin{problem}
 Generate a sample of 1000 exponential random variables with rate parameter
@@ -112,7 +115,7 @@ equal to 2, and calculate the mean of those variables.
 \end{problem}
 \begin{solution}
 <<expprob>>=
-x <- rexp(1000, rate=2)
+x <- rexp(1000, rate = 2)
 mean(x)
 @
 \end{solution}
@@ -123,6 +126,6 @@ with rate parameter 10.
 \end{problem}
 \begin{solution}
 <<expprob2>>=
-qexp(.5, rate=10)
+qexp(.5, rate = 10)
 @
 \end{solution}
