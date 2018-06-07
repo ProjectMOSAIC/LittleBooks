@@ -37,8 +37,8 @@ The \pkg{mosaicData} package contains several forms of the de-identified HELP da
 We will focus on \pkg{HELPrct}, which contains
 27 variables for the 453 subjects
 with minimal missing data, primarily at baseline.
-Variables included in the HELP dataset are described in Table \ref{tab:helpvars}.  More information can be found at: \url{http://www.amherst.edu/~nhorton/r2}.
-A copy of the study instruments can be found at: \url{http://www.amherst.edu/~nhorton/help}.
+Variables included in the HELP dataset are described in Table \ref{tab:helpvars}.  More information can be found at: \url{https://nhorton.people.amherst.edu/r2/}.
+A copy of the study instruments can be found at: \url{https://nhorton.people.amherst.edu/help/}.
 \begin{longtable}{|p{2.1cm}|p{6.8cm}|p{3.5cm}|}
 \caption{Annotated description of variables in the \dataframe{HELPrct} dataset}
 \label{tab:helpvars} \\

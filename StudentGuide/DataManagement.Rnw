@@ -23,7 +23,7 @@ arrange (reorder rows),
 mutate (add new variables),
 summarise (reduce variables to values), and
 group by (collapse groups).
-See \url{http://www.amherst.edu/~nhorton/precursors} for more details and resources.}
+See \url{https://nhorton.people.amherst.edu/precursors/} for more details and resources.}
 
 \section{Inspecting dataframes}
 \myindex{inspecting dataframes}%

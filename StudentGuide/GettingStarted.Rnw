@@ -3,7 +3,7 @@
 
 \RStudio\ is an integrated development environment (IDE) for \R\ that provides an alternative
 interface to \R\ that has several advantages over other the default \R\ interfaces:
-\FoodForThought{A series of getting started videos are available at \url{http://www.amherst.edu/~nhorton/rstudio}.}
+\FoodForThought{A series of getting started videos are available at \url{https://nhorton.people.amherst.edu/rstudio/}.}
 \begin{itemize}
 	\item \RStudio\ runs on Mac, PC, and Linux machines and provides 
 	  a simplified interface that 
