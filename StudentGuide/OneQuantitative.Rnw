@@ -14,11 +14,10 @@ level (see \function{?options} for more configuration possibilities).
 
 \myindex{HELPrct dataset}%
 \Rindex{options()}%
-\Rindex{require()}%
+\Rindex{library()}%
 \Rindex{mosaic package}%
 <<cesd1,cache=FALSE>>=
-require(mosaic)
-require(mosaicData)
+library(mosaic)
 options(digits = 4)
 mean(~ cesd, data = HELPrct)
 @

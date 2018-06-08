@@ -97,20 +97,17 @@
 <<include=FALSE>>=
 #setCacheDir("cache")
 # require(MASS)   # commented out by NJH 9/27/2015
-require(grDevices) 
-require(datasets) 
-require(stats) 
-require(lattice)
-require(grid) 
+library(grDevices) 
+library(datasets) 
+library(stats) 
+library(lattice)
+library(grid) 
 # require(fastR)	# commented out by NH on 7/12/2012
-require(mosaic) 
-require(mosaicData) 
-trellis.par.set(theme=col.mosaic(bw=FALSE))
-trellis.par.set(fontsize=list(text=9))
+library(mosaic) 
 options(format.R.blank=FALSE) 
 options(width=70)
 options(continue=" ")
-require(knitr)
+library(knitr)
 opts_chunk$set(  tidy=FALSE,
 			     size='small',
                  dev="pdf",

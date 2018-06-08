@@ -41,7 +41,7 @@ a cross classification table.
 
 \Rindex{CrossTable()}%
 <<crosstable, message=FALSE>>=
-require(gmodels)
+library(gmodels)
 with(HELPrct, CrossTable(homeless, sex, 
   prop.r = FALSE, prop.chisq = FALSE, prop.t = FALSE))
 @
