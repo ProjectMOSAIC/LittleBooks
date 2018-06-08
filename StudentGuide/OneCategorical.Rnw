@@ -76,7 +76,8 @@ The \function{prop.test} function will carry out the calculations of the proport
 \hfill
 
 <<tidy=FALSE>>=
-prop.test(~ (homeless == "homeless"), correct = FALSE, data = HELPrct)
+prop.test(~ (homeless == "homeless"), correct = FALSE, 
+          data = HELPrct)
 @
 In this statement, prop.test is examining the \variable{homeless} variable in the same way that \function{tally} would. \Pointer{We write \code{homeless=="homeless"} to define unambiguously which proportion we are considering. We could also have written \code{homeless=="housed"}. }
 \function{prop.test} can also work directly with numerical counts, the way \function{binom.test()} does.

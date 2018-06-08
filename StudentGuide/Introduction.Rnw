@@ -16,7 +16,7 @@ is provided in Chapter \ref{sec:manipulatingData}.
 This work leverages initiatives undertaken by Project MOSAIC (\url{http://www.mosaic-web.org}), an NSF-funded effort to improve the teaching of statistics, calculus, science and computing in the undergraduate curriculum. In particular, we utilize the \pkg{mosaic} package, which was written to simplify the use of \R\ for introductory statistics courses, and the \pkg{mosaicData} package which includes a number of data sets. A short summary of the \R\ commands needed to teach introductory statistics can be found in the mosaic package vignette:
 \url{https://cran.r-project.org/web/packages/mosaic}.
 
-Other related resources from Project MOSAIC may be helpful, including an annotated set of examples from the sixth edition of Moore, McCabe and Craig's \emph{Introduction to the Practice of Statistics}\cite{moor:mcca:2007} (see \url{https://nhorton.people.amherst.edu/ips6e/}), the second and third editions of the \emph{Statistical Sleuth}\cite{Sleuth2} (see \url{https://nhorton.people.amherst.edu/sleuth/}), and \emph{Statistics: Unlocking the Power of Data} by Lock et al (see \url{https://github.com/rpruim/Lock5withR}).
+Other related resources from Project MOSAIC may be helpful, including an annotated set of examples from the sixth edition of Moore, McCabe and Craig's \emph{Introduction to the Practice of Statistics}\cite{moor:mcca:2007} (see \url{https://nhorton.people.amherst.edu/ips6e}), the second and third editions of the \emph{Statistical Sleuth}\cite{Sleuth2} (see \url{https://nhorton.people.amherst.edu/sleuth}), and \emph{Statistics: Unlocking the Power of Data} by Lock et al (see \url{https://github.com/rpruim/Lock5withR}).
 
 \myindex{installing packages}%
 \Rindex{install.packages()}%

@@ -98,12 +98,12 @@ More details about (free) academic licenses for \RStudio\ Server Pro as well as 
 Once you connect to the server, you should see a login screen:
 \FoodForThought{The \RStudio\ server doesn't tend to work well with Internet Explorer.}
 
-\includegraphics[width=4.34in]{r-interface.jpg}
+\includegraphics[width=4.34in]{rstudio-login.png}
 
 Once you authenticate, 
 you should see the \RStudio\ interface:
 
-\includegraphics[width=4.34in]{rstudio-init.png}
+\includegraphics[width=4.34in]{r-interface.jpg}
 
 Notice that \Rstudio\ divides its world into four panels.  Several of the panels
 are further subdivided into multiple tabs.  Which tabs appear in which panels
