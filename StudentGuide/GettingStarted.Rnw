@@ -3,7 +3,7 @@
 
 \RStudio\ is an integrated development environment (IDE) for \R\ that provides an alternative
 interface to \R\ that has several advantages over other the default \R\ interfaces:
-\FoodForThought{A series of getting started videos are available at \url{https://nhorton.people.amherst.edu/rstudio/}.}
+\FoodForThought{A series of getting started videos are available at \url{https://nhorton.people.amherst.edu/rstudio}.}
 \begin{itemize}
 	\item \RStudio\ runs on Mac, PC, and Linux machines and provides 
 	  a simplified interface that 
@@ -98,7 +98,7 @@ More details about (free) academic licenses for \RStudio\ Server Pro as well as 
 Once you connect to the server, you should see a login screen:
 \FoodForThought{The \RStudio\ server doesn't tend to work well with Internet Explorer.}
 
-\includegraphics[width=4.34in]{rstudio-login.png}
+\includegraphics[width=4.34in]{r-interface.jpg}
 
 Once you authenticate, 
 you should see the \RStudio\ interface:
@@ -217,7 +217,7 @@ Click on the \tab{Knit} button to convert to an HTML, PDF, or Word file.
 
 This will generate a formatted version of the document.
 
-\includegraphics[width=4.34in]{markdown4.png}
+\includegraphics[width=4.34in]{r-markdown.jpg}
 
 There is a button (marked with a question mark) which
 provides a brief description of the supported markup commands. The \RStudio\ web site 
@@ -291,8 +291,7 @@ the following commands display the number of births in the United States for eac
 # this will make lattice graphics available to the session
 # as well as the Births78 dataset
 require(mosaic)
-gf_point(births ~ dayofyear, data = Births78) %>% 
-  gf_labs(title = "", caption = "")
+gf_point(births ~ dayofyear, data = Births78) 
 @
 From the \tab{Plots} tab, you can navigate to previous plots and also export plots 
 in various formats after interactively resizing them.
