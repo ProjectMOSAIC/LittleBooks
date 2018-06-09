@@ -87,7 +87,8 @@ To provide a check (or for future calculations of this sort) we can use the
 \function{power.t.test()} function.
 \Rindex{power.t.test()}%
 <<>>=
-power.t.test(n = 25, delta = .3, sd = 1, sig.level = alpha, alternative = "one.sided",
+power.t.test(n = 25, delta = .3, sd = 1, sig.level = alpha,
+             alternative = "one.sided",
 type = "one.sample")$power
 @
 

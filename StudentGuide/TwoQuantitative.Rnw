@@ -17,7 +17,7 @@ as the plotting character and slightly thicker line.
 \Rindex{size option}%
 \Rindex{gf\_smooth()}%
 \begin{center}
-<<HELPrct-xyplot,fig.height=3,tidy=FALSE>>=
+<<HELPrct-xyplot,fig.height=3,tidy=FALSE,message=FALSE>>=
 Female <- filter(HELPrct, female == 1)
 gf_point(cesd ~ mcs, data = Female, shape = 1) %>%
   gf_smooth(se = FALSE, size = 2)
@@ -41,7 +41,8 @@ panel.labels <- function(x, y, labels = 'x',...) {
   panel.text(x, y, labels, cex = 0.4, ...)
 }
 gf_text(Murder ~ Assault, panel = panel.labels, 
-  label = rownames(USArrests), data = USArrests)
+  label = rownames(USArrests), data = USArrests, 
+  size = 2)
 @
 
 
@@ -150,8 +151,9 @@ gf_qq(~ resid(cesdmodel))
 \Rindex{alpha option}%
 \Rindex{gf\_hline()}%
 \begin{center}
-<<HELPrct-resid-plot>>=
-gf_point(resid(cesdmodel) ~ fitted(cesdmodel), alpha = 0.5, cex = 0.3, pch = 20) %>%
+<<HELPrct-resid-plot, message=FALSE>>=
+gf_point(resid(cesdmodel) ~ fitted(cesdmodel), 
+         alpha = 0.5, cex = 0.3, pch = 20) %>%
   gf_smooth(se = FALSE) %>%
   gf_hline(yintercept = 0)
 @
@@ -160,7 +162,7 @@ gf_point(resid(cesdmodel) ~ fitted(cesdmodel), alpha = 0.5, cex = 0.3, pch = 20)
 The \function{mplot()} function can facilitate creating a variety of useful plots, including the same residuals vs. fitted scatterplots, by specifying the \option{which = 1} option.
 \Rindex{mplot()}%
 \Rindex{which option}%
-<<mplotc1>>=
+<<mplotc1, message=FALSE>>=
 mplot(cesdmodel, which = 1)
 @
 
@@ -171,7 +173,7 @@ mplot(cesdmodel, which = 2)
 
 \myindex{scale versus location}%
 scale vs.\,location,
-<<mplotc3, results='hide'>>=
+<<mplotc3, results='hide', message=FALSE>>=
 mplot(cesdmodel, which = 3)
 @
 
@@ -183,12 +185,12 @@ mplot(cesdmodel, which = 4)
 
 \myindex{leverage}%
 residuals vs.\,leverage,
-<<mplotc5,results='hide'>>=
+<<mplotc5,results='hide', message=FALSE>>=
 mplot(cesdmodel, which = 5)
 @
 
 and Cook's distance vs. leverage.
-<<mplotc6,results='hide'>>=
+<<mplotc6,results='hide',message=FALSE>>=
 mplot(cesdmodel, which = 6)
 @
 
@@ -198,7 +200,8 @@ mplot(cesdmodel, which = 6)
 Prediction bands can be added to a plot using the \function{panel.lmbands()} function.
 \begin{center}
 <<HELPxyplot1>>=
-gf_point(cesd ~ mcs, panel = panel.lmbands, cex = 0.2, band.lwd = 2, data = HELPrct)
+gf_point(cesd ~ mcs, panel = panel.lmbands, 
+         cex = 0.2, band.lwd = 2, data = HELPrct)
 @
 \end{center}
 

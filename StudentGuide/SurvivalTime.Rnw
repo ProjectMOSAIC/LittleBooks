@@ -9,7 +9,7 @@ Extensive support for survival (time to event) analysis is available within the
 \myindex{Kaplan-Meier plot}%
 \Rindex{survfit()}%
 \Rindex{Surv()}%
-\Rindex{gf\_step}%
+\Rindex{gf\_step()}%
 \Rindex{xlab option}%
 \Rindex{title option}%
 \Rindex{ylab option}%
@@ -21,7 +21,9 @@ library(broom)
 fit <- survfit(Surv(dayslink, linkstatus) ~ treat, 
   data = HELPrct)
 fit <- broom::tidy(fit)
-gf_step(fit, estimate ~ time, linetype = ~ strata, title = "Product-Limit Survival Estimates (time to linkage)", xlab = "time (in days)", ylab = "P(not linked)")
+gf_step(fit, estimate ~ time, linetype = ~ strata, 
+        title = "Product-Limit Survival Estimates (time to linkage)", 
+        xlab = "time (in days)", ylab = "P(not linked)")
 @
 \end{center}
 

@@ -59,10 +59,10 @@ Uniform        &  {\tt unif}     \\
 Weibull        &  {\tt weibull}   \\ \hline
 \end{tabular}
 \end{center}
-\DiggingDeeper{The \function{fitdistr()} within the \pkg{MASS} package facilitates estimation
+\DiggingDeeper{The \function{gf\_fitdistr()} within the \pkg{MASS} package facilitates estimation
 of parameters for many distributions.}
-The \function{plotDist()} can be used to display distributions in a variety of ways.
-\Rindex{gf_dist()}%
+The \function{gf\_dist()} can be used to display distributions in a variety of ways.
+\Rindex{gf\_dist()}%
 <<tidy=FALSE>>=
 gf_dist('norm', mean = 100, sd = 10, kind = 'cdf')
 @
@@ -90,12 +90,11 @@ plotDist("norm", mean = 30, sd = sqrt(100 * .3 * .7),
   groups = abs(x - 30) > 6 , type = "h", under = TRUE)
 @
 
-The \function{plotFun()} function can be used to plot an arbitrary 
+The \function{gf\_fun()} function can be used to plot an arbitrary 
 function (in this case an exponential random variable).
 
 \Rindex{makeFun()}%
 \Rindex{rexp()}%
-\Rindex{plotFun()}%
 \Rindex{gf\_histogram()}%
 \Rindex{binwidth option}%
 \Rindex{center option}%
@@ -104,7 +103,7 @@ function (in this case an exponential random variable).
 \Rindex{size option}%
 \Rindex{xlim option}%
 <<fig.keep="last">>=
-f <- makeFun(2 * exp(-2 * x) ~ x)   # exponential with rate parameter 2
+f <- makeFun(2 * exp(-2 * x) ~ x) # exponential with rate parameter 2
 x <- rexp(1000, rate = 2)
 gf_dhistogram(~ x, binwidth = 0.2, center = 0.1) %>%
   gf_fun(f(x) ~ x, color = "red", size = 2, xlim = c(0, 3))

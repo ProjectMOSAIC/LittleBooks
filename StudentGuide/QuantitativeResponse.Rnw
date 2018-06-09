@@ -16,7 +16,7 @@ favstats(cesd ~ sex, data = HELPrct)
 
 
 Boxplots are a particularly helpful graphical display to compare distributions.
-The \function{gf\_plot()} function can be used to display the boxplots for the
+The \function{gf\_boxplot()} function can be used to display the boxplots for the
 CESD scores separately by sex.  We see from both the numerical and graphical
 summaries that women tend to have slightly higher CESD scores than men.
 
@@ -45,7 +45,8 @@ biologist.}
 \Rindex{cex option}%
 \begin{center}
 <<KidsFeet-xy,fig.height=1.5>>=
-gf_point(sex ~ length, alpha = .6, cex = 1.4, data = KidsFeet) 
+gf_point(sex ~ length, alpha = .6, cex = 1.4, 
+         data = KidsFeet) 
 @
 \end{center}
 
@@ -109,12 +110,13 @@ do(3) * diffmean(age ~ shuffle(sex), data = HELPrct)
 \pkg{mosaic} package Resampling Vignette.}
 \Rindex{xlim option}%
 \Rindex{fill option}%
-\Rindex{gf\_histogram}%
-\Rindex{gf\_vline}%
+\Rindex{gf\_histogram()}%
+\Rindex{gf\_vline()}%
 <<permute-HELPrct,fig.keep='last', tidy=FALSE>>=
 rtest.stats <- do(500) * diffmean(age ~ shuffle(sex), 
   data = HELPrct)
-rtest.stats <- mutate(rtest.stats, diffmeantest = ifelse(diffmean >= test.stat, TRUE, FALSE))
+rtest.stats <- mutate(rtest.stats, 
+                      diffmeantest = ifelse(diffmean >= test.stat, TRUE, FALSE))
 head(rtest.stats, 3)
 favstats(~ diffmean, data = rtest.stats)
 gf_histogram(~ diffmean, n = 40, xlim = c(-6, 6),

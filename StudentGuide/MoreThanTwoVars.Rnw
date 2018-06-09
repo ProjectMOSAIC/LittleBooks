@@ -29,7 +29,6 @@ significant main effects terms for \variable{substance} group and
 mod <- lm(cesd ~ substance + sex + substance*sex, data = HELPrct)
 plotModel(mod)
 @
-\Rindex{auto.key option}%
 
 
 \section{Multiple regression}
@@ -91,9 +90,13 @@ lmfunction <- makeFun(lmnointeract)
 We can now plot the predicted values separately for male and female subjects over a range of MCS (mental component score) values, along
 with the observed data for all of the 36 year olds.  
 <<plotFUN,tidy=FALSE,fig.keep='last'>>=
-gf_point(cesd ~ mcs, color = ~ sex, data = filter(HELPrct, age == 36)) %>%
-  gf_fun(lmfunction(mcs, age = 36, sex = "male") ~ mcs, xlim = c(0, 60), size = 1.5, ylab = "redicted CESD") %>%
-  gf_fun(lmfunction(mcs, age = 36, sex = "female") ~ mcs, xlim = c(0, 60), linetype = 2, size = 2)
+gf_point(cesd ~ mcs, color = ~ sex, 
+         data = filter(HELPrct, age == 36), 
+         ylab = "predicted CESD") %>%
+  gf_fun(lmfunction(mcs, age = 36, sex = "male") ~ mcs, 
+         xlim = c(0, 60), size = 1.5) %>%
+  gf_fun(lmfunction(mcs, age = 36, sex = "female") ~ mcs, 
+         xlim = c(0, 60), linetype = 2, size = 2)
 @
 
 
@@ -142,13 +145,16 @@ filter(HELPrct, abs(residuals) > 25)
 @
 
 \Rindex{cex option}%
-<<tidy=FALSE>>=
-gf_point(residuals ~ pred, cex = .3, xlab = "predicted values", title = "predicted vs. residuals", data = HELPrct) %>%
+<<tidy=FALSE, message=FALSE>>=
+gf_point(residuals ~ pred, cex = .3, xlab = "predicted values", 
+         title = "predicted vs. residuals", data = HELPrct) %>%
   gf_smooth(se = FALSE) %>%
   gf_hline(yintercept = 0)
 @
-<<tidy=FALSE>>=
-gf_point(residuals ~ mcs, cex = .3, xlab = "mental component score", title = "predicted vs. residuals", data = HELPrct) %>%
+<<tidy=FALSE, message=FALSE>>=
+gf_point(residuals ~ mcs, cex = .3, 
+         xlab = "mental component score", 
+         title = "predicted vs. residuals", data = HELPrct) %>%
   gf_smooth(se = FALSE) %>%
   gf_hline(yintercept = 0)
 @
