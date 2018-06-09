@@ -29,7 +29,7 @@ modeling language.  The \emph{Start Teaching with R} also provides useful guidan
 It's straightforward to plot something besides a character in a scatterplot.  
 In this example, the \dataframe{USArrests} can be used to plot the association
 between murder and assault rates, with the state name displayed.  This
-requires a panel function to be written.
+requires a panel function to be written.   
 \Rindex{function()}%
 \Rindex{panel.labels()}%
 \Rindex{panel.text()}%
@@ -76,7 +76,7 @@ A pairs plot (scatterplot matrix) can be calculated for each pair of a set of va
 \FoodForThought{The \pkg{GGally} package has support for more elaborate pairs plots.}
 \Rindex{ggpairs()}%
 <<fig.height=3>>=
-require(GGally)
+library(GGally)
 ggpairs(smallHELP)
 @
 
