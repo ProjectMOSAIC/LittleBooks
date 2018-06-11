@@ -56,7 +56,7 @@ Here we see that males tend to be over-represented
 amongst the homeless subjects (as represented by the horizontal line which is higher for
 the homeless rather than the housed).  
 \FoodForThought{The \function{mosaic()} function 
-in the \pkg{vcd} package also makes mosaic plots.}
+in the \pkg{vcd} package makes mosaic plots.}
 \Rindex{mosaic()}%
 \begin{center}
 <<mosaicplot,fig.height=3.5,tidy=FALSE>>=
