@@ -63,7 +63,8 @@ in the \pkg{vcd} package also makes mosaic plots.}
 library(vcd)
 mytab <- tally(~ homeless + sex, margins = FALSE, 
   data = HELPrct)
-vcd::mosaic(mytab) 
+vcd::mosaic(mytab)
+vcd::mosaic(~ homeless + sex, data = HELPrct, shade = TRUE) 
 @
 \end{center}
 
