@@ -16,8 +16,8 @@ Extensive support for survival (time to event) analysis is available within the
 \Rindex{linetype option}%
 \begin{center}
 <<help-km,fig.width=6,fig.height=3.9,tidy=FALSE,message=FALSE>>=
-require(survival)
-require(broom)
+library(survival)
+library(broom)
 fit <- survfit(Surv(dayslink, linkstatus) ~ treat, 
   data = HELPrct)
 fit <- broom::tidy(fit)

@@ -210,8 +210,7 @@ genotype information for a SNP (single nucleotide polymorphism) in the gene \emp
 
 \Rindex{arrange()}%
 <<warning=FALSE,message=FALSE>>=
-require(fastR)
-require(dplyr)
+library(fastR)
 fusion1 <- arrange(fusion1, id)
 head(fusion1, 3)
 head(pheno, 3)
@@ -221,7 +220,7 @@ head(pheno, 3)
 \Rindex{all.x option}%
 \Rindex{by.x option}%
 <<message=FALSE, warning=FALSE,tidy=FALSE>>=
-require(tidyr)
+library(tidyr)
 fusion1m <- inner_join(fusion1, pheno, by = 'id')
 head(fusion1m, 3)
 @

@@ -288,9 +288,7 @@ can stay in the environment essentially indefinitely.
 Plots created in the console are displayed in the \tab{Plots} tab.  For example,
 the following commands display the number of births in the United States for each day in 1978.
 <<message=FALSE>>=
-# this will make lattice graphics available to the session
-# as well as the Births78 dataset
-require(mosaic)
+library(mosaic)
 gf_point(births ~ dayofyear, data = Births78) 
 @
 From the \tab{Plots} tab, you can navigate to previous plots and also export plots 

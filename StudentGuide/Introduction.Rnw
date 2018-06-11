@@ -27,10 +27,11 @@ install.packages("mosaic")    # note the quotation marks
 \FoodForThought[-1.5cm]{\Rstudio\ features a simplified package installation tab (in the bottom right panel).} The {\tt \#} character is a comment in R, and all text after that on the current line is ignored.
 
 \myindex{loading packages}%
+\Rindex{library()}%
 \Rindex{require()}%
 Once the package is installed (one time only), it can be loaded by running the command:
 <<load_mosaic,eval=FALSE>>=
-require(mosaic)
+library(mosaic)    # require(mosaic) also can be used to load packages
 @
 
 \FoodForThought[-3cm]{The \pkg{knitr}/\LaTeX\ system allows experienced users to combine \R\ and \LaTeX\ in the same document.  The reward for learning this more complicated system is much finer control over the output format. But RMarkdown is much easier to learn and is adequate even for professional-level work.}%
