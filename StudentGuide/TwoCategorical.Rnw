@@ -60,7 +60,6 @@ in the \pkg{vcd} package makes mosaic plots.}
 \Rindex{mosaic()}%
 \begin{center}
 <<mosaicplot,fig.height=3.5,tidy=FALSE>>=
-library(vcd)
 mytab <- tally(~ homeless + sex, margins = FALSE, 
   data = HELPrct)
 vcd::mosaic(mytab, shade = TRUE)
