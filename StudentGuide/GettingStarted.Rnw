@@ -15,8 +15,8 @@ interface to \R\ that has several advantages over other the default \R\ interfac
 	\item
 		\RStudio\ can run in a web browser.
 
-		In addition to stand-alone desktop versions, \RStudio\ can be set up 
-		as a server application that is accessed via the internet.  
+		In addition to stand-alone desktop versions or in \url{RStudio.cloud}, \RStudio\ 
+		can be set up as a server application that is accessed via the internet.  
 
 		The web interface is nearly identical to the desktop version.% 
 		\Caution{The desktop and server version of \RStudio\ are so similar
@@ -159,7 +159,7 @@ and functions.
 log(product)                # (natural) log of the product
 log10(product)              # base 10 log of the product
 log2(product)               # base 2 log of the product
-log(product, base=2)        # base 2 log of the product, another way
+log(product, base = 2)        # base 2 log of the product, another way
 @
 
 The semi-colon can be used to place multiple commands on one line.  
