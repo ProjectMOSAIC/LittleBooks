@@ -200,8 +200,21 @@ mplot(cesdmodel, which = 6)
 Prediction bands can be added to a plot using the \function{panel.lmbands()} function.
 \begin{center}
 <<HELPxyplot1>>=
-gf_point(cesd ~ mcs, panel = panel.lmbands, 
+xyplot(cesd ~ mcs, panel = panel.lmbands, 
          cex = 0.2, band.lwd = 2, data = HELPrct)
+
+gf_point(cesd ~ mcs, data = HELPrct) %>%
+  gf_lm(interval = "confidence", fill = "red") %>%
+  gf_lm(interval = "prediction", fill = "navy")
+
+# augment, type.predict instead of predict
+# broom vignette
+# using r for data management
+lmmm <- lm(cesd ~ mcs, data = HELPrct)
+vals <- tidy(lmmm, conf.int = TRUE)
+stats::predict.glm(cesd ~ mcs, data = HELPrct)
+gf_point(cesd ~ mcs, data = HELPrct) #%>%
+#  gf_line(lmmm)
 @
 \end{center}
 
