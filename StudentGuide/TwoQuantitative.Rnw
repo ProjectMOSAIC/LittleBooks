@@ -139,7 +139,7 @@ returns a vector of predicted values.}
 \Rindex{density option}%
 \begin{center}
 <<lmhist>>=
-gf_histogram(~ residuals(cesdmodel), density=TRUE)
+gf_histogram(~ residuals(cesdmodel), density = TRUE)
 @
 \end{center}
 \Rindex{gf\_qq()}%

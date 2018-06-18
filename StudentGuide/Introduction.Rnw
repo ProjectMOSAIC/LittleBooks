@@ -33,7 +33,8 @@ install.packages("mosaic")    # note the quotation marks
 \Rindex{require()}%
 Once the package is installed (one time only), it can be loaded by running the command:
 <<load_mosaic,eval=FALSE>>=
-library(mosaic)    # require(mosaic) also can be used to load packages
+library(mosaic)    
+# require(mosaic) also can be used to load packages
 @
 
 \FoodForThought[-3cm]{The \pkg{knitr}/\LaTeX\ system allows experienced users to combine \R\ and \LaTeX\ in the same document.  The reward for learning this more complicated system is much finer control over the output format. But RMarkdown is much easier to learn and is adequate even for professional-level work.}%

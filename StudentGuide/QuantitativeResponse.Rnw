@@ -116,7 +116,8 @@ do(3) * diffmean(age ~ shuffle(sex), data = HELPrct)
 rtest.stats <- do(500) * diffmean(age ~ shuffle(sex), 
   data = HELPrct)
 rtest.stats <- mutate(rtest.stats, 
-                      diffmeantest = ifelse(diffmean >= test.stat, TRUE, FALSE))
+                      diffmeantest = 
+                        ifelse(diffmean >= test.stat, TRUE, FALSE))
 head(rtest.stats, 3)
 favstats(~ diffmean, data = rtest.stats)
 gf_histogram(~ diffmean, n = 40, xlim = c(-6, 6),

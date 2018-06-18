@@ -79,7 +79,7 @@ The \function{prop.test} function will carry out the calculations of the proport
 prop.test(~ (homeless == "homeless"), correct = FALSE, 
           data = HELPrct)
 @
-In this statement, prop.test is examining the \variable{homeless} variable in the same way that \function{tally} would. \Pointer{We write \code{homeless=="homeless"} to define unambiguously which proportion we are considering. We could also have written \code{homeless=="housed"}. }
+In this statement, prop.test is examining the \variable{homeless} variable in the same way that \function{tally} would. \Pointer{We write \code{homeless == "homeless"} to define unambiguously which proportion we are considering. We could also have written \code{homeless == "housed"}. }
 \function{prop.test} can also work directly with numerical counts, the way \function{binom.test()} does.
 \InstructorNote{\function{prop.test()} calculates a Chi-squared statistic.
 Most introductory texts use a $z$-statistic.  They are mathematically equivalent in terms of inferential statements, but you may need to address the discrepancy with your students.}%
@@ -98,7 +98,7 @@ observed <- tally(~ substance, data = HELPrct)
 observed
 @
 
-\Caution[-1cm]{In addition to the \option{format} option, there is an option \option{margins} to include marginal totals in the table. The default in \function{tally} is \option{margins=FALSE}. Try it out!}
+\Caution[-1cm]{In addition to the \option{format} option, there is an option \option{margins} to include marginal totals in the table. The default in \function{tally} is \option{margins = FALSE}. Try it out!}
 \Rindex{chisq.test()}%
 <<tidy=FALSE>>=
 p <- c(1/3, 1/3, 1/3)   # equivalent to rep(1/3, 3)
@@ -116,7 +116,7 @@ We can also calculate the $\chi^2$ statistic manually, as a function of observed
 <<gof2,tidy=FALSE>>=
 chisq <- sum((observed - expected)^2/(expected))
 chisq
-1 - pchisq(chisq, df=2)
+1 - pchisq(chisq, df = 2)
 @
 \FoodForThought[-2cm]{The \function{pchisq} function calculates the probability that a $\chi^2$ random variable with \function{df} degrees is freedom is less than or equal to a given value.  Here we calculate the complement to find the area to the right of the observed Chi-square statistic.}%
 

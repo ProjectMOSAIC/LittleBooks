@@ -108,7 +108,7 @@ names(CPS1)
 
 Any number of variables can be dropped or kept in a similar manner.
 <<>>=
-CPS1 <- select(CPS85, select = -matches("workforce.years|exper"))
+CPS1 <- select(CPS85, select = -matches("workforce.years | exper"))
 @
 
 
@@ -147,7 +147,7 @@ names(faithful)
 \myindex{faithful dataset}%
 \begin{center}
 <<"mr-faithful-xy">>=
-gf_point(time.til.next ~ duration, alpha=0.5, data = faithful)
+gf_point(time.til.next ~ duration, alpha = 0.5, data = faithful)
 @
 \end{center}
 If the variable containing a dataframe is modified or used to store a different object,
@@ -229,7 +229,7 @@ head(fusion1m, 3)
 \myindex{fusion1 dataset}%
 Now we are ready to begin our analysis.
 <<"mr-fusion1-xtabs">>=
-tally(~t2d + genotype, data = fusion1m)
+tally(~ t2d + genotype, data = fusion1m)
 @
 
 \begin{problem}

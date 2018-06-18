@@ -125,7 +125,8 @@ an overlaid normal density):
 \Rindex{gf\_dhistogram}%
 \Rindex{dist option}%
 <<women-cesd-hist,tidy=FALSE,message=FALSE>>=
-gf_dhistogram(~ cesd, data = filter(HELPrct, sex == "female"), binwidth = 7.1) %>%
+gf_dhistogram(~ cesd, data = filter(HELPrct, sex == "female"),
+              binwidth = 7.1) %>%
   gf_fitdistr(dist = dnorm)
 @
 
@@ -140,7 +141,7 @@ The layout can be rearranged.
 \begin{center}
 <<cesd-dotlayout>>=
 gf_dhistogram(~ cesd, data = HELPrct, binwidth = 5.9) %>%
-  gf_facet_wrap(~ sex)
+  gf_facet_wrap(~ sex, nrow = 2)
 @
 \end{center}
 \begin{problem}
