@@ -79,18 +79,17 @@ gf_dist('binom', size = 25, prob = 0.25, xlim = c(-1, 26))
 @
 
 Multiple distributions can be plotted on the same plot.
-\Rindex{groups option}%
-\Rindex{type option}%
-\Rindex{under option}%
-\Rindex{lwd option}%
+\Rindex{fill option}%
+\Rindex{cut()}%
+\Rindex{gf\_labs()}%
+\Rindex{geom option}%
 \Rindex{pch option}%
 <<tidy=FALSE,fig.keep='last'>>=
-gf_dist("norm", mean = 30, sd = sqrt(100 * .3 * .7), 
-        fill = ~ (abs(x - 30) > 6), geom = "area") %>%
-  gf_dist("binom", size = 100, prob = .3, col = "black", 
-          pch = 16)
-#plotDist("norm", mean = 30, sd = sqrt(100 * .3 * .7), 
-#  groups = abs(x - 30) > 6 , type = "h", under = TRUE)
+gf_dist("norm", mean = 50 * .3, sd = sqrt(50 * .3 * .7), 
+        fill = ~ cut(x, c(-Inf, 15 - 3, 15 + 3, Inf)), geom = "area") %>%
+  gf_dist("binom", size = 50, prob = .3, col = "black", 
+          pch = 16) %>%
+  gf_labs(fill = "Intervals")
 @
 
 The \function{gf\_fun()} function can be used to plot an arbitrary 
