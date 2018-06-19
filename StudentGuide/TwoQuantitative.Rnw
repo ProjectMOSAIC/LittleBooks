@@ -139,7 +139,7 @@ returns a vector of predicted values.}
 \Rindex{density option}%
 \begin{center}
 <<lmhist>>=
-gf_histogram(~ residuals(cesdmodel), density=TRUE)
+gf_histogram(~ residuals(cesdmodel), density = TRUE)
 @
 \end{center}
 \Rindex{gf\_qq()}%
@@ -194,14 +194,15 @@ and Cook's distance vs. leverage.
 mplot(cesdmodel, which = 6)
 @
 
-\myindex{prediction bands}%
-\Rindex{panel.lmbands()}%
-\Rindex{band.lwd option}%
-Prediction bands can be added to a plot using the \function{panel.lmbands()} function.
+\myindex{prediction intervals}%
+\Rindex{gf\_lm()}%
+\Rindex{interval option}%
+Prediction intervals can be added to a plot using the \option{interval} option in \function{gf\_lm()}.
 \begin{center}
 <<HELPxyplot1>>=
-gf_point(cesd ~ mcs, panel = panel.lmbands, 
-         cex = 0.2, band.lwd = 2, data = HELPrct)
+gf_point(cesd ~ mcs, data = HELPrct) %>%
+  gf_lm(interval = "confidence", fill = "red") %>%
+  gf_lm(interval = "prediction", fill = "navy")
 @
 \end{center}
 

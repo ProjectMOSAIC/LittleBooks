@@ -58,11 +58,12 @@ the homeless rather than the housed).
 \FoodForThought{The \function{mosaic()} function 
 in the \pkg{vcd} package makes mosaic plots.}
 \Rindex{mosaic()}%
+\Rindex{vcd package}%
 \begin{center}
 <<mosaicplot,fig.height=3.5,tidy=FALSE>>=
 mytab <- tally(~ homeless + sex, margins = FALSE, 
   data = HELPrct)
-vcd::mosaic(mytab, shade = TRUE)
+vcd::mosaic(mytab)
 vcd::mosaic(~ homeless + substance, data = HELPrct, 
             shade = TRUE) #example with color
 @

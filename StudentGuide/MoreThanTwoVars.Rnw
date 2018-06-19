@@ -26,7 +26,7 @@ significant main effects terms for \variable{substance} group and
 \variable{sex}.
 \Rindex{plotModel()}%
 <<help-interaction,tidy=FALSE>>=
-mod <- lm(cesd ~ substance + sex + substance*sex, data = HELPrct)
+mod <- lm(cesd ~ substance + sex + substance * sex, data = HELPrct)
 plotModel(mod)
 @
 
@@ -169,7 +169,8 @@ Describe the distribution of the variable \variable{avgtemp} in terms of its
 center, spread and shape.
 <<tidy=FALSE>>=
 favstats(~ avgtemp, data = RailTrail)
-gf_dens(~ avgtemp, xlab = "Average daily temp(degrees F)", data = RailTrail)
+gf_dens(~ avgtemp, xlab = "Average daily temp (degrees F)",
+        data = RailTrail)
 @
 \end{problem}
 \begin{solution}
