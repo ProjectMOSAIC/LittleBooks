@@ -30,19 +30,13 @@ It's straightforward to plot something besides a character in a scatterplot.
 In this example, the \dataframe{USArrests} can be used to plot the association
 between murder and assault rates, with the state name displayed.  This
 requires a panel function to be written.   
-\Rindex{function()}%
-\Rindex{panel.labels()}%
-\Rindex{panel.text()}%
 \Rindex{rownames()}%
 \Rindex{gf\_text()}%
 \Rindex{label option}%
+\Rindex{size option}%
 <<tidy=FALSE>>=
-panel.labels <- function(x, y, labels = 'x',...) { 
-  panel.text(x, y, labels, cex = 0.4, ...)
-}
-gf_text(Murder ~ Assault, panel = panel.labels, 
-  label = rownames(USArrests), data = USArrests, 
-  size = 2)
+gf_text(Murder ~ Assault, label = rownames(USArrests), 
+        data = USArrests, size = 2)
 @
 
 
