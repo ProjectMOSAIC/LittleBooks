@@ -85,9 +85,12 @@ Multiple distributions can be plotted on the same plot.
 \Rindex{lwd option}%
 \Rindex{pch option}%
 <<tidy=FALSE,fig.keep='last'>>=
-gf_dist("binom", size = 100, prob = .3, col = "black", lwd = 1.5, pch = 16)
-plotDist("norm", mean = 30, sd = sqrt(100 * .3 * .7), 
-  groups = abs(x - 30) > 6 , type = "h", under = TRUE)
+gf_dist("norm", mean = 30, sd = sqrt(100 * .3 * .7), 
+        fill = ~ (abs(x - 30) > 6), geom = "area") %>%
+  gf_dist("binom", size = 100, prob = .3, col = "black", 
+          pch = 16)
+#plotDist("norm", mean = 30, sd = sqrt(100 * .3 * .7), 
+#  groups = abs(x - 30) > 6 , type = "h", under = TRUE)
 @
 
 The \function{gf\_fun()} function can be used to plot an arbitrary 

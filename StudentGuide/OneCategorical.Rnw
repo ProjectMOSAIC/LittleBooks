@@ -124,8 +124,7 @@ It may be helpful to consult a graph of the statistic, where the shaded area rep
 
 \Rindex{gf\_dist()}%
 <<chisqplotDist>>=
-plotDist("chisq", df = 2, groups = x > 9.31, type = "h")
-gf_dist("chisq", df = 2)
+gf_dist("chisq", df = 2, fill = ~ (x > 9.31), geom = "area")
 @
 
 
