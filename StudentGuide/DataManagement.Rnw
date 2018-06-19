@@ -108,7 +108,7 @@ names(CPS1)
 
 Any number of variables can be dropped or kept in a similar manner.
 <<>>=
-CPS1 <- select(CPS85, select = -matches("workforce.years | exper"))
+CPS1 <- select(CPS85, select = -matches("workforce.years|exper"))
 @
 
 
