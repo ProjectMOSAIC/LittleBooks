@@ -73,6 +73,7 @@ vcd::mosaic(~ homeless + substance, data = HELPrct,
 
 Tables can be created from summary statistics using the \function{do} function.
 
+\Rindex{do()}%
 <<>>=
 HELPtable <- rbind(
   do(40)  * data.frame(sex = "female", homeless = "homeless"),

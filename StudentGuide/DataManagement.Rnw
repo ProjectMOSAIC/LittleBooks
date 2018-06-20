@@ -120,7 +120,7 @@ The column (variable) names for a dataframe can be changed using the \function{r
 \pkg{dplyr} package.
 <<>>=
 names(CPS85)
-CPSnew = rename(CPS85, workforce = workforce.years)
+CPSnew <- rename(CPS85, workforce = workforce.years)
 names(CPSnew)
 @
 
@@ -140,7 +140,7 @@ The measurements are the duration of an eruption and the time until the subseque
 so let's give it some better names.
 <<tidy=FALSE>>=
 faithful <- rename(faithful, 
-  duration = eruptions, 
+  duration = eruptions,   # new = old
   time.til.next = waiting)
 names(faithful)
 @

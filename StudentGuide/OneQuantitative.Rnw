@@ -178,8 +178,9 @@ how to change the x-axis label.
 \Rindex{gf\_dotplot()}%
 \Rindex{gf\_labs()}%
 <<cesd-dot4,tidy=FALSE>>=
-gf_dotplot(~ cesd, binwidth = 3, data = filter(HELPrct, 
-                                               sex == "female", homeless == "homeless")) %>%
+gf_dotplot(~ cesd, binwidth = 3, 
+           data = filter(HELPrct, sex == "female", 
+                         homeless == "homeless")) %>%
   gf_labs(x = "CESD score")
 @
 
