@@ -50,7 +50,7 @@ Graphical summaries of cross classification tables may be helpful in visualizing
 associations.  Mosaic plots are one example, where the total area (all observations) is proportional to one.
 \Caution{The jury is still out
 regarding the utility of mosaic plots (also known as eikosograms), 
-relative to the low data to ink ratio.\cite{Tufte:2001:Visual}%
+due to their low data to ink ratio.\cite{Tufte:2001:Visual}%
 We have found them to be helpful to reinforce understanding of a two way contingency table.}%
 Here we see that males tend to be over-represented
 amongst the homeless subjects (as represented by the horizontal line which is higher for
@@ -64,6 +64,8 @@ in the \pkg{vcd} package makes mosaic plots.}
 mytab <- tally(~ homeless + sex, margins = FALSE, 
   data = HELPrct)
 vcd::mosaic(mytab)
+@
+<<mosaicplot2,fig.height=4.5,tidy=FALSE>>=
 vcd::mosaic(~ homeless + substance, data = HELPrct, 
             shade = TRUE) #example with color
 @
@@ -73,6 +75,8 @@ vcd::mosaic(~ homeless + substance, data = HELPrct,
 
 Tables can be created from summary statistics using the \function{do} function.
 
+\Rindex{do()}%
+\Rindex{rbind()}%
 <<>>=
 HELPtable <- rbind(
   do(40)  * data.frame(sex = "female", homeless = "homeless"),

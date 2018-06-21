@@ -59,7 +59,7 @@ Uniform        &  {\tt unif}     \\
 Weibull        &  {\tt weibull}   \\ \hline
 \end{tabular}
 \end{center}
-\DiggingDeeper{The \function{gf\_fitdistr()} within the \pkg{MASS} package facilitates estimation
+\DiggingDeeper{The \function{gf\_fitdistr()} facilitates estimation
 of parameters for many distributions.}
 The \function{gf\_dist()} can be used to display distributions in a variety of ways.
 \Rindex{gf\_dist()}%

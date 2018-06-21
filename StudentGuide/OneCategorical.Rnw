@@ -80,7 +80,7 @@ prop.test(~ (homeless == "homeless"), correct = FALSE,
           data = HELPrct)
 @
 In this statement, prop.test is examining the \variable{homeless} variable in the same way that \function{tally} would. \Pointer{We write \code{homeless == "homeless"} to define unambiguously which proportion we are considering. We could also have written \code{homeless == "housed"}. }
-\function{prop.test} can also work directly with numerical counts, the way \function{binom.test()} does.
+The \function{prop.test} function can also work directly with numerical counts, the way \function{binom.test()} does.
 \InstructorNote{\function{prop.test()} calculates a Chi-squared statistic.
 Most introductory texts use a $z$-statistic.  They are mathematically equivalent in terms of inferential statements, but you may need to address the discrepancy with your students.}%
 <<>>=
