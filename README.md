@@ -5,7 +5,7 @@ Project MOSAIC Little Books
 
 
 
-You can grab PDFs of the Little Books here:
+You can find PDFs of the Little Books here:
 
   * *Start Teaching Statistics Using R*
  [[view]](Starting/MOSAIC-StartTeaching.pdf)
@@ -29,9 +29,5 @@ You can grab PDFs of the Little Books here:
   This book describes the use of R in calculus based on the successful
   redesign of the first semester calculus course at Macalester College.
   
-Others that are in progress include
- 
-  * Start Modeling with R
-
 
 There is a spanish language translation of the *Student's Guide to R* available at https://github.com/jarochoeltrocho/MOSAIC-LittleBooks-Spanish (kudos to Francisco Javier Jara Ávila, https://github.com/jarochoeltrocho)

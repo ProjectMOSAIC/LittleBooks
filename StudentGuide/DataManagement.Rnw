@@ -1,17 +1,18 @@
 
 
 \label{sec:manipulatingData}%
-\myindex{data management}%
+\myindex{data wrangling}%
+\myindex{wrangling data}%
 \myindex{thinking with data}%
 
 \FoodForThought{The \emph{Start Teaching with R} book features an extensive section on data management, including use of the \function{read.file()} function to load data into \R\ and \RStudio.}
 
 \vspace*{-1cm}
-Data management is a key capacity to allow students (and instructors) to ``compute with data'' or  
+Data wrangling (also known as management, curation, or marshaling) is a key capacity to allow students (and instructors) to ``compute with data'' or  
 as Diane Lambert of Google has stated, ``think with data''.
-We tend to keep student data management to a minimum during the early part of an introductory
+We tend to keep student data wrangling to a minimum during the early part of an introductory
 statistics course, then gradually introduce topics as needed.  For courses where students
-undertake substantive projects, data management is more important.  This chapter describes 
+undertake substantive projects, more focus on data management is needed.  This chapter describes 
 some key data management tasks.
 \myindex{read.file()}%
 
@@ -108,7 +109,7 @@ names(CPS1)
 
 Any number of variables can be dropped or kept in a similar manner.
 <<>>=
-CPS1 <- select(CPS85, select = -matches("workforce.years | exper"))
+CPS1 <- select(CPS85, select = -matches("workforce.years|exper"))
 @
 
 

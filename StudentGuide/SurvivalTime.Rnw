@@ -36,7 +36,7 @@ link to primary care (less likely to ``survive'') than the control (usual care) 
 \Rindex{coxph()}%
 
 <<help-surv,tidy=FALSE>>=
-require(survival)
+library(survival)
 summary(coxph(Surv(dayslink, linkstatus) ~ age + substance, 
   data = HELPrct))
 @

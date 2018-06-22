@@ -134,7 +134,7 @@ HELPrct <- mutate(HELPrct,
 @
 <<tidy=FALSE, message=FALSE>>=
 gf_dhistogram(~ residuals, data = HELPrct) %>%
-  gf_fitdistr(dist = dnorm)
+  gf_fitdistr(dist = "dnorm")
 @
 
 We can identify the subset of observations with extremely large residuals.
@@ -319,7 +319,7 @@ density) to assess the normality of the residuals.
 \begin{solution}
 <<>>=
 gf_dhistogram(~resid(fm), bins = 7) %>%
-  gf_fitdistr(dist = dnorm)
+  gf_fitdistr(dist = "dnorm")
 @
 The distribution is approximately normal.
 \end{solution}

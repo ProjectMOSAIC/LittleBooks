@@ -68,7 +68,7 @@ cor(cesd ~ mcs, method = "spearman", data = Female)
 A pairs plot (scatterplot matrix) can be calculated for each pair of a set of variables.
 \FoodForThought{The \pkg{GGally} package has support for more elaborate pairs plots.}
 \Rindex{ggpairs()}%
-<<fig.height=3>>=
+<<fig.height=3, message=FALSE>>=
 library(GGally)
 ggpairs(smallHELP)
 @
