@@ -33,9 +33,10 @@ between murder and assault rates, with the state name displayed.
 \Rindex{gf\_text()}%
 \Rindex{label option}%
 \Rindex{size option}%
-<<tidy=FALSE>>=
-gf_text(Murder ~ Assault, label = rownames(USArrests), 
-        data = USArrests, size = 2)
+<<tidy=FALSE,fig.height=4.5>>=
+gf_text(Murder ~ Assault, 
+  label = ~ rownames(USArrests), 
+  data = USArrests)
 @
 
 
